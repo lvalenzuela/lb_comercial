@@ -1,0 +1,128 @@
+<div class="extra">
+	<div class="main">
+		<article class="col1">
+			<ul class="tabs">
+				<li><a href="#" class="active">Busca tu curso ideal</a></li>
+			</ul>
+			<div class="tabs_cont">
+				<div class="bg">
+					<div class="wrapper">
+					<font color="white">
+						<span>
+							<%=form_tag({:controller => "site", :action => "available_courses"}, :method => :get) do%>
+							<table BORDER=0  align=center border=0 bgcolor="#C2C2C2">
+								<tr>
+									<td><b>Ubicación</b></td>
+									<td height=70>
+										<%=radio_button_tag :modalidad_lugar, "sede", true%>Longbourn Escuela Militar<br>
+										<%=radio_button_tag :modalidad_lugarm, "oficina"%>En tu propia oficina</td>
+								</tr>
+
+								<tr>
+									<td><b>Modalidad</b></td>
+									<td><%=radio_button_tag :modalidad_cantidad, "group_p", true%>Grupal Presencial<br>
+										<%=radio_button_tag :modalidad_cantidad, "group_sp"%>Grupal Semi-Presencial<br>
+										<%=radio_button_tag :modalidad_cantidad, "indiv"%>Individual
+									</td>
+								</tr>
+								<tr>
+									<td><b>Tipo de curso</b></td>
+									<td>
+									<%@types.each do |t|%>
+										<%if t.id == 1%>
+											<%=radio_button_tag :tipo_curso, t.id, true%><%=t.typename%><br>
+										<%else%>
+											<%=radio_button_tag :tipo_curso, t.id%><%=t.typename%><br>
+										<%end%>
+									<%end%>
+									</td>
+								</tr> 
+
+								<tr>
+									<td><b>Mes de Inicio</b></td> 
+									<td height=30 align=left> <%=select_month(Date.today,use_month_names: %w(Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre))%></td>
+								</tr>
+
+								<input type="hidden" name="verificador" id="verificador" value="1" />
+								<input type="hidden" name="fecha_quincena" id="fecha_quincena " value="0" />
+
+								<tr>
+									<td></td>
+									<td><%=submit_tag "Buscar Cursos"%></td>
+								</tr>
+							</table>
+							<%end%>
+						</span>
+
+					</font>
+					</div>                
+				</div>
+			</div>
+
+		</article>
+		<article class="col1 pad_left1">
+			<div class="text"><%=image_tag "AmCham.jpg"%>
+				<h2>Longbourn Institute</h2>
+				<p>Ruta Introductory >> Tronador, Cook, Catedral, Tronador<br>Longbourn cuenta con el mejor equipo del mundo en el &aacuterea de Sistemas y procesos.<br>Bla bla bla bla bla bla bla bla bla...</p>
+				<a href="#" class="button">Read More</a> 
+			</div>
+		</article>
+		<div class="img"><img src="" alt=""></div>
+		</header>
+
+		<section id="content">
+			<article class="col_sugerencias">
+				<h3>Tronador</h3>
+				<div class="pad">
+					<div class="wrapper under">
+						<figure class="left marg_right1"><img src="" alt=""></figure>
+						<p class="pad_bot2"><strong>Curso Introductorio<br>
+						Sede / Grupal</strong></p>
+						<p class="pad_bot2">Hablamos un poco sobre el curso, su fecha y otras cosas que se consultan en la base de datos.</p>
+						<a href="#" class="marker_1"></a> 
+					</div>
+				</div>
+			</article>
+
+			<article class="col_sugerencias">
+			<h3>Cotopaxi</h3>
+				<div class="pad">
+					<div class="wrapper under">
+						<figure class="left marg_right1"><img src="" alt=""></figure>
+						<p class="pad_bot2"><strong>Curso Introductorio<br>
+						Sede / Grupal</strong></p>
+						<p class="pad_bot2">Profesor xxxxxx Lugar yyyyy Horario 777777</p>
+						<a href="#" class="marker_1"></a> 
+					</div>
+				</div>
+			</article>
+
+			<article class="col_sugerencias">
+				<h3>Everest</h3>
+				<div class="pad">
+					<div class="wrapper under">
+						<figure class="left marg_right1"><img src="" alt=""></figure>
+						<p class="pad_bot2"><strong>Curso Avanzado<br>
+						Sede / Grupal</strong></p>
+						<p class="pad_bot2">Solo para PRO, curso muy muy avanzado, horarios disponibles, click here to mas info</p>
+						<a href="#" class="marker_1"></a> 
+					</div>
+				</div>
+			</article>
+
+
+			<article class="col_sugerencias">
+				<h3>Test TOEIEEIEI</h3>
+				<div class="pad">
+					<div class="wrapper under">
+						<figure class="left marg_right1"><img src="" alt=""></figure>
+						<p class="pad_bot2"><strong>Curso Test<br>
+						Sede / Grupal</strong></p>
+						<p class="pad_bot2">Solo de preparacion de test, luis les recomienda este curso, es muy bueno, ver horarios $ 120.000 COMPRAR</p>
+						<a href="#" class="marker_1"></a> 
+					</div>
+				</div>
+			</article>
+		</section>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<div class="extra">
+   <div class="main">
+      <article class='col_lista_cursos'>
+         <ul class='tabs'>
+            <li><a href='#' class='active'>Precios desde...</a></li>
+         </ul>
+         <div class='tabs_cont'>
+            <div class='bg'>
+               <div class='wrapper'>
+                  <font color='white'> <br>
+                  <table class="products-table">
+                     <tr>
+                        <td align="center"></td>
+                        <td align="center"><%=get_month_name(@selected_month.to_i-2)%></td>
+                        <td align="center"><%=get_month_name(@selected_month.to_i-1)%></td>
+                        <td align="center"><%=get_month_name(@selected_month.to_i)%></td>
+                        <td align="center"><%=get_month_name(@selected_month.to_i+1)%></td>
+                        <td align="center"><%=get_month_name(@selected_month.to_i+2)%></td>
+                     </tr>
+                     <%@modes.each do |m|%>
+                     <tr>
+                        <td><%=m["name"]%></td>
+                        <td align="center"><%=link_to m["rate"]%></td>
+                        <td align="center"><%=link_to m["rate"]%></td>
+                        <td align="center"><%=link_to m["rate"]%></td>
+                        <td align="center"><%=link_to m["rate"]%></td>
+                        <td align="center"><%=link_to m["rate"]%></td>
+                     </tr>
+                     <%end%>
+                  </table>
+               </div>
+            </div>
+         </div>
+         <div id="extra-content">
+            
+         </div>
+      </article>
+   </div>
+</div>
