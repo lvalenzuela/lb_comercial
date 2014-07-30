@@ -27,4 +27,25 @@ module SiteHelper
 			return "Diciembre"
 		end
 	end
+
+	def disabled_course(courses,month)
+		if courses.select{|c| c.start_date.month == month}
+			return false
+		else
+			return true
+		end
+	end
+
+	def get_coursetype(id)
+		CourseType.find(id).typename
+	end
+
+	def get_course_feature(course_features, desired)
+		feature = course_features.where(:feature_name => desired)
+		if feature.nil?
+			return ""
+		else
+			return feature.first().feature_description
+		end
+	end
 end

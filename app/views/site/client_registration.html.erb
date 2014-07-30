@@ -1,0 +1,124 @@
+<div class="extra">
+	<div class="main">
+		<article class='col_lista_cursos'>
+			<ul class='tabs'>
+				<li><a href='#' class='active'>Resumen del curso</a></li>
+			</ul>
+			<div class='tabs_cont'>
+				<div class='bg'>
+					<div class='wrapper'>
+						<font color='white'> <br>
+							<table>
+								<tr>
+									<td><b>Curso</b></td>
+									<td><%=@course.coursename%></td>
+								</tr>
+								<tr>
+									<td><b>Modalidad</b></td>
+									<td><%=@course.mode%></td>
+								</tr>
+								<tr>
+									<td><b>Tipo de Curso</b></td>
+									<td><%=get_coursetype(@course.course_type_id)%></td>
+								</tr>
+								<tr>
+									<td><b>Fecha de Inicio</b></td>
+									<td><%=@course.start_date.strftime("%d-%m-%Y")%></td>
+								</tr>
+								<tr>
+									<td><b>Dia 1</b></td>
+									<td><%=get_course_feature(@course_features,"first_day")+" "+get_course_feature(@course_features,"first_day_hour")%></td>
+								</tr>
+								<tr>
+									<td><b>Dia 2</b></td>
+									<td><%=get_course_feature(@course_features,"second_day")+" "+get_course_feature(@course_features,"second_day_hour")%></td>
+								</tr>	
+								<tr>
+									<td><b>Precio del Curso</b></td>
+									<td><%=number_to_currency(get_course_feature(@course_features,"price").to_i, :precision => 0)%></td>
+								</tr>
+							</table>
+						</font>
+					</div>
+				</div>
+			</div>
+		</article>
+
+		<article class='col_lista_cursos'>
+			<ul class='tabs'>
+				<li><a href='#' class='active'>Ingresa tus datos</a></li>
+			</ul>
+
+			<div class='tabs_cont'>
+				<div class='bg'>
+					<div class='wrapper'>
+						<font color='white'> <br>
+							<%=form_tag :controller => "site", :action => "register_new_client" do%>
+								<table>
+									<tr>
+										<td><b>Datos Personales</b></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Nombre</td>
+										<td><%=text_field_tag :firstname%></td>
+									</tr>
+									<tr>
+										<td>Apellido</td>
+										<td><%=text_field_tag :lastname%></td>
+									</tr>
+									<tr>
+										<td>Rut</td>
+										<td><%=text_field_tag :rut%></td>
+									</tr>
+									<tr>
+										<td>Genero</td>
+										<td><%=radio_button_tag :gender, "male", true%>Masculino
+											<%=radio_button_tag :gender, "female"%>Femenino</td>
+									</tr>
+									<tr>
+										<td><b>Datos de Contacto</b></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Email</td>
+										<td><%=email_field_tag :email%></td>
+									</tr>
+									<tr>
+										<td>Contraseña Longbourn</td>
+										<td><%=password_field_tag :password%></td>
+									</tr>
+									<tr>
+										<td>Confirmación Contraseña</td>
+										<td><%=password_field_tag :password_confirmation%></td>
+									</tr>
+									<tr>
+										<td>Ciudad</td>
+										<td><%=text_field_tag :city%></td>
+									</tr>
+									<tr>
+										<td>Direccion</td>
+										<td><%=text_field_tag :address%></td>
+									</tr>
+									<tr>
+										<td>Telefono Fijo</td>
+										<td><%=phone_field_tag :phone%></td>
+									</tr>
+									<tr>
+										<td>Celular</td>
+										<td><%=phone_field_tag :mobile%></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td align="right"><br><br>
+											<%=submit_tag "Enviar Datos"%></td>
+									</tr>
+								</table>
+							<%end%>
+						</font>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</div>

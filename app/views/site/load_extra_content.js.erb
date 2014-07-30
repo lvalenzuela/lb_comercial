@@ -1,0 +1,1 @@
+$("#extra-content").replaceWith("<%= escape_javascript(render(:partial => 'courses_for_date', :locals => {:courses => @courses, :features => @course_features}))%>");

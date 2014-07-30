@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   resources :site do
     collection do 
+      get "index"
       get "available_courses"
+      post "load_extra_content"
+      get "client_registration"
+      post "register_new_client"
+      post "confirm_purchase"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

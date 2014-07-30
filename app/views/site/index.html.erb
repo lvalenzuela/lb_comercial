@@ -42,10 +42,6 @@
 									<td><b>Mes de Inicio</b></td> 
 									<td height=30 align=left> <%=select_month(Date.today,use_month_names: %w(Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre))%></td>
 								</tr>
-
-								<input type="hidden" name="verificador" id="verificador" value="1" />
-								<input type="hidden" name="fecha_quincena" id="fecha_quincena " value="0" />
-
 								<tr>
 									<td></td>
 									<td><%=submit_tag "Buscar Cursos"%></td>

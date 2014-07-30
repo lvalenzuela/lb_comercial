@@ -20,11 +20,11 @@
                      <%@modes.each do |m|%>
                      <tr>
                         <td><%=m["name"]%></td>
-                        <td align="center"><%=link_to m["rate"]%></td>
-                        <td align="center"><%=link_to m["rate"]%></td>
-                        <td align="center"><%=link_to m["rate"]%></td>
-                        <td align="center"><%=link_to m["rate"]%></td>
-                        <td align="center"><%=link_to m["rate"]%></td>
+                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m, :month => @selected_month.to_i-2), {:remote => true, :method => :post}%></td>
+                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m, :month => @selected_month.to_i-1), {:remote => true, :method => :post}%></td>
+                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m, :month => @selected_month.to_i), {:remote => true, :method => :post}%></td>
+                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m, :month => @selected_month.to_i+1), {:remote => true, :method => :post}%></td>
+                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m, :month => @selected_month.to_i+2), {:remote => true, :method => :post}%></td>
                      </tr>
                      <%end%>
                   </table>
@@ -32,7 +32,7 @@
             </div>
          </div>
          <div id="extra-content">
-            
+
          </div>
       </article>
    </div>

@@ -1,0 +1,34 @@
+<div id="extra-content">
+	<article class='col_lista_cursos'>
+		<ul class='tabs'>
+			<li><a href='#' class='active'>Lista de Cursos</a></li>
+		</ul>
+		<div class='tabs_cont'>
+			<div class='bg'>
+				<div class='wrapper'>
+					<font color='white'> <br>
+						<table height=130 width=500 BORDER=1 CELLSPACING=5 CELLPADDING=5 align=center bgcolor=#31B404>
+							<tr align=center>
+								<td>Modalidad</td>
+								<td>Curso</td>
+								<td>Fecha de inicio</td>
+								<td>Horario</td>
+								<td>Precio</td> 
+							</tr>
+							<%courses.each do |c|%>
+							<tr align=center>
+								<td><%=c.mode%></td>
+								<td><%=c.coursename%></td>
+								<td><%=c.start_date.strftime("%d-%m-%Y")%></td>
+								<td><%= "-"%></td>
+								<td><%=number_to_currency(get_course_feature(features.where(:course_id => c.id),"price").to_i, :precision => 0)%></td>
+								<td><%=link_to "Comprar", {:controller => "site", :action => "client_registration", :params =>{:id => c.id}}, {:class => "button"}%></td>
+							</tr>
+							<%end%>
+						</table>
+					</font>
+				</div>                
+			</div>
+		</div>
+	</article>
+</div>
