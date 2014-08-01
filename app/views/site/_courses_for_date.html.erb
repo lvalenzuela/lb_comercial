@@ -22,7 +22,7 @@
 								<td><%=c.start_date.strftime("%d-%m-%Y")%></td>
 								<td><%= "-"%></td>
 								<td><%=number_to_currency(get_course_feature(features.where(:course_id => c.id),"price").to_i, :precision => 0)%></td>
-								<td><%=link_to "Comprar", {:controller => "site", :action => "client_registration", :params =>{:id => c.id}}, {:class => "button"}%></td>
+								<td><%=link_to "Comprar", {:controller => "site", :action => "client_registration", :params =>{:course_id => c.id}}, {:class => "button"}%></td>
 							</tr>
 							<%end%>
 						</table>

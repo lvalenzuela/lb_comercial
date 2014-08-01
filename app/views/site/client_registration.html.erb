@@ -43,6 +43,36 @@
 				</div>
 			</div>
 		</article>
+		<article class='col_lista_cursos'>
+			<ul class='tabs'>
+				<li><a href='#' class='active'>Identificate</a></li>
+			</ul>
+
+			<div class='tabs_cont'>
+				<div class='bg'>
+					<div class='wrapper'>
+						<font color='white'> <br>
+							<%=form_tag :controller => "site", :action => "client_login" do%>
+								<table>
+									<tr>
+										<td>Email:</td>
+										<td><%=text_field_tag :email%></td>
+									</tr>
+									<tr>
+										<td>Password:</td>
+										<td><%=password_field_tag :password%></td>
+									</tr>
+									<tr>
+										<td><%=hidden_field_tag :course_id, @course.id%></td>
+										<td><%=submit_tag "Login"%></td>
+									</tr>
+								</table>
+							<%end%>
+						</font>
+					</div>
+				</div>
+			</div>
+		</article>
 
 		<article class='col_lista_cursos'>
 			<ul class='tabs'>
@@ -53,7 +83,7 @@
 				<div class='bg'>
 					<div class='wrapper'>
 						<font color='white'> <br>
-							<%=form_tag :controller => "site", :action => "register_new_client" do%>
+							<%=form_tag :controller => "site", :action => "register_local" do%>
 								<table>
 									<tr>
 										<td><b>Datos Personales</b></td>
@@ -73,8 +103,12 @@
 									</tr>
 									<tr>
 										<td>Genero</td>
-										<td><%=radio_button_tag :gender, "male", true%>Masculino
-											<%=radio_button_tag :gender, "female"%>Femenino</td>
+										<td><%=radio_button_tag :gender, "Masculino", true%>Masculino
+											<%=radio_button_tag :gender, "Femenino"%>Femenino</td>
+									</tr>
+									<tr>
+										<td>Fecha de Nacimiento</td>
+										<td><%=date_field_tag :birthday, Date.new(1990,1,1)%></td>
 									</tr>
 									<tr>
 										<td><b>Datos de Contacto</b></td>
@@ -86,7 +120,7 @@
 									</tr>
 									<tr>
 										<td>Contraseña Longbourn</td>
-										<td><%=password_field_tag :password%></td>
+										<td><%=password_field_tag :password, nil, :validate => true%></td>
 									</tr>
 									<tr>
 										<td>Confirmación Contraseña</td>
@@ -109,7 +143,7 @@
 										<td><%=phone_field_tag :mobile%></td>
 									</tr>
 									<tr>
-										<td></td>
+										<td><%=hidden_field_tag :course_id, @course.id%></td>
 										<td align="right"><br><br>
 											<%=submit_tag "Enviar Datos"%></td>
 									</tr>

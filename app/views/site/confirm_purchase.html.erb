@@ -10,73 +10,77 @@
 			<div class='bg'>
 				<div class='wrapper'>
 					<font color='white'> <br>
-						<h1>Datos del Curso</h1>
 						<table>
 							<tr>
-								<td>Fecha Actual</td>
+								<td><h1>Datos del Curso</h1></td>
 								<td></td>
+							</tr>
+							<tr>
+								<td>Fecha Actual</td>
+								<td><%=Date.current%></td>
 							</tr>
 							<tr>
 								<td>Nombre del Curso</td>
-								<td></td>
+								<td><%=@course.coursename%></td>
 							</tr>
 							<tr>
 								<td>Modalidad</td>
-								<td></td>
+								<td><%=@course.mode%></td>
 							</tr>
 							<tr>
 								<td>Tipo de Curso</td>
-								<td></td>
+								<td><%=get_coursetype(@course.course_type_id)%></td>
 							</tr>
 							<tr>
 								<td>Fecha de Inicio</td>
-								<td></td>
+								<td><%=@course.start_date.strftime("%d-%m-%Y")%></td>
 							</tr>
 							<tr>
 								<td>Horario</td>
-								<td></td>
+								<td><%=get_course_feature(@course_features,"first_day")+" "+get_course_feature(@course_features,"first_day_hour")+" - "+get_course_feature(@course_features,"second_day")+" "+get_course_feature(@course_features,"second_day_hour")%></td>
 							</tr>
 							<tr>
 								<td>Precio</td>
+								<td><%=number_to_currency(get_course_feature(@course_features,"price").to_i,:precision => 0)%></td>
+							</tr>
+							<tr>
+								<td><h1>Datos del Cliente</h1></td>
 								<td></td>
 							</tr>
-						</table>
-
-						<h1>Datos del Cliente</h1>
-						<table>
 							<tr>
 								<td>Nombre</td>
-								<td></td>
+								<td><%=@contact_person.firstname+" "+@contact_person.lastname%></td>
 							</tr>
 							<tr>
 								<td>Fecha de Nacimiento</td>
-								<td></td>
+								<td><%=@contact_person.birthday.strftime("%d-%m-%Y")%></td>
 							</tr>
 							<tr>
 								<td>Rut</td>
-								<td></td>
+								<td><%=@contact.rut%></td>
 							</tr>
 							<tr>
 								<td>Género</td>
-								<td></td>
+								<td><%=@contact_person.gender%></td>
 							</tr>							
-						</table>
-						
-						<h1>Datos de Contacto</h1>
-						<table>
+							<tr>
+								<td><h1>Datos de Contacto</h1></td>
+								<td></td>
+							</tr>
 							<tr>
 								<td>Direccion</td>
-								<td></td>
+								<td><%=@contact.address%></td>
 							</tr>
 							<tr>
 								<td>Teléfono</td>
-								<td></td>
+								<td><%=@contact_person.phone%></td>
 							</tr>
 							<tr>
 								<td>E-Mail</td>
-								<td></td>
+								<td><%=@contact_person.email%></td>
 							</tr>
 						</table>
+						<%=link_to "Realizar Compra", {:controller => "site", :action => "register_purchase", :params => {:contact_id => @contact.id, :course_id => @course.id}}, {:class => "button"}%>
 					</font>
 				</div>
 			</div>

@@ -1,0 +1,19 @@
+<div class="extra">
+	<div class="main">
+		<article>
+			<ul class='tabs'>
+				<li><a href='#' class='active'>Resumen de la Transacción</a></li>
+			</ul>
+			<div class='tabs_cont'>
+				<div class='bg'>
+					<div class='wrapper'>
+						<font color='white'> <br>
+							<%=flash[:notice]%>
+							<%=link_to "Generar Factura", {:controller => "site", :action => "register_invoice", :params => {:course => @course.id}}, {:class => "button"}%>
+						</font>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</div>

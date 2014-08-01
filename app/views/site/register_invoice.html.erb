@@ -1,0 +1,48 @@
+<div class="extra">
+	<div class="main">
+		<article>
+			<ul class='tabs'>
+				<li><a href='#' class='active'>Detalles de la Compra 2</a></li>
+			</ul>
+			<div class='tabs_cont'>
+				<div class='bg'>
+					<div class='wrapper'>
+						<font color='white'> <br>
+							<table>
+								<tr>
+									<td><b>Curso</b></td>
+									<td><%=@course.coursename%></td>
+								</tr>
+								<tr>
+									<td><b>Modalidad</b></td>
+									<td><%=@course.mode%></td>
+								</tr>
+								<tr>
+									<td><b>Tipo de Curso</b></td>
+									<td><%=get_coursetype(@course.course_type_id)%></td>
+								</tr>
+								<tr>
+									<td><b>Fecha de Inicio</b></td>
+									<td><%=@course.start_date.strftime("%d-%m-%Y")%></td>
+								</tr>
+								<tr>
+									<td><b>Dia 1</b></td>
+									<td><%=get_course_feature(@course_features,"first_day")+" "+get_course_feature(@course_features,"first_day_hour")%></td>
+								</tr>
+								<tr>
+									<td><b>Dia 2</b></td>
+									<td><%=get_course_feature(@course_features,"second_day")+" "+get_course_feature(@course_features,"second_day_hour")%></td>
+								</tr>	
+								<tr>
+									<td><b>Precio del Curso</b></td>
+									<td><%=number_to_currency(get_course_feature(@course_features,"price").to_i, :precision => 0)%></td>
+								</tr>
+							</table>
+							<%=flash[:notice]%>
+						</font>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</div>
