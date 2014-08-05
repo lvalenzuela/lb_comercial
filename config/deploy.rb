@@ -1,25 +1,62 @@
-set :application, "set your application name here"
-set :repository,  "set your repository location here"
+require 'bundler/capistrano'
+require "rvm/capistrano"
 
-# set :scm, :git # You can set :scm explicitly or Capistrano will make an intelligent guess based on known version control directory names
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :application, "Longbourn Institute"
+set :repository,  "git@github.com:lvalenzuela/lb_comercial.git"
+set :deploy_to, "/home/ubuntu/production"
+set :scm, :git
+set :branch, "master"
+set :user, "ubuntu"
+set :group, "deployers"
+set :use_sudo, false
+set :rails_env, "production"
+set :deploy_via, :copy
+set :ssh_options, { :forward_agent => true }
+set :keep_releases, 5
+default_run_options[:pty] = true
+server "54.211.124.146", :app, :web, :db, :primary => true
 
-role :web, "your web-server here"                          # Your HTTP server, Apache/etc
-role :app, "your app-server here"                          # This may be the same as your `Web` server
-role :db,  "your primary db-server here", :primary => true # This is where Rails migrations will run
-role :db,  "your slave db-server here"
+set :rvm_ruby_string, :local        # use the same ruby as used locally for deployment
 
-# if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
+before 'deploy', 'rvm:install_rvm'  # install/update RVM
+before 'deploy', 'rvm:install_ruby' # install Ruby and create gemset (both if missing)
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
+before "deploy:assets:precompile" do
+  run ["ln -nfs #{shared_path}/config/settings.yml #{release_path}/config/settings.yml",
+       "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
+       "ln -nfs #{shared_path}/config/secrets.yml #{release_path}/config/secrets.yml",
+       "ln -nfs #{shared_path}/config/production.erb #{release_path}/config/environments/production.erb",
+       "ln -fs #{shared_path}/uploads #{release_path}/uploads"
+  ].join(" && ")
+end
 
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
+namespace :deploy do
+  task :start do ; end
+  task :stop do ; end
+
+#  desc "Symlink shared config files"
+#  task :symlink_config_files do
+#   run "#{ sudo } ln -s #{ deploy_to }/shared/config/database.yml #{ current_path }/config/database.yml"
+#    run "#{ sudo } ln -s #{ deploy_to }/shared/config/secrets.yml #{ current_path }/config/secrets.yml"
+#  end
+
+  # NOTE: I don't use this anymore, but this is how I used to do it.
+  desc "Precompile assets after deploy"
+  task :precompile_assets do
+    run <<-CMD
+      cd #{ current_path } &&
+      #{ sudo } bundle exec rake assets:precompile RAILS_ENV=#{ rails_env }
+    CMD
+  end
+
+  desc "Restart applicaiton"
+  task :restart do
+    run "#{ try_sudo } touch #{ File.join(current_path, 'tmp', 'restart.txt') }"
+  end
+end
+
+#after "deploy", "deploy:symlink_config_files"
+#after "deploy", "deploy:precompile_assets"
+#after "deploy", "deploy:restart"
+after "deploy:update_code", "deploy:migrate"
+after "deploy", "deploy:cleanup"
