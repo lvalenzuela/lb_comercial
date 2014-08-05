@@ -13,16 +13,22 @@
 							<table BORDER=0  align=center border=0 bgcolor="#C2C2C2">
 								<tr>
 									<td><b>Ubicación</b></td>
-									<td height=70>
+									<td>
 										<%=radio_button_tag :modalidad_lugar, "sede", true%>Longbourn Escuela Militar<br>
 										<%=radio_button_tag :modalidad_lugarm, "oficina"%>En tu propia oficina</td>
 								</tr>
 
 								<tr>
 									<td><b>Modalidad</b></td>
-									<td><%=radio_button_tag :modalidad_cantidad, "group_p", true%>Grupal Presencial<br>
-										<%=radio_button_tag :modalidad_cantidad, "group_sp"%>Grupal Semi-Presencial<br>
-										<%=radio_button_tag :modalidad_cantidad, "indiv"%>Individual
+									<%counter = 1%>
+									<td><%@modes.each do |m|%>
+											<%if counter == 1%>
+												<%=radio_button_tag :modalidad_cantidad, counter, true%><%=m.mode%><br>
+											<%else%>
+												<%=radio_button_tag :modalidad_cantidad, counter%><%=m.mode%><br>
+											<%end%>
+											<%counter+=1%>
+										<%end%>
 									</td>
 								</tr>
 								<tr>

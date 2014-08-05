@@ -42,7 +42,7 @@ module SiteHelper
 
 	def get_course_feature(course_features, desired)
 		feature = course_features.where(:feature_name => desired)
-		if feature.nil?
+		if feature.nil? || feature.blank?
 			return ""
 		else
 			return feature.first().feature_description

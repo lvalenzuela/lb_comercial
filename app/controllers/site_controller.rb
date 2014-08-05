@@ -5,6 +5,7 @@ class SiteController < ApplicationController
 
 	def index
 		@types = CourseType.all()
+		@modes = Course.select("distinct(mode) as mode")
 	end
 
 	def available_courses
@@ -118,7 +119,7 @@ class SiteController < ApplicationController
 		@contact = Contact.find(session[:contact_id])
 		@course = Course.find(params[:course])
 		@course_features = CourseFeature.where(:course_id => @course.id)
-		item_response = get_data_from_zoho("items",@course.productpriceid)
+		item_response = get_data_from_zoho("items",@course.zoho_product_id)
 		if item_response["code"].to_i == 0
 			response = post_data("invoices",format_invoice_for_post(@contact,item_response["item"]))
 			if response["code"].to_i != 0
