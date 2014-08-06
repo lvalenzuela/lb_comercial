@@ -31,76 +31,10 @@ class SiteController < ApplicationController
 		respond_to do |format|
 			format.js
 		end
-	end
-
-	def client_registration
-		@course = Course.find(params[:course_id])
-		@course_features = CourseFeature.where(:course_id => @course.id)
-	end
-	
-	def client_login
-		contact_person = ContactPerson.where(:email => params[:email]).first()
-		if contact_person.blank? || contact_person.nil?
-			flash[:notice] = "Datos de usuario incorrectos."
-			redirect_to :action => :contact_signup
-		else
-			password = BCrypt::Password.new(contact_person.password)
-			if password == params[:password]
-				contact = Contact.find(contact_person.contact_id)
-				if params[:remember_me]
-					cookies.permanent[:auth_token] = contact_person.auth_token
-				else
-					cookies[:auth_token] = contact_person.auth_token
-				end
-				redirect_to :action => :available_courses, :mode => session[:selected_mode], :date => {:month => session[:selected_month]}
-			else
-				flash[:notice] = "Contraseña Incorrecta"
-				redirect_to :action => :contact_signup
-			end
-		end
-	end
-
-	def contact_logout
-		cookies.delete(:auth_token)
-	    redirect_to :action => :index
-	end
+	end	
 
 	def contact_signup
 
-	end
-
-	def register_contact_local
-		@contact = Contact.create(	:contact_name => params[:email],
-									:rut => params[:rut],
-									:address => params[:address],
-									:city => params[:city],
-									:phone => params[:phone]
-									)
-		if @contact.valid?
-			@contact_person = ContactPerson.create(	:contact_id => @contact.id,
-													:gender => params[:gender],
-													:birthday => params[:birthday],
-													:firstname => params[:firstname],
-													:lastname => params[:lastname],
-													:rut => params[:rut],
-													:password => params[:password],
-													:password_confirmation => params[:password_confirmation],
-													:email => params[:email],
-													:phone => params[:phone],
-													:mobile => params[:mobile],
-													:is_primary_contact => true,
-													)
-			if @contact.valid?
-				cookies[:auth_token] = contact_person.auth_token
-				redirect_to :action => :available_courses, :mode => session[:selected_mode], :date => {:month => session[:selected_month]}
-			else
-				flash[:notice] = "Error al registrar nuevo contacto."
-				render :contact_signup
-			end
-		else
-			flash[:notice] = "Error al registrar nuevo contacto."
-			render :contact_signup
-		end
 	end
 
 	def confirm_purchase
@@ -269,7 +203,7 @@ class SiteController < ApplicationController
 	end
 
 	def post_data(post_type,array)
-		data = get_zoho_data("Longbourn")
+		data = get_zoho_data("Longbourn","invoice")
 		uri = URI.parse("https://invoice.zoho.com/api/v3/"+post_type)
 		if array
 			resp = Net::HTTP.post_form(uri, {"authtoken" => data.authtoken, "organization_id" => data.organization_id,"JSONString" => array.to_json})
@@ -280,20 +214,20 @@ class SiteController < ApplicationController
 	end
 
 	def get_data_from_zoho(data_type,data_id)
-		data = get_zoho_data("Longbourn")
+		data = get_zoho_data("Longbourn","invoice")
 		url = "https://invoice.zoho.com/api/v3/"+data_type+"/"+data_id+"?authtoken="+data.authtoken+"&organization_id="+data.organization_id
 		resp = Net::HTTP.get_response(URI.parse(url))
 		return JSON.parse resp.body
 	end
 
     def zoho_product_list
-    	data = get_zoho_data("Longbourn")
+    	data = get_zoho_data("Longbourn","invoice")
     	url = "https://invoice.zoho.com/api/v3/items?authtoken="+data.authtoken+"&organization_id="+data.organization_id
     	resp = Net::HTTP.get_response(URI.parse(url))
     	return JSON.parse resp.body
     end
 
-    def get_zoho_data(organization)
-    	return ZohoOrganizationData.where(:organization_name => organization).first()
+    def get_zoho_data(organization,service)
+    	return ZohoOrganizationData.where(:organization_name => organization, :service => service).first()
     end
 end

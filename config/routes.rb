@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
   root "site#index"
 
+  resources :users do
+    collection do
+      post "user_login"
+      post "register_user"
+      get "user_logout"
+    end
+  end
+
   resources :site do
     collection do 
       get "index"
       get "available_courses"
       post "load_extra_content"
-      get "client_registration"
-      post "client_login"
-      post "register_contact_local"
       post "register_new_client"
       get "confirm_purchase"
       get "register_purchase"
       get "register_invoice"
       get "contact_signup"
-      get "contact_logout"
+      get "organization_signup"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
