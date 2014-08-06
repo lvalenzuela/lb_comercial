@@ -1,0 +1,79 @@
+<div class="extra">
+	<div class="main">
+			<div class='tabs_cont'>
+				<div class='bg'>
+					<div class='wrapper'>
+						<font color='white'> <br>
+							<%=form_tag :controller => "site", :action => "register_contact_local" do%>
+								<table>
+									<tr>
+										<td><b>Datos Personales</b></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Nombre</td>
+										<td><%=text_field_tag :firstname%></td>
+									</tr>
+									<tr>
+										<td>Apellido</td>
+										<td><%=text_field_tag :lastname%></td>
+									</tr>
+									<tr>
+										<td>Rut</td>
+										<td><%=text_field_tag :rut%></td>
+									</tr>
+									<tr>
+										<td>Genero</td>
+										<td><%=radio_button_tag :gender, "Masculino", true%>Masculino
+											<%=radio_button_tag :gender, "Femenino"%>Femenino</td>
+									</tr>
+									<tr>
+										<td>Fecha de Nacimiento</td>
+										<td><%=date_field_tag :birthday, Date.new(1990,1,1)%></td>
+									</tr>
+									<tr>
+										<td><b>Datos de Contacto</b></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Email</td>
+										<td><%=email_field_tag :email%></td>
+									</tr>
+									<tr>
+										<td>Contraseña Longbourn</td>
+										<td><%=password_field_tag :password, nil, :validate => true%></td>
+									</tr>
+									<tr>
+										<td>Confirmación Contraseña</td>
+										<td><%=password_field_tag :password_confirmation%></td>
+									</tr>
+									<tr>
+										<td>Ciudad</td>
+										<td><%=text_field_tag :city%></td>
+									</tr>
+									<tr>
+										<td>Direccion</td>
+										<td><%=text_field_tag :address%></td>
+									</tr>
+									<tr>
+										<td>Telefono Fijo</td>
+										<td><%=phone_field_tag :phone%></td>
+									</tr>
+									<tr>
+										<td>Celular</td>
+										<td><%=phone_field_tag :mobile%></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td align="right"><br><br>
+											<%=submit_tag "Enviar Datos"%></td>
+									</tr>
+								</table>
+							<%end%>
+						</font>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</div>

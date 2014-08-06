@@ -1,0 +1,32 @@
+<div id="extra-content">
+	<article class='col_lista_cursos'>
+		<ul class='tabs'>
+			<li><a href='#' class='active'>Login de Usuario</a></li>
+		</ul>
+		<div class='tabs_cont'>
+			<div class='bg'>
+				<div class='wrapper'>
+					<font color='white'> <br>
+						<p>Para ver los cursos disponibles, por favor registrate y rinde nuestra prueba de diagnostico primero</p>
+						<%=form_tag :controller => "site", :action => "client_login" do%>
+							<table>
+								<tr>
+									<td>Email:</td>
+									<td><%=text_field_tag :email%></td>
+								</tr>
+								<tr>
+									<td>Password:</td>
+									<td><%=password_field_tag :password%></td>
+								</tr>
+								<tr>
+									<td><%=check_box_tag :remember_me%> Recordarme</td>
+									<td><%=submit_tag "Login"%>  <%=link_to "Registrarme", {:controller => "site", :action => "contact_signup"}%></td>
+								</tr>
+							</table>
+						<%end%>
+					</font>
+				</div>                
+			</div>
+		</div>
+	</article>
+</div>

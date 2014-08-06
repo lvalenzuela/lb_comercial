@@ -18,16 +18,22 @@
                         <td align="center"><%=get_month_name(@selected_month.to_i+2)%></td>
                      </tr>
                      <%@modes.each do |m|%>
-                     <tr>
+                     <%if m["name"] == @selected_mode%>
+                        <tr style="background-color: #FFCC00">
+                     <%else%>
+                        <tr>
+                     <%end%>
                         <td><%=m["name"]%></td>
                         <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i-2), {:remote => true, :method => :post}%></td>
                         <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i-1), {:remote => true, :method => :post}%></td>
-                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i), {:remote => true, :method => :post}%></td>
+                        <td align="center" style="background-color: #FFCC00"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i), {:remote => true, :method => :post}%></td>
                         <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i+1), {:remote => true, :method => :post}%></td>
                         <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i+2), {:remote => true, :method => :post}%></td>
                      </tr>
                      <%end%>
                   </table>
+                  <%=link_to "Retroceder", {:controller => "site", :action => "available_courses", :params => {:mode => session[:selected_mode], :date => {:month => (session[:selected_month].to_i-1)}}}, {:class => "button"}%>
+                  <%=link_to "Avanzar", {:controller => "site", :action => "available_courses", :params => {:mode => session[:selected_mode], :date => {:month => (session[:selected_month].to_i+1)}}}, {:class => "button"}%>
                </div>
             </div>
          </div>

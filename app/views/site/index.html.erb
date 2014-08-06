@@ -1,5 +1,3 @@
-<div class="extra">
-	<div class="main">
 		<article class="col1">
 			<ul class="tabs">
 				<li><a href="#" class="active">Busca tu curso ideal</a></li>
@@ -15,7 +13,7 @@
 									<td><b>Ubicación</b></td>
 									<td>
 										<%=radio_button_tag :modalidad_lugar, "sede", true%>Longbourn Escuela Militar<br>
-										<%=radio_button_tag :modalidad_lugarm, "oficina"%>En tu propia oficina</td>
+										<%=radio_button_tag :modalidad_lugar, "oficina"%>En tu propia oficina</td>
 								</tr>
 
 								<tr>
@@ -23,9 +21,9 @@
 									<%counter = 1%>
 									<td><%@modes.each do |m|%>
 											<%if counter == 1%>
-												<%=radio_button_tag :modalidad_cantidad, counter, true%><%=m.mode%><br>
+												<%=radio_button_tag :mode, m.mode, true%><%=m.mode%><br>
 											<%else%>
-												<%=radio_button_tag :modalidad_cantidad, counter%><%=m.mode%><br>
+												<%=radio_button_tag :mode, m.mode%><%=m.mode%><br>
 											<%end%>
 											<%counter+=1%>
 										<%end%>
@@ -60,7 +58,6 @@
 					</div>                
 				</div>
 			</div>
-
 		</article>
 		<article class="col1 pad_left1">
 			<div class="text"><%=image_tag "AmCham.jpg"%>

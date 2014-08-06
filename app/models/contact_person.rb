@@ -3,6 +3,7 @@ class ContactPerson < ActiveRecord::Base
 	validates_confirmation_of :password
 	before_create :set_defaults
 	before_create :set_password
+	before_create  {generate_token(:auth_token)}
 
 	def set_defaults
 		#Por defecto, al crear una cuenta, esta no estará en zoho inmediatamente
@@ -22,5 +23,11 @@ class ContactPerson < ActiveRecord::Base
 	def set_password
 		#Se usa bcrypt para el hash de la contraseña
 		self.password = BCrypt::Password.create(self.password)
+	end
+
+	def generate_token(column)
+		begin
+			self[column] = SecureRandom.urlsafe_base64
+		end while ContactPerson.exists?(column => self[column])
 	end
 end

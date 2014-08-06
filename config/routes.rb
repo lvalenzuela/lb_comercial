@@ -8,11 +8,13 @@ Rails.application.routes.draw do
       post "load_extra_content"
       get "client_registration"
       post "client_login"
-      post "register_local"
+      post "register_contact_local"
       post "register_new_client"
       get "confirm_purchase"
       get "register_purchase"
       get "register_invoice"
+      get "contact_signup"
+      get "contact_logout"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

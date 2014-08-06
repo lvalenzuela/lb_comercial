@@ -1,9 +1,15 @@
 module SiteHelper
 	def get_month_name(month_number)
+		if month_number < 0 
+			month_number = month_number + 12
+		elsif month_number > 12
+			month_number = month_number - 12			
+		end
+		
 		case month_number
-		when [1,13]
+		when 1
 			return "Enero"
-		when [2,14]
+		when 2
 			return "Febrero"
 		when 3
 			return "Marzo"
@@ -21,9 +27,9 @@ module SiteHelper
 			return "Septiembre"
 		when 10
 			return "Octubre"
-		when [11,-1]
+		when 11
 			return "Noviembre"
-		when [12,0]
+		when 12
 			return "Diciembre"
 		end
 	end

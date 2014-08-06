@@ -9,14 +9,20 @@ class SiteController < ApplicationController
 	end
 
 	def available_courses
+		if params[:date][:month] && params[:mode]
+			session[:selected_month] = params[:date][:month]
+			session[:selected_mode] = params[:mode]
+		end
+		@selected_month = session[:selected_month]
+		@selected_mode = session[:selected_mode]
+
 		raw_products = zoho_product_list
 		if raw_products["code"] == 0
 			@modes = raw_products["items"].uniq{|i| i["name"]}
 		else
 			@modes = nil
 		end
-		@courses = Course.where("MONTH(start_date) BETWEEN (#{params[:date][:month]}-2) AND (#{params[:date][:month]}+2)")
-		@selected_month = params[:date][:month]
+		@courses = Course.where("MONTH(start_date) BETWEEN (#{session[:selected_month]}-2) AND (#{session[:selected_mode]}+2)")
 	end
 
 	def load_extra_content
@@ -36,22 +42,34 @@ class SiteController < ApplicationController
 		contact_person = ContactPerson.where(:email => params[:email]).first()
 		if contact_person.blank? || contact_person.nil?
 			flash[:notice] = "Datos de usuario incorrectos."
-			redirect_to :action => :client_registration, :course_id => params[:course_id]
+			redirect_to :action => :contact_signup
 		else
 			password = BCrypt::Password.new(contact_person.password)
 			if password == params[:password]
 				contact = Contact.find(contact_person.contact_id)
-				session[:contact_id] = contact.id
-				session[:contact_person_id] = contact_person.id
-				redirect_to :action => :confirm_purchase, :course_id => params[:course_id]
+				if params[:remember_me]
+					cookies.permanent[:auth_token] = contact_person.auth_token
+				else
+					cookies[:auth_token] = contact_person.auth_token
+				end
+				redirect_to :action => :available_courses, :mode => session[:selected_mode], :date => {:month => session[:selected_month]}
 			else
 				flash[:notice] = "Contraseña Incorrecta"
-				redirect_to :action => :client_registration, :course_id => params[:course_id]
+				redirect_to :action => :contact_signup
 			end
 		end
 	end
 
-	def register_local
+	def contact_logout
+		cookies.delete(:auth_token)
+	    redirect_to :action => :index
+	end
+
+	def contact_signup
+
+	end
+
+	def register_contact_local
 		@contact = Contact.create(	:contact_name => params[:email],
 									:rut => params[:rut],
 									:address => params[:address],
@@ -73,30 +91,27 @@ class SiteController < ApplicationController
 													:is_primary_contact => true,
 													)
 			if @contact.valid?
-				session[:contact_id] = @contact.id
-				session[:contact_person_id] = @contact_person.id
-				redirect_to :action => :confirm_purchase, :course_id => params[:course_id]
+				cookies[:auth_token] = contact_person.auth_token
+				redirect_to :action => :available_courses, :mode => session[:selected_mode], :date => {:month => session[:selected_month]}
 			else
-				@course = Course.find(params[:course_id])
 				flash[:notice] = "Error al registrar nuevo contacto."
-				render :client_registration
+				render :contact_signup
 			end
 		else
-			@course = Course.find(params[:course_id])
 			flash[:notice] = "Error al registrar nuevo contacto."
-			render :client_registration
+			render :contact_signup
 		end
 	end
 
 	def confirm_purchase
-		@contact = Contact.find(session[:contact_id])
-		@contact_person = ContactPerson.find(session[:contact_person_id])
+		@contact = Contact.find(current_user.id)
+		@contact_person = ContactPerson.find(current_user.id)
 		@course = Course.find(params[:course_id])
 		@course_features = CourseFeature.where(:course_id => @course.id)
 	end
 
 	def register_purchase
-		@contact = Contact.find(session[:contact_id])
+		@contact = Contact.find(current_user.id)
 		@contact_people = ContactPerson.where(:contact_id => @contact.id)
 		@course = Course.find(params[:course_id])
 		if @contact.zoho_enabled
@@ -116,7 +131,7 @@ class SiteController < ApplicationController
 	end
 
 	def register_invoice
-		@contact = Contact.find(session[:contact_id])
+		@contact = Contact.find(current_user.id)
 		@course = Course.find(params[:course])
 		@course_features = CourseFeature.where(:course_id => @course.id)
 		item_response = get_data_from_zoho("items",@course.zoho_product_id)
