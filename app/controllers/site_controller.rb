@@ -37,6 +37,10 @@ class SiteController < ApplicationController
 
 	end
 
+	def organization_signup
+		@lead = ZohoLead.new()
+	end
+
 	def confirm_purchase
 		@contact = Contact.find(current_user.id)
 		@contact_person = ContactPerson.find(current_user.id)
@@ -82,6 +86,10 @@ class SiteController < ApplicationController
 				end
 			end
 		end
+	end
+
+	def successful_registration
+		
 	end
 
 #####################################

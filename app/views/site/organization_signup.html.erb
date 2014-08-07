@@ -4,76 +4,45 @@
 				<div class='bg'>
 					<div class='wrapper'>
 						<font color='white'> <br>
-							<%=form_tag :controller => "users", :action => "register_user" do%>
+							<%=form_for @lead, :url => {:controller => "users", :action => "register_lead"} do |f|%>
 								<table>
 									<tr>
-										<td><b>Datos Organizacionales</b></td>
+										<td><b>Datos Generales</b></td>
 										<td></td>
 									</tr>
 									<tr>
+										<%=f.hidden_field :lead_source, :value => "Web Longbourn"%>
 										<td>Organizacion</td>
-										<td><%=text_field_tag :company_name%></td>
-									</tr>
-									<tr>
-										<td>Ciudad</td>
-										<td><%=text_field_tag :city%></td>
-									</tr>
-									<tr>
-										<td>Dirección</td>
-										<td><%=text_field_tag :address%></td>
-									</tr>
-									<tr>
-										<td><b>Datos de Contacto</b></td>
-										<td></td>
+										<td><%=f.text_field :company%></td>
 									</tr>
 									<tr>
 										<td>Nombre</td>
-										<td><%=text_field_tag :firstname%></td>
+										<td><%=f.text_field :firstname%></td>
 									</tr>
 									<tr>
 										<td>Apellido</td>
-										<td><%=text_field_tag :lastname%></td>
+										<td><%=f.text_field :lastname%></td>
 									</tr>
 									<tr>
 										<td>Genero</td>
-										<td><%=radio_button_tag :gender, "Masculino", true%>Masculino
-											<%=radio_button_tag :gender, "Femenino"%>Femenino</td>
-									</tr>
-									<tr>
-										<td>Fecha de Nacimiento</td>
-										<td><%=date_field_tag :birthday, Date.new(1990,1,1)%></td>
-									</tr>
-									<tr>
-										<td><b>Rut</b></td>
-										<td><%=text_field_tag :rut%></td>
+										<td><%=f.radio_button :gender, "Masculino", :checked => true%>Masculino
+											<%=f.radio_button :gender, "Femenino"%>Femenino</td>
 									</tr>
 									<tr>
 										<td>Email</td>
-										<td><%=email_field_tag :email%></td>
+										<td><%=f.email_field :email%></td>
 									</tr>
 									<tr>
-										<td>Contraseña Longbourn</td>
-										<td><%=password_field_tag :password, nil, :validate => true%></td>
+										<td>Cargo</td>
+										<td><%=f.text_field :title%></td>
 									</tr>
 									<tr>
-										<td>Confirmación Contraseña</td>
-										<td><%=password_field_tag :password_confirmation%></td>
-									</tr>
-									<tr>
-										<td>Ciudad</td>
-										<td><%=text_field_tag :city%></td>
-									</tr>
-									<tr>
-										<td>Direccion</td>
-										<td><%=text_field_tag :address%></td>
-									</tr>
-									<tr>
-										<td>Telefono Fijo</td>
-										<td><%=phone_field_tag :phone%></td>
+										<td>Telefono de Contacto</td>
+										<td><%=f.phone_field :phone%></td>
 									</tr>
 									<tr>
 										<td>Celular</td>
-										<td><%=phone_field_tag :mobile%></td>
+										<td><%=f.phone_field :mobile%></td>
 									</tr>
 									<tr>
 										<td></td>

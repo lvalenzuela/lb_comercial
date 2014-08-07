@@ -42,3 +42,4 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'bcrypt'
+gem 'nokogiri'

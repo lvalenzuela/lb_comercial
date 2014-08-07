@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       post "user_login"
-      post "register_user"
+      post "register_user_contact"
       get "user_logout"
+      post "register_lead"
     end
   end
 
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
       get "register_invoice"
       get "contact_signup"
       get "organization_signup"
+      get "registration_success"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
