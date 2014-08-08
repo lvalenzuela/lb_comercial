@@ -1,6 +1,10 @@
 class ContactPerson < ActiveRecord::Base
 	require 'bcrypt'
 	validates_confirmation_of :password
+	validates :email, uniqueness: true
+	validates :rut, uniqueness: true, presence: true
+	validate :birthday_cant_be_today
+
 	before_create :set_defaults
 	before_create :set_password
 	before_create  {generate_token(:auth_token)}
@@ -13,6 +17,12 @@ class ContactPerson < ActiveRecord::Base
 			self.salutation = "Sr."
 		else
 			self.salutation = "Srta."
+		end
+	end
+
+	def birthday_cant_be_today
+		if birthday.present? && birthday >= Date.today
+			errors.add(:birthday, "No puede ser mayor o igual a la fecha actual")
 		end
 	end
 

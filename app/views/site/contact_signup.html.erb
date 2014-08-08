@@ -63,12 +63,48 @@
 										<td>Celular</td>
 										<td><%=phone_field_tag :mobile%></td>
 									</tr>
+								</table>
+								<%=check_box_tag :extra_contact_person%> El curso es para otra persona
+								<table id="student-data" style="display:none;">
 									<tr>
+										<td><b>Datos del Alumno</b></td>
 										<td></td>
-										<td align="right"><br><br>
-											<%=submit_tag "Enviar Datos"%></td>
+									</tr>
+									<tr>
+										<td>Nombre</td>
+										<td><%=text_field_tag :student_firstname%></td>
+									</tr>
+									<tr>
+										<td>Apellido</td>
+										<td><%=text_field_tag :student_lastname%></td>
+									</tr>
+									<tr>
+										<td>Email</td>
+										<td><%=email_field_tag :student_email%></td>
+									</tr>
+									<tr>
+										<td>Genero</td>
+										<td><%=radio_button_tag :student_gender, "Masculino", true%>Masculino
+											<%=radio_button_tag :student_gender, "Femenino"%>Femenino</td>
+									</tr>
+									<tr>
+										<td>Rut</td>
+										<td><%=text_field_tag :student_rut%></td>
+									</tr>
+									<tr>
+										<td>Fecha de Nacimiento</td>
+										<td><%=date_field_tag :student_birthday, Date.new(1990,1,1)%></td>
+									</tr>
+									<tr>
+										<td>Telefono Fijo</td>
+										<td><%=phone_field_tag :student_phone%></td>
+									</tr>
+									<tr>
+										<td>Celular</td>
+										<td><%=phone_field_tag :studen_mobile%></td>
 									</tr>
 								</table>
+								<%=submit_tag "Enviar Datos"%>
 							<%end%>
 						</font>
 					</div>
@@ -77,3 +113,13 @@
 		</article>
 	</div>
 </div>
+
+<script>
+$( "#extra_contact_person" ).change(function() {
+	if ($( "#extra_contact_person" ).is(":checked")){
+		$( "#student-data" ).show();
+	} else {
+		$( "#student-data" ).hide();
+	};
+  });
+</script>

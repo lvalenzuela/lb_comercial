@@ -7,21 +7,24 @@ Rails.application.routes.draw do
       post "register_user_contact"
       get "user_logout"
       post "register_lead"
+      post "create_contact_person"
     end
   end
 
   resources :site do
-    collection do 
+    collection do
+      get "new_contact_person"
       get "index"
       get "available_courses"
       post "load_extra_content"
       post "register_new_client"
       get "confirm_purchase"
-      get "register_purchase"
+      post "register_purchase"
       get "register_invoice"
       get "contact_signup"
       get "organization_signup"
       get "registration_success"
+      get "login"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

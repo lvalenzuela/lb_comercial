@@ -1,0 +1,74 @@
+<div class="extra">
+	<div class="main">
+		<article class='col_lista_cursos'>
+
+			<ul class='tabs'>
+				<li><a href='#' class='active'>Resumen del curso</a></li>
+			</ul>
+
+			<div class='tabs_cont'>
+				<div class='bg'>
+					<div class='wrapper'>
+						<font color='white'> <br>
+							<%if @contact_person.errors.any? %>
+								<div class="alert alert-warning">
+								    <%=pluralize(@contact_person.errors.count,"error")%> no permitieron llevar a cabo la operacion 
+								    <ul>
+								        <%@contact_person.errors.full_messages.each do |msg|%>
+								            <li><%= msg %></li>
+								        <%end%>
+								    </ul>
+								</div>
+							<%end%>
+							<%=form_for @contact_person, :url => {:controller => "users", :action => "create_contact_person"} do |f|%>
+								<table>
+									<tr>
+										<td><b>Datos del Alumno</b></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>Nombre</td>
+										<td><%=f.text_field :firstname%></td>
+									</tr>
+									<tr>
+										<td>Apellido</td>
+										<td><%=f.text_field :lastname%></td>
+									</tr>
+									<tr>
+										<td>Email</td>
+										<td><%=f.email_field :email%></td>
+									</tr>
+									<tr>
+										<td>Genero</td>
+										<td><%=f.radio_button :gender, "Masculino", :checked => true%>Masculino
+											<%=f.radio_button :gender, "Femenino"%>Femenino</td>
+									</tr>
+									<tr>
+										<td>Rut</td>
+										<td><%=f.text_field :rut%></td>
+									</tr>
+									<tr>
+										<td>Fecha de Nacimiento</td>
+										<td><%=f.date_field :birthday%></td>
+									</tr>
+									<tr>
+										<td>Telefono Fijo</td>
+										<td><%=f.phone_field :phone%></td>
+									</tr>
+									<tr>
+										<td>Celular</td>
+										<td><%=f.phone_field :mobile%></td>
+									</tr>
+									<tr>
+										<td></td>
+										<td><%=f.submit "Registrar Alumno", :class => "button"%></td>
+									</tr>
+								</table>
+							<%end%>
+						</font>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</div>

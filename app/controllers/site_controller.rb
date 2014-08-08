@@ -31,7 +31,15 @@ class SiteController < ApplicationController
 		respond_to do |format|
 			format.js
 		end
-	end	
+	end
+
+	def new_contact_person
+		if current_user.nil?
+			redirect_to :action => :login
+		else
+			@contact_person = ContactPerson.new()
+		end
+	end
 
 	def contact_signup
 
@@ -42,60 +50,131 @@ class SiteController < ApplicationController
 	end
 
 	def confirm_purchase
-		@contact = Contact.find(current_user.id)
-		@contact_person = ContactPerson.find(current_user.id)
-		@course = Course.find(params[:course_id])
+		if params[:course_id]
+			session[:selected_course] = params[:course_id]
+		end
+		@contact = Contact.find(current_user.contact_id)
+		@contact_people = ContactPerson.where(:contact_id => @contact.id)
+		@primary_contact = ContactPerson.find(current_user.id)
+		@course = Course.find(session[:selected_course])
 		@course_features = CourseFeature.where(:course_id => @course.id)
 	end
 
 	def register_purchase
-		@contact = Contact.find(current_user.id)
-		@contact_people = ContactPerson.where(:contact_id => @contact.id)
-		@course = Course.find(params[:course_id])
-		if @contact.zoho_enabled
-			flash[:notice] = "El cliente ya se encuentra registrado en zoho."
-		else
-			response = post_data("contacts",format_contact_for_post(@contact,@contact_people))
-			case response["code"].to_i
-			when 0
-				update_local_contact_data(@contact,response["contact"])
-				flash[:notice] = "El cliente ha sido registrado exitosamente"
-			when 1001
-				flash[:notice] = "Ya existe un contacto registrado con ese nombre"
-			else
-				flash[:notice] = "Se presentó un problema con su registro. Error: "+response["message"]
-			end
-		end
-	end
-
-	def register_invoice
-		@contact = Contact.find(current_user.id)
-		@course = Course.find(params[:course])
-		@course_features = CourseFeature.where(:course_id => @course.id)
-		item_response = get_data_from_zoho("items",@course.zoho_product_id)
-		if item_response["code"].to_i == 0
-			response = post_data("invoices",format_invoice_for_post(@contact,item_response["item"]))
-			if response["code"].to_i != 0
-				flash[:notice] = "Ocurrio un problema y no se pudo registrar la Factura. Error: "+response["message"]
-			else
-				if register_local_invoice(@contact.id,response["invoice"])
-					mail_response = mail_invoice_to_customer(response["invoice"]["invoice_id"])
-					flash[:notice] = "La factura ha sido generada con exito. "+mail_response["message"]
+		#Verificar si el alumno ya se encuentra en ese curso
+		cm = CourseMember.where(:course_id => session[:selected_course], :contact_person_id => params[:selected_student])
+		if cm.blank?
+			#registrar contacto en zoho si no esta registrado
+			contact = Contact.find(current_user.contact_id)
+			##Revisa si el contacto esta registrado en zoho junto con todas las personas que involucra
+			##Aquellos que no estan registrados, los registra
+			contact_response = enable_zoho_contact(contact)
+			if contact_response["code"].to_i == 0
+				#Se recupera nuevamente el contacto con la informacion actualizada
+				@contact = Contact.find(contact.id)
+				@course = Course.find(session[:selected_course])
+				@course_features = CourseFeature.where(:course_id => @course.id)
+				@contact_person = ContactPerson.find(params[:selected_student])
+				response = register_invoice(@contact,@course)
+				if response["code"].to_i == 0
+					register_course_member(@course,params[:selected_student])
+					flash[:notice] = "La compra fue realizada con exito"
 				else
-					flash[:notice] = "La factura ha sido registrada, pero hubo un error al registrarla localmente."
+					flash[:notice] = "Ocurrió un error al registrar la compra. Error: "+response["message"]
 				end
+			else
+				@contact = Contact.find(contact.id)
+				@course = Course.find(session[:selected_course])
+				@course_features = CourseFeature.where(:course_id => @course.id)
+				@contact_person = ContactPerson.find(params[:selected_student])
+				#hubo un error registrando al contacto en zoho
+				flash[:notice] = "Ocurrió un error al registrar el usuario en el sistema. Error: ["+contact_response["code"].to_s+"] "+contact_response["message"]
 			end
+		else
+			@contact = Contact.find(current_user.contact_id)
+			@course = Course.find(session[:selected_course])
+			@course_features = CourseFeature.where(:course_id => @course.id)
+			@contact_person = ContactPerson.find(params[:selected_student])
+			flash[:notice] = "La compra no se ha realizado. El alumno ya pertenece al curso seleccionado."
 		end
 	end
 
 	def successful_registration
-		
+
 	end
+
+
 
 #####################################
 #Funciones privadas para esta clase
 #####################################
 	private
+
+	def enable_zoho_contact(contact)
+		if !contact.zoho_enabled
+			#contacto no registrado
+			#se registra y se registran sus sub contactos tambien
+			contact_people = ContactPerson.where(:contact_id => contact.id)
+			#registro en zoho
+			response = post_data("contacts",format_contact_for_post(contact,contact_people))
+			#registro local de las correspondientes ID de los contactos en zoho
+			if response["code"].to_i == 0
+				update_local_contact_data(contact,response["contact"])
+			end
+			return response
+		else
+			#el contacto esta registrado en zoho.
+			#se revisa si todos los subcontactos estan registrados
+			contact_people = ContactPerson.where(:contact_id => contact.id, :zoho_enabled => false)
+			if contact_people.blank? || contact_people.nil?
+				#todos los sub_contactos del contacto estan registrados en zoho
+				return {"code" => 0}
+			else
+				contact_people.each do |cp|
+					response = post_data("contacts/contactpersons",format_contact_person_for_post(contact,cp))
+					if response["code"].to_i != 0
+						#si en algun caso hay un error, retornar
+						return response
+					else
+						#actualizar datos locales con los datos de la ID de zoho
+						cp.update_attributes(:zoho_contact_person_id => response["contact_person"]["contact_person_id"], :zoho_enabled => true)
+					end
+				end
+				return {"code" => 0}
+			end
+		end
+	end
+
+	def update_local_contact_data(local_contact,updated_contact)
+		local_contact.update_attributes(:zoho_enabled => true, :zoho_contact_id => updated_contact["contact_id"])
+		updated_contact["contact_persons"].each do |c|
+			cp = ContactPerson.where(:email => c["email"]).first()
+			cp.update_attributes(:zoho_enabled => true, :zoho_contact_person_id => c["contact_person_id"])
+		end
+	end
+
+	def register_invoice(contact,course)
+		item_response = get_data_from_zoho("items",course.zoho_product_id)
+		if item_response["code"].to_i == 0
+			response = post_data("invoices",format_invoice_for_post(contact,item_response["item"]))
+			if response["code"].to_i == 0
+				register_local_invoice(@contact.id,response["invoice"])
+				mail_response = mail_invoice_to_customer(response["invoice"]["invoice_id"])
+			end
+		else
+			return item_response
+		end
+		return response
+	end
+
+	def register_course_member(course,contact_person_id)
+		cm = CourseMember.create(:course_id => course.id, :contact_person_id => contact_person_id)
+		if cm.valid?
+			return true
+		else
+			return false
+		end
+	end
 
 	def mail_invoice_to_customer(zoho_invoice_id)
 		return post_data("invoices/"+zoho_invoice_id+"/email",nil)
@@ -155,12 +234,18 @@ class SiteController < ApplicationController
 		return invoice
 	end
 
-	def update_local_contact_data(local_contact,updated_contact)
-		local_contact.update_attributes(:zoho_enabled => true, :zoho_contact_id => updated_contact["contact_id"])
-		updated_contact["contact_persons"].each do |c|
-			cp = ContactPerson.where(:email => c["email"]).first()
-			cp.update_attributes(:zoho_enabled => true, :zoho_contact_person_id => c["contact_person_id"])
-		end
+	def format_contact_person_for_post(contact,contact_person)
+		#agrega sub_contactos a zoho bajo el contacto señalado
+		contact_person = {
+			:contact_id => contact.zoho_contact_id,
+			:salutation => contact_person.salutation,
+			:first_name => contact_person.firstname,
+			:last_name => contact_person.lastname,
+			:email => contact_person.email,
+			:phone => contact_person.phone,
+			:mobile => contact_person.mobile
+		}
+		return contact_person
 	end
 
 	def format_contact_for_post(contact,contact_people)
