@@ -34,6 +34,18 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def modify_contact_data
+		@contact_person = ContactPerson.find(params[:contact_person][:id])
+		@contact_person.update_attributes(contact_person_params)
+		if @contact_person.valid?
+			flash[:notice] = "Contacto editado con exito."
+			redirect_to :controller => :site, :action => :confirm_purchase
+		else
+			@contact_people = ContactPerson.where(:contact_id => @contact_person.contact_id)
+			render :template => "site/edit_contact"
+		end
+	end
+
 	def user_login
 		contact_person = ContactPerson.where(:email => params[:email]).first()
 		if contact_person.blank? || contact_person.nil?

@@ -10,6 +10,7 @@
 			<div class='bg'>
 				<div class='wrapper'>
 					<font color='white'> <br>
+						<%=flash[:notice]%>
 						<table>
 							<tr>
 								<td><h1>Datos del Curso</h1></td>
@@ -75,7 +76,7 @@
 								<td><b>Seleccionar Alumno</b></td>
 								<td></td>
 							</tr>
-							<%=form_tag :controller => "site", :action => "register_purchase" do %>
+							<%=form_tag :controller => "site", :action => "register_purchase", :id => "register_purchase_form" do %>
 								<%@contact_people.each do |c|%>
 									<tr>
 										<%if c.is_primary_contact%>
@@ -84,12 +85,13 @@
 											<td><%=radio_button_tag :selected_student, c.id%></td>
 										<%end%>
 										<td><%=c.firstname+" "+c.lastname%></td>
+										<td><%=link_to "Editar Datos", {:controller => "site", :action => "edit_contact", :params => {:contact_id => c.contact_id, :cp_id => c.id}}%></td>
 									</tr>
 								<%end%>
 								<%=hidden_field_tag :course_id, @course.id%>
 								<tr>
 									<td></td>
-									<td><%=submit_tag "Realizar Compra", :class => "button"%></td>
+									<td><%=submit_tag "Realizar Compra", :class => "button", :onclick => "$('#register_purchase_form').submit();"%></td>
 								</tr>
 							<%end%>
 							<%=link_to "Registrar Nuevo Alumno", {:controller => "site", :action => "new_contact_person"}, {:class => "button"}%>

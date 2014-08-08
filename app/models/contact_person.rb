@@ -6,12 +6,17 @@ class ContactPerson < ActiveRecord::Base
 	validate :birthday_cant_be_today
 
 	before_create :set_defaults
+	before_create :check_gender
+	before_update :check_gender
 	before_create :set_password
 	before_create  {generate_token(:auth_token)}
 
 	def set_defaults
 		#Por defecto, al crear una cuenta, esta no estará en zoho inmediatamente
 		self.zoho_enabled = false
+	end
+
+	def check_gender
 		#Salutation se define segun el género
 		if self.gender == "Masculino"
 			self.salutation = "Sr."

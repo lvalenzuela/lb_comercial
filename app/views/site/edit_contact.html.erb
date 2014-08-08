@@ -1,0 +1,76 @@
+<div class="extra">
+	<div class="main">
+		<article class='col_lista_cursos'>
+
+		<ul class='tabs'>
+			<li><a href='#' class='active'>Resumen del curso</a></li>
+		</ul>
+
+		<div class='tabs_cont'>
+			<div class='bg'>
+				<div class='wrapper'>
+					<font color='white'> <br>
+						<%=form_for :contact_person, :url => {:controller => "users", :action => "modify_contact_data"} do |f|%>
+							<table>
+								<tr>
+									<td colspan="2"><b>Datos del Contacto Seleccionado</b></td>
+								</tr>
+								<%=f.hidden_field :id%>
+								<tr>
+									<td>Nombre</td>
+									<td><%=f.text_field :firstname%></td>
+								</tr>
+								<tr>
+									<td>Apellido</td>
+									<td><%=f.text_field :lastname%></td>
+								</tr>
+								<tr>
+									<td>Email</td>
+									<td><%=f.email_field :email%></td>
+								</tr>
+								<tr>
+									<td>Género</td>
+									<td><%=f.radio_button :gender, "Masculino", :checked => true%>Masculino
+										<%=f.radio_button :gender, "Femenino"%>Femenino</td>
+								</tr>
+								<tr>
+									<td>Rut</td>
+									<td><%=f.text_field :rut%></td>
+								</tr>
+								<tr>
+									<td>Fecha de Nacimiento</td>
+									<td><%=f.date_field :birthday%></td>
+								</tr>
+								<tr>
+									<td>Telefono Fijo</td>
+									<td><%=f.phone_field :phone%></td>
+								</tr>
+								<tr>
+									<td>Celular</td>
+									<td><%=f.phone_field :mobile%></td>
+								</tr>
+								<tr>
+									<td colspan="2"><%=f.submit "Editar Contacto", :class => "button"%></td>
+								</tr>
+							</table>
+						<%end%>
+						<table>
+							<tr>
+								<td colspan="2"><b>Contactos de la Cuenta</b></td>
+							</tr>
+							<%@contact_people.each do |cp|%>
+							<tr>
+								<td><b>Nombre:</b></td>
+								<td><%=cp.firstname+" "+cp.lastname%></td>
+								<td><%=link_to "Editar", {:controller => "site", :action => "edit_contact", :params => {:cp_id => cp.id, :contact_id => cp.contact_id}}%></td>
+							</tr>
+							<%end%>
+						</table>
+						<%=link_to "Volver", {:controller => "site", :action => "confirm_purchase"}, {:class => "button"}%>
+					</font>
+				</div>
+			</div>
+		</div>
+		</article>
+	</div>
+</div>

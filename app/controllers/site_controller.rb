@@ -41,6 +41,19 @@ class SiteController < ApplicationController
 		end
 	end
 
+	def edit_contact
+		current_contact_id = current_user.contact_id
+		if params[:contact_id].to_i != current_contact_id
+			#si se selecciona modificar a un usuario que no corresponde
+			#se redirige a confirm_purchase
+			flash[:notice] = "No se puede modificar este usuario"
+			redirect_to :action => :confirm_purchase
+		else
+			@contact_person = ContactPerson.find(params[:cp_id])
+			@contact_people = ContactPerson.where(:contact_id => current_contact_id)
+		end
+	end
+
 	def contact_signup
 
 	end
