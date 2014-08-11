@@ -55,7 +55,7 @@ class SiteController < ApplicationController
 	end
 
 	def contact_signup
-
+		@contact_person = ContactPerson.new()
 	end
 
 	def organization_signup
@@ -116,7 +116,13 @@ class SiteController < ApplicationController
 
 	end
 
+	def play_tha_game
 
+	end
+
+	def test_results
+		session[:user_test_results] = params[:results]
+	end
 
 #####################################
 #Funciones privadas para esta clase

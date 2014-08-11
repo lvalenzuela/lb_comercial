@@ -1,3 +1,5 @@
+<div class="extra">
+	<div class="main">
 		<article class="col1">
 			<ul class="tabs">
 				<li><a href="#" class="active">Busca tu curso ideal</a></li>
@@ -6,6 +8,7 @@
 				<div class="bg">
 					<div class="wrapper">
 					<font color="white">
+						<%=render :partial => "login_form"%>
 						<span>
 							<%=form_tag({:controller => "site", :action => "available_courses"}, :method => :get) do%>
 							<table BORDER=0  align=center border=0 bgcolor="#C2C2C2">
@@ -52,6 +55,7 @@
 								</tr>
 							</table>
 							<%end%>
+							<%=link_to "Juega Nuestro Juego", {:controller => "site", :action => "play_tha_game"}, {:class => "button"}%>
 						</span>
 
 					</font>

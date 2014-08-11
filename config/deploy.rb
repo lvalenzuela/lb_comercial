@@ -27,6 +27,7 @@ before "deploy:assets:precompile" do
        "ln -nfs #{shared_path}/config/secrets.yml #{release_path}/config/secrets.yml",
        "ln -nfs #{shared_path}/config/production.erb #{release_path}/config/environments/production.erb",
        "ln -fs #{shared_path}/uploads #{release_path}/uploads"
+       "ln -nfs #{shared_path}/config/application.yml #{release_path}/config/application.yml"
   ].join(" && ")
 end
 

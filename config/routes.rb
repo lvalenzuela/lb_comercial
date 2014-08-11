@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root "site#index"
 
+  match "auth/:provider/callback", to: "users#create_contact_person"
+  match "auth/failure", to: redirect("/")
+  match "signout", to: "users#user_logout", as: "signout"
+
   resources :users do
     collection do
       post "user_login"
@@ -26,6 +30,8 @@ Rails.application.routes.draw do
       get "organization_signup"
       get "registration_success"
       get "login"
+      get "play_tha_game"
+      post "test_results"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -43,3 +43,6 @@ end
 
 gem 'bcrypt'
 gem 'nokogiri'
+gem 'rut_chileno'
+gem 'omniauth-facebook'
+gem 'figaro'

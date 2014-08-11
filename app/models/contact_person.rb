@@ -3,7 +3,7 @@ class ContactPerson < ActiveRecord::Base
 	validates_confirmation_of :password
 	validates :email, uniqueness: true
 	validates :rut, uniqueness: true, presence: true
-	validate :birthday_cant_be_today
+	validate :birthday_cant_be_today, :rut_must_be_valid
 
 	before_create :set_defaults
 	before_create :check_gender
@@ -22,6 +22,12 @@ class ContactPerson < ActiveRecord::Base
 			self.salutation = "Sr."
 		else
 			self.salutation = "Srta."
+		end
+	end
+
+	def rut_must_ve_valid
+		unless RUT::validar(self.rut)
+			errors.add(:rut, "El rut debe ser válido.")
 		end
 	end
 
