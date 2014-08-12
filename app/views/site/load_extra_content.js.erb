@@ -1,5 +1,5 @@
 <%if !current_user.nil?%>
 	$("#extra-content").replaceWith("<%= escape_javascript(render(:partial => 'courses_for_date', :locals => {:courses => @courses, :features => @course_features}))%>");
 <%else%>
-	$("#extra-content").replaceWith("<%= escape_javascript(render(:partial => 'login_form'))%>");
+	$("#extra-content").replaceWith("<%= escape_javascript(render(:partial => 'longbourn_login_form'))%>");
 <%end%>

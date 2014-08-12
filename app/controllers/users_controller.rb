@@ -1,70 +1,61 @@
 class UsersController < ApplicationController
 	require 'nokogiri'
 
-	def register_user_contact
-		@contact = Contact.create(	:contact_name => params[:firstname]+" "+params[:lastname]+" ["+params[:email]+"]",
-									:rut => params[:rut],
-									:address => params[:address],
-									:city => params[:city],
-									:phone => params[:phone]
-									)
-		if @contact.valid?
-			contact_person =  create_contact_people(@contact)
-			if contact_person.valid?
-				cookies[:auth_token] = contact_person.auth_token
-				redirect_to :controller => :site, :action => :available_courses, :mode => session[:selected_mode], :date => {:month => session[:selected_month]}
-			else
-				flash[:notice] = "Error al registrar nuevo contacto."
-				render :template => "site/contact_signup"
-			end
-		else
-			flash[:notice] = "Error al registrar nuevo contacto."
-			render :template => "site/contact_signup"
-		end
+	def facebook_login
+		user = WebUser.from_omniauth(env["omniauth.auth"])
+		cookies[:oauth_token] = user.oauth_token
+		redirect_to root_url
 	end
 
-	def create_contact_person
-		@contact_person = ContactPerson.create(contact_person_params)
-		if @contact_person.valid?
-			#se relaciona a la nueva persona con el contacto correspondiente
-			@contact_person.update_attributes(:contact_id => current_user.contact_id)
-			redirect_to :controller => :site, :action => :confirm_purchase
+	def longbourn_login
+		user = WebUser.where(:email => params[:email]).first()
+		if user.blank? || user.provider == "facebook"
+			#login fallido
+			redirect_to root_url
 		else
-			render :template => "site/new_contact_person"
-		end
-	end
-
-	def modify_contact_data
-		@contact_person = ContactPerson.find(params[:contact_person][:id])
-		@contact_person.update_attributes(contact_person_params)
-		if @contact_person.valid?
-			flash[:notice] = "Contacto editado con exito."
-			redirect_to :controller => :site, :action => :confirm_purchase
-		else
-			@contact_people = ContactPerson.where(:contact_id => @contact_person.contact_id)
-			render :template => "site/edit_contact"
-		end
-	end
-
-	def user_login
-		contact_person = ContactPerson.where(:email => params[:email]).first()
-		if contact_person.blank? || contact_person.nil?
-			flash[:notice] = "Datos de usuario incorrectos."
-			redirect_to :controller => :site, :action => :login
-		else
-			password = BCrypt::Password.new(contact_person.password)
-			if password == params[:password]
+			if user.get_password == params[:password]
 				if params[:remember_me]
-					cookies.permanent[:auth_token] = contact_person.auth_token
+					cookies.permanent[:oauth_token] = user.oauth_token
+					redirect_to root_url
 				else
-					cookies[:auth_token] = contact_person.auth_token
+					cookies[:oauth_token] = user.oauth_token
+					redirect_to root_url
 				end
-				redirect_to :controller => :site, :action => :available_courses, :mode => session[:selected_mode], :date => {:month => session[:selected_month]}
 			else
-				flash[:notice] = "Contraseña Incorrecta"
-				redirect_to :controller => :site, :action => :login
+				#login fallido, password erronea
+				redirect_to root_url
 			end
 		end
+	end
+
+	def create
+		user = WebUser.create(web_user_params)
+		if user.valid?
+			#Usuario creado exitosamente
+			#Se se logea
+			cookies[:oauth_token] = user.oauth_token
+			redirect_to root_url
+		else
+			#Error al crear el usuario
+			redirect_to root_url
+		end
+	end
+
+	def update
+		@user = current_user
+		@user.update_attributes(web_user_params)
+		if @user.valid?
+			#datos del usuario actualizados
+			redirect_to :controller => :site, :action => :confirm_purchase
+		else
+			##no se pudo actualizar los datos del usuario
+			render :template => "site/edit_user"
+		end
+	end
+
+	def logout
+		cookies.delete(:oauth_token)
+		redirect_to root_url
 	end
 
 	def register_lead
@@ -90,36 +81,8 @@ class UsersController < ApplicationController
 ##########################
 	private
 
-	def contact_person_params
-		params.require(:contact_person).permit(:gender, :salutation, :birthday, :firstname, :lastname, :rut, :email, :phone, :mobile, :test_score, :course_level_id)
-	end
-
-	def create_contact_people(contact)
-		contact_person = ContactPerson.create(	:contact_id => contact.id,
-												:gender => params[:gender],
-												:birthday => params[:birthday],
-												:firstname => params[:firstname],
-												:lastname => params[:lastname],
-												:rut => params[:rut],
-												:password => params[:password],
-												:password_confirmation => params[:password_confirmation],
-												:email => params[:email],
-												:phone => params[:phone],
-												:mobile => params[:mobile],
-												:is_primary_contact => true)
-		#Cuando se selecciona la casilla de registrar un curso para otra persona
-		if params[:extra_contact_person]
-			ContactPerson.create( 	:contact_id => contact.id,
-									:gender => params[:student_gender],
-									:birthday => params[:student_birthday],
-									:firstname => params[:student_firstname],
-									:lastname => params[:student_lastname],
-									:rut => params[:student_rut],
-									:email => params[:student_email],
-									:phone => params[:student_phone],
-									:mobile => params[:student_mobile])
-		end
-		return contact_person
+	def web_user_params
+		return params.require(:web_user).permit(:firstname, :lastname, :gender, :email, :phone, :location, :mobile, :password, :password_confirmation)
 	end
 
 	def zoho_lead_params

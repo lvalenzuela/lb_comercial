@@ -1,0 +1,28 @@
+<ul class='tabs'>
+	<li><a href='#' class='active'>Login Longbourn</a></li>
+</ul>
+<div class='tabs_cont'>
+	<div class='bg'>
+		<div class='wrapper'>
+			<font color='white'> <br>
+				<%=form_tag :controller => "users", :action => "longbourn_login" do%>
+					<table>
+						<tr>
+							<td>Email:</td>
+							<td><%=text_field_tag :email%></td>
+						</tr>
+						<tr>
+							<td>Password:</td>
+							<td><%=password_field_tag :password%></td>
+						</tr>
+						<tr>
+							<td colspan="2"><%=submit_tag "Login", :class => "button"%></td>
+						</tr>
+					</table>
+				<%end%>
+				Logeate con <%=link_to "Facebook", "/auth/facebook", :class => "sign_in"%> o 
+				<%=link_to "Registrate", {:controller => "site", :action => "signup"}%>
+			</font>
+		</div>
+	</div>
+</div>

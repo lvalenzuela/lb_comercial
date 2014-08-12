@@ -24,11 +24,11 @@
                         <tr>
                      <%end%>
                         <td><%=m["name"]%></td>
-                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i-2), {:remote => true, :method => :post}%></td>
-                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i-1), {:remote => true, :method => :post}%></td>
-                        <td align="center" style="background-color: #FFCC00"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i), {:remote => true, :method => :post}%></td>
-                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i+1), {:remote => true, :method => :post}%></td>
-                        <td align="center"><%=link_to m["rate"], load_extra_content_site_index_path(:mode => m["name"], :month => @selected_month.to_i+2), {:remote => true, :method => :post}%></td>
+                        <td align="center"><%=link_to m["rate"], :controller => "site", :action => "available_courses", :params => {:mode => m["name"], :date => {:month => @selected_month.to_i-2}}%></td>
+                        <td align="center"><%=link_to m["rate"], :controller => "site", :action => "available_courses", :params => {:mode => m["name"], :date => {:month => @selected_month.to_i-1}}%></td>
+                        <td align="center" style="background-color: #FFCC00"><%=link_to m["rate"], :controller => "site", :action => "available_courses", :params => {:mode => m["name"], :date => {:month => @selected_month.to_i}}%></td>
+                        <td align="center"><%=link_to m["rate"], :controller => "site", :action => "available_courses", :params => {:mode => m["name"], :date => {:month => @selected_month.to_i+1}}%></td>
+                        <td align="center"><%=link_to m["rate"], :controller => "site", :action => "available_courses", :params => {:mode => m["name"], :date => {:month => @selected_month.to_i+2}}%></td>
                      </tr>
                      <%end%>
                   </table>
@@ -37,9 +37,28 @@
                </div>
             </div>
          </div>
-         <div id="extra-content">
-
+      </article>
+      <article class='col_lista_cursos'>
+      <%if current_user.nil?%>
+         <%=render :partial => "longbourn_login_form"%>
+      <%elsif current_user.test_score.nil?%>
+         <div class="extra">
+            <div class="main">
+               <div class='tabs_cont'>
+                  <div class='bg'>
+                     <div class='wrapper'>
+                        <font color='white'> <br>
+                           <p>Para poder ver los cursos disponibles, te invitamos a jugar en nuestro</p>
+                           <%=link_to "Test de Diagnóstico", {:controller => "site", :action => "play_tha_game"}, {:class => "button"}%>
+                        </font>
+                     </div>
+                  </div>
+               </div>
+            </div>
          </div>
+      <%else%>
+         <%=render :partial => "courses_for_date", :locals => {:courses => @courses_for_date, :features => @course_features}%>
+      <%end%>
       </article>
    </div>
 </div>

@@ -8,9 +8,8 @@
 				<div class="bg">
 					<div class="wrapper">
 					<font color="white">
-						<%=render :partial => "login_form"%>
 						<span>
-							<%=form_tag({:controller => "site", :action => "available_courses"}, :method => :get) do%>
+							<%=form_tag :controller => "site", :action => "available_courses" do%>
 							<table BORDER=0  align=center border=0 bgcolor="#C2C2C2">
 								<tr>
 									<td><b>Ubicación</b></td>

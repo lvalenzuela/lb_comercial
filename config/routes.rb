@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   root "site#index"
 
-  match "auth/:provider/callback", to: "users#create_contact_person"
-  match "auth/failure", to: redirect("/")
-  match "signout", to: "users#user_logout", as: "signout"
+  match "auth/:provider/callback", to: "users#facebook_login", via: [:get , :post]
+  match "auth/failure", to: redirect("/"), via: [:get , :post]
+  match "signout", to: "users#logout", as: "signout", via: [:get , :post]
 
   resources :users do
     collection do
-      post "user_login"
+      post "create"
+      post "update"
+      post "longbourn_login"
       post "register_user_contact"
       post "modify_contact_data"
       get "user_logout"
@@ -21,12 +23,13 @@ Rails.application.routes.draw do
       get "new_contact_person"
       get "index"
       get "available_courses"
+      post "available_courses"
       post "load_extra_content"
       get "confirm_purchase"
-      post "register_purchase"
+      get "register_purchase"
       get "register_invoice"
-      get "contact_signup"
-      get "edit_contact"
+      get "signup"
+      get "edit_user"
       get "organization_signup"
       get "registration_success"
       get "login"

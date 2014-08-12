@@ -1,0 +1,24 @@
+<div class="extra">
+	<div class="main">
+			<div class='tabs_cont'>
+				<div class='bg'>
+					<div class='wrapper'>
+						<font color='white'> <br>
+		                    <%if @user.errors.any?%>
+		                        <div class="alert alert-warning">
+		                            <%=pluralize(@user.errors.count,"error")%> no permitieron llevar a cabo la operacion 
+		                            <ul>
+		                                <%@user.errors.full_messages.each do |msg|%>
+		                                    <li><%= msg %></li>
+		                                <%end%>
+		                            </ul>
+		                        </div>
+		                    <%end%>
+							<%=render :partial => "site/edit_user_form"%>
+						</font>
+					</div>
+				</div>
+			</div>
+		</article>
+	</div>
+</div>

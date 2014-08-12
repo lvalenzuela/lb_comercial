@@ -12,13 +12,7 @@
         </form>
       </div>
       <div class="wrapper">
-        <nav>
-          <ul id="top_nav">
-            <li><a href="#">Reg&iacutestrate</a></li>
-            <li><a href="#">Ingresa</a></li>
-            <li><%=link_to "Log out", :controller => "users", :action => "user_logout"%></li>
-          </ul>
-        </nav>
+        <%=render :partial => "site/facebook_login_form"%>
       </div>
 
       <div class="wrapper">

@@ -1,0 +1,34 @@
+<%=form_for @user, :url => {:controller => "users", :action => "update"} do |f|%>
+	<table>
+		<tr>
+			<td colspan="2"><b>Datos del Usuario</b></td>
+		</tr>
+		<tr>
+			<td>Nombre</td>
+			<td><%=f.text_field :firstname%></td>
+		</tr>
+		<tr>
+			<td>Apellido</td>
+			<td><%=f.text_field :lastname%></td>
+		</tr>
+		<tr>
+			<td>Email</td>
+			<td><%=f.email_field :email%></td>
+		</tr>
+		<tr>
+			<td>Telefono</td>
+			<td><%=f.phone_field :phone%></td>
+		</tr>
+		<tr>
+			<td>Celular</td>
+			<td><%=f.phone_field :mobile%></td>
+		</tr>
+		<tr>
+			<td>Direccion</td>
+			<td><%=f.text_field :location%></td>
+		</tr>
+		<tr>
+			<td colspan="2"><%=f.submit "Actualizar Datos", :class => "button"%></td>
+		</tr>
+	</table>
+<%end%>

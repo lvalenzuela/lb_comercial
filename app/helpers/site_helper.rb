@@ -1,4 +1,8 @@
 module SiteHelper
+	def get_course_level_name(level_id)
+		return CourseLevel.find(level_id).course_level
+	end
+
 	def get_month_name(month_number)
 		if month_number < 0 
 			month_number = month_number + 12

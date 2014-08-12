@@ -49,52 +49,25 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td>Contacto</td>
-								<td><%=@contact.contact_name%></td>
+								<td>Usuario</td>
+								<td><%=@user.name%></td>
 							</tr>
 							<tr>
-								<td>Nombre</td>
-								<td><%=@primary_contact.firstname+" "+@primary_contact.lastname%></td>
+								<td>Email</td>
+								<td><%=@user.email%></td>
 							</tr>
-							<tr>
-								<td>Rut</td>
-								<td><%=@primary_contact.rut%></td>
-							</tr>							
 							<tr>
 								<td>Direccion</td>
-								<td><%=@contact.address%></td>
+								<td><%=@user.location%></td>
 							</tr>
 							<tr>
-								<td>Teléfono</td>
-								<td><%=@primary_contact.phone%></td>
+								<td>Telefono de Contacto</td>
+								<td><%=@user.phone%></td>
 							</tr>
 							<tr>
-								<td>E-Mail</td>
-								<td><%=@primary_contact.email%></td>
+								<td><%=link_to "Continuar Compra", {:controller => "site", :action => "register_purchase"}, {:class => "button"}%></td>
+								<td><%=link_to "Editar Datos de Usuario", {:controller => "site", :action => "edit_user"}, {:class => "button"}%></td>
 							</tr>
-							<tr>
-								<td><b>Seleccionar Alumno</b></td>
-								<td></td>
-							</tr>
-							<%=form_tag :controller => "site", :action => "register_purchase", :id => "register_purchase_form" do %>
-								<%@contact_people.each do |c|%>
-									<tr>
-										<%if c.is_primary_contact%>
-											<td><%=radio_button_tag :selected_student, c.id, true%></td>
-										<%else%>
-											<td><%=radio_button_tag :selected_student, c.id%></td>
-										<%end%>
-										<td><%=c.firstname+" "+c.lastname%></td>
-										<td><%=link_to "Editar Datos", {:controller => "site", :action => "edit_contact", :params => {:contact_id => c.contact_id, :cp_id => c.id}}%></td>
-									</tr>
-								<%end%>
-								<%=hidden_field_tag :course_id, @course.id%>
-								<tr>
-									<td></td>
-									<td><%=submit_tag "Realizar Compra", :class => "button", :onclick => "$('#register_purchase_form').submit();"%></td>
-								</tr>
-							<%end%>
-							<%=link_to "Registrar Nuevo Alumno", {:controller => "site", :action => "new_contact_person"}, {:class => "button"}%>
 						</table>
 					</font>
 				</div>

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-  	@current_user ||= ContactPerson.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
+  	@current_user ||= WebUser.find_by_oauth_token!(cookies[:oauth_token]) if cookies[:oauth_token]
   end
   helper_method :current_user
 end
