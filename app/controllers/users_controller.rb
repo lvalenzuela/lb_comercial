@@ -11,19 +11,35 @@ class UsersController < ApplicationController
 		user = WebUser.where(:email => params[:email]).first()
 		if user.blank? || user.provider == "facebook"
 			#login fallido
-			redirect_to root_url
+			if session[:action_milestone]
+				redirect_to :controller => :site, :action => session[:action_milestone]
+			else
+				redirect_to root_url
+			end
 		else
 			if user.get_password == params[:password]
 				if params[:remember_me]
 					cookies.permanent[:oauth_token] = user.oauth_token
-					redirect_to root_url
+					if session[:action_milestone]
+						redirect_to :controller => :site, :action => session[:action_milestone]
+					else
+						redirect_to root_url
+					end
 				else
 					cookies[:oauth_token] = user.oauth_token
-					redirect_to root_url
+					if session[:action_milestone]
+						redirect_to :controller => :site, :action => session[:action_milestone]
+					else
+						redirect_to root_url
+					end
 				end
 			else
 				#login fallido, password erronea
-				redirect_to root_url
+				if session[:action_milestone]
+					redirect_to :controller => :site, :action => session[:action_milestone]
+				else
+					redirect_to root_url
+				end
 			end
 		end
 	end
@@ -34,10 +50,22 @@ class UsersController < ApplicationController
 			#Usuario creado exitosamente
 			#Se se logea
 			cookies[:oauth_token] = user.oauth_token
-			redirect_to root_url
+			if session[:test_score]
+				user.test_score = session[:test_score]
+				user.save!
+			end
+			if session[:action_milestone]
+				redirect_to :controller => :site, :action => session[:action_milestone]
+			else
+				redirect_to root_url
+			end
 		else
 			#Error al crear el usuario
-			redirect_to root_url
+			if session[:action_milestone]
+				redirect_to :controller => :site, :action => session[:action_milestone]
+			else
+				redirect_to root_url
+			end
 		end
 	end
 

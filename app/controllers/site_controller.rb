@@ -6,9 +6,14 @@ class SiteController < ApplicationController
 	def index
 		@types = CourseType.all()
 		@modes = Course.select("distinct(mode) as mode")
+		#Se registra el paso
+		session[:action_milestone] = action_name
 	end
 
 	def available_courses
+		#se registra el paso
+		session[:action_milestone] = action_name
+
 		if params[:date] && params[:mode]
 			session[:selected_month] = params[:date][:month]
 			session[:selected_mode] = params[:mode]
@@ -96,14 +101,19 @@ class SiteController < ApplicationController
 	end
 
 	def test_results
-		@user = current_user
-		if @user
-			@user.test_score = params[:results]
-			@user.save!
-			redirect_to :action => :available_courses
+		if params[:results]
+			@user = current_user
+			if @user
+				@user.test_score = params[:results]
+				@user.save!
+				redirect_to :action => :available_courses
+			else
+				session[:test_score] = params[:results]
+				redirect_to :action => session[:action_milestone]
+			end
 		else
-			session[:test_score] = params[:results]
-			redirect_to :action => :available_courses
+			flash[:notice] = "No se ha registrado un puntaje para el Quiz de Diagnostico."
+			redirect_to :action => session[:action_milestone]
 		end
 	end
 
