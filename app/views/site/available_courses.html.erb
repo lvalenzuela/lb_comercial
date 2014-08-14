@@ -39,9 +39,7 @@
          </div>
       </article>
       <article class='col_lista_cursos'>
-      <%if current_user.nil?%>
-         <%=render :partial => "longbourn_login_form"%>
-      <%elsif current_user.test_score.nil?%>
+      <%if (current_user.nil? || current_user.test_score.nil?) && !session[:test_score]%>
          <div class="extra">
             <div class="main">
                <div class='tabs_cont'>
@@ -56,6 +54,8 @@
                </div>
             </div>
          </div>
+      <%elsif current_user.nil?%>
+         <%=render :partial => "longbourn_login_form"%>
       <%else%>
          <%=render :partial => "courses_for_date", :locals => {:courses => @courses_for_date, :features => @course_features}%>
       <%end%>
