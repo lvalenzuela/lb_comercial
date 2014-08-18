@@ -27,7 +27,7 @@ class SiteController < ApplicationController
 		else
 			@modes = nil
 		end
-		if current_user
+		if current_user.test_score
 			@courses_for_date = Course.where("MONTH(start_date) = #{session[:selected_month]} and mode = '#{session[:selected_mode]}' and course_level_id = #{current_user.course_level_id}")
 			@course_features = CourseFeature.where(:course_id => @courses_for_date.map{|c| c.id})
 		else
