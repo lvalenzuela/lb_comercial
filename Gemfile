@@ -46,3 +46,6 @@ gem 'nokogiri'
 gem 'rut_chileno'
 gem 'omniauth-facebook'
 gem 'figaro'
+
+gem 'jquery-rails'
+gem "font-awesome-rails"

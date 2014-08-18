@@ -1,3 +1,189 @@
+<!-- Homepage Slider -->
+<div class="homepage-slider">
+	<div id="sequence">
+		<ul class="sequence-canvas">
+			<!-- Slide 1 -->
+			<li class="bg4">
+				<!-- Slide Title -->
+				<h2 class="title">Cursos de Ingles</h2>
+				<!-- Slide Text -->
+				<h3 class="subtitle">Tenemos los cursos de inglés que son las ensación del bloque.</h3>
+				<!-- Slide Image -->
+			</li>
+			<!-- End Slide 1 -->
+			<!-- Slide 2 -->
+			<li class="bg3">
+				<!-- Slide Title -->
+				<h2 class="title">Profesores</h2>
+				<!-- Slide Text -->
+				<h3 class="subtitle">Nuestros profesores hablan más mejor que nadien!</h3>
+				<!-- Slide Image -->
+			</li>
+			<!-- End Slide 2 -->
+			<!-- Slide 3 -->
+			<li class="bg1">
+				<!-- Slide Title -->
+				<h2 class="title">Disponibilidad</h2>
+				<!-- Slide Text -->
+				<h3 class="subtitle">Le tenimos de todos los horarios para que escoja caserito.</h3>
+				<!-- Slide Image -->
+				<%=image_tag "slider_placeholder3.png", :class => "slide-img"%>
+			</li>
+			<!-- End Slide 3 -->
+		</ul>
+		<div class="sequence-pagination-wrapper">
+			<ul class="sequence-pagination">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- End Homepage Slider -->
+<!-- Press Coverage -->
+<div class="section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="in-press">
+					<a href="#">No es simplemente aprender inglés. Es aprender a expresar lo correcto, de la forma correcta, a la persona correcta, en el momento correcto, en inglés</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Press Coverage -->
+
+<!-- Services -->
+<div class="section">
+    <div class="container-fluid">
+    	<div class="row">
+    		<div class="col-md-3">
+    			<div class="service-wrapper">
+        			<%=image_tag "service-icon/diamond.png"%>
+        			<h3>Longbourn Executive</h3>
+        			<p>Cursos de Inglés para Ejecutivos.</p><br>
+        			<a href="#" class="btn">Read more</a>
+        		</div>
+    		</div>
+    		<div class="col-md-3">
+    			<div class="service-wrapper">
+        			<%=image_tag "service-icon/chat.png"%>
+        			<h3>Longbourn Institut</h3>
+        			<p>Cursos de Inglés para Profesionales.</p><br>
+        			<a href="#" class="btn">Read more</a>
+        		</div>
+    		</div>
+    		<div class="col-md-3">
+    			<div class="service-wrapper">
+    				<%=image_tag "service-icon/ruler.png"%>
+        			<h3>Longbourn Startup</h3>
+        			<p>Cursos de Inglés para Emprendedores y Universitarios.</p>
+        			<a href="#" class="btn">Read more</a>
+        		</div>
+    		</div>
+    		<div class="col-md-3">
+    			<div class="service-wrapper">
+    				<%=image_tag "service-icon/box.png"%>
+    				<h3>Preparacion para Pruebas Internacionales.</h3>
+    				<p>TOEFL, IELTS, TOEIC.</p><br>
+    				<a href="#" class="btn">Read More</a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</div>
+<!-- End Services -->
+
+
+<!-- Call to Action Bar -->
+<div class="section section-white">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="calltoaction-wrapper">
+					<h3>Juega a nuestro Juego y descubre tu nivel de Inglés!</h3> <%=link_to "Jugar", {:controller => "site", :action => "play_tha_game"}, {:class => "btn btn-grey"}%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Call to Action Bar -->
+
+<!-- Testimonials -->
+<div class="section">
+	<div class="container-fluid">
+		<h2>Por Qué Longbourn?</h2>
+		<div class="row">
+			<!-- Testimonial -->
+			<div class="testimonial col-md-6">
+				<!-- Author Photo -->
+				<div class="author-photo">
+					<p class="circle-highlight"><i class="fa fa-star fa-lg"></i></p>
+				</div>
+				<div class="testimonial-bubble">
+					<blockquote>
+						<h4>Cursos de Inglés de Calidad</h4>
+						<!-- Quote -->
+						<p class="quote">
+                            Longbourn ofrece la mejor calidad en la enseñanza del idioma. Contamos con el uso exclusivo del TEG Method y sólo contratamos profesores titulados de las mejores Universidades, a quienes capacitamos constantemente.
+                		</p>
+                	</blockquote>
+                	<div class="sprite arrow-speech-bubble"></div>
+                </div>
+            </div>
+            <!-- End Testimonial -->
+            <div class="testimonial col-md-6">
+				<div class="author-photo">
+					<p class="circle-highlight"><i class="fa fa-group fa-lg"></i></p>
+				</div>
+				<div class="testimonial-bubble">
+					<blockquote>
+						<h4>Facilitamos tu Experiencia</h4>
+						<p class="quote">
+                            Longbourn sabe que tu tiempo y recursos son valiosos. Las prioridades de cada tipo de Profesional son diferentes, por lo que diseñamos múltiples soluciones para facilitar tu experiencia estudiando Inglés.
+                		</p>
+                	</blockquote>
+                	<div class="sprite arrow-speech-bubble"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+			<div class="testimonial col-md-6">
+				<div class="author-photo">
+					<p class="circle-highlight"><i class="fa fa-map-marker fa-lg"></i></p>
+				</div>
+				<div class="testimonial-bubble">
+					<blockquote>
+						<h4>En tu Oficina o en Longbourn Las Condes</h4>
+						<p class="quote">
+                            Ofrecemos una alta gama horarios en Longbourn Las Condes; con el Metro Escuela Militar a 3 cuadras y estacionamiento muy cercano.
+                		</p>
+                	</blockquote>
+                	<div class="sprite arrow-speech-bubble"></div>
+                </div>
+            </div>
+			<div class="testimonial col-md-6">
+				<div class="author-photo">
+					<p class="circle-highlight"><i class="fa fa-gears fa-lg"></i></p>
+				</div>
+				<div class="testimonial-bubble">
+					<blockquote>
+						<h4>Servicio Confiable</h4>
+						<p class="quote">
+                            El equipo docente Longbourn está apoyado por nuestro equipo de ingeniería y backoffice. Estamos atentos para solucionar cualquier contingencia. Siempre tendremos profesores reemplazantes disponibles en caso de imprevistos.
+                		</p>
+                	</blockquote>
+                	<div class="sprite arrow-speech-bubble"></div>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+<!-- End Testimonials -->
+
+
 <div class="extra">
 	<div class="main">
 		<article class="col1">
@@ -10,7 +196,7 @@
 					<font color="white">
 						<span>
 							<%=form_tag :controller => "site", :action => "available_courses" do%>
-							<table BORDER=0  align=center border=0 bgcolor="#C2C2C2">
+							<table>
 								<tr>
 									<td><b>Ubicación</b></td>
 									<td>
@@ -54,77 +240,9 @@
 								</tr>
 							</table>
 							<%end%>
-							<%=link_to "Juega Nuestro Juego", {:controller => "site", :action => "play_tha_game"}, {:class => "button"}%>
 						</span>
-
 					</font>
 					</div>                
 				</div>
 			</div>
 		</article>
-		<article class="col1 pad_left1">
-			<div class="text"><%=image_tag "AmCham.jpg"%>
-				<h2>Longbourn Institute</h2>
-				<p>Ruta Introductory >> Tronador, Cook, Catedral, Tronador<br>Longbourn cuenta con el mejor equipo del mundo en el &aacuterea de Sistemas y procesos.<br>Bla bla bla bla bla bla bla bla bla...</p>
-				<a href="#" class="button">Read More</a> 
-			</div>
-		</article>
-		<div class="img"><img src="" alt=""></div>
-		</header>
-
-		<section id="content">
-			<article class="col_sugerencias">
-				<h3>Tronador</h3>
-				<div class="pad">
-					<div class="wrapper under">
-						<figure class="left marg_right1"><img src="" alt=""></figure>
-						<p class="pad_bot2"><strong>Curso Introductorio<br>
-						Sede / Grupal</strong></p>
-						<p class="pad_bot2">Hablamos un poco sobre el curso, su fecha y otras cosas que se consultan en la base de datos.</p>
-						<a href="#" class="marker_1"></a> 
-					</div>
-				</div>
-			</article>
-
-			<article class="col_sugerencias">
-			<h3>Cotopaxi</h3>
-				<div class="pad">
-					<div class="wrapper under">
-						<figure class="left marg_right1"><img src="" alt=""></figure>
-						<p class="pad_bot2"><strong>Curso Introductorio<br>
-						Sede / Grupal</strong></p>
-						<p class="pad_bot2">Profesor xxxxxx Lugar yyyyy Horario 777777</p>
-						<a href="#" class="marker_1"></a> 
-					</div>
-				</div>
-			</article>
-
-			<article class="col_sugerencias">
-				<h3>Everest</h3>
-				<div class="pad">
-					<div class="wrapper under">
-						<figure class="left marg_right1"><img src="" alt=""></figure>
-						<p class="pad_bot2"><strong>Curso Avanzado<br>
-						Sede / Grupal</strong></p>
-						<p class="pad_bot2">Solo para PRO, curso muy muy avanzado, horarios disponibles, click here to mas info</p>
-						<a href="#" class="marker_1"></a> 
-					</div>
-				</div>
-			</article>
-
-
-			<article class="col_sugerencias">
-				<h3>Test TOEIEEIEI</h3>
-				<div class="pad">
-					<div class="wrapper under">
-						<figure class="left marg_right1"><img src="" alt=""></figure>
-						<p class="pad_bot2"><strong>Curso Test<br>
-						Sede / Grupal</strong></p>
-						<p class="pad_bot2">Solo de preparacion de test, luis les recomienda este curso, es muy bueno, ver horarios $ 120.000 COMPRAR</p>
-						<a href="#" class="marker_1"></a> 
-					</div>
-				</div>
-			</article>
-		</section>
-	</div>
-</div>

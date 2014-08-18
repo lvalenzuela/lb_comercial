@@ -3,7 +3,7 @@
 		Logeado como <strong><%=current_user.name%></strong>
 		<%=link_to "Log out", {:controller => "users", :action => "logout"}, {:class => "sign_out"}%>
 	<%else%>
-		<%=link_to "Login con Facebook", "/auth/facebook", :class => "sign_in"%> 
+		Login con <%=link_to "Facebook", "/auth/facebook", :class => "sign_in"%> / 
 		<%=link_to "Registrate", :controller => "site", :action => "signup"%>
 	<%end%>
 </div>
