@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   resources :site do
     collection do
+      get "course_list"
       get "new_contact_person"
       get "index"
       get "available_courses"

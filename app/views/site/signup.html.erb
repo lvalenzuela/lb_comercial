@@ -1,46 +1,36 @@
-<!-- Page Title -->
-<div class="section section-breadcrumbs">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<h1>Registrar Usuarios</h1>
-			</div>
-		</div>
-	</div>
-</div>
-
 <div class="section">
 	<div class="container-fluid">
+		<h2>Registro de Usuarios</h2>
 		<div class="row">
-			<div class="col-sm-5">
+			<div class="col-md-5">
 				<div class="basic-login">
 					<%=form_for @web_user, :url => {:controller => "users", :action => "create"} do |f|%>
 						<div class="form-group">
-							<label for="register-firstname"><i class="icon-user"></i> <b>Nombre</b></label>
+							<label for="register-firstname"> <b>Nombre</b></label>
 							<%=f.text_field :firstname, :class => "form-control"%>
 						</div>
 						<div class="form-group">
-							<label for="register-lastname"><i class="icon-user"></i> <b>Apellido</b></label>
+							<label for="register-lastname"> <b>Apellido</b></label>
 							<%=f.text_field :lastname, :class => "form-control"%>
 						</div>
 						<div class="form-group">
-							<label for="register-phone"><i class="icon-user"></i> <b>Telefono</b></label>
+							<label for="register-phone"> <b>Telefono</b></label>
 							<%=f.phone_field :mobile, :class => "form-control"%>
 						</div>
 						<div class="form-group">
-							<label for="register-gender"><i class="icon-user"></i> <b>Género</b></label><br>
-							<%=f.radio_button :gender, "male",:checked => true%>Masculino<%=f.radio_button :gender, "female"%>Femenino
+							<label for="register-gender"> <b>Género</b></label><br>
+							<%=f.select :gender, options_for_select([["Masculino","male"],["Femenino","female"]], "male"), {}, {:class => "form-control"}%>
 						</div>
 						<div class="form-group">
-        				 	<label for="register-username"><i class="icon-user"></i> <b>Email</b></label>
+        				 	<label for="register-username"> <b>Email</b></label>
 							<%=f.email_field :email, :class => "form-control"%>
 						</div>
 						<div class="form-group">
-        				 	<label for="register-password"><i class="icon-lock"></i> <b>Password</b></label>
+        				 	<label for="register-password"> <b>Password</b></label>
 							<%=f.password_field :password, :class => "form-control"%>
 						</div>
 						<div class="form-group">
-        				 	<label for="register-password2"><i class="icon-lock"></i> <b>Re-enter Password</b></label>
+        				 	<label for="register-password2"> <b>Re-enter Password</b></label>
 							<%=f.password_field :password_confirmation, :class => "form-control"%>
 						</div>
 						<div class="form-group">
@@ -51,10 +41,9 @@
 				</div>
 			</div>
 			<div class="col-sm-6 col-sm-offset-1 social-login">
-				<p>You can use your Facebook or Twitter for registration</p>
+				<p>Puedes registrarte también mediante Facebook</p>
 				<div class="social-login-buttons">
-					<a href="#" class="btn-facebook-login">Use Facebook</a>
-					<a href="#" class="btn-twitter-login">Use Twitter</a>
+					<a href="/auth/facebook" class="btn-facebook-login sign_in"><i class="fa fa-facebook-square"></i> Registrarse con Facebook</a>
 				</div>
 			</div>
 		</div>

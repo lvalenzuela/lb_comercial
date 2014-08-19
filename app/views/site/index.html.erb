@@ -1,3 +1,4 @@
+
 <!-- Homepage Slider -->
 <div class="homepage-slider">
 	<div id="sequence">
@@ -44,8 +45,56 @@
 <!-- Press Coverage -->
 <div class="section">
 	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+		<h2 style="text-align: center;">The Longbourn Experience</h2>
+		<div class="row features-selector">
+			<div class="col-md-6">
+				<div class="service-wrapper">
+					<%=form_tag :controller => "site", :action => "available_courses" do%>
+					<table class="course-selection-table">
+						<tr>
+							<th>Ubicación</th>
+							<td>
+								<%=radio_button_tag :modalidad_lugar, "sede", true%>Longbourn Escuela Militar<br>
+								<%=radio_button_tag :modalidad_lugar, "oficina"%>En tu propia oficina</td>
+						</tr>
+						<tr>
+							<th>Modalidad</th>
+							<%counter = 1%>
+							<td><%@modes.each do |m|%>
+									<%if counter == 1%>
+										<%=radio_button_tag :mode, m["name"], true%><%=m["name"]%><br>
+									<%else%>
+										<%=radio_button_tag :mode, m["name"]%><%=m["name"]%><br>
+									<%end%>
+									<%counter+=1%>
+								<%end%>
+							</td>
+						</tr>
+						<tr>
+							<th>Tipo de curso</th>
+							<td>
+							<%@types.each do |t|%>
+								<%if t.id == 1%>
+									<%=radio_button_tag :tipo_curso, t.id, true%><%=t.typename%><br>
+								<%else%>
+									<%=radio_button_tag :tipo_curso, t.id%><%=t.typename%><br>
+								<%end%>
+							<%end%>
+							</td>
+						</tr> 
+						<tr>
+							<th>Mes de Inicio</th> 
+							<td><%=select_month(Date.today,use_month_names: %w(Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre))%></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td><%=submit_tag "Buscar Cursos", :class => "btn pull-right"%></td>
+						</tr>
+					</table>
+					<%end%>
+				</div>
+			</div>
+			<div class="col-md-6 vcenter">
 				<div class="in-press">
 					<a href="#">No es simplemente aprender inglés. Es aprender a expresar lo correcto, de la forma correcta, a la persona correcta, en el momento correcto, en inglés</a>
 				</div>
@@ -183,66 +232,76 @@
 </div>
 <!-- End Testimonials -->
 
-
-<div class="extra">
-	<div class="main">
-		<article class="col1">
-			<ul class="tabs">
-				<li><a href="#" class="active">Busca tu curso ideal</a></li>
-			</ul>
-			<div class="tabs_cont">
-				<div class="bg">
-					<div class="wrapper">
-					<font color="white">
-						<span>
-							<%=form_tag :controller => "site", :action => "available_courses" do%>
-							<table>
-								<tr>
-									<td><b>Ubicación</b></td>
-									<td>
-										<%=radio_button_tag :modalidad_lugar, "sede", true%>Longbourn Escuela Militar<br>
-										<%=radio_button_tag :modalidad_lugar, "oficina"%>En tu propia oficina</td>
-								</tr>
-
-								<tr>
-									<td><b>Modalidad</b></td>
-									<%counter = 1%>
-									<td><%@modes.each do |m|%>
-											<%if counter == 1%>
-												<%=radio_button_tag :mode, m.mode, true%><%=m.mode%><br>
-											<%else%>
-												<%=radio_button_tag :mode, m.mode%><%=m.mode%><br>
-											<%end%>
-											<%counter+=1%>
-										<%end%>
-									</td>
-								</tr>
-								<tr>
-									<td><b>Tipo de curso</b></td>
-									<td>
-									<%@types.each do |t|%>
-										<%if t.id == 1%>
-											<%=radio_button_tag :tipo_curso, t.id, true%><%=t.typename%><br>
-										<%else%>
-											<%=radio_button_tag :tipo_curso, t.id%><%=t.typename%><br>
-										<%end%>
-									<%end%>
-									</td>
-								</tr> 
-
-								<tr>
-									<td><b>Mes de Inicio</b></td> 
-									<td height=30 align=left> <%=select_month(Date.today,use_month_names: %w(Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre))%></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td><%=submit_tag "Buscar Cursos"%></td>
-								</tr>
-							</table>
-							<%end%>
-						</span>
-					</font>
-					</div>                
-				</div>
-			</div>
-		</article>
+<!-- Pricing Table -->
+<div class="section">
+	<div class="container-fluid">
+		<h2>Nuestros Cursos</h2>
+    	<div class="row">
+    		<!-- Pricing Plans Wrapper -->
+    		<div class="pricing-wrapper col-md-12 col-md-offset-1">
+    			<div class="pricing-plan">
+    				<div class="ribbon-wrapper">
+    					<div class="price-ribbon ribbon-green">Nuevo!</div>
+    				</div>
+    				<h3 class="pricing-plan-title">Cursos Individuales</h3>
+    				<p class="pricing-plan-price">400.000</p>
+    				<ul class="pricing-plan-features">
+    					<li><strong>Ubicación</strong> Longbourn Institute</li>
+    					<li><strong>Estudiantes</strong> 1</li>
+    					<li><strong>Flexibilidad</strong> Mucha</li>
+    				</ul>
+    				<%=link_to "Me Interesa", {:controller => "site", :action => "course_list", :params => {:mode => "single"}}, :class => "btn"%>
+    			</div>
+    			<div class="pricing-plan pricing-plan-promote">
+    				<div class="ribbon-wrapper">
+    					<div class="price-ribbon ribbon-red">Contactanos!</div>
+    				</div>
+    				<h3 class="pricing-plan-title">Cursos en tu Oficina</h3>
+    				<p class="pricing-plan-price">150.000</p>
+    				<ul class="pricing-plan-features">
+    					<li><strong>Ubicación</strong> Oficinas del Cliente</li>
+    					<li><strong>Estudiantes</strong> - </li>
+    					<li><strong>Flexibilidad</strong> Mas o Menos</li>
+    				</ul>
+    				<%=link_to "Me Interesa", {:controller => "site", :action => "course_list", :params => {:mode => "office"}}, :class => "btn"%>
+    			</div>
+    			<div class="pricing-plan">
+    				<div class="ribbon-wrapper">
+    					<div class="price-ribbon ribbon-green">Nuevo!</div>
+    				</div>
+    				<h3 class="pricing-plan-title">Cursos Grupales</h3>
+    				<p class="pricing-plan-price">200.000</p>
+    				<ul class="pricing-plan-features">
+    					<li><strong>Ubicación</strong> Longbourn Institute</li>
+    					<li><strong>Estudiantes</strong> 10</li>
+    					<li><strong>Flexibilidad</strong> Poca</li>
+    				</ul>
+    				<%=link_to "Me Interesa", {:controller => "site", :action => "course_list", :params => {:mode => "group"}}, :class => "btn"%>
+    			</div>
+    		</div>
+    		<!-- End Pricing Plans Wrapper -->
+    	</div>
+	</div>
+</div>
+<!-- End Pricing Table -->
+<!-- Our Clients -->
+<div class="section">
+	<div class="container-fluid">
+		<h2>Our Clients</h2>
+		<div class="clients-logo-wrapper text-center row">
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/canon.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/cisco.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/dell.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/ea.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/ebay.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/facebook.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/google.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/hp.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/microsoft.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/mysql.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/sony.png"%></a></div>
+			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/yahoo.png"%></a></div>
+		</div>
+	</div>
+</div>
+<!-- End Our Clients -->

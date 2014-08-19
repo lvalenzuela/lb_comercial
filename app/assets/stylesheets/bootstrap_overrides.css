@@ -1,0 +1,32 @@
+/*overrides de bootstrap*/
+
+.navbar{
+	margin-bottom: 0;
+	padding: 0 auto;
+	background: #222;
+	background: rgba(34, 34, 34, 0.8);
+	border: none;
+	border-radius: 0;
+}
+
+.navbar ul {
+	margin: 0;
+	padding: 0;
+}
+
+.navbar a{
+	vertical-align: middle;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 8px auto;
+}
+
+.navbar ul.dropdown-menu li {
+}
+
+.navbar ul.dropdown-menu li a{
+	display: block;
+	padding: 1em 1em;
+	vertical-align: middle;
+	font-size: 1.2em;
+}

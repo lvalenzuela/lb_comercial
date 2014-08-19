@@ -1,28 +1,23 @@
-<ul class='tabs'>
-	<li><a href='#' class='active'>Login Longbourn</a></li>
-</ul>
-<div class='tabs_cont'>
-	<div class='bg'>
-		<div class='wrapper'>
-			<font color='white'> <br>
-				<%=form_tag :controller => "users", :action => "longbourn_login" do%>
-					<table>
-						<tr>
-							<td>Email:</td>
-							<td><%=text_field_tag :email%></td>
-						</tr>
-						<tr>
-							<td>Password:</td>
-							<td><%=password_field_tag :password%></td>
-						</tr>
-						<tr>
-							<td colspan="2"><%=submit_tag "Login", :class => "button"%></td>
-						</tr>
-					</table>
-				<%end%>
-				Logeate con <%=link_to "Facebook", "/auth/facebook", :class => "sign_in"%> o 
-				<%=link_to "Registrate", {:controller => "site", :action => "signup"}%>
-			</font>
+<div class="basic-login">
+	<h4>Identifícate para poder ver los cursos que te corresponden.</h4>
+	<%=form_tag :controller => "users", :action => "longbourn_login" do%>
+		<div class="form-group">
+			<label for="email">Email</label>
+			<%=text_field_tag :email, "", :class => "form-control"%>
 		</div>
+		<div class="form-group">
+			<label for="password">Password</label>
+			<%=password_field_tag :password, "", :class => "form-control"%>
+		</div>
+		<div class="form-group">
+			<label class="checkbox">
+				<%=check_box_tag :remember_me%> Remember Me
+			</label>
+			<%=submit_tag "Login", :class => "btn pull-right"%>
+		</div>
+	<%end%>
+	<div class="form-group">
+		Logeate con <%=link_to "Facebook", "/auth/facebook", :class => "sign_in"%> o 
+		<%=link_to "Registrate", {:controller => "site", :action => "signup"}%>
 	</div>
 </div>

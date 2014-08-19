@@ -5,7 +5,13 @@ class SiteController < ApplicationController
 
 	def index
 		@types = CourseType.all()
-		@modes = Course.select("distinct(mode) as mode")
+		raw_products = zoho_product_list
+		if raw_products["code"] == 0
+			@modes = raw_products["items"]
+		else
+			@modes = nil
+		end
+		#@modes = Course.select("distinct(mode) as mode")
 		#Se registra el paso
 		session[:action_milestone] = action_name
 	end
@@ -27,7 +33,7 @@ class SiteController < ApplicationController
 		else
 			@modes = nil
 		end
-		if current_user.test_score
+		if current_user && current_user.test_score
 			@courses_for_date = Course.where("MONTH(start_date) = #{session[:selected_month]} and mode = '#{session[:selected_mode]}' and course_level_id = #{current_user.course_level_id}")
 			@course_features = CourseFeature.where(:course_id => @courses_for_date.map{|c| c.id})
 		else
