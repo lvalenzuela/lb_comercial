@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 
 	def facebook_login
 		user = WebUser.from_omniauth(env["omniauth.auth"])
+		if session[:test_score] && user.test_score.nil?
+			user.test_score = session[:test_score]
+			user.save!
+		end
 		cookies[:oauth_token] = user.oauth_token
 		redirect_to root_url
 	end

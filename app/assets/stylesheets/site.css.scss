@@ -2,6 +2,122 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+/*TABLA DE CURSOS DISPONIBLES*/
+
+.theader {
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 3px;
+	padding: 12px;
+	font-size: 1.2em;
+}
+
+.first-month {
+	background: #4f8db3;
+}
+
+.second-month {
+	background: #D9EDF7;
+}
+
+.third-month {
+	background: #B8FF70;
+}
+
+.course-description {
+	text-align: center;
+	font-weight: bold;
+	padding: 12px;
+	margin-bottom: 3px;
+}
+
+.course-description a {
+	color: #D8E6EE;
+}
+
+.course-description a:hover {
+	color: #fff;
+}
+
+.course-mode{
+	font-weight: bold;
+	padding: 12px;
+	background: #DFF0D8;
+	margin-right: 0;
+	margin-bottom: 3px;
+}
+
+/*FIN TABLA DE CURSOS DISPONIBLES*/
+
+/*COURSE AVAILABILITY*/
+.course-availability {
+	margin-left: 0px;
+}
+/**/
+
+/*PURCHASE CONFIRMATION*/
+.purchase-confirmation {
+	padding: 30px 20px;
+	color: 0 0 3px #999;
+	margin-bottom: 20px
+}
+
+.purchase-confirmation label{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	display: block;
+}
+
+.purchase-confirmation span.description {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+	
+/*FIN PURCHASE CONFIRMATION*/
+
+/*COURSE DETAILS*/
+
+.course-details {
+  padding: 30px 20px;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 0 3px #999;
+  -moz-box-shadow: 0 0 3px #999;
+  box-shadow: 0 0 3px #999;
+  color: 0 0 3px #999;
+  margin-bottom: 20px;
+}
+
+.course-details .details-box {
+	background-color: #FFF;
+}
+
+.course-details h2 {
+	font-size: 20px;
+}
+
+.course-details label{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	display: block;
+}
+
+.course-details span.description {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.course-details .teacher-img img{
+	display: inline-block;
+	overflow: hidden;
+	max-width: 100%;
+}
+
+/*FIN COURSE DETAILS*/
+
+
 .course-selection-table {
 	width: 100%;
 }
@@ -11,3 +127,9 @@
 .course-selection-table td {
 	text-align: left;
 }
+
+/*QUOTATION ADVISE*/
+.quotation-advise {
+	margin-top: 40px;
+}
+/*FIN QUOTATION-ADVISE*/

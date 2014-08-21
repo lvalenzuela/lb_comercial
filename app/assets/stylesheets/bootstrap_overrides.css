@@ -21,12 +21,24 @@
 	padding: 8px auto;
 }
 
+.navbar ul.dropdown-menu {
+}
+
 .navbar ul.dropdown-menu li {
 }
 
 .navbar ul.dropdown-menu li a{
 	display: block;
-	padding: 1em 1em;
+	padding: 0.8em 1em;
 	vertical-align: middle;
 	font-size: 1.2em;
 }
+
+/*Esto hace que el menu de navegacion se despliegue sin hacer click en los elementos*/
+/*Lo prefiero de la otra forma, pero en fin...*/
+
+/*
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
+}
+*/

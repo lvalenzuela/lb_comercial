@@ -58,4 +58,18 @@ module SiteHelper
 			return feature.first().feature_description
 		end
 	end
+
+	def get_teacher_name(teacher_id)
+		teacher = User.find(teacher_id)
+		return teacher.firstname+" "+teacher.lastname
+	end
+
+	def available_courses_for_month(courses,month,mode)
+		return courses.where("MONTH(start_date) = #{month} AND mode = '#{mode}'").count
+		#return Course.where("MONTH(start_date) = #{month} and mode = '#{mode}' and course_level_id = #{current_user.course_level_id}").count
+	end
+
+	def get_teacher_image(teacher_id)
+		return User.find(teacher_id).avatar.url
+	end
 end

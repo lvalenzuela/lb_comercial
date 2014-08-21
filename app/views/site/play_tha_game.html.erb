@@ -1,21 +1,18 @@
-<div class="extra">
-	<div class="main">
-		<article class="col1">
-			<ul class="tabs">
-				<li><a href="#" class="active">Busca tu curso ideal</a></li>
-			</ul>
-			<div class="tabs_cont">
-				<div class="bg">
-					<div class="wrapper">
-					<font color="white">
-						<%=form_tag :controller => "site", :action => "test_results" do%>
-							Resultados del test : <%=number_field_tag :results%>
-							<%=submit_tag "Rendir Prueba de Diagnostico", :class => "button"%>
-						<%end%>
-					</font>
+<div class="section">
+	<div class="container-fluid">
+		<h2>Test de Diagnóstico</h2>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="basic-login">
+					<%=form_tag :controller => "site", :action => "test_results" do%>
+					<div class="form-group">
+						<label>Resultados del test : </label>
+						<%=number_field_tag :results, nil, :class => "form-control"%>
 					</div>
+						<%=submit_tag "Rendir Prueba de Diagnostico", :class => "btn btn-default"%>
+					<%end%>
 				</div>
 			</div>
-		</article>
+		</div>
 	</div>
 </div>
