@@ -1,23 +1,20 @@
 <div class="basic-login">
-	<h4>Identifícate para poder ver los cursos que te corresponden.</h4>
+	<h4><%=flash[:notice]%></h4>
 	<%=form_tag :controller => "users", :action => "longbourn_login" do%>
 		<div class="form-group">
 			<label for="email">Email</label>
-			<%=text_field_tag :email, "", :class => "form-control"%>
+			<%=text_field_tag :email, nil, :class => "form-control"%>
 		</div>
 		<div class="form-group">
 			<label for="password">Password</label>
-			<%=password_field_tag :password, "", :class => "form-control"%>
+			<%=password_field_tag :password, nil, :class => "form-control"%>
 		</div>
 		<div class="form-group">
 			<label class="checkbox">
 				<%=check_box_tag :remember_me%> Remember Me
 			</label>
-			<%=submit_tag "Login", :class => "btn pull-right"%>
+			<%=submit_tag "Login", :class => "btn btn-lg pull-right"%>
+			<div class="clearfix"></div>
 		</div>
 	<%end%>
-	<div class="form-group">
-		Logeate con <%=link_to "Facebook", "/auth/facebook", :class => "sign_in"%> o 
-		<%=link_to "Registrate", {:controller => "site", :action => "signup"}%>
-	</div>
 </div>

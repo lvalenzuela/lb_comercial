@@ -9,32 +9,78 @@
 .theader {
 	text-align: center;
 	font-weight: bold;
-	margin-bottom: 3px;
+	margin-bottom: 5px;
 	padding: 12px;
 	font-size: 1.2em;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 0 3px #999;
+	-moz-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 3px #999;
+}
+
+.theader span.title {
+	display: block;
+	font-size: 1.6em;
+	padding: 5px 0;
+}
+
+.theader span.explanation {
+	display:block;
 }
 
 .first-month {
 	background: #4f8db3;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 0 3px #999;
+	-moz-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 3px #999;
 }
 
 .second-month {
-	background: #D9EDF7;
+	background: #99CCFF;/*#FFB46A;*/
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 0 3px #999;
+	-moz-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 3px #999;
 }
 
 .third-month {
 	background: #B8FF70;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 0 3px #999;
+	-moz-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 3px #999;
 }
 
 .course-description {
 	text-align: center;
 	font-weight: bold;
 	padding: 12px;
-	margin-bottom: 3px;
+	margin-bottom: 5px;
 }
 
 .course-description a {
-	color: #D8E6EE;
+	color: #fff;
 }
 
 .course-description a:hover {
@@ -46,7 +92,16 @@
 	padding: 12px;
 	background: #DFF0D8;
 	margin-right: 0;
-	margin-bottom: 3px;
+	margin-bottom: 5px;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 0 3px #999;
+	-moz-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 3px #999;
 }
 
 /*FIN TABLA DE CURSOS DISPONIBLES*/
@@ -131,5 +186,10 @@
 /*QUOTATION ADVISE*/
 .quotation-advise {
 	margin-top: 40px;
+}
+
+.quotation-advise .info {
+	font-size: 1.5em;
+	padding-top: 50px;
 }
 /*FIN QUOTATION-ADVISE*/

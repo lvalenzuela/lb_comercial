@@ -91,7 +91,8 @@ class SiteController < ApplicationController
 				redirect_to :action => :available_courses
 			else
 				session[:test_score] = params[:results]
-				redirect_to :action => session[:action_milestone]
+				flash[:notice] = "Registrate para conocer tu nivel de inglés y los cursos que te corresponden!"
+				redirect_to :action => :signup
 			end
 		else
 			flash[:notice] = "No se ha registrado un puntaje para el Quiz de Diagnostico."
@@ -102,15 +103,8 @@ class SiteController < ApplicationController
 	def available_courses
 		session[:action_milestone] = action_name
 
-		if params[:date] && params[:mode]
-			session[:selected_month] = params[:date][:month]
-			session[:selected_mode] = params[:mode]
-		elsif !session[:selected_month] && !session[:selected_mode]
-			session[:selected_month] = Time.now.month
-			session[:selected_mode] = "Grupal Presencial Oficina"
-		end
-		@selected_month = session[:selected_month]
-		@selected_mode = session[:selected_mode]
+		@current_date = Time.now
+		@selected_mode = "Grupal Presencial Oficina"
 
 		raw_products = zoho_product_list
 		if raw_products["code"] == 0
@@ -118,38 +112,25 @@ class SiteController < ApplicationController
 		else
 			@modes = nil
 		end
-		@courses = Course.where("MONTH(start_date) BETWEEN #{@selected_month.to_i} AND #{@selected_month.to_i+2} AND course_level_id = #{current_user.course_level_id}")
+		@courses = Course.where("WEEK(start_date) BETWEEN WEEK('#{@current_date.strftime('%Y-%m-%d')}') AND (WEEK('#{@current_date.strftime('%Y-%m-%d')}')+6) AND course_level_id = #{current_user.course_level_id}")
 	end
 
 	def selected_courses_list
-		@courses = Course.where("MONTH(start_date) = #{params[:month]} and mode = '#{params[:mode]}' and course_level_id = #{current_user.course_level_id}")
+		@courses = Course.where("WEEK(start_date) BETWEEN WEEK('#{params[:date]}') AND (WEEK('#{params[:date]}')+1) and mode = '#{params[:mode]}' and course_level_id = #{current_user.course_level_id}")
 		@features = CourseFeature.where(:course_id => @courses.map{|c| c.id})
-		@month = params[:month]
+		@date = Date.parse(params[:date])
 	end
 
-	def available_courses2
-		#se registra el paso
-		session[:action_milestone] = action_name
+	def course_details_report
+		course = Course.find(params[:course_id])
+		course_level = CourseLevel.find(course.course_level_id).course_level
 
-		if params[:date] && params[:mode]
-			session[:selected_month] = params[:date][:month]
-			session[:selected_mode] = params[:mode]
-		end
-		@selected_month = session[:selected_month]
-		@selected_mode = session[:selected_mode]
-
-		raw_products = zoho_product_list
-		if raw_products["code"] == 0
-			@modes = raw_products["items"].uniq{|i| i["name"]}
-		else
-			@modes = nil
-		end
-		if current_user && current_user.test_score
-			@courses_for_date = Course.where("MONTH(start_date) = #{session[:selected_month]} and mode = '#{session[:selected_mode]}' and course_level_id = #{current_user.course_level_id}")
-			@course_features = CourseFeature.where(:course_id => @courses_for_date.map{|c| c.id})
-		else
-			@courses_for_date = nil
-			@course_features = nil
+		respond_to do |format|
+			format.html
+			format.pdf do
+				pdf = CourseDetailsPdf.new(course,view_context)
+				send_data pdf.render, filename: course.coursename+"_"+course_level+"_Details.pdf", type: "application/pdf"
+			end
 		end
 	end
 

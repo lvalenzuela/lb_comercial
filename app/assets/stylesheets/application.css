@@ -130,6 +130,8 @@
 }
 .testimonial-nb .author-photo img {
   margin: auto;
+  max-width: 100%;
+  overflow: hidden;
   border: 5px solid #FFF;
   -webkit-border-radius: 100px;
   -webkit-background-clip: padding-box;
@@ -507,10 +509,10 @@ a:hover {
   background-color: #5ACBFF;
 }
 .ribbon-orange {
-  background-color: #FF9542;
+  background-color: #FFB56C;/*#FF9542;*/
 }
 .ribbon-red {
-  background-color: #FF7373;
+  background-color: #FF9900;/*#FF7373;*/
 }
 @media (min-width: 768px) {
   .pricing-plan {
@@ -1576,7 +1578,8 @@ span.color-red {
   text-decoration: none;
 }
 .in-press a:after {
-  content: '';
+  content: "\201D";
+  font-size: 2.2em;
   display: block;
   position: absolute;
   bottom: -10px;

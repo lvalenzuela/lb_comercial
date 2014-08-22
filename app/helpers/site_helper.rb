@@ -3,41 +3,6 @@ module SiteHelper
 		return CourseLevel.find(level_id).course_level
 	end
 
-	def get_month_name(month_number)
-		if month_number < 0 
-			month_number = month_number + 12
-		elsif month_number > 12
-			month_number = month_number - 12			
-		end
-		
-		case month_number
-		when 1
-			return "Enero"
-		when 2
-			return "Febrero"
-		when 3
-			return "Marzo"
-		when 4
-			return "Abril"
-		when 5
-			return "Mayo"
-		when 6
-			return "Junio"
-		when 7
-			return "Julio"
-		when 8
-			return "Agosto"
-		when 9
-			return "Septiembre"
-		when 10
-			return "Octubre"
-		when 11
-			return "Noviembre"
-		when 12
-			return "Diciembre"
-		end
-	end
-
 	def disabled_course(courses,month)
 		if courses.select{|c| c.start_date.month == month}
 			return false
@@ -64,9 +29,8 @@ module SiteHelper
 		return teacher.firstname+" "+teacher.lastname
 	end
 
-	def available_courses_for_month(courses,month,mode)
-		return courses.where("MONTH(start_date) = #{month} AND mode = '#{mode}'").count
-		#return Course.where("MONTH(start_date) = #{month} and mode = '#{mode}' and course_level_id = #{current_user.course_level_id}").count
+	def available_courses_for_month(courses,date,mode)
+		return courses.where("start_date BETWEEN '#{date.beginning_of_week.strftime('%Y-%m-%d')}' AND '#{(date + 1.weeks).end_of_week.strftime('%Y-%m-%d')}' AND mode = '#{mode}'").count
 	end
 
 	def get_teacher_image(teacher_id)

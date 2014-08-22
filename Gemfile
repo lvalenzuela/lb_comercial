@@ -46,7 +46,6 @@ gem 'nokogiri'
 gem 'rut_chileno'
 gem 'omniauth-facebook'
 gem 'figaro'
-
-gem 'jquery-rails'
 gem "font-awesome-rails"
 gem "paperclip", "~> 3.5.2"
+gem 'prawn'

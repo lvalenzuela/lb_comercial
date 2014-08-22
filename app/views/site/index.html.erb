@@ -42,82 +42,11 @@
 	</div>
 </div>
 <!-- End Homepage Slider -->
-<!-- Press Coverage -->
-<div class="section">
-	<div class="container-fluid">
-		<h2 style="text-align: center;">The Longbourn Experience</h2>
-		<div class="row features-selector">
-			<div class="col-md-6">
-				<div class="service-wrapper">
-					<%=form_tag :controller => "site", :action => "available_courses" do%>
-					<table class="course-selection-table">
-						<tr>
-							<th>Ubicación</th>
-							<td>
-								<%=radio_button_tag :modalidad_lugar, "sede", true%>Longbourn Escuela Militar<br>
-								<%=radio_button_tag :modalidad_lugar, "oficina"%>En tu propia oficina</td>
-						</tr>
-						<tr>
-							<th>Modalidad</th>
-							<%counter = 1%>
-							<td><%@modes.each do |m|%>
-									<%if counter == 1%>
-										<%=radio_button_tag :mode, m["name"], true%><%=m["name"]%><br>
-									<%else%>
-										<%=radio_button_tag :mode, m["name"]%><%=m["name"]%><br>
-									<%end%>
-									<%counter+=1%>
-								<%end%>
-							</td>
-						</tr>
-						<tr>
-							<th>Tipo de curso</th>
-							<td>
-							<%@types.each do |t|%>
-								<%if t.id == 1%>
-									<%=radio_button_tag :tipo_curso, t.id, true%><%=t.typename%><br>
-								<%else%>
-									<%=radio_button_tag :tipo_curso, t.id%><%=t.typename%><br>
-								<%end%>
-							<%end%>
-							</td>
-						</tr> 
-						<tr>
-							<th>Mes de Inicio</th> 
-							<td><%=select_month(Date.today,use_month_names: %w(Enero Febrero Marzo Abril Mayo Junio Julio Agosto Septiembre Octubre Noviembre Diciembre))%></td>
-						</tr>
-						<tr>
-							<td></td>
-							<td><%=submit_tag "Buscar Cursos", :class => "btn pull-right"%></td>
-						</tr>
-					</table>
-					<%end%>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Press Coverage -->
-<!-- Call to Action Bar -->
-<div class="section section-white">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="calltoaction-wrapper">
-					<h3>Juega a nuestro Juego y descubre tu nivel de Inglés!</h3> <%=link_to "Jugar", {:controller => "site", :action => "play_tha_game"}, {:class => "btn btn-grey"}%>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- End Call to Action Bar -->
-
-
 <div class="section">
 	<div class="container-fluid">
 		<h2 style="text-align: center;">The Longbourn Experience</h2>
 		<div class="row">
-			<div class="col-md-12">
+			<div class="col-md-10 col-md-offset-1">
 				<div class="in-press">
 					<a href="#">No es simplemente aprender inglés. Es aprender a expresar lo correcto, de la forma correcta, a la persona correcta, en el momento correcto, en inglés</a>
 				</div>
@@ -125,6 +54,20 @@
 		</div>
 	</div>
 </div>
+
+<!-- Call to Action Bar -->
+<div class="section section-white">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="calltoaction-wrapper">
+					<h3>Juega a nuestro Juego y descubre tu nivel de Inglés!</h3> <%=link_to "Jugar", {:controller => "site", :action => "play_tha_game"}, {:class => "btn btn-lg  btn-grey"}%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Call to Action Bar -->
 
 <!-- Services -->
 <div class="section">
@@ -224,58 +167,7 @@
 </div>
 <!-- End Testimonials -->
 
-<!-- Pricing Table -->
-<div class="section">
-	<div class="container-fluid">
-		<h2>Nuestros Cursos</h2>
-    	<div class="row">
-    		<!-- Pricing Plans Wrapper -->
-    		<div class="pricing-wrapper col-md-11 col-md-offset-2">
-    			<div class="pricing-plan">
-    				<div class="ribbon-wrapper">
-    					<div class="price-ribbon ribbon-green">Nuevo!</div>
-    				</div>
-    				<h3 class="pricing-plan-title">Cursos Individuales</h3>
-    				<p class="pricing-plan-price">400.000</p>
-    				<ul class="pricing-plan-features">
-    					<li><strong>Ubicación</strong> Longbourn Institute</li>
-    					<li><strong>Estudiantes</strong> 1</li>
-    					<li><strong>Flexibilidad</strong> Mucha</li>
-    				</ul>
-    				<%=link_to "Me Interesa", {:controller => "site", :action => "course_list", :params => {:mode => "single"}}, :class => "btn"%>
-    			</div>
-    			<div class="pricing-plan pricing-plan-promote">
-    				<div class="ribbon-wrapper">
-    					<div class="price-ribbon ribbon-red">Contactanos!</div>
-    				</div>
-    				<h3 class="pricing-plan-title">Cursos en tu Oficina</h3>
-    				<p class="pricing-plan-price">150.000</p>
-    				<ul class="pricing-plan-features">
-    					<li><strong>Ubicación</strong> Oficinas del Cliente</li>
-    					<li><strong>Estudiantes</strong> - </li>
-    					<li><strong>Flexibilidad</strong> Mas o Menos</li>
-    				</ul>
-    				<%=link_to "Me Interesa", {:controller => "site", :action => "course_list", :params => {:mode => "office"}}, :class => "btn"%>
-    			</div>
-    			<div class="pricing-plan">
-    				<div class="ribbon-wrapper">
-    					<div class="price-ribbon ribbon-green">Nuevo!</div>
-    				</div>
-    				<h3 class="pricing-plan-title">Cursos Grupales</h3>
-    				<p class="pricing-plan-price">200.000</p>
-    				<ul class="pricing-plan-features">
-    					<li><strong>Ubicación</strong> Longbourn Institute</li>
-    					<li><strong>Estudiantes</strong> 10</li>
-    					<li><strong>Flexibilidad</strong> Poca</li>
-    				</ul>
-    				<%=link_to "Me Interesa", {:controller => "site", :action => "course_list", :params => {:mode => "group"}}, :class => "btn"%>
-    			</div>
-    		</div>
-    		<!-- End Pricing Plans Wrapper -->
-    	</div>
-	</div>
-</div>
-<!-- End Pricing Table -->
+
 <!-- Our Clients -->
 <div class="section">
 	<div class="container-fluid">
