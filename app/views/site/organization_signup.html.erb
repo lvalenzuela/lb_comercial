@@ -1,60 +1,50 @@
-<div class="extra">
-	<div class="main">
-			<div class='tabs_cont'>
-				<div class='bg'>
-					<div class='wrapper'>
-						<font color='white'> <br>
-							<%=form_for @lead, :url => {:controller => "users", :action => "register_lead"} do |f|%>
-								<table>
-									<tr>
-										<td><b>Datos Generales</b></td>
-										<td></td>
-									</tr>
-									<tr>
-										<%=f.hidden_field :lead_source, :value => "Web Longbourn"%>
-										<td>Organizacion</td>
-										<td><%=f.text_field :company%></td>
-									</tr>
-									<tr>
-										<td>Nombre</td>
-										<td><%=f.text_field :firstname%></td>
-									</tr>
-									<tr>
-										<td>Apellido</td>
-										<td><%=f.text_field :lastname%></td>
-									</tr>
-									<tr>
-										<td>Genero</td>
-										<td><%=f.radio_button :gender, "Masculino", :checked => true%>Masculino
-											<%=f.radio_button :gender, "Femenino"%>Femenino</td>
-									</tr>
-									<tr>
-										<td>Email</td>
-										<td><%=f.email_field :email%></td>
-									</tr>
-									<tr>
-										<td>Cargo</td>
-										<td><%=f.text_field :title%></td>
-									</tr>
-									<tr>
-										<td>Telefono de Contacto</td>
-										<td><%=f.phone_field :phone%></td>
-									</tr>
-									<tr>
-										<td>Celular</td>
-										<td><%=f.phone_field :mobile%></td>
-									</tr>
-									<tr>
-										<td></td>
-										<td align="right"><br><br>
-											<%=submit_tag "Enviar Datos"%></td>
-									</tr>
-								</table>
-							<%end%>
-						</font>
-					</div>
+<div class="section">
+	<div class="container-fluid">
+		<div class="row">
+			<h2>Contacto Longbourn</h2>
+			<div class="col-sm-6">
+				<div class="basic-login">
+					<%=form_for @lead, :url => {:controller => "users", :action => "register_lead"} do |f|%>
+						<%=f.hidden_field :lead_source, :value => "Web Longbourn"%>
+						<div class="form-group">
+							<label for="company">Organizacion</label>
+							<%=f.text_field :company, :class => "form-control"%>
+						</div>
+						<div class="form-group">
+							<label for="firstname">Nombre</label>
+							<%=f.text_field :firstname, :class => "form-control"%>
+						</div>
+						<div class="form-group">
+							<label for="firstname">Apellido</label>
+							<%=f.text_field :lastname, :class => "form-control"%>
+						</div>
+						<div class="form-group">
+							<label for="gender">Genero</label>
+							<%=f.select :gender, options_for_select([["Masculino","male"],["Femenino","female"]], "male"), {}, {:class => "form-control"}%>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<%=f.email_field :email, :class => "form-control"%>
+						</div>
+						<div class="form-group">
+							<label for="title">Cargo</label>
+							<%=f.text_field :title, :class => "form-control"%>
+						</div>
+						<div class="form-group">
+							<label for="phone">Telefono de Contacto</label>
+							<%=f.phone_field :phone, :class => "form-control"%>
+						</div>
+						<div class="form-group">
+							<label for="mobile">Celular</label>
+							<%=f.phone_field :mobile, :class => "form-control"%>
+						</div>
+						<div class="form-group">
+							<%=submit_tag "Enviar Datos", :class => "btn btn-lg pull-right"%>
+							<div class="clearfix"></div>
+						</div>
+					<%end%>
 				</div>
 			</div>
-		</article>
+		</div>
 	</div>
 </div>

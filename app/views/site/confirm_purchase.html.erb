@@ -1,77 +1,51 @@
-<div class="extra">
-	<div class="main">
-		<article class='col_lista_cursos'>
-
-		<ul class='tabs'>
-			<li><a href='#' class='active'>Resumen del curso</a></li>
-		</ul>
-
-		<div class='tabs_cont'>
-			<div class='bg'>
-				<div class='wrapper'>
-					<font color='white'> <br>
-						<%=flash[:notice]%>
-						<table>
-							<tr>
-								<td><h1>Datos del Curso</h1></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Fecha Actual</td>
-								<td><%=Date.current%></td>
-							</tr>
-							<tr>
-								<td>Nombre del Curso</td>
-								<td><%=@course.coursename%></td>
-							</tr>
-							<tr>
-								<td>Modalidad</td>
-								<td><%=@course.mode%></td>
-							</tr>
-							<tr>
-								<td>Tipo de Curso</td>
-								<td><%=get_coursetype(@course.course_type_id)%></td>
-							</tr>
-							<tr>
-								<td>Fecha de Inicio</td>
-								<td><%=@course.start_date.strftime("%d-%m-%Y")%></td>
-							</tr>
-							<tr>
-								<td>Horario</td>
-								<td><%=get_course_feature(@course_features,"first_day")+" "+get_course_feature(@course_features,"first_day_hour")+" - "+get_course_feature(@course_features,"second_day")+" "+get_course_feature(@course_features,"second_day_hour")%></td>
-							</tr>
-							<tr>
-								<td>Precio</td>
-								<td><%=number_to_currency(get_course_feature(@course_features,"price").to_i,:precision => 0)%></td>
-							</tr>
-							<tr>
-								<td><h1>Datos del Cliente</h1></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>Usuario</td>
-								<td><%=@user.name%></td>
-							</tr>
-							<tr>
-								<td>Email</td>
-								<td><%=@user.email%></td>
-							</tr>
-							<tr>
-								<td>Direccion</td>
-								<td><%=@user.location%></td>
-							</tr>
-							<tr>
-								<td>Telefono de Contacto</td>
-								<td><%=@user.phone%></td>
-							</tr>
-							<tr>
-								<td><%=link_to "Continuar Compra", {:controller => "site", :action => "register_purchase"}, {:class => "button"}%></td>
-								<td><%=link_to "Editar Datos de Usuario", {:controller => "site", :action => "edit_user"}, {:class => "button"}%></td>
-							</tr>
-						</table>
-					</font>
-				</div>
+<div class="section">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12 error-box">
+				<%=flash[:notice]%>
 			</div>
-		</article>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 purchase-confirmation">
+				<h2>Datos del Cliente</h2>
+				<label>Usuario</label>
+				<span class="description"><%=@user.name%></span>
+				<label>Email</label>
+				<span class="description"><%=@user.email%></span>
+				<label>Direccion</label>
+				<span class="description"><%=@user.location%></span>
+				<label>Telefono de Contacto</label>
+				<span class="description"><%=@user.phone%></span>
+				<%=link_to "Editar Datos de Usuario", {:controller => "site", :action => "edit_user"}, {:class => "btn btn-default"}%>
+
+			</div>
+			<div class="col-sm-6 purchase-confirmation">
+				<h2>Datos del Curso Seleccionado</h2>
+				<label>Fecha Actual</label>
+				<span class="description"><%=Date.current%></span>
+
+				<label>Nombre del Curso</label>
+				<span class="description"><%=@course.coursename%></span>
+
+				<label>Modalidad</label>
+				<span class="description"><%=@course.mode%></span>
+
+				<label>Tipo de Curso</label>
+				<span class="description"><%=get_coursetype(@course.course_type_id)%></span>
+
+				<label>Fecha de Inicio</label>
+				<span class="description"><%=@course.start_date.strftime("%d-%m-%Y")%></span>
+
+				<label>Horario</label>
+				<span class="description"><%=get_course_feature(@course_features,"first_day")+" "+get_course_feature(@course_features,"first_day_hour")+" - "+get_course_feature(@course_features,"second_day")+" "+get_course_feature(@course_features,"second_day_hour")%></span>
+				<label>Precio</label>
+				<span class="description"><%=number_to_currency(get_course_feature(@course_features,"price").to_i,:precision => 0)%></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<%=link_to "Continuar Compra", {:controller => "site", :action => "register_purchase"}, {:class => "btn btn-lg btn-block"}%>
+			</div>
+		</div>
 	</div>
 </div>

@@ -1,0 +1,45 @@
+<div class="section">
+	<div class="container-fluid">
+		<h2>Cursos Seleccionados para el Mes de <%=l(@date, :format => "%B")%></h2>
+		<div class="row">
+			<%@courses.each do |c|%>
+				<div class="col-sm-10 col-sm-offset-1 course-details">
+					<div class="row">
+						<div class="col-sm-3 teacher-img">
+							<%=image_tag get_teacher_image(c.teacher_user_id)%>
+						</div>
+						<div class="col-sm-9 details-box">
+							<h2><%=c.coursename%> - <%=get_course_level_name(c.course_level_id)%></h2>
+							<div class="row">
+								<div class="col-sm-4 descriptionbox">
+									<label>Descripcion del Curso </label>
+									<span class="description"><%=c.description%></span>
+									<label>Modalidad </label> 
+									<span class="description"><%=c.mode%></span>
+									<label>Fecha de Inicio</label>
+									<span class="description"><%=c.start_date.strftime("%d-%m-%Y")%></span>
+								</div>
+								<div class="col-sm-4 detailsbox">
+									<label>Profesor</label>
+									<span class="description"><%=get_teacher_name(c.teacher_user_id)%></span>
+									<label>Ubicacion</label> 
+									<span class="description"><%=c.location%></span>
+									<label>Horario</label> 
+									<span class="description"><%=get_course_feature(@features.where(:course_id => c.id),"first_day")+" - "+get_course_feature(@features.where(:course_id => c.id),"first_day_hour")+" / "+get_course_feature(@features.where(:course_id => c.id),"second_day")+" - "+get_course_feature(@features.where(:course_id => c.id),"second_day_hour")%></span>
+								</div>
+								<div class="col-sm-4 pricebox">
+									<label>Precio</label> 
+									<span class="description"><%=number_to_currency(get_course_feature(@features.where(:course_id => c.id),"price").to_i, :precision => 0)%></span>
+								</div>
+							</div>
+							<div class="pull-right">
+								<%=link_to "Detalles del Curso", {:controller => :site, :action => :course_details_report, :params => {:course_id => c.id, :format => "pdf"}}, {:class => "btn", :target => "_blank"}%>
+								<%=link_to "Comprar Curso", {:controller => :site, :action => :confirm_purchase, :params => {:course_id => c.id}}, {:class => "btn btn-default"}%>
+							</div>
+						</div>
+					</div>
+				</div>
+			<%end%>
+		</div>
+	</div>
+</div>

@@ -12,5 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+
+$(function () {
+	$('.mainmenu li ul').hide().removeClass('fallback');
+	$('.mainmenu li').hover(function () {
+		$('ul', this).stop().slideToggle(200);
+	});
+});
