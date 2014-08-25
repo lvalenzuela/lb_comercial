@@ -2,20 +2,25 @@
 	<div class="container-fluid">
 		<div class="row">
 			<h2>Qué Quieres Obtener de Longbourn?</h2>
-			<div class="col-sm-4 objectives-frame">
-				<h4>Metas a Lograr</h4>
-				<ul>
-					<li>Redacción de Correos / Cartas</li>
-					<li>Intervención en Reuniones</li>
-					<li>Dirección de Reuniones</li>
-					<li>Negocios en Inglés</li>
-					<li>Etc</li>
-				</ul>
-				<p>Para descubrir desde donde iniciar tu aprendizaje, te invitamos a rendir nuestro entretenido test de diagnóstico.</p>
-				<%=link_to "Test de Diagnóstico", {:controller => :site, :action => :play_tha_game}, {:class => "btn btn-lg btn-block btn-grey"}%>
+			<div class="col-sm-12 objectives-frame" id="mountain-bg">
+				<div class="col-xs-7 col-sm-offset-1">
+					<h3>Metas a Lograr</h3>
+					<ul class="challenges">
+						<li id="emails">Redacción de Correos / Cartas</li>
+						<li id="int-meetings">Intervención en Reuniones</li>
+						<li id="dir-meetings">Dirección de Reuniones</li>
+						<li id="business">Negocios en Inglés</li>
+						<li id="etc">Etc</li>
+					</ul>
+				</div>
 			</div>
-			<div class="col-sm-8 challenges-frame">
-				<%=image_tag "descriptions/Slide3.png"%>
+		</div>
+		<div class="row challenges-frame">
+			<div class="col-sm-6 col-sm-offset-1">
+				<p>Para descubrir desde donde iniciar tu aprendizaje, te invitamos a rendir nuestro entretenido test de diagnóstico.</p>
+			</div>
+			<div class="col-sm-5">
+				<%=link_to "Test de Diagnóstico", {:controller => :site, :action => :play_tha_game}, {:class => "btn btn-lg btn-block btn-grey"}%>
 			</div>
 		</div>
 	</div>
@@ -27,7 +32,7 @@
 					<div class="col-xs-4 route-header introductory-route">
 						Ruta Introductoria
 					</div>
-					<div class="col-xs-8 route-description introductory-route">
+					<div class="col-xs-7 route-description introductory-route">
 						<p>Ruta diseñada para principiantes y entusiastas del inglés, orientada a desarrollar competencias en la comprensión y el uso del lenguaje.</p>
 					</div>
 				</div>
@@ -35,7 +40,7 @@
 					<div class="col-xs-4 route-header standard-route">
 						Ruta Standard
 					</div>
-					<div class="col-xs-8 route-description standard-route">
+					<div class="col-xs-7 route-description standard-route">
 						<p>Ruta orientada a pulir las destrezas de aquellos que ya tienen cierta experiencia en el idioma.</p> 
 					</div>
 				</div>
@@ -43,7 +48,7 @@
 					<div class="col-xs-4 route-header expert-route">
 						Ruta Expert
 					</div>
-					<div class="col-xs-8 route-description expert-route">
+					<div class="col-xs-7 route-description expert-route">
 						<p>Ruta para aquellos cuyo objetivo sea perfeccionar su comprendimiento del idioma, desarrollando la fluidez y seguridad en la expresión.</p>
 					</div>
 				</div>
@@ -51,7 +56,7 @@
 					<div class="col-xs-4 route-header superior-route">
 						Ruta Superior
 					</div>
-					<div class="col-xs-8 route-description superior-route">
+					<div class="col-xs-7 route-description superior-route">
 						<p>Ruta orientada a aquellos que deseen desarrollar su comprensión técnica del lenguaje.</p>
 					</div>
 				</div>
@@ -59,3 +64,24 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+$( "#emails" ).mouseover(function() {
+	$( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide2.png')");
+});
+$( "#int-meetings" ).mouseover(function() {
+    $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide3.png')");
+});
+$( "#dir-meetings" ).mouseover(function() {
+    $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide4.png')");
+});
+$( "#business" ).mouseover(function() {
+    $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide5.png')");
+});
+$( "#etc" ).mouseover(function() {
+    $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide6.png')");
+});
+$( "ul.challenges li" ).mouseout(function() {
+    $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide1.png')");
+});
+</script>

@@ -4,13 +4,39 @@
 
 
 /*CHALLENGES*/
-.challenges-frame img{
-	max-width: 100%;
-	overflow: hidden;
+.objectives-frame {
+	min-height: 320px;
+	background-image: asset-url("descriptions/Slide1.png");
+	background-repeat: no-repeat;
+	background-position: right center;
 }
 
-.objectives-frame p{
+.objectives-frame h3 {
+	font-size: 2.0em;
+}
+
+ul.challenges{
+	font-size: 1.6em;
+	list-style-type: disc;
+}
+
+ul.challenges li {
+	padding: 10px auto;
+	font-weight: bold;
+}
+
+ul.challenges li:hover{
+	font-size: 1.8em;
+	cursor: pointer;
+}
+.challenges-frame {
+	margin-top: 20px;
+}
+
+.challenges-frame p{
 	text-align: justify;
+	font-size: 1.8em;
+	font-weight: bold;
 }
 
 .route .introductory-route {
@@ -112,6 +138,7 @@
 
 
 .route-description {
+	margin-left: 8px;
 	text-shadow: 0 0 2px #9C9C9C;
 	height: 100%;
 	padding: 20px 20px;

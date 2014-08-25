@@ -1,5 +1,5 @@
 .navbar-collapse {
-	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
 	font-weight: bold;
 }
 
@@ -22,8 +22,8 @@
 .navbar a{
 	vertical-align: middle;
 	font-family: inherit;
-	font-size: 16px;
-	padding: 8px auto;
+	font-size: 12px;
+	padding: 5px auto;
 }
 
 .navbar ul.dropdown-menu {
@@ -36,7 +36,7 @@
 	display: block;
 	padding: 0.8em 1em;
 	vertical-align: middle;
-	font-size: 1.2em;
+	font-size: 1em;
 }
 
 /*Esto hace que el menu de navegacion se despliegue sin hacer click en los elementos*/
