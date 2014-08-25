@@ -3,6 +3,133 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/*CHALLENGES*/
+.challenges-frame img{
+	max-width: 100%;
+	overflow: hidden;
+}
+
+.objectives-frame p{
+	text-align: justify;
+}
+
+.route .introductory-route {
+	color: #F6F8F6;
+	border: solid 1px #9C9C9C;
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #005900 0%, #009900 100%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #005900 0%, #009900 100%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #005900 0%, #009900 100%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #005900), color-stop(1, #009900));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #005900 0%, #009900 100%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #005900 0%, #009900 100%);
+}
+
+.route .standard-route {
+	color: #F6F8F6;
+	border: solid 1px #9C9C9C;
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(bottom, #FF9900 0%, #915700 100%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(bottom, #FF9900 0%, #915700 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(bottom, #FF9900 0%, #915700 100%);
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #FF9900), color-stop(1, #915700));
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(bottom, #FF9900 0%, #915700 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to top, #FF9900 0%, #915700 100%);
+}
+
+.route .expert-route {
+	color: #F6F8F6;
+	border: solid 1px #9C9C9C;
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #172D70 0%, #3366FF 100%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #172D70 0%, #3366FF 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #172D70 0%, #3366FF 100%);
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #172D70), color-stop(1, #3366FF));
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #172D70 0%, #3366FF 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #172D70 0%, #3366FF 100%);
+}
+
+.route .superior-route {
+	color: #F6F8F6;
+	border: solid 1px #9C9C9C;
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #451745 0%, #993399 100%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #451745 0%, #993399 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #451745 0%, #993399 100%);
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #451745), color-stop(1, #993399));
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #451745 0%, #993399 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #451745 0%, #993399 100%);
+}
+
+.route {
+	padding: 10px 0;
+	height: 120px;
+}
+
+.route-header {
+	text-shadow: 0 0 3px #666666;
+	height: 100%;
+	padding: 40px 20px;
+	font-size: 1.8em;
+	font-weight: bolder;
+	text-align: center;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 0 3px #999;
+	-moz-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 3px #999;
+
+}
+
+
+.route-description {
+	text-shadow: 0 0 2px #9C9C9C;
+	height: 100%;
+	padding: 20px 20px;
+	text-align: center;
+	font-size: 1.2em;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 0 3px #999;
+	-moz-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 3px #999;
+}
+
+/*FIN CHALLENGES*/
+
 
 /*TABLA DE CURSOS DISPONIBLES*/
 

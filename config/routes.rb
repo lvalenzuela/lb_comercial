@@ -43,6 +43,7 @@ Rails.application.routes.draw do
       get "course_list"
       get "new_contact_person"
       get "index"
+      get "show_challenges"
       get "available_courses"
       post "available_courses"
       get "selected_courses_list"

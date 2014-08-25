@@ -1,0 +1,61 @@
+<div class="section">
+	<div class="container-fluid">
+		<div class="row">
+			<h2>Qué Quieres Obtener de Longbourn?</h2>
+			<div class="col-sm-4 objectives-frame">
+				<h4>Metas a Lograr</h4>
+				<ul>
+					<li>Redacción de Correos / Cartas</li>
+					<li>Intervención en Reuniones</li>
+					<li>Dirección de Reuniones</li>
+					<li>Negocios en Inglés</li>
+					<li>Etc</li>
+				</ul>
+				<p>Para descubrir desde donde iniciar tu aprendizaje, te invitamos a rendir nuestro entretenido test de diagnóstico.</p>
+				<%=link_to "Test de Diagnóstico", {:controller => :site, :action => :play_tha_game}, {:class => "btn btn-lg btn-block btn-grey"}%>
+			</div>
+			<div class="col-sm-8 challenges-frame">
+				<%=image_tag "descriptions/Slide3.png"%>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+			<h2>Las Rutas de Longbourn</h2>
+			<div class="row">
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
+					<div class="col-xs-4 route-header introductory-route">
+						Ruta Introductoria
+					</div>
+					<div class="col-xs-8 route-description introductory-route">
+						<p>Ruta diseñada para principiantes y entusiastas del inglés, orientada a desarrollar competencias en la comprensión y el uso del lenguaje.</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
+					<div class="col-xs-4 route-header standard-route">
+						Ruta Standard
+					</div>
+					<div class="col-xs-8 route-description standard-route">
+						<p>Ruta orientada a pulir las destrezas de aquellos que ya tienen cierta experiencia en el idioma.</p> 
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
+					<div class="col-xs-4 route-header expert-route">
+						Ruta Expert
+					</div>
+					<div class="col-xs-8 route-description expert-route">
+						<p>Ruta para aquellos cuyo objetivo sea perfeccionar su comprendimiento del idioma, desarrollando la fluidez y seguridad en la expresión.</p>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
+					<div class="col-xs-4 route-header superior-route">
+						Ruta Superior
+					</div>
+					<div class="col-xs-8 route-description superior-route">
+						<p>Ruta orientada a aquellos que deseen desarrollar su comprensión técnica del lenguaje.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
