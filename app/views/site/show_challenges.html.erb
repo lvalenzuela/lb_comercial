@@ -67,19 +67,19 @@
 
 <script type="text/javascript">
 $( "#emails" ).mouseover(function() {
-	$( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide2.png')");
+	$( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide2.png'%>')");
 });
 $( "#int-meetings" ).mouseover(function() {
-    $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide3.png')");
+    $( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide3.png'%>')");
 });
 $( "#dir-meetings" ).mouseover(function() {
-    $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide4.png')");
+    $( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide4.png'%>')");
 });
 $( "#business" ).mouseover(function() {
-    $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide5.png')");
+    $( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide5.png'%>')");
 });
 $( "#etc" ).mouseover(function() {
-    $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide6.png')");
+    $( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide6.png'%>')");
 });
 $( "ul.challenges li" ).mouseout(function() {
     $( "#mountain-bg" ).css("background-image","url('/assets/descriptions/Slide1.png')");
