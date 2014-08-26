@@ -3,6 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/*QUIZ FRAME*/
+.quiz-frame {
+	border: none;
+	width: 100%;
+	min-height: 800px;
+	overflow: hidden;
+}
+/*FIN QUIZ*/
+
 /*CHALLENGES*/
 .objectives-frame {
 	min-height: 320px;
@@ -31,7 +40,6 @@ ul.challenges li {
 }
 
 ul.challenges li:hover{
-	font-size: 1.4em;
 	cursor: pointer;
 }
 .challenges-frame {
