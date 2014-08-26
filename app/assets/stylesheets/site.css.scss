@@ -6,6 +6,10 @@
 /*CHALLENGES*/
 .objectives-frame {
 	min-height: 320px;
+}
+
+#mountain-bg {
+	min-height: 320px;
 	background-image: asset-url("descriptions/Slide1.png");
 	background-repeat: no-repeat;
 	background-position: right center;
@@ -16,17 +20,18 @@
 }
 
 ul.challenges{
-	font-size: 1.6em;
+	font-size: 1.2em;
 	list-style-type: disc;
 }
 
 ul.challenges li {
+	margin: 10px auto;
 	padding: 10px auto;
 	font-weight: bold;
 }
 
 ul.challenges li:hover{
-	font-size: 1.8em;
+	font-size: 1.4em;
 	cursor: pointer;
 }
 .challenges-frame {
@@ -120,7 +125,7 @@ ul.challenges li:hover{
 .route-header {
 	text-shadow: 0 0 3px #666666;
 	height: 100%;
-	padding: 40px 20px;
+	padding: 40px 18px;
 	font-size: 1.8em;
 	font-weight: bolder;
 	text-align: center;
@@ -234,10 +239,14 @@ ul.challenges li:hover{
 }
 
 .course-description a {
+	font-weight: bold;
+	text-shadow: 0 0 3px #666666;
 	color: #fff;
 }
 
 .course-description a:hover {
+	font-size: 1.2em;
+	text-decoration: none;
 	color: #fff;
 }
 
@@ -268,9 +277,22 @@ ul.challenges li:hover{
 
 /*PURCHASE CONFIRMATION*/
 .purchase-confirmation {
+	min-height: 470px;
 	padding: 30px 20px;
 	color: 0 0 3px #999;
-	margin-bottom: 20px
+	margin-bottom: 20px;
+	margin-right: 20px;
+	padding: 20px 20px 10px 20px;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	-webkit-box-shadow: inset 0 1px #fff,0 0 4px #c8cfe6;
+	-moz-box-shadow: inset 0 1px #fff,0 0 4px #c8cfe6;
+	box-shadow: inset 0 1px #fff,0 0 4px #c8cfe6;
+	color: inset 0 1px #fff,0 0 4px #c8cfe6;
 }
 
 .purchase-confirmation label{
@@ -280,6 +302,17 @@ ul.challenges li:hover{
 
 .purchase-confirmation span.description {
 	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.purchase-confirmation span.discount-note {
+	font-size: 12px;
+	display: block;
+}
+
+.purchase-confirmation a.btn {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
 }
 	
 /*FIN PURCHASE CONFIRMATION*/

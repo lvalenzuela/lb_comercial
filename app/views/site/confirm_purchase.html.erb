@@ -1,25 +1,21 @@
 <div class="section">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-12 error-box">
-				<%=flash[:notice]%>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-6 purchase-confirmation">
+			<div class="col-sm-5 col-sm-offset-1 purchase-confirmation">
 				<h2>Datos del Cliente</h2>
 				<label>Usuario</label>
-				<span class="description"><%=@user.name%></span>
+				<%=text_field_tag :name, @user.name, :disabled => true, :class => "form-control"%>
 				<label>Email</label>
-				<span class="description"><%=@user.email%></span>
+				<%=text_field_tag :email, @user.email, :disabled => true, :class => "form-control"%>
 				<label>Direccion</label>
-				<span class="description"><%=@user.location%></span>
+				<%=text_field_tag :location, @user.location, :disabled => true, :class => "form-control"%>
 				<label>Telefono de Contacto</label>
-				<span class="description"><%=@user.phone%></span>
+				<%=text_field_tag :phone, @user.phone, :disabled => true, :class => "form-control"%>
+				<label>Celular de contacto</label>
+				<%=text_field_tag :mobile, @user.mobile, :disabled => true, :class => "form-control"%>
 				<%=link_to "Editar Datos de Usuario", {:controller => "site", :action => "edit_user"}, {:class => "btn btn-default"}%>
-
 			</div>
-			<div class="col-sm-6 purchase-confirmation">
+			<div class="col-sm-5 purchase-confirmation">
 				<h2>Datos del Curso Seleccionado</h2>
 				<label>Fecha Actual</label>
 				<span class="description"><%=Date.current%></span>
@@ -39,7 +35,8 @@
 				<label>Horario</label>
 				<span class="description"><%=get_course_feature(@course_features,"first_day")+" "+get_course_feature(@course_features,"first_day_hour")+" - "+get_course_feature(@course_features,"second_day")+" "+get_course_feature(@course_features,"second_day_hour")%></span>
 				<label>Precio</label>
-				<span class="description"><%=number_to_currency(get_course_feature(@course_features,"price").to_i,:precision => 0)%></span>
+				<span class="description"><%=number_to_currency(price_with_discount(@course,@course_features),:precision => 0)%></span>
+				<span class="discount-note">(<b><%=@course.discount_pct%></b> de Descuento.)</span>
 			</div>
 		</div>
 		<div class="row">

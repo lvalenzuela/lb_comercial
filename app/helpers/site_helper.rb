@@ -30,10 +30,19 @@ module SiteHelper
 	end
 
 	def available_courses_for_month(courses,date,mode)
-		return courses.where("start_date BETWEEN '#{date.beginning_of_week.strftime('%Y-%m-%d')}' AND '#{(date + 1.weeks).end_of_week.strftime('%Y-%m-%d')}' AND mode = '#{mode}'").count
+		if date == Time.now
+			return courses.where("start_date BETWEEN '#{(date + 1.days).strftime('%Y-%m-%d')}' AND '#{(date + 1.weeks).end_of_week.strftime('%Y-%m-%d')}' AND mode = '#{mode}'").count
+		else
+			return courses.where("start_date BETWEEN '#{date.beginning_of_week.strftime('%Y-%m-%d')}' AND '#{(date + 1.weeks).end_of_week.strftime('%Y-%m-%d')}' AND mode = '#{mode}'").count
+		end
 	end
 
 	def get_teacher_image(teacher_id)
 		return User.find(teacher_id).avatar.url
+	end
+
+	def price_with_discount(course,features)
+		price = get_course_feature(features.where(:course_id => course.id),"price").to_i
+		return price * (100 - course.discount_factor)/100
 	end
 end

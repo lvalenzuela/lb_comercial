@@ -2,17 +2,18 @@
 	<div class="container-fluid">
 		<div class="row">
 			<h2>Qué Quieres Obtener de Longbourn?</h2>
-			<div class="col-sm-12 objectives-frame" id="mountain-bg">
-				<div class="col-xs-7 col-sm-offset-1">
-					<h3>Metas a Lograr</h3>
-					<ul class="challenges">
-						<li id="emails">Redacción de Correos / Cartas</li>
-						<li id="int-meetings">Intervención en Reuniones</li>
-						<li id="dir-meetings">Dirección de Reuniones</li>
-						<li id="business">Negocios en Inglés</li>
-						<li id="etc">Etc</li>
-					</ul>
-				</div>
+			<div class="col-sm-4 objectives-frame">
+				<h3>Metas a Lograr</h3>
+				<ul class="challenges">
+					<li id="emails">Redacción de Correos / Cartas</li>
+					<li id="int-meetings">Intervención en Reuniones</li>
+					<li id="dir-meetings">Dirección de Reuniones</li>
+					<li id="business">Negocios en Inglés</li>
+					<li id="etc">Etc</li>
+				</ul>
+			</div>
+			<div class="col-sm-8" id="mountain-bg">
+				
 			</div>
 		</div>
 		<div class="row challenges-frame">
@@ -23,41 +24,41 @@
 				<%=link_to "Test de Diagnóstico", {:controller => :site, :action => :play_tha_game}, {:class => "btn btn-lg btn-block btn-grey"}%>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-12">
+		<div class="row">
 			<h2>Las Rutas de Longbourn</h2>
-			<div class="row">
-				<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
-					<div class="col-xs-4 route-header introductory-route">
-						Ruta Introductoria
+			<div class="col-sm-12">
+				<div class="row">
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
+						<div class="col-xs-4 route-header introductory-route">
+							Ruta Introductoria
+						</div>
+						<div class="col-xs-7 route-description introductory-route">
+							<p>Ruta diseñada para principiantes y entusiastas del inglés, orientada a desarrollar competencias en la comprensión y el uso del lenguaje.</p>
+						</div>
 					</div>
-					<div class="col-xs-7 route-description introductory-route">
-						<p>Ruta diseñada para principiantes y entusiastas del inglés, orientada a desarrollar competencias en la comprensión y el uso del lenguaje.</p>
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
+						<div class="col-xs-4 route-header standard-route">
+							Ruta Standard
+						</div>
+						<div class="col-xs-7 route-description standard-route">
+							<p>Ruta orientada a pulir las destrezas de aquellos que ya tienen cierta experiencia en el idioma.</p> 
+						</div>
 					</div>
-				</div>
-				<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
-					<div class="col-xs-4 route-header standard-route">
-						Ruta Standard
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
+						<div class="col-xs-4 route-header expert-route">
+							Ruta Expert
+						</div>
+						<div class="col-xs-7 route-description expert-route">
+							<p>Ruta para aquellos cuyo objetivo sea perfeccionar su comprendimiento del idioma, desarrollando la fluidez y seguridad en la expresión.</p>
+						</div>
 					</div>
-					<div class="col-xs-7 route-description standard-route">
-						<p>Ruta orientada a pulir las destrezas de aquellos que ya tienen cierta experiencia en el idioma.</p> 
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
-					<div class="col-xs-4 route-header expert-route">
-						Ruta Expert
-					</div>
-					<div class="col-xs-7 route-description expert-route">
-						<p>Ruta para aquellos cuyo objetivo sea perfeccionar su comprendimiento del idioma, desarrollando la fluidez y seguridad en la expresión.</p>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
-					<div class="col-xs-4 route-header superior-route">
-						Ruta Superior
-					</div>
-					<div class="col-xs-7 route-description superior-route">
-						<p>Ruta orientada a aquellos que deseen desarrollar su comprensión técnica del lenguaje.</p>
+					<div class="col-xs-12 col-sm-8 col-sm-offset-2 route">
+						<div class="col-xs-4 route-header superior-route">
+							Ruta Superior
+						</div>
+						<div class="col-xs-7 route-description superior-route">
+							<p>Ruta orientada a aquellos que deseen desarrollar su comprensión técnica del lenguaje.</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -66,22 +67,5 @@
 </div>
 
 <script type="text/javascript">
-$( "#emails" ).mouseover(function() {
-	$( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide2.png'%>')");
-});
-$( "#int-meetings" ).mouseover(function() {
-    $( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide3.png'%>')");
-});
-$( "#dir-meetings" ).mouseover(function() {
-    $( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide4.png'%>')");
-});
-$( "#business" ).mouseover(function() {
-    $( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide5.png'%>')");
-});
-$( "#etc" ).mouseover(function() {
-    $( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide6.png'%>')");
-});
-$( "ul.challenges li" ).mouseout(function() {
-    $( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide1.png'%>')");
-});
+
 </script>

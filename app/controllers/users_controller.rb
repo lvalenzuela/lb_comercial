@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 			user.save!
 		end
 		cookies[:oauth_token] = user.oauth_token
-		redirect_to root_url
+		redirect_to :controller => :site, :action => session[:action_milestone]
 	end
 
 	def longbourn_login

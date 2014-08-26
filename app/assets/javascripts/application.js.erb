@@ -1,0 +1,48 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
+// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file.
+//
+// Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require jquery_ujs
+//= require_tree .
+
+$(document).ready(function(){
+	$( "#emails" ).mouseover(function() {
+		$( "#mountain-bg" ).fadeOut(300, function(){
+			$( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide2.png'%>')");
+			$( "#mountain-bg" ).fadeIn(500);
+		});
+	});
+	$( "#int-meetings" ).mouseover(function() {
+		$( "#mountain-bg" ).fadeOut(300, function(){
+			$( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide3.png'%>')");
+			$( "#mountain-bg" ).fadeIn(500);
+		});
+	});
+	$( "#dir-meetings" ).mouseover(function() {
+		$( "#mountain-bg" ).fadeOut(300, function(){
+			$( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide4.png'%>')");
+			$( "#mountain-bg" ).fadeIn(500);
+		});
+	});
+	$( "#business" ).mouseover(function() {
+		$( "#mountain-bg" ).fadeOut(300, function(){
+			$( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide5.png'%>')");
+			$( "#mountain-bg" ).fadeIn(500);
+		});
+	});
+	$( "#etc" ).mouseover(function() {
+		$( "#mountain-bg" ).fadeOut(300, function(){
+			$( "#mountain-bg" ).css("background-image","url('<%= asset_path 'descriptions/Slide6.png'%>')");
+			$( "#mountain-bg" ).fadeIn(500);
+		});
+	});
+});

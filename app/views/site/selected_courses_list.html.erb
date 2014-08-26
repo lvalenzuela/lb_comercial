@@ -29,6 +29,9 @@
 								</div>
 								<div class="col-sm-4 pricebox">
 									<label>Precio</label> 
+									<span class="description"><%=number_to_currency(price_with_discount(c,@features), :precision => 0)%></span>
+									<span class="discount-note">(<b><%=c.discount_pct%></b> de Descuento.)</span>
+									<label>Precio Original</label>
 									<span class="description"><%=number_to_currency(get_course_feature(@features.where(:course_id => c.id),"price").to_i, :precision => 0)%></span>
 								</div>
 							</div>

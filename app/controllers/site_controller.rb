@@ -76,7 +76,12 @@ class SiteController < ApplicationController
 
 	end
 
+	def show_challenges
+		session[:action_milestone] = action_name
+	end
+
 	def play_tha_game
+		session[:action_milestone] = action_name
 		if current_user && current_user.test_score
 			redirect_to :action => :available_courses
 		end
@@ -104,7 +109,6 @@ class SiteController < ApplicationController
 		session[:action_milestone] = action_name
 
 		@current_date = Time.now
-		@selected_mode = "Grupal Presencial Oficina"
 
 		raw_products = zoho_product_list
 		if raw_products["code"] == 0
@@ -133,6 +137,7 @@ class SiteController < ApplicationController
 			end
 		end
 	end
+
 
 #####################################
 #Funciones privadas para esta clase
@@ -186,7 +191,7 @@ class SiteController < ApplicationController
 		end
 	end
 
-	def register_invoice(web_user,course)
+	def register_invoice2(web_user,course)
 		item_response = get_data_from_zoho("items",course.zoho_product_id)
 		if item_response["code"].to_i == 0
 			response = post_data("invoices",format_invoice_for_post(web_user,item_response["item"]))
@@ -196,6 +201,15 @@ class SiteController < ApplicationController
 			end
 		else
 			return item_response
+		end
+		return response
+	end
+
+	def register_invoice(web_user,course)
+		response = post_data("invoices", format_invoice_for_post(web_user,course))
+		if response["code"].to_i == 0
+			register_local_invoice(web_user.id,response["invoice"])
+			mail_response = mark_invoice_as_sent(response["invoice"]["invoice_id"])
 		end
 		return response
 	end
@@ -226,7 +240,14 @@ class SiteController < ApplicationController
 		end
 	end
 
-	def format_invoice_for_post(customer,product)
+	def format_invoice_for_post(customer,course)
+		#se obtiene el item correspondiente de zoho
+		item_response = get_data_from_zoho("items",course.zoho_product_id)
+		if item_response["code"].to_i == 0
+			product = item_response["item"]
+		else
+			return item_response
+		end
 
 		invoice = {
 			:customer_id => customer.zoho_contact_id,
@@ -237,9 +258,9 @@ class SiteController < ApplicationController
 			:payment_terms => 30,
 			:payment_terms_label => "Pago a 30 Días",
 			:due_date => (Date.current() + 30.days).strftime("%Y-%m-%d"),
-			:discount => 0,
+			:discount => course.discount_pct,
 			#:is_discount_before_tax => true,
-			#:discount_type => "item_level",
+			:discount_type => "entity_level",
 			:exchange_rate => 1.00,
 			#:recurring_invoice_id => "",
 			#:invoiced_estimate_id => "",
