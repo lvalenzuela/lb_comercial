@@ -1,6 +1,11 @@
 .navbar-collapse {
-	font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
 	font-weight: bold;
+}
+
+.navbar-collapse a{
+	font-size: 0.9em;
+	padding: 0px 0px;
 }
 
 /*overrides de bootstrap*/
@@ -21,9 +26,6 @@
 
 .navbar a{
 	vertical-align: middle;
-	font-family: inherit;
-	font-size: 12px;
-	padding: 5px auto;
 }
 
 .navbar ul.dropdown-menu {

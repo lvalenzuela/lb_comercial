@@ -1,4 +1,4 @@
-<div id="user_nav">
+<div id="user_nav" class="registration-links">
 	<%if current_user%>
 		Logeado como <strong><%=current_user.name%></strong>
 		<%=link_to "Log out", {:controller => "users", :action => "logout"}, {:class => "sign_out"}%>
