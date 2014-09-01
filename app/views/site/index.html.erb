@@ -1,56 +1,83 @@
-
 <!-- Homepage Slider -->
-<div class="homepage-slider">
-	<div id="sequence">
-		<ul class="sequence-canvas">
-			<!-- Slide 1 -->
-			<li class="bg4">
-				<!-- Slide Title -->
-				<h2 class="title">Cursos de Ingles</h2>
-				<!-- Slide Text -->
-				<h3 class="subtitle">Tenemos los cursos de inglés que son las ensación del bloque.</h3>
-				<!-- Slide Image -->
-			</li>
-			<!-- End Slide 1 -->
-			<!-- Slide 2 -->
-			<li class="bg3">
-				<!-- Slide Title -->
-				<h2 class="title">Profesores</h2>
-				<!-- Slide Text -->
-				<h3 class="subtitle">Nuestros profesores hablan más mejor que nadien!</h3>
-				<!-- Slide Image -->
-			</li>
-			<!-- End Slide 2 -->
-			<!-- Slide 3 -->
-			<li class="bg1">
-				<!-- Slide Title -->
-				<h2 class="title">Disponibilidad</h2>
-				<!-- Slide Text -->
-				<h3 class="subtitle">Le tenimos de todos los horarios para que escoja caserito.</h3>
-				<!-- Slide Image -->
-				<%=image_tag "slider_placeholder3.png", :class => "slide-img"%>
-			</li>
-			<!-- End Slide 3 -->
-		</ul>
-		<div class="sequence-pagination-wrapper">
-			<ul class="sequence-pagination">
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-			</ul>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-3 banner-block executive">
+			<div class="banner-block-button">
+				<%=link_to "Longbourn Executive", "/longbourn-executive", {:class => "banner-block-btn"}%>
+			</div>
+		</div>
+		<div class="col-sm-3 banner-block startup">
+			<div class="banner-block-button">
+				<%=link_to "Longbourn StartUp", "/longbourn-startup", {:class => "banner-block-btn"}%>
+			</div>
+		</div>
+		<div class="col-sm-3 banner-block institute">
+			<div class="banner-block-button">
+				<%=link_to "Longbourn Institute", "/longbourn-institute", {:class => "banner-block-btn"}%>
+			</div>
+		</div>
+		<div class="col-sm-3 banner-block international">
+			<div class="banner-block-button">
+				<%=link_to "Cursos Internacionales", "/cursos-internacionales", {:class => "banner-block-btn"}%>
+			</div>
 		</div>
 	</div>
 </div>
-<!-- End Homepage Slider -->
+
 <div class="section">
 	<div class="container-fluid">
 		<h2 style="text-align: center;">The Longbourn Experience</h2>
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<div class="in-press">
-					<a href="#">No es simplemente aprender inglés. Es aprender a expresar lo correcto, de la forma correcta, a la persona correcta, en el momento correcto, en inglés</a>
-				</div>
-			</div>
+		<div class="col-sm-12">
+			<ul class="timeline">
+				<li>
+					<div class="timeline-badge"><i class="fa fa-chevron-circle-down"></i></div>
+					<div class="timeline-panel">
+						<div class="timeline-heading">
+						  <h4 class="timeline-title">Define tus Metas</h4>
+						  <p><small class="text-muted"><i class="fa fa-trophy"></i> ¿Qué quieres lograr con Longbourn?</small></p>
+						</div>
+						<div class="timeline-body">
+						  <p>Selecciona un objetivo a lograr con <strong>Longbourn Institute</strong>.</p>
+						</div>
+					</div>
+				</li>
+				<li class="timeline-inverted">
+					<div class="timeline-badge"><i class="fa fa-chevron-circle-down"></i></div>
+					<div class="timeline-panel">
+						<div class="timeline-heading">
+						  <h4 class="timeline-title">Descubre tu Nivel</h4>
+						  <p><small class="text-muted"><i class="fa fa-gamepad"></i> Quiz de diagnostico Longbourn</small></p>
+						</div>
+						<div class="timeline-body">
+						  <p>Diviertete con nuestro entretenido <strong>Quiz de Diagnóstico</strong> y descubre tu ruta a seguir en Longbourn Institute</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="timeline-badge"><i class="fa fa-chevron-circle-down"></i></div>
+					<div class="timeline-panel">
+						<div class="timeline-heading">
+						  <h4 class="timeline-title">Cotiza tu Curso</h4>
+						  <p><small class="text-muted"><i class="fa fa-university"></i> Cursos de Longbourn</small></p>
+						</div>
+						<div class="timeline-body">
+						  <p>Selecciona uno de los cursos de <strong>Longbourn Institute</strong> en la modalidad y fecha que más te acomode.</p>
+						</div>
+					</div>
+				</li>
+				<li class="timeline-inverted">
+					<div class="timeline-badge"><i class="fa fa-chevron-circle-right"></i></div>
+					<div class="timeline-panel">
+						<div class="timeline-heading">
+						  <h4 class="timeline-title">Vive la Experiencia Longbourn!</h4>
+						  <p><small class="text-muted"><i class="fa fa-gamepad"></i> Cursos a la Medida</small></p>
+						</div>
+						<div class="timeline-body">
+						  <p>Vive la <strong>Experiencia Longbourn</strong> en nuestras salas y con nuestros profesores.</p>
+						</div>
+					</div>
+				</li>
+			</ul>
 		</div>
 	</div>
 </div>
@@ -68,31 +95,6 @@
 	</div>
 </div>
 <!-- End Call to Action Bar -->
-
-<!-- Services -->
-<div class="section">
-    <div class="container-fluid">
-    	<div class="row">
-    		<div class="col-md-6">
-    			<div class="service-wrapper-nb">
-	    			<p class="circle-highlight"><i class="fa fa-plane fa-lg"></i></p>
-	    			<h3>Longbourn Executive</h3>
-	    			<p>Cursos de Inglés para Ejecutivos.</p><br>
-	    			<a href="#" class="btn">Read more</a>
-	    		</div>
-    		</div>
-    		<div class="col-md-6">
-    			<div class="service-wrapper-nb">
-    				<p class="circle-highlight"><i class="fa fa-graduation-cap fa-lg"></i></p>
-    				<h3>Preparacion para Pruebas Internacionales.</h3>
-    				<p>TOEFL, IELTS, TOEIC.</p><br>
-    				<a href="#" class="btn">Read More</a>
-    			</div>
-    		</div>
-    	</div>
-    </div>
-</div>
-<!-- End Services -->
 
 <!-- Testimonials -->
 <div class="section">

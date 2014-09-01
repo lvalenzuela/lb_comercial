@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   ##
   #Informacionales
   ##
+  match "longbourn-executive", to: "info#longbourn_executive", via: [:get]
+  match "longbourn-startup", to: "info#longbourn_startup", via: [:get]
+  match "longburn-institute", to: "info#longbourn_institute", via: [:get]
+  match "cursos-internacionales", to: "info#cursos_internacionales", via: [:get]
+
 
   match "cursos-de-ingles-personalizados-in-office", to: "info#cursos_individuales_in_office", via: [:get]
   match "workshops-de-inmersion-en-ingles", to: "info#workshops_inmersion", via: [:get]
@@ -27,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :users do
     collection do
+      get "user_identification"
       post "create"
       post "update"
       post "longbourn_login"
@@ -40,6 +46,7 @@ Rails.application.routes.draw do
 
   resources :site do
     collection do
+      get "redirect_view"
       get "course_list"
       get "new_contact_person"
       get "index"

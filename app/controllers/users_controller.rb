@@ -1,17 +1,47 @@
 class UsersController < ApplicationController
 	require 'nokogiri'
 
+	def user_identification
+		user = WebUser.where(:oauth_token => params[:user_auth_token]).first()
+		if user.blank? || user.nil?
+			#el usuario no existe
+			flash[:notice] = "No estas registrado en el sitio. Registrate!"
+			redirect_to :controller => :site, :action => :signup
+		else
+			#login exitoso
+			cookies.permanent[:oauth_token] = user.oauth_token
+			redirect_to :controller => :site, :action => :available_courses
+		end
+	end
+
 	def facebook_login
 		user = WebUser.from_omniauth(env["omniauth.auth"])
 		if session[:test_score] && user.test_score.nil?
 			user.test_score = session[:test_score]
 			user.save!
 		end
-		cookies[:oauth_token] = user.oauth_token
+		cookies.permanent[:oauth_token] = user.oauth_token
 		redirect_to :controller => :site, :action => session[:action_milestone]
 	end
 
 	def longbourn_login
+		user = WebUser.where(:email => params[:email]).first()
+		if user.blank? || user.nil?
+			#Login fallido, el usuario no existe
+			flash[:notice] = "No estas registrado en el sitio. Registrate!"
+			redirect_to :controller => :site, :action => :signup
+		else
+			#login exitoso
+			#se envía un mail con el codigo de acceso
+			WebUserMailer.user_login(user.oauth_token, user).deliver
+			flash[:notice] = "Por favor revise su correo. Se le ha enviado un correo con sus datos de registro."
+			redirect_to :controller => :site, :action => :redirect_view
+		end
+	end
+
+
+	##Login antiguo, ahora no vamos a usar passwords
+	def longbourn_login222
 		user = WebUser.where(:email => params[:email]).first()
 		if user.blank? || user.provider == "facebook"
 			#login fallido
@@ -53,7 +83,8 @@ class UsersController < ApplicationController
 		if user.valid?
 			#Usuario creado exitosamente
 			#Se se logea
-			cookies[:oauth_token] = user.oauth_token
+			cookies.permanent[:oauth_token] = user.oauth_token
+			WebUserMailer.user_registration(user.oauth_token, user).deliver
 			if session[:test_score]
 				user.test_score = session[:test_score]
 				user.save!
@@ -114,7 +145,7 @@ class UsersController < ApplicationController
 	private
 
 	def web_user_params
-		return params.require(:web_user).permit(:firstname, :lastname, :gender, :email, :phone, :location, :mobile, :password, :password_confirmation)
+		return params.require(:web_user).permit(:firstname, :lastname, :gender, :email, :phone, :location, :mobile)
 	end
 
 	def zoho_lead_params

@@ -1,29 +1,41 @@
 <div class="section">
 	<div class="container-fluid">
-		<div class="row">
-			<h2>Qué Quieres Obtener de Longbourn?</h2>
-			<div class="col-sm-4 objectives-frame">
-				<h3>Metas a Lograr</h3>
-				<ul class="challenges">
-					<li id="emails">Redacción de Correos / Cartas</li>
-					<li id="int-meetings">Intervención en Reuniones</li>
-					<li id="dir-meetings">Dirección de Reuniones</li>
-					<li id="business">Negocios en Inglés</li>
-					<li id="etc">Etc</li>
-				</ul>
+		<h2>Objetivos de Longbourn</h2>
+		<div class="row" id="objectives-bg">
+			<div class="col-sm-3">
+				<div class="service-wrapper objective" id="obj-1">
+					<h3>Comprensión y Redacción</h3>
+					<p>Tu objetivo es lograr la comunicación escrita de forma fluída, siendo capaz de comprender y responder correos, cartas o publicaciones de forma adecuada.</p>
+					<%=link_to "Rendir Quiz", {}, {:class => "btn btn-block"}%>
+				</div>
 			</div>
-			<div class="col-sm-8" id="mountain-bg">
-				
+			<div class="col-sm-3">
+				<div class="service-wrapper objective" id="obj-2">
+					<h3>Fluidez Intermedia</h3>
+					<p>Tu objetivo es poder comprender a tu interlocutor y poder intervenir de forma adecuada cuando sea necesario, transmitiendo tu mensaje de forma concisa y adecuada.</p>
+					<%=link_to "Rendir Quiz", {}, {:class => "btn btn-block"}%>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="service-wrapper objective" id="obj-3">
+					<h3>Fluidez Avanzada</h3>
+					<p>Tu objetivo es poder guiar el desarrollo de reuniones y discursos, expresando fluidez en el dominio del lenguaje</p>
+					<%=link_to "Rendir Quiz", {}, {:class => "btn btn-block"}%>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="service-wrapper objective" id="obj-4">
+					<h3>Inglés Nativo</h3>
+					<p>Tu objetivo es la comunicación fluida, tanto a nivel técnico como coloquial.</p>
+					<%=link_to "Rendir Quiz", {}, {:class => "btn btn-block"}%>
+				</div>
 			</div>
 		</div>
-		<div class="row challenges-frame">
-			<div class="col-sm-6 col-sm-offset-1">
-				<p>Para descubrir desde donde iniciar tu aprendizaje, te invitamos a rendir nuestro entretenido test de diagnóstico.</p>
-			</div>
-			<div class="col-sm-5">
-				<%=link_to "Test de Diagnóstico", {:controller => :site, :action => :play_tha_game}, {:class => "btn btn-lg btn-block btn-grey"}%>
-			</div>
-		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container-fluid">
 		<div class="row">
 			<h2>Las Rutas de Longbourn</h2>
 			<div class="col-sm-12">

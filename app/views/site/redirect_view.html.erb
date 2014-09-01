@@ -1,0 +1,18 @@
+<div class="section">
+	<div class="container-fluid">
+		<h2>Acción realizada con Exito!</h2>
+		<div class="col-md-8 col-md-offset-2 ">
+			<div class="basic-login redirect-msg">
+				<%if flash[:notice]%>
+					<p><%=flash[:notice]%></p>
+				<%end%>
+				<p>Será redirigido a la brevedad.</p>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+    window.setTimeout(function(){
+        window.location.href = "http://localhost:3000";
+    }, 5000);
+</script>

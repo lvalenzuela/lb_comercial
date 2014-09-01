@@ -72,7 +72,7 @@ class SiteController < ApplicationController
 		end
 	end
 
-	def successful_registration
+	def redirect_view
 
 	end
 

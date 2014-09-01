@@ -1,5 +1,21 @@
 class InfoController < ApplicationController
 
+	def longbourn_executive
+		@page_title = "Longbourn Executive"
+	end
+
+	def longbourn_startup
+		@page_title = "Longbourn StartUp"
+	end
+
+	def longbourn_institute
+		@page_title = "Longbourn Institute"
+	end
+
+	def cursos_internacionales
+		@page_title = "Cursos Internacionales"
+	end
+
 	def cursos_individuales_in_office
 		@page_title = "Cursos Individuales In Office"
 	end

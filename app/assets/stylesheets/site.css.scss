@@ -2,56 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/**/
 
-/*QUIZ FRAME*/
-.quiz-frame {
-	border: none;
-	width: 100%;
-	min-height: 800px;
-	overflow: hidden;
+#objectives-bg {
+	background-image: asset-url("backgrounds/mountain-white.jpg");
+	background-size: 1600px 800px;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 0 3px #999;
+	-moz-box-shadow: 0 0 3px #999;
+	box-shadow: 0 0 3px #999;
 }
-/*FIN QUIZ*/
+
+.objective {
+	min-height: 200px;
+	opacity: 0.9;
+}
+
+.objective h3 {
+	font-size: 14px !important;
+	text-align: left;
+	border-bottom: 1px solid #dedede;
+}
+
+.objective p{
+	text-align: justify;
+}
+
+#obj-1 {
+	margin-top: 300px;
+}
+
+#obj-2 {
+	margin-top: 200px;
+}
+
+#obj-3 {
+	margin-top: 100px;
+}
+
+#obj-4 {
+}
+/**/
+
 
 /*CHALLENGES*/
-.objectives-frame {
-	min-height: 320px;
-}
-
-#mountain-bg {
-	min-height: 320px;
-	background-image: asset-url("descriptions/Slide1.png");
-	background-repeat: no-repeat;
-	background-position: right center;
-}
-
-.objectives-frame h3 {
-	font-size: 2.0em;
-}
-
-ul.challenges{
-	font-size: 1.2em;
-	list-style-type: disc;
-}
-
-ul.challenges li {
-	margin: 10px auto;
-	padding: 10px auto;
-	font-weight: bold;
-
-}
-
-ul.challenges li:hover{
-	cursor: pointer;
-}
-.challenges-frame {
-	margin-top: 20px;
-}
-
-.challenges-frame p{
-	text-align: justify;
-	font-size: 1.8em;
-	font-weight: bold;
-}
 
 .route .introductory-route {
 	color: #F6F8F6;
@@ -147,7 +146,6 @@ ul.challenges li:hover{
 	-webkit-box-shadow: 0 0 3px #999;
 	-moz-box-shadow: 0 0 3px #999;
 	box-shadow: 0 0 3px #999;
-
 }
 
 
@@ -171,6 +169,118 @@ ul.challenges li:hover{
 
 /*FIN CHALLENGES*/
 
+
+
+/*PAGINA DE REDIRECCION*/
+
+.redirect-msg {
+	text-align: center;
+}
+
+.redirect-msg p{
+	font-size: 1.4em;
+}
+
+/*FIN PAGINA DE REDIRECCION*/
+
+/* BANNER DE LA PRIMERA PAGINA*/
+.frontpage-banner {
+
+}
+
+.international {
+	background-image: asset-url("profile_pictures/british-flag.jpg");
+	background-repeat: no-repeat;
+	background-size: 600px 400px;
+	background-position: -20px 0px;
+	transition-duration: 1s;
+}
+
+.international:hover{
+	background-position: -80px 0px;
+}
+
+.institute {
+	background-image: asset-url("profile_pictures/university.jpg");
+	background-repeat: no-repeat;
+	background-size: 600px 400px;
+	background-position: -20px 0px;
+	transition-duration: 1s;
+}
+
+.institute:hover{
+	background-position: -80px 0px;
+}
+
+.startup {
+	background-image: asset-url("profile_pictures/thinker_startup.jpg");
+	background-repeat: no-repeat;
+	background-position: -30px 0px;
+	transition-duration: 1s;
+}
+
+.startup:hover{
+	background-position: -100px 0px;
+}
+
+.executive{
+	background-image: asset-url("profile_pictures/young_executive.jpg");
+	background-repeat: no-repeat;
+	background-position: -230px 0px;
+	transition-duration: 1s;
+}
+
+.executive:hover{
+	background-position: -300px 0px;
+}
+
+.banner-block{
+	padding-right: 0px;
+	padding-left: 0px;
+	min-height: 400px;
+}
+
+.banner-block-button {
+	display: block;
+	text-align: center;
+	margin-top: 350px;
+	width: 100%;
+	background-color: #525252;
+	height: 50px;
+	padding-top: 12px;
+	border-top: 2px solid #c1c1c1;
+}
+
+.banner-block-button a{
+	color: #FFF;
+	font-size: 1.7em;
+	text-shadow: 0 0 3px #666666;
+	font-weight: bolder;
+}
+
+.banner-block-button a:hover {
+	font-size: 1.8em;
+	color: #FFF;
+	text-decoration: none;
+}
+
+
+/* FIN BANNER DE LA PRIMERA PAGINA*/
+
+/*QUIZ FRAME*/
+.quiz-login p{
+	text-align: center;
+	font-size: 1.2em;
+}
+
+.quiz-frame {
+	margin-bottom: 40px;
+	border: none;
+	width: 100%;
+	min-height: 500px;
+	overflow: hidden;
+}
+/*FIN QUIZ*/
 
 /*TABLA DE CURSOS DISPONIBLES*/
 

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @greeting+" "+@user.firstname+" "+@user.lastname %>,</h1>
+    <p>
+      Mediante este correo puedes entrar a cotizar los cursos que Longbourn Institute tiene para ti!<br>
+    </p>
+    <p>
+      Para continuar con la cotizacion de cursos en Longbourn Institute, te invitamos a hacer click en el siguiente <strong><%=link_to "Link", @url%></strong>
+    </p>
+    <br>
+    <p>Te esperamos!</p>
+    
+    -------------------------------------------------------
+    <p>Este correo fue generado automáticamente, por lo cual se sugiere no responderlo.</p>
+  </body>
+</html>

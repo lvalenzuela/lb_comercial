@@ -14,6 +14,10 @@
 							<%=f.text_field :lastname, :class => "form-control"%>
 						</div>
 						<div class="form-group">
+        				 	<label for="register-username"> <b>Email</b></label>
+							<%=f.email_field :email, :class => "form-control"%>
+						</div>
+						<div class="form-group">
 							<label for="register-phone"> <b>Telefono</b></label>
 							<%=f.phone_field :mobile, :class => "form-control"%>
 						</div>
@@ -22,19 +26,7 @@
 							<%=f.select :gender, options_for_select([["Masculino","male"],["Femenino","female"]], "male"), {}, {:class => "form-control"}%>
 						</div>
 						<div class="form-group">
-        				 	<label for="register-username"> <b>Email</b></label>
-							<%=f.email_field :email, :class => "form-control"%>
-						</div>
-						<div class="form-group">
-        				 	<label for="register-password"> <b>Password</b></label>
-							<%=f.password_field :password, :class => "form-control"%>
-						</div>
-						<div class="form-group">
-        				 	<label for="register-password2"> <b>Re-enter Password</b></label>
-							<%=f.password_field :password_confirmation, :class => "form-control"%>
-						</div>
-						<div class="form-group">
-							<%=f.submit "Registrar Usuario", :class => "btn pull-right"%>
+							<%=f.submit "Enviar Datos", :class => "btn pull-right"%>
 							<div class="clearfix"></div>
 						</div>
 					<%end%>

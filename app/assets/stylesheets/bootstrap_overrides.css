@@ -1,22 +1,39 @@
 .navbar-collapse {
-	font-family: "Big Caslon", "Book Antiqua", "Palatino Linotype", Georgia, serif;
-	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bolder;
 }
 
 .navbar-collapse a{
-	font-size: 0.9em;
+	font-size: 1.6em;
 	padding: 0px 0px;
+
+}
+
+.navbar .quotation-link a{
+	padding-top: 5px;
+	color: #FFF;
+
 }
 
 /*overrides de bootstrap*/
 
 .navbar{
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #858585 0%, #4A4A4A 100%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #858585 0%, #4A4A4A 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #858585 0%, #4A4A4A 100%);
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #858585), color-stop(1, #4A4A4A));
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #858585 0%, #4A4A4A 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #858585 0%, #4A4A4A 100%);
 	margin-bottom: 0;
 	padding: 0 auto;
-	background: #222;
-	background: rgba(34, 34, 34, 0.8);
-	border: none;
 	border-radius: 0;
+	border: solid 1px #CCC;
 }
 
 .navbar ul {
@@ -25,20 +42,23 @@
 }
 
 .navbar a{
+	color: #FFF !important;
 	vertical-align: middle;
 }
 
 .navbar ul.dropdown-menu {
+	min-width: 100%;
 }
 
-.navbar ul.dropdown-menu li {
+.navbar ul.dropdown-menu li.active {
 }
 
 .navbar ul.dropdown-menu li a{
+	color: #000 !important;
 	display: block;
 	padding: 0.8em 1em;
 	vertical-align: middle;
-	font-size: 1em;
+	font-size: 1.3em;
 }
 
 /*Esto hace que el menu de navegacion se despliegue sin hacer click en los elementos*/

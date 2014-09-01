@@ -1,9 +1,7 @@
 class WebUser < ActiveRecord::Base
 	require 'bcrypt'
-	validates_confirmation_of :password
 	validates :email, uniqueness: true, presence: true 
 	before_create :set_defaults
-	before_create :set_password
 	before_create  {generate_token(:oauth_token)}
 	before_update :set_course_level
 
