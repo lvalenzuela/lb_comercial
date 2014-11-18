@@ -4,21 +4,25 @@
 		<div class="col-sm-3 banner-block executive">
 			<div class="banner-block-button">
 				<%=link_to "Longbourn Executive", "/longbourn-executive", {:class => "banner-block-btn"}%>
+				<span class="btn-subtitle">Cursos en tu oficina</span>
 			</div>
 		</div>
 		<div class="col-sm-3 banner-block institute">
 			<div class="banner-block-button">
 				<%=link_to "Longbourn Institute", "/longbourn-institute", {:class => "banner-block-btn"}%>
+				<span class="btn-subtitle">Cursos en los mejores horarios</span>
 			</div>
 		</div>
 		<div class="col-sm-3 banner-block startup">
 			<div class="banner-block-button">
 				<%=link_to "Longbourn StartUp", "/longbourn-startup", {:class => "banner-block-btn"}%>
+				<span class="btn-subtitle">Cursos a los mejores precios</span>
 			</div>
 		</div>
 		<div class="col-sm-3 banner-block international">
 			<div class="banner-block-button">
 				<%=link_to "Cursos Internacionales", "/cursos-internacionales", {:class => "banner-block-btn"}%>
+				<span class="btn-subtitle">TOEFL, IELTS, TOEIC</span>
 			</div>
 		</div>
 	</div>
@@ -37,7 +41,7 @@
 	<div class="container-fluid">
 		<h2 style="text-align: center;">¿Por Que Longbourn?</h2>
 		<div class="row">
-			<div class="col-xs-5 col-xs-offset-1">
+			<div class="col-xs-4 col-xs-offset-1">
 				<div class="portfolio-item">
 					<div class="portfolio-image">
 						<%=image_tag "site-pics/testing.jpg", :size => "450x210"%>
@@ -51,7 +55,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-5 col-xs-offset-1">
+			<div class="col-xs-4 col-xs-offset-2">
 				<div class="portfolio-item">
 					<div class="portfolio-image">
 						<%=image_tag "site-pics/teacher_pic.jpg", :size => "450x210"%>
@@ -67,7 +71,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-xs-5 col-xs-offset-1">
+			<div class="col-xs-4 col-xs-offset-1">
 				<div class="portfolio-item">
 					<div class="portfolio-image">
 						<%=image_tag "site-pics/health-and-laws.jpg", :size => "450x210"%>
@@ -81,7 +85,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-5 col-xs-offset-1">
+			<div class="col-xs-4 col-xs-offset-2">
 				<div class="portfolio-item">
 					<div class="portfolio-image">
 						<%=image_tag "site-pics/office-meeting.jpg", :size => "450x210"%>
@@ -99,25 +103,12 @@
 	</div>
 </div>
 
-<!-- Call to Action Bar -->
-<div class="section section-white">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="calltoaction-wrapper">
-					<h3>Juega a nuestro Juego y descubre tu nivel de Inglés!</h3> <%=link_to "Jugar", {:controller => "site", :action => "play_tha_game"}, {:class => "btn btn-lg  btn-grey"}%>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- End Call to Action Bar -->
 
 
 <!-- Our Clients -->
 <div class="section">
 	<div class="container-fluid">
-		<h2>Our Clients</h2>
+		<h2>Nuestros Clientes</h2>
 		<div class="clients-logo-wrapper text-center row">
 			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/canon.png"%></a></div>
 			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/cisco.png"%></a></div>

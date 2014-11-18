@@ -240,30 +240,37 @@
 	min-height: 400px;
 }
 
+
 .banner-block-button {
 	display: block;
 	text-align: center;
 	margin-top: 350px;
 	width: 100%;
 	background-color: rgba(0,0,0,1);
-	height: 50px;
+	height: 70px;
 	padding-top: 12px;
 	border-top: 2px solid #c1c1c1;
 }
 
+.banner-block-button span.btn-subtitle {
+	color: #FFF;
+	display: block;
+	font-style: italic;
+	font-size: 14px;
+}
+
 .banner-block-button a{
 	color: #FFF;
-	font-size: 1.7em;
+	font-size: 1.5em;
 	text-shadow: 0 0 3px #666666;
-	font-weight: bolder;
+	font-weight: normal;
 }
 
 .banner-block-button a:hover {
-	font-size: 1.8em;
+	font-size: 1.6em;
 	color: #FFF;
 	text-decoration: none;
 }
-
 
 /* FIN BANNER DE LA PRIMERA PAGINA*/
 

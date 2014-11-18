@@ -1,12 +1,11 @@
 .navbar-collapse {
 	font-family: 'Open Sans', sans-serif;
-	font-weight: bolder;
 }
 
 .navbar-collapse a{
 	font-size: 1.3em;
 	padding: 0px 0px;
-
+	height: 55px;
 }
 
 .navbar .quotation-link a{
@@ -37,9 +36,14 @@
 	padding: 0;
 }
 
+.navbar li {
+	margin-right: 30px;
+}
+
 .navbar a{
 	color: #FFF !important;
 	vertical-align: middle;
+	font-weight: normal;
 }
 
 .navbar ul.dropdown-menu {

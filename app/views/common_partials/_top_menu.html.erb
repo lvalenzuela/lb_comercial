@@ -40,37 +40,30 @@
 
     </div>
     <div id="navbarCollapse" class="collapse navbar-collapse">
-      <div class="row">
-        <div class="col-xs-12">
-          <ul class="nav navbar-nav">
-            <li>
-              <%=link_to "Inglés In Office", :controller => :info, :action => :longbourn_executive%>
-            </li>
-            <li>
-              <%=link_to "Inglés en Sede", :controller => :info, :action => :cursos_en_sede%>
-            </li>
-            <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">Preparación Tests <b class="caret"></b></a>
-                <ul role="menu" class="dropdown-menu">
-                  <li><%=link_to "TOEFL", :controller => :info, :action => :cursos_toefl%></li>
-                  <li><%=link_to "IELTS", :controller => :info, :action => :cursos_ielts%></li>
-                  <li><%=link_to "TOEIC", :controller => :info, :action => :cursos_toeic%></li>
-                </ul>
-            </li>
-            <li>
-              <%=link_to "Metodología TEG", :controller => :info, :action => :teg_method%>
-            </li>
-            <li>
-              <%=link_to "Empresas", :controller => :info, :action => :cursos_empresas%>
-            </li>
-            <li>
-              <%=link_to "Contactanos", {:controller => :site, :action => :contact_us}%>
-            </li>
-            <li>
-              <%=link_to "Cotiza!", {:controller => :site, :action => :show_challenges}%>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <ul class="nav navbar-nav">
+        <li>
+          <%=link_to "Inglés In Office", :controller => :info, :action => :longbourn_executive%>
+        </li>
+        <li>
+          <%=link_to "Inglés en Sede", :controller => :info, :action => :cursos_en_sede%>
+        </li>
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Preparación Tests <b class="caret"></b></a>
+            <ul role="menu" class="dropdown-menu">
+              <li><%=link_to "TOEFL", :controller => :info, :action => :cursos_toefl%></li>
+              <li><%=link_to "IELTS", :controller => :info, :action => :cursos_ielts%></li>
+              <li><%=link_to "TOEIC", :controller => :info, :action => :cursos_toeic%></li>
+            </ul>
+        </li>
+        <li>
+          <%=link_to "Metodología TEG", :controller => :info, :action => :teg_method%>
+        </li>
+        <li>
+          <%=link_to "Empresas", :controller => :info, :action => :cursos_empresas%>
+        </li>
+        <li>
+          <%=link_to "Contactanos", {:controller => :site, :action => :contact_us}%>
+        </li>
+      </ul>
     </div>
   </nav>
