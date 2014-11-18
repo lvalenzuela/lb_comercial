@@ -25,11 +25,11 @@ class UsersController < ApplicationController
 	end
 
 	def longbourn_login
-		user = WebUser.where(:email => params[:email]).first()
+		user = WebUser.find_by_email(params[:email])
 		if user.blank? || user.nil?
 			#Login fallido, el usuario no existe
-			flash[:notice] = "No estas registrado en el sitio. Registrate!"
-			redirect_to :controller => :site, :action => :signup
+			flash[:notice] = "No estas registrado en el sitio. <br> Registrate y cotiza tu curso!"
+			redirect_to :controller => :site, :action => :redirect_view, :controller_name => "site", :action_name => "signup"
 		else
 			#login exitoso
 			#se envía un mail con el codigo de acceso

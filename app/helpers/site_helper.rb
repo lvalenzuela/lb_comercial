@@ -1,4 +1,44 @@
 module SiteHelper
+
+	def classroom_matching_label(matching_id)
+		if matching_id
+			return ClassroomMatching.find(matching_id).matching_label
+		else
+			return ""
+		end
+	end
+
+	def location_label(location_id)
+		if location_id
+			return Location.find(location_id).name
+		else
+			return ""
+		end
+	end
+
+	def week_day(day_number)
+		case day_number
+		when 1
+			return "Lunes"
+		when 2
+			return "Martes"
+		when 3
+			return "Miércoles"
+		when 4
+			return "Jueves"
+		when 5
+			return "Viernes"
+		when 6
+			return "Sábado"
+		else
+			return "Domingo"
+		end
+	end
+
+	def course_mode_name(mode_id)
+		return CourseMode.find(mode_id).mode_name
+	end
+
 	def get_course_level_name(level_id)
 		return CourseLevel.find(level_id).course_level
 	end
@@ -25,15 +65,15 @@ module SiteHelper
 	end
 
 	def get_teacher_name(teacher_id)
-		teacher = User.find(teacher_id)
-		return teacher.firstname+" "+teacher.lastname
+		teacher = TeacherV.find(teacher_id)
+		return teacher.name
 	end
 
 	def available_courses_for_month(courses,date,mode)
 		if date == Time.now
-			return courses.where("start_date BETWEEN '#{(date + 1.days).strftime('%Y-%m-%d')}' AND '#{(date + 1.weeks).end_of_week.strftime('%Y-%m-%d')}' AND mode = '#{mode}'").count
+			return courses.where("start_date BETWEEN '#{(date + 1.days).strftime('%Y-%m-%d')}' AND '#{(date + 1.weeks).end_of_week.strftime('%Y-%m-%d')}' AND mode = #{mode}").count
 		else
-			return courses.where("start_date BETWEEN '#{date.beginning_of_week.strftime('%Y-%m-%d')}' AND '#{(date + 1.weeks).end_of_week.strftime('%Y-%m-%d')}' AND mode = '#{mode}'").count
+			return courses.where("start_date BETWEEN '#{date.beginning_of_week.strftime('%Y-%m-%d')}' AND '#{(date + 1.weeks).end_of_week.strftime('%Y-%m-%d')}' AND mode = #{mode}").count
 		end
 	end
 
@@ -41,8 +81,12 @@ module SiteHelper
 		return User.find(teacher_id).avatar.url
 	end
 
-	def price_with_discount(course,features)
-		price = get_course_feature(features.where(:course_id => course.id),"price").to_i
+	def price_with_discount(course)
+		price = CourseModeZohoProductMap.find_by_zoho_product_id(course.zoho_product_id).price.to_i
 		return price * (100 - course.discount_factor)/100
+	end
+
+	def course_price(course)
+		CourseModeZohoProductMap.find_by_zoho_product_id(course.zoho_product_id).price.to_i
 	end
 end

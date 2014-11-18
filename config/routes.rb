@@ -14,6 +14,16 @@ Rails.application.routes.draw do
   match "cursos-internacionales", to: "info#cursos_internacionales", via: [:get]
 
 
+  match "longbourn-executive", to: "info#longbourn_executive", via: [:get]
+  match "ingles-en-sede", to: "info#inges_en_sede", via: [:get]
+  match "cursos-toefl", to: "info#cursos_toefl", via: [:get]
+  match "cursos-ielts", to: "info#cursos_ielts", via: [:get]
+  match "cursos-toeic", to: "info#cursos_toeic", via: [:get]
+  match "metodologia-teg", to: "info#teg_method", via: [:get]
+  match "cursos-empresas", to: "info#cursos_empresas", via: [:get]
+
+  #rutas antiguas
+
   match "cursos-de-ingles-personalizados-in-office", to: "info#cursos_individuales_in_office", via: [:get]
   match "workshops-de-inmersion-en-ingles", to: "info#workshops_inmersion", via: [:get]
   match "workshops-interempresariales-en-ingles", to: "info#workshops_interempresariales", via: [:get]
@@ -22,10 +32,7 @@ Rails.application.routes.draw do
   match "cursos-de-ingles-semi-presenciales", to: "info#cursos_semi_presenciales", via: [:get]
   match "cursos-de-ingles-startup-presenciales", to: "info#cursos_startup_presenciales", via: [:get]
   match "cursos-de-ingles-startup-semi-presenciales", to: "info#cursos_startup_semi_presenciales", via: [:get]
-  match "cursos-de-preparacion-toefl", to: "info#cursos_toefl", via: [:get]
-  match "cursos-de-preparacion-ielts", to: "info#cursos_ielts", via: [:get]
-  match "cursos-de-preparacion-toeic", to: "info#cursos_toeic", via: [:get]
-  match "teg-method", to: "info#teg_method", via: [:get]
+
   match "programas-ejecutivos", to: "info#programas_ejecutivos", via: [:get]
   match "programas-corporativos", to: "info#programas_corporativos", via: [:get]
   match "soluciones-de-motivacion", to: "info#soluciones_motivacion", via: [:get]
@@ -67,6 +74,9 @@ Rails.application.routes.draw do
       post "test_results"
       post "search"
       get "course_details_report"
+      get "contact_sales_agent"
+      get "contact_us"
+      post "contact"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

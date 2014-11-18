@@ -6,14 +6,14 @@
 				<%=link_to "Longbourn Executive", "/longbourn-executive", {:class => "banner-block-btn"}%>
 			</div>
 		</div>
-		<div class="col-sm-3 banner-block startup">
-			<div class="banner-block-button">
-				<%=link_to "Longbourn StartUp", "/longbourn-startup", {:class => "banner-block-btn"}%>
-			</div>
-		</div>
 		<div class="col-sm-3 banner-block institute">
 			<div class="banner-block-button">
 				<%=link_to "Longbourn Institute", "/longbourn-institute", {:class => "banner-block-btn"}%>
+			</div>
+		</div>
+		<div class="col-sm-3 banner-block startup">
+			<div class="banner-block-button">
+				<%=link_to "Longbourn StartUp", "/longbourn-startup", {:class => "banner-block-btn"}%>
 			</div>
 		</div>
 		<div class="col-sm-3 banner-block international">
@@ -26,58 +26,75 @@
 
 <div class="section">
 	<div class="container-fluid">
-		<h2 style="text-align: center;">The Longbourn Experience</h2>
-		<div class="col-sm-12">
-			<ul class="timeline">
-				<li>
-					<div class="timeline-badge"><i class="fa fa-chevron-circle-down"></i></div>
-					<div class="timeline-panel">
-						<div class="timeline-heading">
-						  <h4 class="timeline-title">Define tus Metas</h4>
-						  <p><small class="text-muted"><i class="fa fa-trophy"></i> ¿Qué quieres lograr con Longbourn?</small></p>
-						</div>
-						<div class="timeline-body">
-						  <p>Selecciona un objetivo a lograr con <strong>Longbourn Institute</strong>.</p>
-						</div>
+		<h2 style="text-align: center;">Longbourn</h2>
+		<div class="col-xs-6 col-xs-offset-3">
+			<iframe width="100%" height="315" src="//www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+</div>
+
+<div class="section">
+	<div class="container-fluid">
+		<h2 style="text-align: center;">¿Por Que Longbourn?</h2>
+		<div class="row">
+			<div class="col-xs-5 col-xs-offset-1">
+				<div class="portfolio-item">
+					<div class="portfolio-image">
+						<%=image_tag "site-pics/testing.jpg", :size => "450x210"%>
 					</div>
-				</li>
-				<li class="timeline-inverted">
-					<div class="timeline-badge"><i class="fa fa-chevron-circle-down"></i></div>
-					<div class="timeline-panel">
-						<div class="timeline-heading">
-						  <h4 class="timeline-title">Descubre tu Nivel</h4>
-						  <p><small class="text-muted"><i class="fa fa-gamepad"></i> Quiz de diagnostico Longbourn</small></p>
-						</div>
-						<div class="timeline-body">
-						  <p>Diviertete con nuestro entretenido <strong>Quiz de Diagnóstico</strong> y descubre tu ruta a seguir en Longbourn Institute</p>
-						</div>
+					<div class="portfolio-info">
+						<ul>
+							<li class="portfolio-project-name">Metodología TEG</li>
+							<li>La Metodología TEG desarrolla simultáneamente, de forma diferente, dinámica y entretenida, las 4 habilidades del inglés: leer, escribir, escuchar y hablar.</li>
+							<li class="read-more"><a href="#" class="btn">Leer Más</a></li>
+						</ul>
 					</div>
-				</li>
-				<li>
-					<div class="timeline-badge"><i class="fa fa-chevron-circle-down"></i></div>
-					<div class="timeline-panel">
-						<div class="timeline-heading">
-						  <h4 class="timeline-title">Cotiza tu Curso</h4>
-						  <p><small class="text-muted"><i class="fa fa-university"></i> Cursos de Longbourn</small></p>
-						</div>
-						<div class="timeline-body">
-						  <p>Selecciona uno de los cursos de <strong>Longbourn Institute</strong> en la modalidad y fecha que más te acomode.</p>
-						</div>
+				</div>
+			</div>
+			<div class="col-xs-5 col-xs-offset-1">
+				<div class="portfolio-item">
+					<div class="portfolio-image">
+						<%=image_tag "site-pics/teacher_pic.jpg", :size => "450x210"%>
 					</div>
-				</li>
-				<li class="timeline-inverted">
-					<div class="timeline-badge"><i class="fa fa-chevron-circle-right"></i></div>
-					<div class="timeline-panel">
-						<div class="timeline-heading">
-						  <h4 class="timeline-title">Vive la Experiencia Longbourn!</h4>
-						  <p><small class="text-muted"><i class="fa fa-gamepad"></i> Cursos a la Medida</small></p>
-						</div>
-						<div class="timeline-body">
-						  <p>Vive la <strong>Experiencia Longbourn</strong> en nuestras salas y con nuestros profesores.</p>
-						</div>
+					<div class="portfolio-info">
+						<ul>
+							<li class="portfolio-project-name">Nuestros Profesores</li>
+							<li>Nuestros profesores son titulados de las mejores Universidades y son capacitados en Longbourn, entregándoles las herramientas para que realicen clases excelentes.</li>
+							<li class="read-more"><a href="page-portfolio-item.html" class="btn">Leer Más</a></li>
+						</ul>
 					</div>
-				</li>
-			</ul>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-5 col-xs-offset-1">
+				<div class="portfolio-item">
+					<div class="portfolio-image">
+						<%=image_tag "site-pics/health-and-laws.jpg", :size => "450x210"%>
+					</div>
+					<div class="portfolio-info">
+						<ul>
+							<li class="portfolio-project-name">Especialistas en Profesionales y Ejecutivos</li>
+							<li>Diseñamos soluciones para facilitar tu experiencia estudiando Inglés. En Longbourn también podrás compartir e intercambiar ideas con otros Profesionales que buscan tus mismos objetivos.</li>
+							<li class="read-more"><a href="page-portfolio-item.html" class="btn">Leer Más</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-5 col-xs-offset-1">
+				<div class="portfolio-item">
+					<div class="portfolio-image">
+						<%=image_tag "site-pics/office-meeting.jpg", :size => "450x210"%>
+					</div>
+					<div class="portfolio-info">
+						<ul>
+							<li class="portfolio-project-name">En tu Oficina o en Longbourn Las Condes</li>
+							<li>Sabemos que tu tiempo y recursos son valiosos. Puedes acceder a nuestros Cursos de Inglés en tu Oficina o en Longbourn Las Condes, a pasos del Metro Escuela Militar.</li>
+							<li class="read-more"><a href="page-portfolio-item.html" class="btn">Leer Más</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

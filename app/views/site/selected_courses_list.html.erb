@@ -6,7 +6,7 @@
 				<div class="col-sm-10 col-sm-offset-1 course-details">
 					<div class="row">
 						<div class="col-sm-3 teacher-img">
-							<%=image_tag get_teacher_image(c.teacher_user_id)%>
+							<%=image_tag get_teacher_image(c.main_teacher_id)%>
 						</div>
 						<div class="col-sm-9 details-box">
 							<h2><%=c.coursename%> - <%=get_course_level_name(c.course_level_id)%></h2>
@@ -15,24 +15,28 @@
 									<label>Descripcion del Curso </label>
 									<span class="description"><%=c.description%></span>
 									<label>Modalidad </label> 
-									<span class="description"><%=c.mode%></span>
+									<span class="description"><%=course_mode_name(c.mode)%></span>
 									<label>Fecha de Inicio</label>
 									<span class="description"><%=c.start_date.strftime("%d-%m-%Y")%></span>
 								</div>
 								<div class="col-sm-4 detailsbox">
 									<label>Profesor</label>
-									<span class="description"><%=get_teacher_name(c.teacher_user_id)%></span>
+									<span class="description"><%=get_teacher_name(c.main_teacher_id)%></span>
 									<label>Ubicacion</label> 
-									<span class="description"><%=c.location%></span>
+									<span class="description"><%=location_label(c.location_id)%></span>
 									<label>Horario</label> 
-									<span class="description"><%=get_course_feature(@features.where(:course_id => c.id),"first_day")+" - "+get_course_feature(@features.where(:course_id => c.id),"first_day_hour")+" / "+get_course_feature(@features.where(:course_id => c.id),"second_day")+" - "+get_course_feature(@features.where(:course_id => c.id),"second_day_hour")%></span>
+									<span class="description">
+										<%CourseSessionWeekday.where(:course_id => c.id).each do |sess|%>
+											<%=week_day(sess.day_number)%> - <%=sess.session_start_hour%> <br>
+										<%end%>
+									</span>
 								</div>
 								<div class="col-sm-4 pricebox">
 									<label>Precio</label> 
-									<span class="description"><%=number_to_currency(price_with_discount(c,@features), :precision => 0)%></span>
+									<span class="description"><%=number_to_currency(price_with_discount(c), :precision => 0)%></span>
 									<span class="discount-note">(<b><%=c.discount_pct%></b> de Descuento.)</span>
 									<label>Precio Original</label>
-									<span class="description"><%=number_to_currency(get_course_feature(@features.where(:course_id => c.id),"price").to_i, :precision => 0)%></span>
+									<span class="description"><%=number_to_currency(course_price(c).to_i, :precision => 0)%></span>
 								</div>
 							</div>
 							<div class="pull-right">

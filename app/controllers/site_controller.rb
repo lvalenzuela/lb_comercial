@@ -16,6 +16,10 @@ class SiteController < ApplicationController
 		session[:action_milestone] = action_name
 	end
 
+	def contact_us
+		
+	end
+
 	def signup
 		@web_user = WebUser.new()
 	end
@@ -28,15 +32,74 @@ class SiteController < ApplicationController
 		@user = current_user
 	end
 
+	def redirect_view
+		@controller = params[:controller_name]
+		@action = params[:action_name]
+	end
+
+	def show_challenges
+		session[:action_milestone] = action_name
+	end
+
+	def play_tha_game
+		session[:action_milestone] = action_name
+		if current_user && current_user.test_score
+			redirect_to :action => :available_courses
+		end
+	end
+
+	def test_results
+		if params[:results]
+			@user = current_user
+			if @user
+				@user.test_score = params[:results]
+				@user.save!
+				redirect_to :action => :available_courses
+			else
+				session[:test_score] = params[:results]
+				flash[:notice] = "Registrate para conocer tu nivel de inglés y los cursos que te corresponden!"
+				redirect_to :action => :signup
+			end
+		else
+			flash[:notice] = "No se ha registrado un puntaje para el Quiz de Diagnostico."
+			redirect_to :action => session[:action_milestone]
+		end
+	end
+
+	def available_courses
+		session[:action_milestone] = action_name
+		@current_date = Time.now
+		@modes = CourseMode.where(:enabled => true)
+		@courses = Course.where("WEEK(start_date) BETWEEN WEEK('#{@current_date.strftime('%Y-%m-%d')}') AND (WEEK('#{@current_date.strftime('%Y-%m-%d')}')+6) AND course_level_id = #{current_user.course_level_id}")
+	end
+
+	def selected_courses_list
+		@courses = Course.where("WEEK(start_date) BETWEEN WEEK('#{params[:date]}') AND (WEEK('#{params[:date]}')+1) and mode = #{params[:mode]} and course_level_id = #{current_user.course_level_id}")
+		@date = Date.parse(params[:date])
+	end
+
+	def course_details_report
+		course = Course.find(params[:course_id])
+		course_level = CourseLevel.find(course.course_level_id).course_level
+
+		respond_to do |format|
+			format.html
+			format.pdf do
+				pdf = CourseDetailsPdf.new(course,view_context)
+				send_data pdf.render, filename: course.coursename+"_"+course_level+"_Details.pdf", type: "application/pdf"
+			end
+		end
+	end
+
 	def confirm_purchase
 		if params[:course_id]
 			session[:selected_course] = params[:course_id]
 		end
 		@user = current_user
 		@course = Course.find(session[:selected_course])
-		@course_features = CourseFeature.where(:course_id => @course.id)
+		@product_features = CourseMode.where(:zoho_product_id => @course.zoho_product_id)
+		@week_sessions = CourseSessionWeekday.where(:course_id => @course.id)
 	end
-
 
 	def register_purchase
 		cm = CourseMember.where(:course_id => session[:selected_course], :web_user_id => current_user.id)
@@ -72,70 +135,12 @@ class SiteController < ApplicationController
 		end
 	end
 
-	def redirect_view
-
-	end
-
-	def show_challenges
-		session[:action_milestone] = action_name
-	end
-
-	def play_tha_game
-		session[:action_milestone] = action_name
-		if current_user && current_user.test_score
-			redirect_to :action => :available_courses
-		end
-	end
-
-	def test_results
-		if params[:results]
-			@user = current_user
-			if @user
-				@user.test_score = params[:results]
-				@user.save!
-				redirect_to :action => :available_courses
-			else
-				session[:test_score] = params[:results]
-				flash[:notice] = "Registrate para conocer tu nivel de inglés y los cursos que te corresponden!"
-				redirect_to :action => :signup
-			end
-		else
-			flash[:notice] = "No se ha registrado un puntaje para el Quiz de Diagnostico."
-			redirect_to :action => session[:action_milestone]
-		end
-	end
-
-	def available_courses
-		session[:action_milestone] = action_name
-
-		@current_date = Time.now
-
-		raw_products = zoho_product_list
-		if raw_products["code"] == 0
-			@modes = raw_products["items"].uniq{|i| i["name"]}
-		else
-			@modes = nil
-		end
-		@courses = Course.where("WEEK(start_date) BETWEEN WEEK('#{@current_date.strftime('%Y-%m-%d')}') AND (WEEK('#{@current_date.strftime('%Y-%m-%d')}')+6) AND course_level_id = #{current_user.course_level_id}")
-	end
-
-	def selected_courses_list
-		@courses = Course.where("WEEK(start_date) BETWEEN WEEK('#{params[:date]}') AND (WEEK('#{params[:date]}')+1) and mode = '#{params[:mode]}' and course_level_id = #{current_user.course_level_id}")
-		@features = CourseFeature.where(:course_id => @courses.map{|c| c.id})
-		@date = Date.parse(params[:date])
-	end
-
-	def course_details_report
-		course = Course.find(params[:course_id])
-		course_level = CourseLevel.find(course.course_level_id).course_level
-
-		respond_to do |format|
-			format.html
-			format.pdf do
-				pdf = CourseDetailsPdf.new(course,view_context)
-				send_data pdf.render, filename: course.coursename+"_"+course_level+"_Details.pdf", type: "application/pdf"
-			end
-		end
+	def contact_sales_agent
+		user = WebUser.find(params[:userid])
+		course = Course.find(params[:courseid])
+		WebUserMailer.contact_sales_agent(user,course).deliver
+		flash[:notice] = "Tus datos se han enviado a nuestros ejecutivos de ventas.<br> Nos pondremos en contacto contigo dentro de las siguientes 24 horas."
+		redirect_to :action => :redirect_view, :controller_name => "site", :action_name => "index"
 	end
 
 

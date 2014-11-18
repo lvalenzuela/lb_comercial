@@ -51,15 +51,15 @@ class CourseDetailsPdf < Prawn::Document
 		font "Helvetica", :style => :normal, :size => 12
 		move_down 10
 
-		teacher = User.find(course.teacher_user_id)
+		teacher = UserV.find(course.main_teacher_id)
 		features = CourseFeature.where(:course_id => course.id)
 
 		data = [["<b>Nombre del Curso</b>",course.coursename],
 				["<b>Descripcion</b>", course.description],
-				["<b>Modalidad</b>", course.mode],
+				["<b>Modalidad</b>", CourseMode.find(course.mode).mode_name],
 				["<b>Fecha de Inicio</b>", I18n.l(course.start_date, :format => :default)],
 				["<b>Nombre Profesor</b>", teacher.firstname+" "+teacher.lastname],
-				["<b>Ubicación</b>", course.location],
+				["<b>Ubicación</b>", Location.find(course.location_id).name],
 				["<b>Horario</b>", get_course_feature(features.where(:course_id => course.id),"first_day")+" - "+get_course_feature(features.where(:course_id => course.id),"first_day_hour")+" / "+get_course_feature(features.where(:course_id => course.id),"second_day")+" - "+get_course_feature(features.where(:course_id => course.id),"second_day_hour")],
 				["<b>Precio</b>", number_to_currency(get_course_feature(features.where(:course_id => course.id),"price").to_i, :precision => 0)]
 			]

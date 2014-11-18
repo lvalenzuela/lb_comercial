@@ -4,15 +4,19 @@
 		<div class="col-md-8 col-md-offset-2 ">
 			<div class="basic-login redirect-msg">
 				<%if flash[:notice]%>
-					<p><%=flash[:notice]%></p>
+					<p><%=flash[:notice].html_safe%></p>
 				<%end%>
 				<p>Será redirigido a la brevedad.</p>
 			</div>
 		</div>
 	</div>
 </div>
-<script>
+<%=javascript_tag do%>
     window.setTimeout(function(){
-        window.location.href = "http://localhost:3000";
+    	<%if @controller && @action%>
+    		window.location.href = "http://localhost:3000/<%=@controller%>/<%=@action%>";
+    	<%else%>
+        	window.location.href = "http://localhost:3000/";
+        <%end%>
     }, 5000);
-</script>
+<%end%>

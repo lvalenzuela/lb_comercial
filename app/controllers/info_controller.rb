@@ -1,7 +1,32 @@
 class InfoController < ApplicationController
 
+	
 	def longbourn_executive
-		@page_title = "Longbourn Executive"
+		@page_title = "Longbourn Executive: Cursos de Ingles para Ejecutivos"
+	end
+
+	def cursos_toefl
+		@page_title = "Cursos TOEFL"
+	end
+
+	def cursos_ielts
+		@page_title = "Cursos IELTS"
+	end
+
+	def cursos_toeic
+		@page_title = "Cursos TOEIC"
+	end
+
+	def teg_method
+		@page_title = "Metodología TEG"
+	end
+
+	def cursos_en_sede
+		@page_title = "Cursos en nuestra Sede"
+	end
+
+	def cursos_empresas
+		@page_title = "Cursos para Empresas"
 	end
 
 	def longbourn_startup
@@ -24,14 +49,6 @@ class InfoController < ApplicationController
 		@page_title = "Workshops de Inmersión en Inglés"
 	end
 
-	def workshops_interempresariales
-		@page_title = "Workshops InterEmpresariales en Inglés"
-	end
-
-	def cursos_grupales_in_office
-		@page_title = "Cursos de Inglés Grupales In Office"
-	end
-
 	def cursos_presenciales
 		@page_title = "Cursos de Inglés Presenciales"
 	end
@@ -42,26 +59,6 @@ class InfoController < ApplicationController
 
 	def cursos_startup_presenciales
 		@page_title = "Cursos de Inglés StartUp Presenciales"
-	end
-
-	def cursos_startup_semi_presenciales
-		@page_title = "Cursos de Inglés StartUp Semi Presenciales"
-	end
-
-	def cursos_toefl
-		@page_title = "Curso de Preparación TOEFL"
-	end
-
-	def cursos_ielts
-		@page_title = "Curso de Preparación IELTS"
-	end
-
-	def cursos_toeic
-		@page_title = "Curso de Preparación TOEIC"
-	end
-
-	def teg_method
-		@page_title = "TEG Method"
 	end
 
 	def programas_ejecutivos

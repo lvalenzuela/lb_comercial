@@ -17,31 +17,51 @@
 			</div>
 			<div class="col-sm-5 purchase-confirmation">
 				<h2>Datos del Curso Seleccionado</h2>
-				<label>Fecha Actual</label>
-				<span class="description"><%=Date.current%></span>
-
-				<label>Nombre del Curso</label>
-				<span class="description"><%=@course.coursename%></span>
-
-				<label>Modalidad</label>
-				<span class="description"><%=@course.mode%></span>
-
-				<label>Tipo de Curso</label>
-				<span class="description"><%=get_coursetype(@course.course_type_id)%></span>
-
-				<label>Fecha de Inicio</label>
-				<span class="description"><%=@course.start_date.strftime("%d-%m-%Y")%></span>
-
-				<label>Horario</label>
-				<span class="description"><%=get_course_feature(@course_features,"first_day")+" "+get_course_feature(@course_features,"first_day_hour")+" - "+get_course_feature(@course_features,"second_day")+" "+get_course_feature(@course_features,"second_day_hour")%></span>
-				<label>Precio</label>
-				<span class="description"><%=number_to_currency(price_with_discount(@course,@course_features),:precision => 0)%></span>
-				<span class="discount-note">(<b><%=@course.discount_pct%></b> de Descuento.)</span>
+				<table class="table">
+					<tr>
+						<th>Fecha Actual</th>
+						<td><%=Date.current%></td>
+					</tr>
+					<tr>
+						<th>Curso</th>
+						<td><%=@course.coursename%></td>
+					</tr>
+					<tr>
+						<th>Modalidad</th>
+						<td><%=course_mode_name(@course.mode)%></td>
+					</tr>
+					<tr>
+						<th>Tipo Curso</th>
+						<td><%=get_coursetype(@course.course_type_id)%></td>
+					</tr>
+					<tr>
+						<th>Fecha Inicio</th>
+						<td><%=l(@course.start_date, :format => "%d-%m-%Y")%></td>
+					</tr>
+					<tr>
+						<th>Ubicación</th>
+						<td><%=location_label(@course.location_id)%></td>
+					</tr>
+					<tr>
+						<th>Horario</th>
+						<td>
+							<%=classroom_matching_label(@course.classroom_matching_id)%>
+						</td>
+					</tr>
+					<tr>
+						<th>Precio</th>
+						<td><%=number_to_currency(price_with_discount(@course),:precision => 0)%> (<b><%=@course.discount_pct%></b> de Descuento.)</td>
+					</tr>
+					
+				</table>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-sm-4 col-sm-offset-4">
-				<%=link_to "Continuar Compra", {:controller => "site", :action => "register_purchase"}, {:class => "btn btn-lg btn-block"}%>
+			<div class="col-sm-4 col-sm-offset-2">
+				<%=link_to "<i class='fa fa-envelope fa-lg'></i> Contactar Agente de Ventas".html_safe, {:controller => :site, :action => :contact_sales_agent, :params => {:courseid => @course.id, :userid => current_user.id}}, {:class => "btn btn-lg btn-block"}%>
+			</div>
+			<div class="col-sm-4">
+				<%=link_to "<i class='fa fa-arrow-right fa-lg'></i> Continuar Compra".html_safe , {:controller => "site", :action => "register_purchase"}, {:class => "btn btn-lg btn-block"}%>
 			</div>
 		</div>
 	</div>

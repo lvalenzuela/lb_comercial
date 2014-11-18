@@ -49,3 +49,5 @@ gem 'figaro'
 gem "font-awesome-rails"
 gem "paperclip", "~> 3.5.2"
 gem 'prawn'
+gem "gmaps4rails"
+gem "underscore-rails"

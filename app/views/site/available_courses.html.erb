@@ -27,29 +27,29 @@
 		<%@modes.each do |m|%>
 	    <div class="row">
 	        <div class="col-xs-12 col-sm-4 course-mode">
-	            <%=m["name"]%>
+	            <%=m.mode_name%>
 	        </div>
 	        <div class="col-xs-12 col-sm-8 course-availability">
                 <div class="col-xs-4 col-sm-4 course-description first-month">
-                	<%courses_available = available_courses_for_month(@courses,@current_date,m["name"]).to_s%>
+                	<%courses_available = available_courses_for_month(@courses,@current_date,m.id).to_s%>
                 	<%if courses_available.to_i > 0%>
-                    	<%=link_to courses_available.to_s+" Cursos", {:controller => :site, :action => :selected_courses_list, :params => {:mode => m["name"], :date => (@current_date).strftime("%Y-%m-%d")}}%>
+                    	<%=link_to courses_available.to_s+" Cursos", {:controller => :site, :action => :selected_courses_list, :params => {:mode => m.id, :date => (@current_date).strftime("%Y-%m-%d")}}%>
                     <%else%>
                     	<i class="fa fa-times fa-lg"></i>
                     <%end%>
                 </div>
                 <div class="col-xs-4 col-sm-4 course-description second-month">
-                	<%courses_available = available_courses_for_month(@courses,@current_date + 2.weeks,m["name"]).to_s%>
+                	<%courses_available = available_courses_for_month(@courses,@current_date + 2.weeks,m.id).to_s%>
                 	<%if courses_available.to_i > 0%>
-                    	<%=link_to courses_available.to_s+" Cursos", {:controller => :site, :action => :selected_courses_list, :params => {:mode => m["name"], :date => (@current_date + 2.weeks).strftime("%Y-%m-%d")}}%>
+                    	<%=link_to courses_available.to_s+" Cursos", {:controller => :site, :action => :selected_courses_list, :params => {:mode => m.id, :date => (@current_date + 2.weeks).strftime("%Y-%m-%d")}}%>
                     <%else%>
                     	<i class="fa fa-times fa-lg"></i>
                     <%end%>
                 </div>
                 <div class="col-xs-4 col-sm-4 course-description third-month">
-                	<%courses_available = available_courses_for_month(@courses,@current_date + 4.weeks,m["name"]).to_s%>
+                	<%courses_available = available_courses_for_month(@courses,@current_date + 4.weeks,m.id).to_s%>
                 	<%if courses_available.to_i > 0%>
-                    	<%=link_to courses_available.to_s+" Cursos", {:controller => :site, :action => :selected_courses_list, :params => {:mode => m["name"], :date => (@current_date + 4.weeks).strftime("%Y-%m-%d")}}%>
+                    	<%=link_to courses_available.to_s+" Cursos", {:controller => :site, :action => :selected_courses_list, :params => {:mode => m.id, :date => (@current_date + 4.weeks).strftime("%Y-%m-%d")}}%>
                     <%else%>
                     	<i class="fa fa-times fa-lg"></i>
                     <%end%>
