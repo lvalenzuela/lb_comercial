@@ -13,3 +13,47 @@
 .info-frame h3 {
 	font-size: 24px;
 }
+
+.info-frame-img{
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.info-frame-img img {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.course-features-table{
+	font-size: 1.2em;
+}
+
+.course-features-table .table-row {
+	border: solid 1px #E5E5E5;
+	margin-bottom: 3px;
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+}
+
+.course-features-table .table-header {
+	font-size: 1.1em;
+	height: 80px;
+	padding: auto 0;
+	background-color: #E5E5E5;
+	font-weight: bolder;
+	margin-left: -15px;
+	padding-top: 20px;
+}
+
+.course-features-table .table-data {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.course-features-table .table-data .data-row {
+	display: block;
+}

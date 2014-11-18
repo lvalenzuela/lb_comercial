@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
 
   match "longbourn-executive", to: "info#longbourn_executive", via: [:get]
-  match "ingles-en-sede", to: "info#inges_en_sede", via: [:get]
+  match "ingles-en-sede", to: "info#cursos_en_sede", via: [:get]
   match "cursos-toefl", to: "info#cursos_toefl", via: [:get]
   match "cursos-ielts", to: "info#cursos_ielts", via: [:get]
   match "cursos-toeic", to: "info#cursos_toeic", via: [:get]
