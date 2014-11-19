@@ -100,6 +100,47 @@ ul.course-features-list li ul li{
 	display: block;
 }
 
+.feature-row {
+	margin-top: 12px;
+}
+
+.feature-box {
+	border: solid 2px #BEBEBE;  
+	-webkit-border-radius: 5px;
+	-webkit-background-clip: padding-box;
+	-moz-border-radius: 5px;
+	-moz-background-clip: padding;
+	border-radius: 5px;
+	background-clip: padding-box;
+	padding-top: 0px;
+}
+
+.feature-box .feature-box-header {
+	border-bottom: solid 2px #ccc;
+	padding-left: 12px;
+	margin-top: 0px;
+	font-size: 20px;
+}
+
+.feature-box .feature-box-body {
+	padding: 12px 5px;
+}
+
+.feature-box-body .feature-box-icon {
+	padding: 12px 5px;
+	text-align: center;
+}
+
+.feature-box-body .feature-box-info {
+
+}
+
+.feature-box-body .feature-box-info ul{
+	padding-left: 0;
+	font-size: 16px;
+	list-style-type: none;
+}
+
 .box {
 	padding: 5px;
 	border: solid 3px #6E6E6E;
