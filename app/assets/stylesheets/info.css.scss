@@ -3,15 +3,29 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+.info-section h1 {
+	margin-bottom: 20px;
+	padding-bottom: 6px;
+}
+
+.icon-frame {
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 20px;
+}
+
 .info-frame p{
-	font-size: 16px;
+	font-size: 18px;
+	text-align: justify;
 }
 
 .info-frame li{
-	font-size: 16px;
+	font-size: 18px;
+	padding: 3px 0px;
+	font-family: Arial, Helvetica, sans-serif
 }
 .info-frame h3 {
-	font-size: 24px;
+	font-size: 26px;
 }
 
 .info-frame-img{
@@ -26,24 +40,49 @@
 	margin-right: auto;
 }
 
+.info-frame-table {
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.course-features-list {
+	font-size: 16px;
+	font-family: Arial, Helvetica, sans-serif;
+	list-style-type: none;
+}
+
+ul.course-features-list li {
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+ul.course-features-list li ul {
+	list-style-type: circle;
+}
+
+ul.course-features-list li ul li{
+	font-size: 18px;
+	font-weight: normal;
+	line-height: 1.4;
+}
+
+
 .course-features-table{
 	font-size: 1.1em;
 }
 
 .course-features-table .table-row {
-	border: solid 1px #E5E5E5;
+	border: solid 1px #6E6E6E;
 	margin-bottom: 15px;
-	-webkit-border-radius: 5px;
-	-webkit-background-clip: padding-box;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+
 	-webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 	box-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 .course-features-table .table-header {
-	font-size: 1.1em;
+	font-size: 1.2em;
 	height: 80px;
 	padding: auto 0;
 	background-color: #E5E5E5;
@@ -110,7 +149,7 @@
 
 .product-box .product-box-body .body-section span.line {
 	padding: 5px;
-	font-size: 16px;
+	font-size: 18px;
 	text-align: center;
 	font-weight: bold;
 	display: block;

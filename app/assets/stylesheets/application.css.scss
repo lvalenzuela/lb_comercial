@@ -99,7 +99,7 @@
 + Testimonials Style - No Borders
 --------------------------------------------------------------------------*/
 .testimonial-nb h4 {
-  font-size: 1.4em;
+  font-size: 1.6em;
 }
 .testimonial-nb blockquote {
   margin: 0;
@@ -107,9 +107,10 @@
   border-left: none;
 }
 .testimonial-nb blockquote p {
-  font-size: 0.9em;
+  font-size: 1em;
   margin-bottom: 20px;
   line-height: 1.5;
+  text-align: justify;
 }
 .testimonial-nb .testimonial-bubble {
   text-align: center;
