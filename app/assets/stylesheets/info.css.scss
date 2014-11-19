@@ -209,3 +209,22 @@ ul.course-features-list li ul li{
 	padding-bottom: 6px;
 	vertical-align: middle;
 }
+
+/*carousel*/
+.carousel-wrapper {
+	height: 333;
+}
+
+.routes-list ul {
+	list-style-type: none;
+	display: block;
+}
+
+.routes-list li {
+	padding: 13px 0px;
+	font-size: 20px;
+}
+
+.routes-list li:hover {
+	background-color: #EDEDED;
+}

@@ -61,8 +61,24 @@
 				<p>
 					Nuestro modelo de aprendizaje de inglés es similar al escalamiento gradual de una montaña. Como se muestra en el siguiente esquema, se puede llegar a la cima por diferentes rutas:
 				</p>
-				<div class="info-frame-img">
-					<%=image_tag "site-pics/diagrama_cursos_1100.png", :size => "900x333"%>
+				<div class="row">
+					<div class="col-xs-8 carousel-wrapper">
+						<div class="owl-carousel">
+							<div class="item"><%=image_tag "site-pics/Diagrama_Ejemplo.png", :size => "600x333", :alt => "imagen 1"%></div>
+							<div class="item"><%=image_tag "site-pics/class_whiteboard.jpg", :size => "950x333", :alt => "imagen 1"%></div>
+							<div class="item"><%=image_tag "site-pics/health-and-laws.jpg", :size => "950x333", :alt => "imagen 1"%></div>
+						</div>
+					</div>
+					<div class="col-xs-4 routes-list">
+						<h2>Rutas de Longbourn</h2>
+						<ul>
+							<li id="test-btn1">Rutas</li>
+							<li id="test-btn2">Introductory</li>
+							<li id="test-btn3">Standard</li>
+							<li>Expert</li>
+							<li>Superior</li>
+						</ul>
+					</div>
 				</div>
 				<p>
 					Nuestros libros tienen nombres de montañas debido a que cada uno representa distinto grado de dificultad y permite alcanzar distintos objetivos, tal como se indican en el esquema.
@@ -81,6 +97,37 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript"> 
+	var owl = $(".owl-carousel");
+
+	owl.owlCarousel({
+
+	  navigation : false, // Show next and prev buttons
+	  slideSpeed : 300,
+	  paginationSpeed : 400,
+	  singleItem:true,
+	  transitionStyle : "fade"
+
+	  // "singleItem:true" is a shortcut for:
+	  // items : 1, 
+	  // itemsDesktop : false,
+	  // itemsDesktopSmall : false,
+	  // itemsTablet: false,
+	  // itemsMobile : false
+
+	});
+
+	$("#test-btn1").mouseover(function(){
+		owl.trigger('owl.goTo',0);
+	});
+	$("#test-btn2").mouseover(function(){
+		owl.trigger('owl.goTo',1);
+	});
+	$("#test-btn3").mouseover(function(){
+		owl.trigger('owl.goTo',2);
+	});
+</script>
 
 
 <div class="section">

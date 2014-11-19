@@ -1,3 +1,4 @@
+/*
 $(document).ready(function(){
     
 	//Homepage Slider
@@ -57,3 +58,4 @@ $(document).ready(function(){
 	$( window ).resize();
 
 });
+*/

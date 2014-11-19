@@ -51,3 +51,5 @@ gem "paperclip", "~> 3.5.2"
 gem 'prawn'
 gem "gmaps4rails"
 gem "underscore-rails"
+gem 'jquery-turbolinks'
+gem 'owlcarousel-rails'
