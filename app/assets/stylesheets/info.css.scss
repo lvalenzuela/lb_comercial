@@ -15,12 +15,12 @@
 }
 
 .info-frame p{
-	font-size: 18px;
+	font-size: 14px;
 	text-align: left;
 }
 
 .info-frame li{
-	font-size: 18px;
+	font-size: 14px;
 	padding: 3px 0px;
 	font-family: Arial, Helvetica, sans-serif
 }
@@ -41,7 +41,7 @@
 }
 
 .info-frame-table {
-	font-size: 18px;
+	font-size: 14px;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -219,15 +219,34 @@ ul.course-features-list li ul li{
 }
 
 /*carousel*/
-.carousel-wrapper {
-	height: 400;
-}
 
-.slider-frame {
+#slider-frame {
+	position: relative;
+	height: 342;
+	width: 600;
 	margin-top: 50px;
 }
 
+#slider-frame img {
+	position: absolute;
+	left:0;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+	-o-transition: opacity 0.5s ease-in-out;
+	transition: opacity 0.5s ease-in-out;
+	opacity:0;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+}
+
+#slider-frame img.opaque {
+	opacity:1;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=1);
+ }
+
 .routes-list h2 {
+	font-size: 20px;
 	margin-bottom: 5px;
 }
 
@@ -239,7 +258,7 @@ ul.course-features-list li ul li{
 
 .routes-list li {
 	padding: 9px 5px;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .routes-list li:hover {

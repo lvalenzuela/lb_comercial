@@ -61,37 +61,35 @@
 				<p>
 					Nuestro modelo de aprendizaje de inglés es similar al escalamiento gradual de una montaña. Como se muestra en el siguiente esquema, se puede llegar a la cima por diferentes rutas:
 				</p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-8 carousel-wrapper">
-				<div class="owl-carousel slider-frame">
-					<div class="item"><%=image_tag "site-pics/Diagrama_1.png", :size => "700x400", :alt => "imagen 1"%></div>
-					<div class="item"><%=image_tag "site-pics/Diagrama_2.png", :size => "700x400", :alt => "imagen 1"%></div>
-					<div class="item"><%=image_tag "site-pics/Diagrama_3.png", :size => "700x400", :alt => "imagen 1"%></div>
-					<div class="item"><%=image_tag "site-pics/Diagrama_4.png", :size => "700x400", :alt => "imagen 1"%></div>
-					<div class="item"><%=image_tag "site-pics/Diagrama_5.png", :size => "700x400", :alt => "imagen 1"%></div>
-					<div class="item"><%=image_tag "site-pics/Diagrama_6.png", :size => "700x400", :alt => "imagen 1"%></div>
-					<div class="item"><%=image_tag "site-pics/Diagrama_7.png", :size => "700x400", :alt => "imagen 1"%></div>
-					<div class="item"><%=image_tag "site-pics/Diagrama_8.png", :size => "700x400", :alt => "imagen 1"%></div>
+
+				<div class="row">
+					<div class="col-xs-8 carousel-wrapper">
+						<div id="slider-frame" class="shadow">
+							<%=image_tag "site-pics/Diagrama_1.png", :size => "600x342", :alt => "imagen 1", :class => "opaque"%>
+							<%=image_tag "site-pics/Diagrama_2.png", :size => "600x342", :alt => "imagen 1"%>
+							<%=image_tag "site-pics/Diagrama_3.png", :size => "600x342", :alt => "imagen 1"%>
+							<%=image_tag "site-pics/Diagrama_4.png", :size => "600x342", :alt => "imagen 1"%>
+							<%=image_tag "site-pics/Diagrama_5.png", :size => "600x342", :alt => "imagen 1"%>
+							<%=image_tag "site-pics/Diagrama_6.png", :size => "600x342", :alt => "imagen 1"%>
+							<%=image_tag "site-pics/Diagrama_7.png", :size => "600x342", :alt => "imagen 1"%>
+							<%=image_tag "site-pics/Diagrama_8.png", :size => "600x342", :alt => "imagen 1"%>
+						</div>
+					</div>
+					<div class="col-xs-4 routes-list">
+						<h2>Rutas de Longbourn</h2>
+						<ol id="slide_controls">
+							<li class="selected">Nociones de Ingles</li>
+							<li>Comunicación Escrita</li>
+							<li>Participación Activa en Reuniones</li>
+							<li>Presentaciones y Llamadas telefonicas</li>
+							<li>Dirigir Reuniones</li>
+							<li>Redacción de Contratos / Papers Académicos</li>
+							<li>Presentaciones en Congresos Internacionales</li>
+							<li>Negociación Avanzada</li>
+						</ol>
+					</div>
 				</div>
-			</div>
-			<div class="col-xs-4 routes-list">
-				<h2>Rutas de Longbourn</h2>
-				<ol>
-					<li class="slide-btn" id="test-btn1">Nociones de Ingles</li>
-					<li class="slide-btn" id="test-btn2">Comunicación Escrita</li>
-					<li class="slide-btn" id="test-btn3">Participación Activa en Reuniones</li>
-					<li class="slide-btn" id="test-btn4">Presentaciones y Llamadas telefonicas</li>
-					<li class="slide-btn" id="test-btn5">Dirigir Reuniones</li>
-					<li class="slide-btn" id="test-btn6">Redacción de Contratos / Papers Académicos</li>
-					<li class="slide-btn" id="test-btn7">Presentaciones en Congresos Internacionales</li>
-					<li class="slide-btn" id="test-btn8">Negociación Avanzada</li>
-				</ol>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-10 col-xs-offset-1 info-frame">
+
 				<p>
 					Nuestros libros tienen nombres de montañas debido a que cada uno representa distinto grado de dificultad y permite alcanzar distintos objetivos, tal como se indican en el esquema.
 				</p>
@@ -110,55 +108,19 @@
 	</div>
 </div>
 
-<script type="text/javascript"> 
-	var owl = $(".owl-carousel");
+<script>
+$(document).ready(function() {
+  $("#slide_controls").on('click', 'li', function() {
+    $("#slider-frame img").removeClass("opaque");
 
-	owl.owlCarousel({
+    var newImage = $(this).index();
 
-	  navigation : false, // Show next and prev buttons
-	  slideSpeed : 0,
-	  paginationSpeed : 300,
-	  autoPlay: 2000,
-	  singleItem:true,
-	  transitionStyle : "fade"
+    $("#slider-frame img").eq(newImage).addClass("opaque");
 
-	  // "singleItem:true" is a shortcut for:
-	  // items : 1, 
-	  // itemsDesktop : false,
-	  // itemsDesktopSmall : false,
-	  // itemsTablet: false,
-	  // itemsMobile : false
-
-	});
-
-	$("#test-btn1").click(function(){
-		owl.trigger('owl.goTo',0);
-	});
-	$("#test-btn2").click(function(){
-		owl.trigger('owl.goTo',1);
-	});
-	$("#test-btn3").click(function(){
-		owl.trigger('owl.goTo',2);
-	});
-	$("#test-btn4").click(function(){
-		owl.trigger('owl.goTo',3);
-	});
-	$("#test-btn5").click(function(){
-		owl.trigger('owl.goTo',4);
-	});
-	$("#test-btn6").click(function(){
-		owl.trigger('owl.goTo',5);
-	});
-	$("#test-btn7").click(function(){
-		owl.trigger('owl.goTo',6);
-	});
-	$("#test-btn8").click(function(){
-		owl.trigger('owl.goTo',7);
-	});
-
-	$(".slide-btn").click(function(){
-		owl.trigger('owl.stop');
-	});
+    $("#slider_controls li").removeClass("selected");
+    $(this).addClass("selected");
+  });
+});
 </script>
 
 
