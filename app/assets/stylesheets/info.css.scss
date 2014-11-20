@@ -16,7 +16,7 @@
 
 .info-frame p{
 	font-size: 18px;
-	text-align: justify;
+	text-align: left;
 }
 
 .info-frame li{
@@ -112,14 +112,18 @@ ul.course-features-list li ul li{
 	-moz-background-clip: padding;
 	border-radius: 5px;
 	background-clip: padding-box;
-	padding-top: 0px;
 }
 
 .feature-box .feature-box-header {
-	border-bottom: solid 2px #ccc;
+	border-bottom: solid 2px #BEBEBE;
 	padding-left: 12px;
-	margin-top: 0px;
+	padding-top: 1px;
+	background-color: #D4D4D4;
+}
+
+.feature-box .feature-box-header h4{
 	font-size: 20px;
+	font-weight: bold;
 }
 
 .feature-box .feature-box-body {
@@ -137,9 +141,13 @@ ul.course-features-list li ul li{
 
 .feature-box-body .feature-box-info ul{
 	padding-left: 0;
-	font-size: 16px;
 	list-style-type: none;
 }
+
+.feature-box-body .feature-box-info ul li{
+	font-size: 18px;
+}
+
 
 .box {
 	padding: 5px;
@@ -212,19 +220,29 @@ ul.course-features-list li ul li{
 
 /*carousel*/
 .carousel-wrapper {
-	height: 333;
+	height: 400;
 }
 
-.routes-list ul {
-	list-style-type: none;
+.slider-frame {
+	margin-top: 50px;
+}
+
+.routes-list h2 {
+	margin-bottom: 5px;
+}
+
+.routes-list ol {
+	margin-top: 0px;
+	list-style-type: decimal;
 	display: block;
 }
 
 .routes-list li {
-	padding: 13px 0px;
-	font-size: 20px;
+	padding: 9px 5px;
+	font-size: 18px;
 }
 
 .routes-list li:hover {
-	background-color: #EDEDED;
+	cursor: pointer;
+	border-bottom: solid 3px #CCC;
 }

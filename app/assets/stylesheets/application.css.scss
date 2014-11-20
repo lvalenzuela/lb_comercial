@@ -101,21 +101,28 @@
 + Testimonials Style - No Borders
 --------------------------------------------------------------------------*/
 .testimonial-nb h4 {
-  font-size: 1.6em;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  font-weight: bolder;
+  border-bottom: solid 2px #CCC;
 }
+
 .testimonial-nb blockquote {
   margin: 0;
   padding: 0;
   border-left: none;
 }
 .testimonial-nb blockquote p {
-  font-size: 1em;
-  margin-bottom: 20px;
+  font-size: 0.8em;
+  margin-top: 15px;
+  margin-bottom: 0px;
   line-height: 1.5;
-  text-align: justify;
+  text-align: center;
 }
 .testimonial-nb .testimonial-bubble {
   text-align: center;
+  border: solid 2px #696969;
   -webkit-border-radius: 4px;
   -webkit-background-clip: padding-box;
   -moz-border-radius: 4px;
@@ -123,7 +130,7 @@
   border-radius: 4px;
   background-clip: padding-box;
   padding: 0 20px 20px 20px;
-  margin: 35px 10px 20px 10px;
+  margin: 25px 10px 20px 10px;
   background: #FFF;
   position: relative;
   color: inset 0 1px #fff,0 1px 2px #c8cfe6;
@@ -146,6 +153,7 @@
 .testimonial-nb .author-photo {
   text-align: center;
 }
+
 .testimonial-nb .author-photo img {
   margin: auto;
   max-width: 100%;
