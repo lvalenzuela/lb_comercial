@@ -3,6 +3,91 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/*BOTTOM MENU*/
+.bottom-menu-bar {
+	height: 40px;
+	background-color: #000;
+	border-top: solid 2px #ccc;
+	position: fixed;
+	bottom: 0px;
+	z-index: 999;
+	padding: 8px 10px;
+	width: 100%;
+	left: 0px;
+}
+.bottom-menu-bar .bottom-menu-header {
+	float: left;
+}
+.bottom-menu-bar .bottom-menu-header h4{
+	color: #DBDBDB;
+	margin-top: 0px;
+	margin-left: 60px;
+}
+
+.bottom-menu-bar .bottom-menu-body {
+	float: left;
+	text-align: center;
+}
+
+.bottom-menu-bar .bottom-menu-body ul{
+	list-style-type: none;
+	margin: auto;
+}
+
+.bottom-menu-bar .bottom-menu-body li{
+	float: left;
+	padding-left: 20px;
+}
+
+.bottom-menu-bar .bottom-menu-body a{
+	color: #fff;
+	font-weight: bolder;
+}
+/*END BOTTOM MENU*/
+
+/*LEFT HOVER MENU*/
+.menu-collapse {
+	width: 80px;
+}
+
+
+.left-hover-menu {
+	width: 300px;
+	border: solid 1px #FFF;
+	background-color: #000;
+	position: fixed;
+	left: 0px;
+	z-index: 999;
+	padding: 20px 10px;
+}
+
+.left-hover-menu .hover-menu-header a{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+
+.left-hover-menu  h4{
+	color: #DBDBDB;
+}
+
+.left-hover-menu ul {
+	color: #FFF;
+	list-style-type: none;
+}
+
+.left-hover-menu li {
+	padding: 5px;
+}
+
+.left-hover-menu a {
+	color: #fff;
+	font-size: 16px;
+	font-weight: bolder;
+}
+
+/*END LEFT HOVER MENU*/
+
 .info-section h1 {
 	margin-bottom: 20px;
 	padding-bottom: 6px;
@@ -44,6 +129,55 @@
 	font-size: 14px;
 	font-family: Arial, Helvetica, sans-serif;
 }
+
+/*alt timeline*/
+.alt-timeline-row {
+	margin-top: 20px;
+}
+
+.alt-timeline-panel {
+	border: solid 1px #ccc;	
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.alt-timeline-title h3{
+	font-size: 18px;
+	border-bottom: solid 2px #ccc;	
+	padding: 8px 4px;
+}
+
+.alt-timeline-body {
+	font-size: 14px;
+}
+
+.alt-timeline-line{ 
+	text-align: center;
+}
+
+.alt-timeline-circle{
+	background-color: #CCC;
+  margin: auto;
+  padding: 10px;
+  max-width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border: 5px solid #FFF;
+  -webkit-border-radius: 100px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100px;
+  -moz-background-clip: padding;
+  border-radius: 100px;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset 0 1px #fff,0 1px 2px #c8cfe6;
+  -moz-box-shadow: inset 0 1px #fff,0 1px 2px #c8cfe6;
+  box-shadow: inset 0 1px #fff,0 1px 2px #c8cfe6;
+  color: inset 0 1px #fff,0 1px 2px #c8cfe6;
+}
+
+/*end alt table*/
+
 
 ul.course-features-list {
 	font-size: 16px;
@@ -169,14 +303,14 @@ ul.course-features-list li ul li{
 }
 
 .product-box .product-box-header h2.product-box-title{
-	font-size: 26px;
+	font-size: 22px;
 	text-align: center;
 	border: none;
 	margin-bottom: 0;
 }
 
 .product-box .product-box-header span.product-box-subtitle{
-	font-size: 16px;
+	font-size: 14px;
 	text-align: center;
 	display: block;
 	margin-bottom: 5px;
@@ -184,13 +318,13 @@ ul.course-features-list li ul li{
 
 .product-box .product-box-body .body-section {
 	padding: 10px 0px;
-	height: 100px;
+	height: 80px;
 	border-bottom: solid 1px #6E6E6E;
 }
 
 .product-box .product-box-body .body-section span.bold-line {
 	padding: 5px;
-	font-size: 18px;
+	font-size: 14px;
 	text-align: center;
 	font-weight: bolder;
 	display: block;
@@ -198,7 +332,7 @@ ul.course-features-list li ul li{
 
 .product-box .product-box-body .body-section span.line {
 	padding: 5px;
-	font-size: 18px;
+	font-size: 14px;
 	text-align: center;
 	font-weight: bold;
 	display: block;
@@ -222,9 +356,9 @@ ul.course-features-list li ul li{
 
 #slider-frame {
 	position: relative;
-	height: 342;
-	width: 600;
-	margin-top: 50px;
+	height: 340;
+	width: 700;
+	margin-top: 0px;
 }
 
 #slider-frame img {

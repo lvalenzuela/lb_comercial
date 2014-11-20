@@ -1,4 +1,22 @@
-<div class="section">
+
+
+<div class="bottom-menu-bar">
+	<div class="bottom-menu-header">
+		<h4>Navegación</h4>
+	</div>
+	<div class="bottom-menu-body">
+		<ul>
+			<li><a href="#first-section">Longbourn Executive</a></li>
+			<li><a href="#second-section">Cursos Longbourn</a></li>
+			<li><a href="#third-section">Caracteristicas Generales</a></li>
+			<li><a href="#fourth-section">Inscripción</a></li>
+			<li><a href="#fifth-section">Valores</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="section" id="first-section">
 	<div class="container-fluid info-section">
 		<h1><%=@page_title%></h1>
 		<div class="row">
@@ -52,43 +70,47 @@
 </div>
 
 
-
-<div class="section">
+<div class="section" id="second-section">
     <div class="container-fluid info-section">
 		<h1>Cursos Longbourn</h1>
 		<div class="row">
-			<div class="col-xs-10 col-xs-offset-1 info-frame">
+			<div class="col-xs-12 info-frame">
 				<p>
 					Nuestro modelo de aprendizaje de inglés es similar al escalamiento gradual de una montaña. Como se muestra en el siguiente esquema, se puede llegar a la cima por diferentes rutas:
 				</p>
+			</div>
+		</div>
 
-				<div class="row">
-					<div class="col-xs-8 carousel-wrapper">
-						<div id="slider-frame" class="shadow">
-							<%=image_tag "site-pics/Diagrama_1.png", :size => "600x342", :alt => "imagen 1", :class => "opaque"%>
-							<%=image_tag "site-pics/Diagrama_2.png", :size => "600x342", :alt => "imagen 1"%>
-							<%=image_tag "site-pics/Diagrama_3.png", :size => "600x342", :alt => "imagen 1"%>
-							<%=image_tag "site-pics/Diagrama_4.png", :size => "600x342", :alt => "imagen 1"%>
-							<%=image_tag "site-pics/Diagrama_5.png", :size => "600x342", :alt => "imagen 1"%>
-							<%=image_tag "site-pics/Diagrama_6.png", :size => "600x342", :alt => "imagen 1"%>
-							<%=image_tag "site-pics/Diagrama_7.png", :size => "600x342", :alt => "imagen 1"%>
-							<%=image_tag "site-pics/Diagrama_8.png", :size => "600x342", :alt => "imagen 1"%>
-						</div>
-					</div>
-					<div class="col-xs-4 routes-list">
-						<h2>Rutas de Longbourn</h2>
-						<ol id="slide_controls">
-							<li class="selected">Nociones de Ingles</li>
-							<li>Comunicación Escrita</li>
-							<li>Participación Activa en Reuniones</li>
-							<li>Presentaciones y Llamadas telefonicas</li>
-							<li>Dirigir Reuniones</li>
-							<li>Redacción de Contratos / Papers Académicos</li>
-							<li>Presentaciones en Congresos Internacionales</li>
-							<li>Negociación Avanzada</li>
-						</ol>
-					</div>
+		<div class="row" style="margin-top: 20px;">
+			<div class="col-xs-8 carousel-wrapper">
+				<div id="slider-frame" class="shadow">
+					<%=image_tag "site-pics/Diagrama_1.png", :size => "700x340", :alt => "imagen 1", :class => "opaque"%>
+					<%=image_tag "site-pics/Diagrama_2.png", :size => "700x340", :alt => "imagen 1"%>
+					<%=image_tag "site-pics/Diagrama_3.png", :size => "700x340", :alt => "imagen 1"%>
+					<%=image_tag "site-pics/Diagrama_4.png", :size => "700x340", :alt => "imagen 1"%>
+					<%=image_tag "site-pics/Diagrama_5.png", :size => "700x340", :alt => "imagen 1"%>
+					<%=image_tag "site-pics/Diagrama_6.png", :size => "700x340", :alt => "imagen 1"%>
+					<%=image_tag "site-pics/Diagrama_7.png", :size => "700x340", :alt => "imagen 1"%>
+					<%=image_tag "site-pics/Diagrama_8.png", :size => "700x340", :alt => "imagen 1"%>
 				</div>
+			</div>
+			<div class="col-xs-4 routes-list">
+				<h2>Objetivos</h2>
+				<ol id="slide_controls">
+					<li class="selected">Nociones de Ingles</li>
+					<li>Comunicación Escrita</li>
+					<li>Participación Activa en Reuniones</li>
+					<li>Presentaciones y Llamadas telefonicas</li>
+					<li>Dirigir Reuniones</li>
+					<li>Redacción de Contratos / Papers Académicos</li>
+					<li>Presentaciones en Congresos Internacionales</li>
+					<li>Negociación Avanzada</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="row" style="margin-top:20px">
+			<div class="col-xs-12 info-frame">
 
 				<p>
 					Nuestros libros tienen nombres de montañas debido a que cada uno representa distinto grado de dificultad y permite alcanzar distintos objetivos, tal como se indican en el esquema.
@@ -124,7 +146,7 @@ $(document).ready(function() {
 </script>
 
 
-<div class="section">
+<div class="section" id="third-section">
     <div class="container-fluid info-section">
 		<h1>Características Generales de los Cursos Longbourn Executive</h1>
 		<div class="row">
@@ -244,13 +266,13 @@ $(document).ready(function() {
 
 
 
-<div class="section">
+<div class="section" id="fourth-section">
     <div class="container-fluid info-section">
 		<div class="row">
 			<div class="col-xs-12 info-frame" style="margin-top: 20px;">
 				<h1>Proceso de Inscripción</h1>
 			</div>
-			<div class="col-xs-10 col-xs-offset-1 info-frame" style="margin-top: 20px;">
+			<div class="col-xs-12 info-frame" style="margin-top: 20px;">
 				<p>
 					El <b>Punto de Partida</b> queda determinado por el nivel inicial de inglés, que será medido a través de nuestra <b>Prueba de Diagnóstico</b>.
 				</p>
@@ -308,13 +330,13 @@ $(document).ready(function() {
 </div>
 
 
-<div class="section">
+<div class="section" id="fifth-section">
     <div class="container-fluid info-section">
 		<div class="row">
 			<div class="col-xs-12 info-frame" style="margin-top: 20px;">
 				<h1>Valores</h1>
 			</div>
-			<div class="col-xs-10 col-xs-offset-1 info-frame" style="margin-top: 20px;">
+			<div class="col-xs-12 info-frame" style="margin-top: 20px;">
 				<p>
 					Valores para programas cerrados In Office. Los valores van disminuyendo según la cantidad de alumnos interesados en el curso.
 				</p>

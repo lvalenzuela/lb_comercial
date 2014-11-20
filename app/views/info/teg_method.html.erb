@@ -1,3 +1,141 @@
+<div class="left-hover-menu">
+	<div class="hover-menu-header">
+		<h4>Menú de Navegación</h4>
+		<a href="#"><i class="fa fa-chevron-left"></i><i class="fa fa-chevron-left"></i></a>
+	</div>
+	<div class="hover-menu-body">
+		<ul>
+			<li><a href="#first-section">Longbourn Executive</a></li>
+			<li><a href="#second-section">Cursos Longbourn</a></li>
+			<li><a href="#third-section">Caracteristicas Generales</a></li>
+			<li><a href="#fourth-section">Inscripción</a></li>
+			<li><a href="#fifth-section">Valores</a></li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="section">
+    <div class="container-fluid info-section">
+		<h1>Cursos Longbourn</h1>
+		<div class="row">
+			<div class="col-xs-12 info-frame">
+				<p>
+					Nuestro modelo de aprendizaje de inglés es similar al escalamiento gradual de una montaña. Como se muestra en el siguiente esquema, se puede llegar a la cima por diferentes rutas:
+				</p>
+				<div class="row alt-timeline-row">
+					<div class="col-xs-5 alt-timeline-panel">
+						<div class="alt-timeline-title">
+							<h3>Objetivos Longbourn</h3>
+						</div>
+						<div class="alt-timeline-body">
+							<ol id="slide_controls">
+								<li class="selected">Nociones de Ingles</li>
+								<li>Comunicación Escrita</li>
+								<li>Participación Activa en Reuniones</li>
+								<li>Presentaciones y Llamadas telefonicas</li>
+								<li>Dirigir Reuniones</li>
+								<li>Redacción de Contratos / Papers Académicos</li>
+								<li>Presentaciones en Congresos Internacionales</li>
+								<li>Negociación Avanzada</li>
+							</ol>
+						</div>
+					</div>
+					<div class="col-xs-1 alt-timeline-line">
+						<div class="alt-timeline-circle">
+							<i class="fa fa-chevron-down"></i>
+						</div>
+					</div>
+					<div class="col-xs-6 alt-timeline-panel clearfix">
+						<div class="alt-timeline-body" style="padding: 10px 5px;">
+							<div class="shadow">
+							<%=image_tag "site-pics/Diagrama_2.png", :size => "500x240", :alt => "imagen 1", :class => "opaque"%>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row alt-timeline-row">
+					<div class="col-xs-5 alt-timeline-panel">
+						<div class="alt-timeline-title">
+							<h3>Inscripción</h3>
+						</div>
+						<div class="alt-timeline-body">
+							<p>El <b>Punto Objetivo</b> lo decides tú.</p>
+							<ul>
+								<li>La cantidad de libros a contratar queda determinada por lo que cada Ejecutivo o Grupo necesite o quiera aprender.</li>
+							</ul>
+
+							<p>
+								<b>Inscríbete</b> en nuestra <b>Prueba de Diagnóstico</b>. Con tus resultados y teniendo en cuenta el objetivo deseado, generaremos la cotización final de tu <b>Programa Longbourn Executive</b>.
+							</p>
+							<p>
+								La <b>Prueba de Diagnóstico</b> no tiene costo.
+							</p>
+						</div>
+					</div>
+					<div class="col-xs-1 alt-timeline-line">
+						<div class="alt-timeline-circle">
+							<i class="fa fa-chevron-down"></i>
+						</div>
+					</div>
+					<div class="col-xs-6 alt-timeline-panel">
+						<div class="alt-timeline-title">
+							<h3>Tabla de Puntajes</h3>
+						</div>
+						<div class="alt-timeline-body" style="padding: 10px 5px;">
+							<table class="table table-bordered info-frame-table">
+								<thead>
+									<tr>
+										<th>Puntaje Prueba de Diagnóstico</th>
+										<th>Ruta</th>
+										<th>Libro Inicial</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>+71% Prueba Diagnóstico</td>
+										<td>Expert Route</td>
+										<td>Cotopaxi</td>
+									</tr>
+									<tr>
+										<td>40% a 70% Prueba Diagnóstico</td>
+										<td>Standard Route</td>
+										<td>Mauna Kea</td>
+									</tr>
+									<tr>
+										<td>0% a 39% Prueba Diagnóstico</td>
+										<td>Introductory Route</td>
+										<td>Tronador</td>
+									</tr>
+								
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>
+$(document).ready(function() {
+  $("#slide_controls").on('mouseenter', 'li', function() {
+    $("#slider-frame img").removeClass("opaque");
+
+    var newImage = $(this).index();
+
+    $("#slider-frame img").eq(newImage).addClass("opaque");
+
+    $("#slider_controls li").removeClass("selected");
+    $(this).addClass("selected");
+  });
+});
+</script>
+
+
+
 <div class="section">
 	<div class="container-fluid">
 		<h1><%=@page_title%></h1>
