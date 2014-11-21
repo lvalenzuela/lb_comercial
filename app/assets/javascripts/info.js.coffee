@@ -6,7 +6,7 @@
 $(document).ready ->
   $window = $(window)
   topOffset = $("#pnav-bar").offset().top
-  topPadding = 30
+  topPadding = 0
   $window.scroll ->
     if $window.scrollTop() > topOffset + 25
       $("#pnav-bar").stop().animate
