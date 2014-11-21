@@ -4,89 +4,61 @@
 
 
 /*BOTTOM MENU*/
-.bottom-menu-bar {
-	height: 40px;
-	background-color: #000;
-	border-top: solid 2px #ccc;
-	position: fixed;
-	bottom: 0px;
-	z-index: 999;
-	padding: 8px 10px;
-	width: 100%;
-	left: 0px;
+
+#pnav-wrapper{
+	padding-left: 0px;
+	padding-right: 30px;
 }
-.bottom-menu-bar .bottom-menu-header {
+
+.pnav-menu-bar {
+	height: 45px;
+	background-color: #292929;
+	border-bottom: solid 4px #ccc;
+	position: absolute;
+	z-index: 999;
+	padding: 0px 10px;
+	margin-top: 0px;
+	width: 100%;
+}
+
+.pnav-menu-bar .pnav-menu-header {
 	float: left;
 }
-.bottom-menu-bar .bottom-menu-header h4{
+.pnav-menu-bar .pnav-menu-header h4{
 	color: #DBDBDB;
-	margin-top: 0px;
+	margin-top: 10px;
 	margin-left: 60px;
 }
 
-.bottom-menu-bar .bottom-menu-body {
+.pnav-menu-bar .pnav-menu-body {
 	float: left;
-	text-align: center;
 }
 
-.bottom-menu-bar .bottom-menu-body ul{
+.pnav-menu-bar .pnav-menu-body ul{
 	list-style-type: none;
-	margin: auto;
+	margin-top: 0px;
+	margin-left: 25px;
+	padding: 10px;
 }
 
-.bottom-menu-bar .bottom-menu-body li{
+.pnav-menu-bar .pnav-menu-body li{
 	float: left;
-	padding-left: 20px;
+	padding: 0px 30px;
+
 }
 
-.bottom-menu-bar .bottom-menu-body a{
+.pnav-menu-bar .pnav-menu-body a{
+	font-family: 'Open Sans', sans-serif;
 	color: #fff;
-	font-weight: bolder;
+	font-weight: normal;
+	font-size: 16px;
 }
 /*END BOTTOM MENU*/
 
-/*LEFT HOVER MENU*/
-.menu-collapse {
-	width: 80px;
+
+#first-section{
+	margin-top: 40px;
 }
-
-
-.left-hover-menu {
-	width: 300px;
-	border: solid 1px #FFF;
-	background-color: #000;
-	position: fixed;
-	left: 0px;
-	z-index: 999;
-	padding: 20px 10px;
-}
-
-.left-hover-menu .hover-menu-header a{
-	position: absolute;
-	top: 10px;
-	right: 10px;
-}
-
-.left-hover-menu  h4{
-	color: #DBDBDB;
-}
-
-.left-hover-menu ul {
-	color: #FFF;
-	list-style-type: none;
-}
-
-.left-hover-menu li {
-	padding: 5px;
-}
-
-.left-hover-menu a {
-	color: #fff;
-	font-size: 16px;
-	font-weight: bolder;
-}
-
-/*END LEFT HOVER MENU*/
 
 .info-section h1 {
 	margin-bottom: 20px;
@@ -264,6 +236,10 @@ ul.course-features-list li ul li{
 	padding: 12px 5px;
 }
 
+.feature-box .feature-box-body p{
+	font-size: 18px;
+}
+
 .feature-box-body .feature-box-icon {
 	padding: 12px 5px;
 	text-align: center;
@@ -359,11 +335,11 @@ ul.course-features-list li ul li{
 	height: 340;
 	width: 700;
 	margin-top: 0px;
+	margin-left: 20px;
 }
 
 #slider-frame img {
 	position: absolute;
-	left:0;
 	-webkit-transition: opacity 0.5s ease-in-out;
 	-moz-transition: opacity 0.5s ease-in-out;
 	-o-transition: opacity 0.5s ease-in-out;
@@ -398,4 +374,24 @@ ul.course-features-list li ul li{
 .routes-list li:hover {
 	cursor: pointer;
 	border-bottom: solid 3px #CCC;
+}
+
+ol.reverse-list {
+	counter-reset: c 9;
+	list-style: none;
+	font-size: 16px;
+}
+
+ol.reverse-list li {
+	counter-increment: c -1;
+	padding: 8px 5px;
+	font-weight: bold;
+}
+
+ol.reverse-list li:before{
+	content:  counter(c) ". ";
+}
+
+ol.reverse-list li:hover {
+	cursor: pointer;
 }

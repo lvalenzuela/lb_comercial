@@ -11,8 +11,6 @@
  * file per style scope.
  *
  *= require font-awesome
- *= require owl.carousel
- *= require owl.theme
  *= require_tree .
  *= require_self
  */
@@ -115,7 +113,7 @@
   border-left: none;
 }
 .testimonial-nb blockquote p {
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 15px;
   margin-bottom: 0px;
   line-height: 1.5;
@@ -1948,7 +1946,7 @@ span.color-red {
   background: #222;
   color: #A0A0A0;
   padding: 0 20px 10px 20px;
-  border-top: 4px solid #4f8db3;
+  border-top: 4px solid #555555;/*#4f8db3;*/
   margin-top: 20px;
   -webkit-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
   -moz-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);

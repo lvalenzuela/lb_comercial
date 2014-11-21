@@ -4,13 +4,13 @@ class SiteController < ApplicationController
 	require "bcrypt"
 
 	def index
-		@types = CourseType.all()
-		raw_products = zoho_product_list
-		if raw_products["code"] == 0
-			@modes = raw_products["items"]
-		else
-			@modes = nil
-		end
+		#@types = CourseType.all()
+		#raw_products = zoho_product_list
+		#if raw_products["code"] == 0
+		#	@modes = raw_products["items"]
+		#else
+		#	@modes = nil
+		#end
 		#@modes = Course.select("distinct(mode) as mode")
 		#Se registra el paso
 		session[:action_milestone] = action_name

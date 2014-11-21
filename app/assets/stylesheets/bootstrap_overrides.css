@@ -29,6 +29,7 @@
 	padding: 0 auto;
 	border-radius: 0;
 	border-top: solid 3px #CCC;
+	border-bottom: solid 1px #CCC;
 }
 
 .navbar ul {

@@ -1,17 +1,22 @@
 
-
-<div class="bottom-menu-bar">
-	<div class="bottom-menu-header">
-		<h4>Navegación</h4>
-	</div>
-	<div class="bottom-menu-body">
-		<ul>
-			<li><a href="#first-section">Longbourn Executive</a></li>
-			<li><a href="#second-section">Cursos Longbourn</a></li>
-			<li><a href="#third-section">Caracteristicas Generales</a></li>
-			<li><a href="#fourth-section">Inscripción</a></li>
-			<li><a href="#fifth-section">Valores</a></li>
-		</ul>
+<div class="container-fluid" id="pnav-wrapper">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="pnav-menu-bar" id="pnav-bar">
+				<div class="pnav-menu-header">
+					<h4>Navegación</h4>
+				</div>
+				<div class="pnav-menu-body">
+					<ul>
+						<li><a href="#first-section">Longbourn Executive</a></li>
+						<li><a href="#second-section">Cursos Longbourn</a></li>
+						<li><a href="#third-section">Caracteristicas Generales</a></li>
+						<li><a href="#fourth-section">Inscripción</a></li>
+						<li><a href="#fifth-section">Valores</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -20,6 +25,61 @@
 	<div class="container-fluid info-section">
 		<h1><%=@page_title%></h1>
 		<div class="row">
+			<div class="testimonial-nb col-md-4">
+				<!-- Author Photo -->
+				<div class="author-photo">
+					<i class="fa fa-graduation-cap fa-5x"></i>
+				</div>
+				<div class="testimonial-bubble">
+					<blockquote>
+						<h4>Aprendizaje</h4>
+						<!-- Quote -->
+						<p class="quote">
+                            Longbourn considera las habilidades y características propias de cada estudiante para generar una estrategia de enseñanza de inglés, la cual da especial importancia a la forma en la que aprende el estudiante. 
+                		</p>
+                	</blockquote>
+                	<div class="sprite arrow-speech-bubble"></div>
+                </div>
+            </div>
+			<div class="testimonial-nb col-md-4">
+				<!-- Author Photo -->
+				<div class="author-photo">
+					<i class="fa fa-group fa-5x"></i>
+				</div>
+				<div class="testimonial-bubble">
+					<blockquote>
+						<h4>Clases</h4>
+						<!-- Quote -->
+						<p class="quote">
+                            Las clases están está diseñadas para generar un ambiente donde las conductas espontaneas y dinámicas sean parte de una educación integral.  
+                		</p>
+                	</blockquote>
+                	<div class="sprite arrow-speech-bubble"></div>
+                </div>
+            </div>
+			<div class="testimonial-nb col-md-4">
+				<!-- Author Photo -->
+				<div class="author-photo">
+					<i class="fa fa-book fa-5x"></i>
+				</div>
+				<div class="testimonial-bubble">
+					<blockquote>
+						<h4>Material</h4>
+						<!-- Quote -->
+						<p class="quote">
+							En cada clase se trabaja con<br>
+							Videos<br>
+							Libros propios<br>
+							Canciones <br>
+							Lecturas <br>
+							Acceso Web de Estudiantes Longbourn.
+                		</p>
+                	</blockquote>
+                	<div class="sprite arrow-speech-bubble"></div>
+                </div>
+            </div>
+		</div>
+		<div class="row" style="margin-top: 80px;">
 			<!-- Testimonial -->
 			<div class="testimonial-nb col-md-4">
 				<!-- Author Photo -->
@@ -72,78 +132,91 @@
 
 <div class="section" id="second-section">
     <div class="container-fluid info-section">
-		<h1>Cursos Longbourn</h1>
+		<h1>Proceso de Inscripción</h1>
 		<div class="row">
-			<div class="col-xs-12 info-frame">
+			<div class="col-xs-12">
 				<p>
-					Nuestro modelo de aprendizaje de inglés es similar al escalamiento gradual de una montaña. Como se muestra en el siguiente esquema, se puede llegar a la cima por diferentes rutas:
+					Nuestros libros tienen nombres de montañas, debido a que cada uno representa distinto grado de dificultad y permite alcanzar distintos objetivos. Se puede llegar a la cima por diferentes rutas.
 				</p>
-			</div>
-		</div>
-
-		<div class="row" style="margin-top: 20px;">
-			<div class="col-xs-8 carousel-wrapper">
-				<div id="slider-frame" class="shadow">
-					<%=image_tag "site-pics/Diagrama_1.png", :size => "700x340", :alt => "imagen 1", :class => "opaque"%>
-					<%=image_tag "site-pics/Diagrama_2.png", :size => "700x340", :alt => "imagen 1"%>
-					<%=image_tag "site-pics/Diagrama_3.png", :size => "700x340", :alt => "imagen 1"%>
-					<%=image_tag "site-pics/Diagrama_4.png", :size => "700x340", :alt => "imagen 1"%>
-					<%=image_tag "site-pics/Diagrama_5.png", :size => "700x340", :alt => "imagen 1"%>
-					<%=image_tag "site-pics/Diagrama_6.png", :size => "700x340", :alt => "imagen 1"%>
-					<%=image_tag "site-pics/Diagrama_7.png", :size => "700x340", :alt => "imagen 1"%>
-					<%=image_tag "site-pics/Diagrama_8.png", :size => "700x340", :alt => "imagen 1"%>
+				<div class="row feature-row">
+					<div class="col-xs-12">
+						<div class="feature-box">
+							<div class="feature-box-header">
+								<h4>1. Descubre tu Nivel de Inglés</h4>
+							</div>
+							<div class="row feature-box-body">
+								<div class="col-xs-12">
+									<p>
+										El <b>Punto de Partida</b> queda determinado por el nivel inicial de inglés, que será medido a través de nuestra <b>Prueba de Diagnóstico</b> (sin costo).
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-			<div class="col-xs-4 routes-list">
-				<h2>Objetivos</h2>
-				<ol id="slide_controls">
-					<li class="selected">Nociones de Ingles</li>
-					<li>Comunicación Escrita</li>
-					<li>Participación Activa en Reuniones</li>
-					<li>Presentaciones y Llamadas telefonicas</li>
-					<li>Dirigir Reuniones</li>
-					<li>Redacción de Contratos / Papers Académicos</li>
-					<li>Presentaciones en Congresos Internacionales</li>
-					<li>Negociación Avanzada</li>
-				</ol>
-			</div>
-		</div>
-
-		<div class="row" style="margin-top:20px">
-			<div class="col-xs-12 info-frame">
-
-				<p>
-					Nuestros libros tienen nombres de montañas debido a que cada uno representa distinto grado de dificultad y permite alcanzar distintos objetivos, tal como se indican en el esquema.
-				</p>
-				<p>
-					En cada clase se trabaja con:
-				</p>
-				<ul>
-					<li>Videos</li>
-					<li>Libros propios</li>
-					<li>Canciones</li>
-					<li>Lecturas</li>
-					<li>Acceso Web de Estudiantes Longbourn.</li>
-				</ul>
+				<div class="row feature-row">
+					<div class="col-xs-12">
+						<div class="feature-box">
+							<div class="feature-box-header">
+								<h4>2. Define tu Objetivo</h4>
+							</div>
+							<div class="row feature-box-body">
+								<div class="col-xs-12">
+									<p style="padding: 10px;">
+										Selecciona tu objetivo a lograr con Longbourn. La cantidad de libros a contratar queda determinada por lo que cada Ejecutivo o Grupo necesite o quiera aprender.
+									</p>
+								</div>
+							</div>
+							<div class="row feature-box-body">
+								<div class="col-xs-8">
+									<div id="slider-frame" class="shadow">
+										<%=image_tag "site-pics/Diagrama_8.png", :size => "700x330", :alt => "imagen 1"%>
+										<%=image_tag "site-pics/Diagrama_7.png", :size => "700x330", :alt => "imagen 1"%>
+										<%=image_tag "site-pics/Diagrama_6.png", :size => "700x330", :alt => "imagen 1"%>
+										<%=image_tag "site-pics/Diagrama_5.png", :size => "700x330", :alt => "imagen 1"%>
+										<%=image_tag "site-pics/Diagrama_4.png", :size => "700x330", :alt => "imagen 1"%>
+										<%=image_tag "site-pics/Diagrama_3.png", :size => "700x330", :alt => "imagen 1"%>
+										<%=image_tag "site-pics/Diagrama_2.png", :size => "700x330", :alt => "imagen 1"%>
+										<%=image_tag "site-pics/Diagrama_1.png", :size => "700x330", :alt => "imagen 1", :class => "opaque"%>
+									</div>
+								</div>
+								<div class="col-xs-4">
+									<ol id="slide_controls" class="reverse-list">
+										<li>Negociación Avanzada</li>
+										<li>Presentaciones en Congresos Internacionales</li>
+										<li>Redacción de Contratos / Papers Académicos</li>
+										<li>Dirigir Reuniones</li>
+										<li>Presentaciones y Llamadas telefonicas</li>
+										<li>Participación Activa en Reuniones</li>
+										<li>Comunicación Escrita</li>
+										<li class="selected">Nociones de Ingles</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row feature-row">
+					<div class="col-xs-12">
+						<div class="feature-box">
+							<div class="feature-box-header">
+								<h4>3. Vive la experiencia Longbourn</h4>
+							</div>
+							<div class="row feature-box-body">
+								<div class="col-xs-12">
+									<p>
+										Con tus resultados y teniendo en cuenta el objetivo deseado, generaremos la cotización final de tu <b>Programa Longbourn Executive</b>.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-<script>
-$(document).ready(function() {
-  $("#slide_controls").on('mouseenter', 'li', function() {
-    $("#slider-frame img").removeClass("opaque");
-
-    var newImage = $(this).index();
-
-    $("#slider-frame img").eq(newImage).addClass("opaque");
-
-    $("#slider_controls li").removeClass("selected");
-    $(this).addClass("selected");
-  });
-});
-</script>
 
 
 <div class="section" id="third-section">
