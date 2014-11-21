@@ -5,12 +5,12 @@
 #para que la barra de navegacion quede fija en la parte superior de la pantala
 $(document).ready ->
   $window = $(window)
-  offset = $("#pnav-bar").offset() 
+  topOffset = $("#pnav-bar").offset().top
   topPadding = 30
   $window.scroll ->
-    if $window.scrollTop() > offset.top + 25
+    if $window.scrollTop() > topOffset + 25
       $("#pnav-bar").stop().animate
-        marginTop: $window.scrollTop() - offset.top - topPadding
+        marginTop: $window.scrollTop() - topOffset - topPadding
       , 0
     else
       $("#pnav-bar").stop().animate
