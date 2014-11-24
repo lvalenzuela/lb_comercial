@@ -1,69 +1,89 @@
-<div class="container">
-  <!-- Navigation & Logo-->
-  <div class="mainmenu-wrapper">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xs-4">
-          <nav class="banner-menu">
-              <div class="logo-wrapper"><%=link_to root_url do%><%=image_tag "LogoLongbourn1.png"%><%end%></div>
-          </nav>
-        </div>
-        <div class="col-xs-4 col-xs-offset-4 menuextras">
-          <div class="extras">
-            <div class="row">
-              <div class="contact pull-right">
-                Coronel Pereira 72 Piso 11, Las Condes
-              </div>
+<!-- main wrapper - termina en footer -->
+<div class="body-wrap">
+  <!-- HEADER -->
+  <div id="divHeaderWrapper">
+    <header class="header-standard-2">     
+    <!-- MAIN NAV -->
+      <div class="navbar navbar-wp navbar-arrow mega-nav" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle navbar-toggle-aside-menu">
+                    <i class="fa fa-outdent icon-custom"></i>
+                </button>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="fa fa-bars icon-custom"></i>
+                </button>
+                <%=link_to root_url, :class => "navbar-brand", :title => "Longbourn Institute" do%>
+                    <%=image_tag "LogoLongbourn1.png", :alt => "Longbourn Institute"%>
+                <%end%>
             </div>
-            <div class="row">
-              <div class="contact pull-right" style="margin-top: 5px;">
-                <i class="fa fa-phone-square fa-lg"></i> +56 2378 7755
-              </div>
-            </div>
-            <div class="row">
-              <%#render :partial => "site/facebook_login_form"%>
-            </div>
-          </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden-md hidden-lg">
+                        <div class="bg-light-gray">
+                            <form class="form-horizontal form-light p-15" role="form">
+                                <div class="input-group input-group-lg">
+                                    <input type="text" class="form-control" placeholder="I want to find ...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-white" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <li>
+                      <%=link_to "Inglés In Office", :controller => :info, :action => :longbourn_executive%>
+                    </li>
+                    <li>
+                      <%=link_to "Inglés en Sede", :controller => :info, :action => :cursos_en_sede%>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Preparación Tests</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                              <%=link_to "TOEFL", :controller => :info, :action => :cursos_toefl%>
+                            </li>
+                            <li>
+                              <%=link_to "IELTS", :controller => :info, :action => :cursos_ielts%>
+                            </li> 
+                            <li>
+                              <%=link_to "TOEIC", :controller => :info, :action => :cursos_toeic%>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- comentado para calzar contenido
+                    <li>
+                      <%=link_to "Metodología TEG", :controller => :info, :action => :teg_method%>
+                    </li>
+                    -->
+                    <li>
+                      <%=link_to "Empresas", :controller => :info, :action => :cursos_empresas%>
+                    </li>
+                    <li>
+                      <%=link_to "Contactanos", {:controller => :site, :action => :contact_us}%>
+                    </li>
+                    <li class="dropdown dropdown-aux animate-click" data-animate-in="animated bounceInUp" data-animate-out="animated fadeOutDown" style="z-index:500;">
+                        <a href="#" class="dropdown-form-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
+                        <ul class="dropdown-menu dropdown-menu-user animate-wr">
+                            <li id="dropdownForm">
+                                <div class="dropdown-form">
+                                    <form class="form-horizontal form-light p-15" role="form">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="I want to find ...">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-base" type="button">Go</button>
+                                            </span>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
         </div>
       </div>
-    </div>
+    </header>        
   </div>
-
-  <nav role="navigation" class="navbar navbar-inverse">
-    <div class="navbar-header">
-      <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-    </div>
-    <div id="navbarCollapse" class="collapse navbar-collapse">
-      <ul class="nav navbar-nav">
-        <li>
-          <%=link_to "Inglés In Office", :controller => :info, :action => :longbourn_executive%>
-        </li>
-        <li>
-          <%=link_to "Inglés en Sede", :controller => :info, :action => :cursos_en_sede%>
-        </li>
-        <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Preparación Tests <b class="caret"></b></a>
-            <ul role="menu" class="dropdown-menu">
-              <li><%=link_to "TOEFL", :controller => :info, :action => :cursos_toefl%></li>
-              <li><%=link_to "IELTS", :controller => :info, :action => :cursos_ielts%></li>
-              <li><%=link_to "TOEIC", :controller => :info, :action => :cursos_toeic%></li>
-            </ul>
-        </li>
-        <li>
-          <%=link_to "Metodología TEG", :controller => :info, :action => :teg_method%>
-        </li>
-        <li>
-          <%=link_to "Empresas", :controller => :info, :action => :cursos_empresas%>
-        </li>
-        <li>
-          <%=link_to "Contactanos", {:controller => :site, :action => :contact_us}%>
-        </li>
-      </ul>
-    </div>
-  </nav>

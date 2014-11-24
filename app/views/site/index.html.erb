@@ -1,131 +1,235 @@
-<!-- Homepage Slider -->
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-sm-3 banner-block executive">
-			<div class="banner-block-button">
-				<%=link_to "Longbourn Executive", "/longbourn-executive", {:class => "banner-block-btn"}%>
-				<span class="btn-subtitle">Cursos en tu oficina</span>
-			</div>
-		</div>
-		<div class="col-sm-3 banner-block institute">
-			<div class="banner-block-button">
-				<%=link_to "Longbourn Institute", "/longbourn-institute", {:class => "banner-block-btn"}%>
-				<span class="btn-subtitle">Cursos en los mejores horarios</span>
-			</div>
-		</div>
-		<div class="col-sm-3 banner-block startup">
-			<div class="banner-block-button">
-				<%=link_to "Longbourn StartUp", "/longbourn-startup", {:class => "banner-block-btn"}%>
-				<span class="btn-subtitle">Cursos a los mejores precios</span>
-			</div>
-		</div>
-		<div class="col-sm-3 banner-block international">
-			<div class="banner-block-button">
-				<%=link_to "Cursos Internacionales", "/cursos-internacionales", {:class => "banner-block-btn"}%>
-				<span class="btn-subtitle">TOEFL, IELTS, TOEIC</span>
-			</div>
-		</div>
-	</div>
-</div>
 
-<div class="section">
-	<div class="container-fluid">
-		<h2 style="text-align: center;">Longbourn</h2>
-		<div class="col-xs-8 col-xs-offset-2" id="video-frame">
-			<video autoplay loop muted poster="/assets/site-pics/testing.jpg" id="bgvid" style="width: 100%; height: auto;">
-				<source src="/assets/vids/longbourn_a.webm" type="video/webm">
-				<source src="/assets/vids/longbourn_a.mp4" type="video/mpeg">
-			</video>
-		</div>
-	</div>
-</div>
+<section id="slider-wrapper" class="layer-slider-wrapper layer-slider-dynamic">
+    <div id="layerslider" class="main-video-wrapper"> 
+        <!-- slide background video-->
+		<video autoplay loop muted poster="/assets/backgrounds/full-bg-20.jpg" id="main-bgvid">
+			<source src="/assets/vids/longbourn_a.webm" type="video/webm">
+			<source src="/assets/vids/longbourn_a.mp4" type="video/mpeg">
+		</video>
+		<div id="main-video-bg-dimmer"></div>
+        <div id="main-video-titles">
+	        <!-- Left Text -->
+	        <h3 class="ls-l title-lg c-white text-shadow text-uppercase text-center strong" style="width:100%; top:25%; left:50%;">
+	            Longbourn Institute
+	        </h3>
+	       <h3 class="ls-l title c-white text-wrapped black text-uppercase text-center strong" style="top:50%; left:50%;">
+	            Inglés en tu Oficina
+	        </h3>
+	    </div>  
+    </div>
+</section>
 
-<div class="section">
-	<div class="container-fluid">
-		<h2 style="text-align: center;">¿Por Que Longbourn?</h2>
-		<div class="row">
-			<div class="col-xs-4 col-xs-offset-1">
-				<div class="portfolio-item">
-					<div class="portfolio-image">
-						<%=image_tag "site-pics/testing.jpg", :size => "450x210"%>
-					</div>
-					<div class="portfolio-info">
-						<ul>
-							<li class="portfolio-project-name">Metodología TEG</li>
-							<li>La Metodología TEG desarrolla simultáneamente, de forma diferente, dinámica y entretenida, las 4 habilidades del inglés: leer, escribir, escuchar y hablar.</li>
-							<li class="read-more"><a href="#" class="btn">Leer Más</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-4 col-xs-offset-2">
-				<div class="portfolio-item">
-					<div class="portfolio-image">
-						<%=image_tag "site-pics/teacher_pic.jpg", :size => "450x210"%>
-					</div>
-					<div class="portfolio-info">
-						<ul>
-							<li class="portfolio-project-name">Nuestros Profesores</li>
-							<li>Nuestros profesores son titulados de las mejores Universidades y son capacitados en Longbourn, entregándoles las herramientas para que realicen clases excelentes.</li>
-							<li class="read-more"><a href="page-portfolio-item.html" class="btn">Leer Más</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-xs-4 col-xs-offset-1">
-				<div class="portfolio-item">
-					<div class="portfolio-image">
-						<%=image_tag "site-pics/health-and-laws.jpg", :size => "450x210"%>
-					</div>
-					<div class="portfolio-info">
-						<ul>
-							<li class="portfolio-project-name">Especialistas en Profesionales y Ejecutivos</li>
-							<li>Diseñamos soluciones para facilitar tu experiencia estudiando Inglés. En Longbourn también podrás compartir e intercambiar ideas con otros Profesionales que buscan tus mismos objetivos.</li>
-							<li class="read-more"><a href="page-portfolio-item.html" class="btn">Leer Más</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-xs-4 col-xs-offset-2">
-				<div class="portfolio-item">
-					<div class="portfolio-image">
-						<%=image_tag "site-pics/office-meeting.jpg", :size => "450x210"%>
-					</div>
-					<div class="portfolio-info">
-						<ul>
-							<li class="portfolio-project-name">En tu Oficina o en Longbourn Las Condes</li>
-							<li>Sabemos que tu tiempo y recursos son valiosos. Puedes acceder a nuestros Cursos de Inglés en tu Oficina o en Longbourn Las Condes, a pasos del Metro Escuela Militar.</li>
-							<li class="read-more"><a href="page-portfolio-item.html" class="btn">Leer Más</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
 
+<!-- MAIN CONTENT -->
+<section class="slice no-padding">
+    <div class="wp-section">
+        <div class="row-fluid">
+            <div class="col-md-4 wp-block no-space arrow-right base no-margin">
+                <div class="wp-block-body">
+                    <div class="img-icon">
+                        <i class="fa fa-suitcase"></i>
+                    </div>
+                    <h1>Longbourn Executive</h1>
+                    <p class="text-center">
+                    Lorem ipsum dolor sit amet, consectetur curabitur pellentesque neque eget diam posuere adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 wp-block no-space arrow-right light no-margin">
+                <div class="wp-block-body">
+                    <div class="img-icon">
+                        <i class="fa fa-institution"></i>
+                    </div>
+                    <h1>Longbourn Institute</h1>
+                    <p class="text-center">
+                    Lorem ipsum dolor sit amet, consectetur urabitur pellentesque neque eget diam posuere adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4 wp-block no-space dark no-margin">
+                <div class="wp-block-body">
+                    <div class="img-icon">
+                        <i class="fa fa-thumbs-o-up"></i>
+                    </div>
+                    <h1>Longbourn StartUp</h1>
+                    <p class="text-center">
+                    Lorem ipsum dolor sit amet, consectetur urabitur pellentesque neque eget diam posuere adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slice bg-white bb animate-hover-slide-3">
+    <div class="wp-section">
+        <div class="container">
+            <div class="section-title-wr">
+                <h3 class="section-title left"><span>Our team</span></h3>
+            </div>
+            <div class="row">   
+                <div class="col-md-3">
+                    <div class="wp-block inverse">
+                        <div class="figure">
+                            <%=image_tag "site-pics/testing.jpg"%>
+                            <div class="figcaption">                                    
+                                <%=link_to "Ver Más"%>
+                            </div>
+                        </div>
+                        <h2>Metodología TEG</h2>
+                        <p>
+                        La Metodología TEG desarrolla simultáneamente, de forma diferente, dinámica y entretenida, las 4 habilidades del inglés: leer, escribir, escuchar y hablar.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="wp-block inverse">
+                        <div class="figure">
+                            <%=image_tag "site-pics/teacher_pic.jpg"%>
+                            <div class="figcaption">
+                            	<div class="figcaption-txt">                                  
+                                	<%=link_to "Ver Más"%>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Nuestros Profesores</h2>
+                        <p>
+                        Nuestros profesores son titulados de las mejores Universidades y son capacitados en Longbourn, entregándoles las herramientas para que realicen clases excelentes.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="wp-block inverse">
+                        <div class="figure">
+                            <%=image_tag "site-pics/health-and-laws.jpg"%>
+                            <div class="figcaption">                                    
+                                <%=link_to "Ver Más"%>
+                            </div>
+                        </div>
+                        <h2>Especialistas en Profesionales y Ejecutivos</h2>
+                        <p>
+                        Diseñamos soluciones para facilitar tu experiencia estudiando Inglés. En Longbourn también podrás compartir e intercambiar ideas con otros Profesionales que buscan tus mismos objetivos.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-md-3">
+                    <div class="wp-block inverse">
+                        <div class="figure">
+                            <%=image_tag "site-pics/testing.jpg"%>
+                            <div class="figcaption">                                    
+                                <%=link_to "Ver Más"%>
+                            </div>
+                        </div>
+                        <h2>En tu Oficina o en Longbourn Las Condes</h2>
+                        <p>
+                        Sabemos que tu tiempo y recursos son valiosos. Puedes acceder a nuestros Cursos de Inglés en tu Oficina o en Longbourn Las Condes, a pasos del Metro Escuela Militar
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="prlx-bg inset-shadow-1" data-stellar-ratio="2" style="min-height: 450px; padding: 50px 0; background-image: url(assets/backgrounds/full-bg-11.jpg); background-position: 0 -100px;">
+    <div class="mask mask-2"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h4 class="c-white"><i class="fa fa-birthday-cake fa-4x"></i></h4>
+                        <h2 class="c-white">Cursos de preparación para Tests Internacionales</h2>
+                        
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <div class="pie-chart" data-percent="91" data-color="#FFF">
+                                    <span class="percent"></span>
+                                    <div class="chart-text">
+                                        <h3 class="c-white">TOEFL</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="pie-chart" data-percent="23" data-color="#FFF">
+                                    <span class="percent"></span>
+                                    <div class="chart-text">
+                                        <h3 class="c-white">TOEIC</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-4">
+                                <div class="pie-chart" data-percent="68" data-color="#FFF">
+                                    <span class="percent"></span>
+                                    <div class="chart-text">
+                                        <h3 class="c-white">IELTS</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <!-- Our Clients -->
-<div class="section">
-	<div class="container-fluid">
-		<h2>Nuestros Clientes</h2>
-		<div class="clients-logo-wrapper text-center row">
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/canon.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/cisco.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/dell.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/ea.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/ebay.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/facebook.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/google.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/hp.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/microsoft.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/mysql.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/sony.png"%></a></div>
-			<div class="col-lg-1 col-md-1 col-sm-3 col-xs-6"><a href="#"><%=image_tag "logos/yahoo.png"%></a></div>
-		</div>
-	</div>
-</div>
+<section class="slice bg-white">
+    <div class="wp-section">
+        <div class="container">
+            <div class="section-title-wr">
+                <h3 class="section-title left"><span>Nuestros Clientes</span></h3>
+            </div>
+            <div class="row">
+                <div class="col-md-2 col-sm-4 col-xs-6">
+                    <div class="client">
+                        <a href="#">
+                            <%=image_tag "logos/canon.png"%>
+                        </a>
+                    </div>
+                </div>
+                 <div class="col-md-2 col-sm-4 col-xs-6">
+                    <div class="client">
+                        <a href="#">
+                            <%=image_tag "logos/cisco.png"%>
+                        </a>
+                    </div>
+                </div>
+                 <div class="col-md-2 col-sm-4 col-xs-6">
+                    <div class="client">
+                        <a href="#">
+                            <%=image_tag "logos/dell.png"%>
+                        </a>
+                    </div>
+                </div>
+                 <div class="col-md-2 col-sm-4 col-xs-6">
+                    <div class="client">
+                        <a href="#">
+                            <%=image_tag "logos/ea.png"%>
+                        </a>
+                    </div>
+                </div>
+                 <div class="col-md-2 col-sm-4 col-xs-6">
+                    <div class="client">
+                        <a href="#">
+                            <%=image_tag "logos/ebay.png"%>
+                        </a>
+                    </div>
+                </div>
+                 <div class="col-md-2 col-sm-4 col-xs-6">
+                    <div class="client">
+                        <a href="#">
+                            <%=image_tag "logos/facebook.png"%>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- End Our Clients -->
