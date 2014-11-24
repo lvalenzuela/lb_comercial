@@ -396,5 +396,6 @@ ol.reverse-list li:before{
 }
 
 ol.reverse-list li:hover {
-	cursor: pointer;
+	cursor: default;
+	text-decoration: underline;
 }
