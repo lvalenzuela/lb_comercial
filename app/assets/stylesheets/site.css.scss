@@ -2,13 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+span.phone-contact {
+	font-size: 20px;
+}
 
 /*video de la pag principal*/
 .main-video-wrapper {
 	width:100%;
-	height:680px;
+	height:720px;
 	padding: 0;
 	margin: 0;
+	overflow: hidden;
 }
 .main-video-wrapper video#main-bgvid{
 	min-width: 100%;
@@ -27,19 +31,21 @@
 	height: auto;
 	z-index: 100;	
 	position: relative;
-	top: -800px;
+	top: -100%;
 	opacity: 1;
 }
 
 /*canales en el video*/
 
 #channels-row {
+	position: relative;
+	top: -101.1%;
 }
 
 #channels-row .channel-block {
 	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 	text-align: center;
-	padding-bottom: 15px;
+	padding-top: 15px;
 }
 
 #channels-row .channel-block:hover {
@@ -47,7 +53,7 @@
 	cursor: pointer;
 }
 
-#channels-row .channel-block .subtitle {
+#channels-row .channel-block span.subtitle {
 	color: #DEDEDE; 
 }
 
