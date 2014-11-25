@@ -5,16 +5,23 @@
     <header class="header-standard-2">     
     <!-- MAIN NAV -->
       <div class="navbar navbar-wp navbar-arrow mega-nav" role="navigation">
-        <div class="container">
+        <div class="phone-wrapper">
             <div class="row">
                 <div class="pull-right" style="display: block">
-                    <span class="phone-contact"><i class="fa fa-phone-square"></i> +56 2951 9205</span>
+                    <table class="phone-contact">
+                        <tr>
+                            <td>Cursos en Sede</td>
+                            <td>+56 2 2378 7720</td>
+                            <td class="separator"></td>
+                            <td>Cursos In Office</td>
+                            <td>+56 2 2378 7755</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
+        </div>
+        <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle navbar-toggle-aside-menu">
-                    <i class="fa fa-outdent icon-custom"></i>
-                </button>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <i class="fa fa-bars icon-custom"></i>
                 </button>
@@ -65,7 +72,7 @@
                       <%=link_to "Empresas", :controller => :info, :action => :cursos_empresas%>
                     </li>
                     <li>
-                      <%=link_to "Contactanos", {:controller => :site, :action => :contact_us}%>
+                      <%=link_to "Contáctanos", {:controller => :site, :action => :contact_us}%>
                     </li>
                 </ul>
             </div><!--/.nav-collapse -->

@@ -2,9 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-span.phone-contact {
-	font-size: 20px;
+.phone-wrapper {
+	background-color: #000;/*#EBEBEB;*/
+	padding: 2px 20px;
+	margin-right: 14px;
+	width: 100%;
 }
+
+table.phone-contact {
+	font-size: 16px;
+	color: #FFF;
+	font-weight: bold;
+	margin-right: 20px;
+}
+
+table.phone-contact td{
+	padding: 2px;
+}
+
+table.phone-contact td.separator{
+	padding: 0px 20px;
+}
+
+/*desplazar imagen*/
+
+.navbar-header img{
+	margin-top: 5px;
+}
+
 
 /*video de la pag principal*/
 .main-video-wrapper {
@@ -42,6 +67,12 @@ span.phone-contact {
 	top: -101.1%;
 }
 
+#channels-row .channels-title {
+	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+	text-align: center;
+	padding-bottom: 15px;
+}
+
 #channels-row .channel-block {
 	background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 	text-align: center;
@@ -66,4 +97,13 @@ span.phone-contact {
 	text-align: center;
 	padding: auto;
 	display: block;
+}
+
+footer.footer {
+	font-size: 1.1em;
+}
+
+footer.footer h4 {
+	font-size: 1.3em;
+	font-weight: bold;
 }
