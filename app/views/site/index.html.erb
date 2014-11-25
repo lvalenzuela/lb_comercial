@@ -5,16 +5,41 @@
 			<source src="/assets/vids/main_vid.webm" type="video/webm">
 			<source src="/assets/vids/main_vid.mp4" type="video/mpeg">
 		</video>
-		<div id="main-video-bg-dimmer"></div>
         <div id="main-video-titles">
 	        <!-- Left Text -->
-	        <h3 class="ls-l title-lg c-white text-shadow text-uppercase text-center strong" style="width:100%; top:25%; left:50%;">
-	            Longbourn Institute
+	        <h3 class="ls-l title-lg c-white text-shadow text-uppercase text-center strong">
+	            Longbourn
 	        </h3>
-	       <h3 class="ls-l title c-white text-wrapped black text-uppercase text-center strong" style="top:50%; left:50%;">
-	            Inglés en tu Oficina
+	       <h3 class="ls-l title c-white text-wrapped text-uppercase text-center strong">
+	            Cursos de Inglés para Profesionales y Ejecutivos
 	        </h3>
 	    </div>  
+    </div>
+    <div class="row-fluid" id="channels-row">
+        <%=link_to :controller => :info, :action => :longbourn_executive do%>
+        <div class="col-sm-3 channel-block">
+            <h2>Longbourn Executive</h2>
+            <span class="subtitle">Inglés en tu Oficina</span>
+        </div>
+        <%end%>
+        <%=link_to do%>
+        <div class="col-sm-3 channel-block">
+            <h2>Longbourn Insitute</h2>
+            <span class="subtitle">Ingles en los mejores horarios</span>
+        </div>
+        <%end%>
+        <%=link_to do%>
+        <div class="col-sm-3 channel-block">
+            <h2>Longbourn Startup</h2>
+            <span class="subtitle">Ingles a los mejores precios</span>
+        </div>
+        <%end%>
+        <%=link_to do%>
+        <div class="col-sm-3 channel-block">
+            <h2>Tests Internacionales</h2>
+            <span class="subtitle">TOEFL - TOEIC - IELTS</span>
+        </div>
+        <%end%>
     </div>
 </section>
 
@@ -41,7 +66,8 @@
                     </div>
                     <h1>Longbourn Institute</h1>
                     <p class="text-center">
-                    Lorem ipsum dolor sit amet, consectetur urabitur pellentesque neque eget diam posuere adipiscing elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus.
+                    Lorem ipsum dolor sit amet, consectetur urabitur pellentesque neque eget diam posuere adipiscin
+                    g elit. Curabitur pellentesque neque eget diam posuere porta. Quisque ut nulla at nunc vehicula lacinia. Proin adipiscing porta tellus.
                     </p>
                 </div>
             </div>
