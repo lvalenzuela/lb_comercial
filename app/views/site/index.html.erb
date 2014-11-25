@@ -1,10 +1,7 @@
 <section id="slider-wrapper" class="layer-slider-wrapper layer-slider-dynamic">
     <div id="layerslider" class="main-video-wrapper"> 
         <!-- slide background video-->
-		<video autoplay loop muted poster="/assets/backgrounds/vid-background.png" id="main-bgvid">
-			<source src="/assets/vids/main_vid.webm" type="video/webm">
-			<source src="/assets/vids/main_vid.mp4" type="video/mpeg">
-		</video>
+        <%=video_tag "vids/main_vid.webm", "vids/main_vid.mp4", :autoplay => true ,:loop => true, :muted => true, :poster => "backgrounds/vid-background.png", :id => "main-bgvid"%>
         <div id="main-video-titles">
 	        <!-- Left Text -->
 	       <h3 class="ls-l title c-white text-wrapped text-uppercase text-center strong">
