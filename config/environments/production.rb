@@ -80,4 +80,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  #precompile vendor assets
+  config.assets.precompile = [ Proc.new { |path, fn| fn =~ /app\/assets/ && !%w(.js .css).include?(File.extname(path)) },
+                             /(?:\/|\\|\A)application\.(css|js)$/ ]
 end
