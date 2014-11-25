@@ -14,7 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
-//= require underscore
-//= require gmaps/google
 //= require_tree .
+//= require_tree ../../../vendor/assets/javascripts/.
 
