@@ -44,4 +44,9 @@ Rails.application.configure do
     enable_starttls_auto: true  }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  #precompile fonts
+  config.assets.precompile << lambda do |filename, path|
+    path =~ /vendor\/assets/ && !%w(.js .css).include?(File.extname(filename))
+  end
 end
