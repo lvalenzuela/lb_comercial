@@ -34,7 +34,7 @@ class InfoController < ApplicationController
 	end
 
 	def longbourn_institute
-		@page_title = "Longbourn Institute"
+		@page_title = "Longbourn Institute: Cursos de Ingles para Profesionales"
 	end
 
 	def cursos_internacionales

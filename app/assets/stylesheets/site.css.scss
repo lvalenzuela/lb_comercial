@@ -2,6 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/*titulos mas grandes*/
+h3.section-title span{
+	font-size: 22px;
+}
+
+h3.section-title small{
+	font-size: 14px;
+}
+/**/
 .phone-wrapper {
 	background-color: #000;/*#EBEBEB;*/
 	padding: 2px 20px;
