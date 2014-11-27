@@ -35,6 +35,8 @@ class InfoController < ApplicationController
 
 	def longbourn_institute
 		@page_title = "Longbourn Institute: Cursos de Ingles para Profesionales"
+		#cursos introductorios en venta
+		@active_courses = Course.where(:course_level_id => 1, :course_status_id => 2).limit(6)
 	end
 
 	def cursos_internacionales

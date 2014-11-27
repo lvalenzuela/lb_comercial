@@ -67,6 +67,10 @@ class SiteController < ApplicationController
 	end
 
 	def available_courses
+		
+	end
+
+	def available_courses2
 		session[:action_milestone] = action_name
 		@current_date = Time.now
 		@modes = CourseMode.where(:enabled => true)

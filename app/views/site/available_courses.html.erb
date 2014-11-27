@@ -1,74 +1,366 @@
-<div class="section">
-	<div class="container-fluid">
-		<h2>Selección de Cursos - Nivel <%=get_course_level_name(current_user.course_level_id)%></h2>
-		<div class="row">
-			<div class="col-xs-12 col-sm-offset-4 col-sm-8">
-				<div class="col-xs-4 theader first-month">
-					<span class="title"><%=l(@current_date, :format => "%B")%></span>
-					<span class="explanation"><%=l(@current_date + 1.days, :format => "%d de %b")+" - "+l((@current_date + 1.weeks).end_of_week, :format => "%d de %b")%></span>
-				</div>
-				<div class="col-xs-4 theader second-month">
-					<div class="ribbon-wrapper">
-						<div class="price-ribbon ribbon-orange"> - 10%</div>
-					</div>
+<section id="slider-wrapper" class="layer-slider-wrapper">
+    <div id="layerslider" style="width:100%;height:500px;">        
+        <div class="ls-slide" data-ls="transition2d:1;timeshift:-1000;">
+            <!-- slide background -->
+            <%=image_tag "slider/fw-1.jpg", :class => "ls-bg", :alt => "Slide background"%>
+            
+            <!-- Right Image -->
+            <%=image_tag "d_mountain/introductory/introductory_8.png", :class =>"ls-l", :style => "top:50%; left:70%;", :data => {:ls =>"offsetxin:0;offsetyin:250;durationin:950;offsetxout:0;offsetyout:-8;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;"}, :alt => "Image layer"%>
+            
+            <!-- Left Text -->
+            <h3 class="ls-l title title-sm strong" style="width:500px; top:25%; left:80px;" data-ls="offsetxin:0;offsetyin:250;durationin:1000;delayin:500;offsetxout:0;offsetyout:-8;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;">Ruta Introductoria</h3>
+            <h3 class="ls-l subtitle strong-400" style="top:40%; left:80px;" data-ls="offsetxin:0;offsetyin:250;durationin:1000;delayin:1500;offsetxout:0;offsetyout:-8;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;">Menor Dificultad. Mismo Objetivo.</h3>
+        </div>
+        
+        <div class="ls-slide" data-ls="transition2d:1;timeshift:-1000;">
+            <!-- slide background -->
+            <%=image_tag "slider/fw-1.jpg", :class => "ls-bg", :alt => "Slide background"%>
+            
+            <!-- Right Image -->
+            <%=image_tag "d_mountain/expert/expert_6.png", :class =>"ls-l", :style => "top:50%; left:70%;", :data => {:ls =>"offsetxin:0;offsetyin:250;durationin:950;offsetxout:0;offsetyout:-8;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;"}, :alt => "Image layer"%>
+            
+            <!-- Left Text -->
+            <h3 class="ls-l title" style="width:500px; top:15%; left:80px;" data-ls="offsetxin:0;offsetyin:250;durationin:1000;delayin:500;offsetxout:0;offsetyout:-8;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;">Expert Route</h3>
+            <h3 class="ls-l list-item" style="top:28%; left:80px;" data-ls="offsetxin: left; rotatein: 90;durationin:1000;delayin:1500;offsetxout:0;offsetyout:-8;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;">
+                <i class="fa fa-check-circle-o"></i> Mas Complejidad
+            </h3>
+            <h3 class="ls-l list-item" style="top:35%; left:80px;" data-ls="offsetxin: left; rotatein: 90;durationin:1000;durationin:1000;delayin:2000;offsetxout:0;offsetyout:-8;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;">
+                <i class="fa fa-check-circle-o"></i> Menos Cursos
+            </h3>
+            <h3 class="ls-l list-item" style="top:42%; left:80px;" data-ls="offsetxin: left; rotatein: 90;durationin:1000;durationin:1000;delayin:2500;offsetxout:0;offsetyout:-8;easingout:easeInOutQuart;scalexout:1.2;scaleyout:1.2;">
+                <i class="fa fa-check-circle-o"></i> Mas Buena Onda
+            </h3>
+        </div>
+    </div>
+</section>
 
-					<span class="title"><%=l(@current_date + 2.weeks, :format => "%B")%></span>
-					<span class="explanation"><%=l((@current_date + 2.weeks).beginning_of_week, :format => "%d de %b")+" - "+l((@current_date + 3.weeks).end_of_week, :format => "%d de %b")%></span>
-				</div>
-				<div class="col-xs-4 theader third-month">
-					<div class="ribbon-wrapper">
-						<div class="price-ribbon ribbon-red"> - 20%</div>
-					</div>
-					<span class="title"><%=l(@current_date + 2.weeks, :format => "%B")%></span>
-					<span class="explanation"><%=l((@current_date + 4.weeks).beginning_of_week, :format => "%d de %b")+" - "+l((@current_date + 5.weeks).end_of_week, :format => "%d de %b")%></span>
-				</div>
-			</div>
-		</div>
-		<%@modes.each do |m|%>
-	    <div class="row">
-	        <div class="col-xs-12 col-sm-4 course-mode">
-	            <%=m.mode_name%>
-	        </div>
-	        <div class="col-xs-12 col-sm-8 course-availability">
-                <div class="col-xs-4 col-sm-4 course-description first-month">
-                	<%courses_available = available_courses_for_month(@courses,@current_date,m.id).to_s%>
-                	<%if courses_available.to_i > 0%>
-                    	<%=link_to courses_available.to_s+" Cursos", {:controller => :site, :action => :selected_courses_list, :params => {:mode => m.id, :date => (@current_date).strftime("%Y-%m-%d")}}%>
-                    <%else%>
-                    	<i class="fa fa-times fa-lg"></i>
-                    <%end%>
+<!-- Initializing the slider -->
+<script>
+    jQuery("#layerslider").layerSlider({
+        pauseOnHover: true,
+        autoPlayVideos: false,
+        skinsPath: 'assets/layerslider/skins/',
+        responsive: false,
+        responsiveUnder: 1280,
+        layersContainer: 1280,
+        skin: 'v5',
+        hoverPrevNext: true,
+    });
+</script>
+
+<section class="slice bg-white bb">
+    <div class="wp-section">
+        <div class="container">
+            <div class="section-title-wr">
+                <h3 class="section-title left">
+                    <span>Rutas de Longbourn</span>
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="wp-block inverse text-center">
+                        <div class="thmb-img">
+                            <i class="fa fa-lightbulb-o"></i>
+                        </div>
+                        
+                        <h2>Introductory</h2>
+                        <p class="">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
+                    </div>
                 </div>
-                <div class="col-xs-4 col-sm-4 course-description second-month">
-                	<%courses_available = available_courses_for_month(@courses,@current_date + 2.weeks,m.id).to_s%>
-                	<%if courses_available.to_i > 0%>
-                    	<%=link_to courses_available.to_s+" Cursos", {:controller => :site, :action => :selected_courses_list, :params => {:mode => m.id, :date => (@current_date + 2.weeks).strftime("%Y-%m-%d")}}%>
-                    <%else%>
-                    	<i class="fa fa-times fa-lg"></i>
-                    <%end%>
+                
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="wp-block inverse text-center" style="background: transparent !important;">
+                        <div class="thmb-img">
+                            <i class="fa fa-keyboard-o"></i>
+                        </div>
+                        
+                        <h2>Standard</h2>
+                        <p class="">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
+                    </div>
                 </div>
-                <div class="col-xs-4 col-sm-4 course-description third-month">
-                	<%courses_available = available_courses_for_month(@courses,@current_date + 4.weeks,m.id).to_s%>
-                	<%if courses_available.to_i > 0%>
-                    	<%=link_to courses_available.to_s+" Cursos", {:controller => :site, :action => :selected_courses_list, :params => {:mode => m.id, :date => (@current_date + 4.weeks).strftime("%Y-%m-%d")}}%>
-                    <%else%>
-                    	<i class="fa fa-times fa-lg"></i>
-                    <%end%>
+                
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="wp-block inverse text-center">
+                        <div class="thmb-img">
+                            <i class="fa fa-code"></i>
+                        </div>
+                        
+                        <h2>Expert</h2>
+                        <p class="">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
+                    </div>
                 </div>
-	        </div>
-	    </div>
-	    <%end%>
-	    <div class="row quotation-advise">
-	    	<h2>Cotiza con Nosotros!</h2>
-	    	<div class="testimonial-nb col-sm-4">
-				<div class="author-photo">
-					<%=image_tag "profile_pictures/Woman_Call_Center.jpg"%>
-				</div>
-	    	</div>
-	    	<div class="col-sm-8 info">
-	    		<p>Llama al 800-800-Longbourn y cotiza con nosotros!</p>
-	    		<p>Tambien puedes visitarnos en nuestra sede en Coronel Pereira ASDfasdasd #1231451</p>
-	    		<p>O entra <%=link_to "Aqui!", :controller => :site, :action => :organization_signup%> para que nuestros ejecutivos se pongan en contacto contigo.</p>
-	    	</div>
-	    </div>
-	 </div>
-</div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="wp-block inverse text-center">
+                        <div class="thmb-img">
+                            <i class="fa fa-code"></i>
+                        </div>
+                        
+                        <h2>Superior</h2>
+                        <p class="">Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris.</p>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+    </div>    
+</section>
+
+<section class="slice p-15 base">
+    <div class="cta-wr">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="text-normal">
+                        <strong>¿Necesitas Más?</strong> Nuestros cursos ofrecen la mayor flexibilidad en precios y ubicacion
+                    </h1>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right">
+                        <span>Longbourn Executive</span>
+                    </a>
+                </div>
+                <div class="col-md-3">
+                    <a href="#" class="btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right">
+                        <span>Longbourn StartUp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="slice bg-white bb">
+    <div class="wp-section">
+        <div class="container">
+            <div class="section-title-wr">
+                <h3 class="section-title left"><span>Cursos Correspondientes a la Ruta</span></h3>
+                <div class="aux-nav">
+                    <!-- Auxiliary content comes here -->
+                </div>
+            </div>
+        
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="wp-block property list">
+                        <div class="wp-block-title">
+                            <h3><a href="#">Tronador</a></h3>
+                        </div>
+                        <div class="wp-block-body">
+                            <div class="wp-block-img">
+                                <a href="#">
+                                    <img src="images/prv/estate/item-1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="wp-block-content">
+                                <small>Ruta Introductoria</small>
+                                <h4 class="content-title">Special Offer</h4>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam.</p>
+                                <span class="pull-left">
+                                    <span class="price">$23.000</span> 
+                                    <span class="period">por hora</span>
+                                </span>
+                                <span class="pull-right">
+                                <span class="capacity">
+                                    <i class="fa fa-user"></i> 8 Max.
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="wp-block-footer">
+                            <ul class="aux-info">
+                                <li><i class="fa fa-group"></i>4 Vacantes</li>
+                                <li><i class="fa fa-calendar"></i> 3 Sep</li>
+                                <li><i class="fa fa-map-marker"></i> Sede Longbourn</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="wp-block property list">
+                        <div class="wp-block-title">
+                            <h3><a href="#">Tronador</a></h3>
+                        </div>
+                        <div class="wp-block-body">
+                            <div class="wp-block-img">
+                                <a href="#">
+                                    <img src="images/prv/estate/item-1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="wp-block-content">
+                                <small>Ruta Introductoria</small>
+                                <h4 class="content-title">Special Offer</h4>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam.</p>
+                                <span class="pull-left">
+                                    <span class="price">$23.000</span> 
+                                    <span class="period">por hora</span>
+                                </span>
+                                <span class="pull-right">
+                                <span class="capacity">
+                                    <i class="fa fa-user"></i> 8 Max.
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="wp-block-footer">
+                            <ul class="aux-info">
+                                <li><i class="fa fa-group"></i>4 Vacantes</li>
+                                <li><i class="fa fa-calendar"></i> 3 Sep</li>
+                                <li><i class="fa fa-map-marker"></i> Sede Longbourn</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="wp-block property list">
+                        <div class="wp-block-title">
+                            <h3><a href="#">Tronador</a></h3>
+                        </div>
+                        <div class="wp-block-body">
+                            <div class="wp-block-img">
+                                <a href="#">
+                                    <img src="images/prv/estate/item-1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="wp-block-content">
+                                <small>Ruta Introductoria</small>
+                                <h4 class="content-title">Special Offer</h4>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam.</p>
+                                <span class="pull-left">
+                                    <span class="price">$23.000</span> 
+                                    <span class="period">por hora</span>
+                                </span>
+                                <span class="pull-right">
+                                <span class="capacity">
+                                    <i class="fa fa-user"></i> 8 Max.
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="wp-block-footer">
+                            <ul class="aux-info">
+                                <li><i class="fa fa-group"></i>4 Vacantes</li>
+                                <li><i class="fa fa-calendar"></i> 3 Sep</li>
+                                <li><i class="fa fa-map-marker"></i> Sede Longbourn</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="wp-block property list">
+                        <div class="wp-block-title">
+                            <h3><a href="#">Tronador</a></h3>
+                        </div>
+                        <div class="wp-block-body">
+                            <div class="wp-block-img">
+                                <a href="#">
+                                    <img src="images/prv/estate/item-1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="wp-block-content">
+                                <small>Ruta Introductoria</small>
+                                <h4 class="content-title">Special Offer</h4>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam.</p>
+                                <span class="pull-left">
+                                    <span class="price">$23.000</span> 
+                                    <span class="period">por hora</span>
+                                </span>
+                                <span class="pull-right">
+                                <span class="capacity">
+                                    <i class="fa fa-user"></i> 8 Max.
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="wp-block-footer">
+                            <ul class="aux-info">
+                                <li><i class="fa fa-group"></i>4 Vacantes</li>
+                                <li><i class="fa fa-calendar"></i> 3 Sep</li>
+                                <li><i class="fa fa-map-marker"></i> Sede Longbourn</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="wp-block property list">
+                        <div class="wp-block-title">
+                            <h3><a href="#">Tronador</a></h3>
+                        </div>
+                        <div class="wp-block-body">
+                            <div class="wp-block-img">
+                                <a href="#">
+                                    <img src="images/prv/estate/item-1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="wp-block-content">
+                                <small>Ruta Introductoria</small>
+                                <h4 class="content-title">Special Offer</h4>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam.</p>
+                                <span class="pull-left">
+                                    <span class="price">$23.000</span> 
+                                    <span class="period">por hora</span>
+                                </span>
+                                <span class="pull-right">
+                                <span class="capacity">
+                                    <i class="fa fa-user"></i> 8 Max.
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="wp-block-footer">
+                            <ul class="aux-info">
+                                <li><i class="fa fa-group"></i>4 Vacantes</li>
+                                <li><i class="fa fa-calendar"></i> 3 Sep</li>
+                                <li><i class="fa fa-map-marker"></i> Sede Longbourn</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="wp-block property list">
+                        <div class="wp-block-title">
+                            <h3><a href="#">Tronador</a></h3>
+                        </div>
+                        <div class="wp-block-body">
+                            <div class="wp-block-img">
+                                <a href="#">
+                                    <img src="images/prv/estate/item-1.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="wp-block-content">
+                                <small>Ruta Introductoria</small>
+                                <h4 class="content-title">Special Offer</h4>
+                                <p class="description">Lorem ipsum dolor sit amet, consectetur adipisg elitm Ut tincidunt purus iaculis ipsum dctum non dtum quam.</p>
+                                <span class="pull-left">
+                                    <span class="price">$23.000</span> 
+                                    <span class="period">por hora</span>
+                                </span>
+                                <span class="pull-right">
+                                <span class="capacity">
+                                    <i class="fa fa-user"></i> 8 Max.
+                                </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="wp-block-footer">
+                            <ul class="aux-info">
+                                <li><i class="fa fa-group"></i>4 Vacantes</li>
+                                <li><i class="fa fa-calendar"></i> 3 Sep</li>
+                                <li><i class="fa fa-map-marker"></i> Sede Longbourn</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
