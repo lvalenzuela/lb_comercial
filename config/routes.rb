@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   ##
   match "longbourn-executive", to: "info#longbourn_executive", via: [:get]
   match "longbourn-startup", to: "info#longbourn_startup", via: [:get]
-  match "longburn-institute", to: "info#longbourn_institute", via: [:get]
+  match "longbourn-institute", to: "info#longbourn_institute", via: [:get]
   match "cursos-internacionales", to: "info#cursos_internacionales", via: [:get]
 
 

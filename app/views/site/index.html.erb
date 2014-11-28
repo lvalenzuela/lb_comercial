@@ -15,30 +15,32 @@
                     <b>¿Qué Necesitas?</b>
                 </h3>
             </div>
-            <%=link_to :controller => :info, :action => :longbourn_executive do%>
             <div class="col-sm-3 channel-block">
-                <h2>Longbourn Executive</h2>
-                <span class="subtitle">Inglés en tu Oficina</span>
+                <%=link_to longbourn_executive_path, :class => "btn btn-lg btn-block btn-dark" do%>
+                    <h3>Longbourn Executive</h3>
+                    <span class="subtitle">Inglés en tu Oficina</span>
+                <%end%>
             </div>
-            <%end%>
-            <%=link_to :controller => :info, :action => :longbourn_institute do%>
+            
             <div class="col-sm-3 channel-block">
-                <h2>Longbourn Insitute</h2>
-                <span class="subtitle">Inglés en los mejores horarios</span>
+                <%=link_to longbourn_institute_path, :class => "btn btn-lg btn-block btn-dark" do%>
+                    <h3>Longbourn Institute</h3>
+                    <span class="subtitle">Inglés en los Mejores Horarios</span>
+                <%end%>
             </div>
-            <%end%>
-            <%=link_to do%>
+            
             <div class="col-sm-3 channel-block">
-                <h2>Longbourn StartUp</h2>
-                <span class="subtitle">Inglés a los mejores precios</span>
+                <%=link_to longbourn_startup_path, :class => "btn btn-lg btn-block btn-dark" do%>
+                    <h3>Longbourn StartUp</h3>
+                    <span class="subtitle">Inglés en los Mejores Precios</span>
+                <%end%>
             </div>
-            <%end%>
-            <%=link_to do%>
             <div class="col-sm-3 channel-block">
-                <h2>Preparación Tests</h2>
-                <span class="subtitle">TOEFL - TOEIC - IELTS</span>
+                <%=link_to cursos_internacionales_path, :class => "btn btn-lg btn-block btn-dark" do%>
+                    <h3>Tests Internacionales</h3>
+                    <span class="subtitle">TOEFL - TOEIC - IELTS</span>
+                <%end%>
             </div>
-            <%end%>
         </div>
     </div>
 </section>

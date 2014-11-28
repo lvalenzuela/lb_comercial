@@ -89,10 +89,7 @@ table.phone-contact td.separator{
 	padding-bottom: 15px;
 }
 
-#channels-row .channel-block:hover {
-	background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
-	cursor: pointer;
-}
+
 
 #channels-row .channel-block span.subtitle {
 	color: #DEDEDE; 
@@ -121,5 +118,57 @@ footer.footer h4 {
 /*colores de ruta*/
 
 .routebg-intro {
-	background-color: #008A00;
+	background-color: #8ec449;
 }
+
+/*achievements list*/
+
+ul.achievements-list{
+	font-size: 16px;
+	font-weight: normal;
+}
+ul.achievements-list li{
+	padding-top: 13px;
+	padding-bottom: 14px;
+	padding-left: 10px;
+	display: block;
+	background-color: #FFF;
+}
+
+ul.achievements-list li:hover {
+	border-bottom: solid 2px #3498db;
+	cursor: pointer;
+}
+
+ul.achievements-list li.selected {
+	background-color: #3498db;
+	color: #FFF;
+	font-weight: bolder;
+}
+/*menu de montaña*/
+
+.achv-imgs {
+  position:relative;
+  height: 402px;
+  width: 701px;
+  margin:0 auto 10px;
+}
+.achv-imgs img {
+  position:absolute;
+  left:5px;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity:0;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+
+.achv-imgs img.opaque {
+  opacity:1;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=1);
+}
+
+/*override de pricing plans*/
