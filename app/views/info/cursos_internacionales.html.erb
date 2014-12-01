@@ -1,78 +1,99 @@
-<!-- MAIN CONTENT -->
-<div class="pg-opt">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h2><%=@page_title%></h2>
-            </div>
-            <div class="col-md-6">
-                <ol class="breadcrumb">
-                    <li>Tests Internacionales</li>
-                </ol>
-            </div>
-        </div>
-    </div> 
-</div>
-
-<section class="slice white bb">
-    <div class="wp-section">
+	<div class="pg-opt">
         <div class="container">
-            <div class="row ">  
-            	<div class="col-md-6">
-            		<%=image_tag "site-pics/class_whiteboard_small.jpg"%>
-            	</div>
-            	<div class="col-md-6">
-            		<div class="row">
-            			<div class="col-md-7">
-            				<h4 class="title">TOEFL</h4>
-            			</div>
-            			<div class="col-md-5">
-            			</div>
-            		</div>
-            		<p>
-            			Test Of English as a Foreign Language (Examen de inglés como segunda lengua) es una prueba internacional estandarizada por ETS (Educational Testing Service), que mide el dominio del lenguaje inglés académico. 
-            		</p>
-            		<%=link_to "Ir al Curso", {}, {:class => "btn btn-block btn-lg btn-light"}%>
-            	</div>
-            </div>
-            <hr>
-            <div class="row">  
-            	<div class="col-md-6">
-            		<div class="row">
-            			<div class="col-md-7">
-            				<h4 class="title">IELTS</h4>
-            			</div>
-            			<div class="col-md-5">
-            			</div>
-            		</div>
-            		<p>
-            			El examen TOEIC es una evaluación que mide las habilidades en el uso del inglés en situaciones cotidianas de personas que trabajan en un ambiente internacional.
-            		</p>
-            		<%=link_to "Ir al Curso", {}, {:class => "btn btn-block btn-lg btn-light"}%>
-            	</div>
-            	<div class="col-md-6">
-            		<%=image_tag "site-pics/class_whiteboard_small.jpg"%>
-            	</div>
-            </div>
-            <hr>
-            <div class="row ">  
-            	<div class="col-md-6">
-            		<%=image_tag "site-pics/class_whiteboard_small.jpg"%>
-            	</div>
-            	<div class="col-md-6">
-            		<div class="row">
-            			<div class="col-md-7">
-            				<h4 class="title">IELTS</h4>
-            			</div>
-            			<div class="col-md-5">
-            			</div>
-            		</div>
-            		<p>
-            			International English Language Testing System es un Sistema de Evaluación Internacional del Idioma Inglés creado en conjunto con el Concilio Británico, IDP: IELTS Australia y el Cambridge English Language Assessment.
-            		</p>
-            		<%=link_to "Ir al Curso", {}, {:class => "btn btn-block btn-lg btn-light"}%>
-            	</div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2><%=@page_title%></h2>
+                </div>
+                <div class="col-md-6">
+                    <ol class="breadcrumb">
+                        <li class="active">Cursos Internacionales</li>
+                    </ol>
+                </div>
             </div>
         </div>
     </div>
-</section>
+
+    <section class="slice bg-white"> 
+        <div class="wp-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="list-listings-2">
+                            <li class="">
+                                <div class="listing-image">
+                                	<%=image_tag "site-pics/class_whiteboard_small.jpg", :class => "img-responsive"%>
+                                	<%=link_to "Ver Más", cursos_toefl_path, :class => "btn btn-lg btn-square btn-light btn-block-bm btn-icon btn-icon-go"%>
+                                </div>
+                                <div class="cell">
+                                    <div class="listing-body clearfix">
+                                        <h3><%=link_to "TOEFL", cursos_toefl_path%></h3>
+                                        <h4>Test Of English as a Foreign Language</h4>
+                                        <p>
+                                        Test Of English as a Foreign Language (Examen de inglés como segunda lengua) es una prueba internacional estandarizada por ETS (Educational Testing Service), que mide el dominio del lenguaje inglés académico.
+                                        </p>
+                                    </div>
+                                    <div class="listing-footer">
+                                        <ul class="aux-info">
+                                        	<li><i class="fa fa-clock-o"></i>24 clases - 90 mins.</li>
+                                            <li><i class="fa fa-group"></i><strong>Max:</strong> 8 Estudiantes</li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="">
+                                <div class="listing-image">
+                                	<%=image_tag "site-pics/class_whiteboard_small.jpg", :class => "img-responsive"%>
+                                	<%=link_to "Ver Más", cursos_toeic_path, :class => "btn btn-lg btn-square btn-light btn-block-bm btn-icon btn-icon-go"%>
+                                </div>
+                                <div class="cell">
+                                    <div class="listing-body clearfix">
+                                        <h3><%=link_to "TOEIC", cursos_toeic_path%></h3>
+                                        <p>
+                                        El examen TOEIC es una evaluación que mide las habilidades en el uso del inglés en situaciones cotidianas de personas que trabajan en un ambiente internacional...
+                                        </p>
+                                    </div>
+                                    <div class="listing-footer">
+                                        <ul class="aux-info">
+                                        	<li><i class="fa fa-clock-o"></i>24 clases - 90 mins.</li>
+                                            <li><i class="fa fa-group"></i><strong>Max:</strong> 8 Estudiantes</li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </li>
+                            <li class="">
+                                <div class="listing-image">
+                                	<%=image_tag "site-pics/class_whiteboard_small.jpg", :class => "img-responsive"%>
+                                	<%=link_to "Ver Más", cursos_ielts_path, :class => "btn btn-lg btn-square btn-light btn-block-bm btn-icon btn-icon-go"%>
+                                </div>
+                                <div class="cell">
+                                    <div class="listing-body clearfix">
+                                        <h3><%=link_to "IELTS", cursos_toeic_path%></h3>
+                                        <h4>International English Language Testing System</h4>
+                                        <p>
+                                        International English Language Testing System es un Sistema de Evaluación Internacional del Idioma Inglés creado en conjunto con el Concilio Británico, IDP: IELTS Australia y el Cambridge English Language Assessment.
+                                        </p>
+                                    </div>
+                                    <div class="listing-footer">
+                                        <ul class="aux-info">
+                                        	<li><i class="fa fa-clock-o"></i>24 clases - 90 mins.</li>
+                                            <li><i class="fa fa-group"></i><strong>Max:</strong> 8 Estudiantes</li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="sidebar">
+                            <ul class="categories mb-20">
+                                <li><%=link_to "Longbourn Executive", longbourn_executive_path%></li>
+                                <li><%=link_to "Longbourn Institute", longbourn_institute_path%></li>
+                                <li><%=link_to "Longbourn StartUp", longbourn_startup_path%></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
