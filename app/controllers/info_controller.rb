@@ -1,8 +1,19 @@
 class InfoController < ApplicationController
-
 	
+	def longbourn_startup
+		@page_title = "Longbourn StartUp: Inglés para Profesionales Independientes y Futuros Profesionales"
+		@active_courses = Course.where(:course_status_id => 2).limit(6)
+	end
+
+	def longbourn_institute
+		@page_title = "Longbourn Institute: Cursos de Ingles para Profesionales"
+		#cursos introductorios en venta
+		@active_courses = Course.where(:course_status_id => 2).limit(6)
+	end
+
 	def longbourn_executive
 		@page_title = "Longbourn Executive: Cursos de Ingles para Ejecutivos"
+		@active_courses = Course.where(:course_status_id => 2).limit(6)
 	end
 
 	def cursos_toefl
@@ -27,16 +38,6 @@ class InfoController < ApplicationController
 
 	def cursos_empresas
 		@page_title = "Cursos para Empresas"
-	end
-
-	def longbourn_startup
-		@page_title = "Longbourn StartUp"
-	end
-
-	def longbourn_institute
-		@page_title = "Longbourn Institute: Cursos de Ingles para Profesionales"
-		#cursos introductorios en venta
-		@active_courses = Course.where(:course_level_id => 1, :course_status_id => 2).limit(6)
 	end
 
 	def cursos_internacionales

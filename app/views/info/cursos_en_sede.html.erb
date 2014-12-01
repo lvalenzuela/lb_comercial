@@ -1,0 +1,47 @@
+<div class="static-page-image">
+	<%=image_tag "backgrounds/full-bg-20.jpg", :alt => ""%>
+    <div class="description-left">
+        <span class="title c-white">No Corras!</span>
+        <span class="subtitle text-wrapped alpha c-black">Cotiza cursos en nuestra sede para acceder a los mejores precios y horarios más cómodos.</span>
+        <%=link_to "Cursos en tu Oficina", longbourn_executive_path, :class => "btn btn-lg btn-dark"%>
+    </div>
+</div>
+
+<section class="slice white">
+    <div class="wp-section">
+        <div class="container">
+			<div class="row-fluid">
+				<div class="col-md-6">
+					<%=link_to longbourn_institute_path do%>
+					<div class="hero-link wp-block hero white">
+					    <div class="thmb-img">
+					        <%=image_tag "svg/clipboard.svg"%>
+					    </div>
+
+					    <h2>Longbourn Institute</h2>
+					    <p class="text-center">
+					    	Los cursos de Longbourn Institute estan orientados a sacar el mayor provecho de tu horario, permitiendo compatibilziar las clases con tu trabajo y estudios.<br>
+					    	Conoce los <b>cursos en los mejores horarios</b> que Longbourn Institute tiene para ti!.
+						</p>
+					</div>
+					<%end%>
+				</div>
+				<div class="col-md-6">
+					<%=link_to longbourn_startup_path do%>
+					<div class="hero-link wp-block hero white">
+					    <div class="thmb-img">
+					        <%=image_tag "svg/book.svg"%>
+					    </div>
+
+					    <h2>Longbourn StartUp</h2>
+					    <p class="text-center">
+					    	Los cursos de Longbourn Institute estan orientados a sacar el mayor provecho de tu horario, permitiendo compatibilziar las clases con tu trabajo y estudios. <br>
+					    	Conoce los <b>cursos con los mejores precios</b> en Longbourn!.
+						</p>
+					</div>
+					<%end%>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -441,7 +441,7 @@ $(document).ready(function() {
                             <ul class="aux-info-cells">
                                 <li><i class="fa fa-calendar"></i><%=l(ac.start_date, :format => "%b %d")%></li>
                                 <li><i class="fa fa-clock-o"></i> 10:00 AM</li>
-                                <li class="routebg-intro"><i class="fa fa-plus"></i> <a href="#">Más Información</a></li>
+                                <li style="background-color: <%=route_bg_color(ac.course_level_id)%>;"><i class="fa fa-plus"></i> <a href="#">Más Información</a></li>
                             </ul>
                         </div>
                     </div>

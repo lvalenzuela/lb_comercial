@@ -1,5 +1,18 @@
 module SiteHelper
 
+	def route_bg_color(course_level)
+		case course_level
+		when 1 #introductory
+			return "#8ec449"
+		when 2 #standard
+			return "#e67e22"
+		when 3 #expert
+			return "#3498db"
+		else #superior
+			return "#563d7c"
+		end
+	end
+
 	def classroom_matching_label(matching_id)
 		if matching_id
 			return ClassroomMatching.find(matching_id).matching_label

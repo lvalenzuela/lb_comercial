@@ -1,9 +1,558 @@
-<div class="section">
-	<div class="container-fluid">
-		<h1><%=@page_title%></h1>
-		<div class="row">
-			<div class="col-md-12">
-			</div>
-		</div>
-	</div>
+<div class="pg-opt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h2><%=@page_title%></h2>
+            </div>
+            <div class="col-md-2">
+                <ol class="breadcrumb">
+                    <li class="active">Longbourn StartUp</li>
+                </ol>
+            </div>
+        </div>
+    </div>
 </div>
+
+<section class="slice white bb">
+    <div class="wp-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="workCarousel" class="carousel carousel-4 slide color-two-l" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators hide">
+                            <li data-target="#homepageCarousel" data-slide-to="0" class="active"></li>
+                        </ol>
+                        
+                        <div class="carousel-inner">
+                            <div class="item item-dark active">
+                                <%=image_tag "prv/school/school-5.jpg", :class => "img-responsive"%>
+                            </div>
+                            <div class="item item-dark">
+                                <%=image_tag "prv/school/school-6.jpg", :class => "img-responsive"%>
+                            </div>
+                        </div>
+                        
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#workCarousel" data-slide="prev">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                        <a class="right carousel-control" href="#workCarousel" data-slide="next">
+                            <i class="fa fa-angle-right"></i>
+                        </a>       
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="box-element box-element-bordered dark">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1>
+                                    Cursos de Ingles para Profesionales e Independientes a los mejores precios!
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slice light-gray bb">
+    <div class="wp-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="wp-block hero white no-margin" style="height: 300px;">
+                        <div class="thmb-img">
+                            <i class="fa fa-lightbulb-o"></i>
+                        </div>
+                        
+                        <h2>Cursos Orientados a Profesionales independientes y futuros profesionales</h2>
+                        <p class="text-center">
+                        	Te estregaremos las herramientas y contenidos para que puedas comunicar tus ideas en forma precisa y puedas comprender con claridad mensajes escritos y auditivos en inglés.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="wp-block hero white no-margin" style="height: 300px;">
+                        <div class="thmb-img">
+                            <i class="fa fa-group"></i>
+                        </div>
+                        
+                        <h2>Grupos de Hasta 8 Participantes</h2>
+                        <p class="text-center">
+                        	En Longbourn podrás compartir e intercambiar ideas con otros Profesionales que buscan tus mismos objetivos, lo que enriquece la experiencia de aprendizaje.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="wp-block hero white no-margin" style="height: 300px;">
+                        <div class="thmb-img">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                        
+                        <h2>Los Mejores Valores En Sede Las Condes</h2>
+                        <p class="text-center">
+                        	Accede a los valores más convenientes estudiando en las mañanas o tardes en nuestra Sede Las Condes, a pasos del Metro Escuela Militar. 
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="wp-block hero white no-margin" style="height: 300px;">
+                        <div class="thmb-img">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                        
+                        <h2>Metodología TEG</h2>
+                        <p class="text-center">
+                        	Las clases utilizan la <b>Metodología TEG</b> (Teaching English Gradually) que de una <b>forma diferente, dinámica y entretenida</b>, desarrolla de manera simultánea las 4 habilidades del idioma: leer, escribir, escuchar y hablar.
+                        </p>
+                    </div>
+                </div>
+                    
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="slice white bb">
+    <div class="wp-section">
+        <div class="container">
+            <div class="section-title-wr">
+                <h3 class="section-title left">
+                    <span>Características Generales</span>
+                    <small>Cursos Longbourn Institute</small>
+                </h3>
+            </div>
+            <div class="row mt-20">
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-clock-o"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Horarios</h4>
+                            <p>36 hrs. Cronológicas</p>
+                            <p>24 clases de 90 minutos - 3 Meses Aprox.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Frecuencia de Clases</h4>
+                            <p>2 veces por semana</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Ubicación</h4>
+                            <p>Longbourn Sede Las Condes.</p>
+                            <p>Coronel Pereira 72 Piso 11, Las Condes</p>
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-graduation-cap"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Criterios de Aprobación</h4>
+                            <p>Obtener promedio de notas sobre 4.0</p>
+                            <p>75% de asistencia.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-group"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Grupos</h4>
+                            <p>De 1 hasta 8 participantes, mismo nivel</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-barcode"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Código Sence</h4>
+                            <p>Sí. Consulta con tu Empresa.</p>
+                        </div>
+                    </div>
+                </div>                   
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slice white bb">
+    <div class="wp-section">
+        <div class="container">
+            <div class="section-title-wr">
+                <h3 class="section-title left">
+                    <span>Proceso de Postulación</span>
+                    <small>Longbourn Institute</small>
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                   <%=image_tag "backgrounds/full-bg-20.jpg", :size => "580x369"%>
+                </div>
+                <div class="col-md-6">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-child"></i>
+                        </div>   
+                        <div class="icon-block-body">
+                            <h4 class="title">Punto de Partida</h4>
+                            <p>El Punto de Partida queda determinado por el nivel inicial de inglés, que será medido a través de nuestra <b>Prueba de Diagnóstico</b>.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-flag"></i>
+                        </div>   
+                        <div class="icon-block-body">
+                            <h4 class="title">El Objetivo lo Defines Tú</h4>
+                            <p>La cantidad de libros a contratar queda determinada por lo que cada Profesional o Grupo necesite o quiera aprender.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-check-square-o"></i>
+                        </div>   
+                        <div class="icon-block-body">
+                            <h4 class="title">Prueba de Diagnóstico Sin Costo</h4>
+                            <p>Inscríbete en nuestra Prueba de Diagnóstico. Con tus resultados y teniendo en cuenta el objetivo deseado, generaremos la cotización final de tu <b>Programa Longbourn Institute</b>.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</section>
+
+<section class="slice white bb">
+    <div class="wp-section">
+        <div class="container">
+            <div class="section-title-wr">
+                <h3 class="section-title left">
+                    <span>Rutas de Longbourn</span>
+                    <small>Simula tu programa de inglés en Longbourn</small>
+                </h3>
+            </div>
+            <div class="tabs-framed">
+                <ul class="tabs clearfix">
+                    <li class="active"><a href="#tab-1" data-toggle="tab">Introductory</a></li>
+                    <li class=""><a href="#tab-2" data-toggle="tab">Standard</a></li>
+                    <li class=""><a href="#tab-3" data-toggle="tab">Expert</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <!-- Tab 1 -->
+                    <div class="tab-pane fade active in" id="tab-1">
+                        <div class="tab-body">
+                            <div class="row">
+                                <div class="col-md-8 shadow achv-imgs" id="achievements-int">
+                                    <%=image_tag "d_mountain/introductory/introductory_8.png"%>
+                                    <%=image_tag "d_mountain/introductory/introductory_7.png"%>
+                                    <%=image_tag "d_mountain/introductory/introductory_6.png"%>
+                                    <%=image_tag "d_mountain/introductory/introductory_5.png"%>
+                                    <%=image_tag "d_mountain/introductory/introductory_4.png"%>
+                                    <%=image_tag "d_mountain/introductory/introductory_3.png"%>
+                                    <%=image_tag "d_mountain/introductory/introductory_2.png"%>
+                                    <%=image_tag "d_mountain/introductory/introductory_1.png", :class => "opaque"%>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="achievements-list" id="int-controls">
+                                        <li>Negociación Avanzada</li>
+                                        <li>Presentaciones en Congresos Internacionales</li>
+                                        <li>Redacción de Contratos y Papers Académicos</li>
+                                        <li>Liderar Reuniones de Negocios</li>
+                                        <li>Presentaciones y Llamadas Telefonicas</li>
+                                        <li>Participación en Reuniones</li>
+                                        <li>Comunicación Escrita</li>
+                                        <li class="selected">Nociones de Inglés</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-2">
+                        <div class="tab-body">
+                            <div class="row">
+                                <div class="col-md-8 shadow achv-imgs" id="achievements-std">
+                                    <%=image_tag "d_mountain/standard/standard_7.png"%>
+                                    <%=image_tag "d_mountain/standard/standard_6.png"%>
+                                    <%=image_tag "d_mountain/standard/standard_5.png"%>
+                                    <%=image_tag "d_mountain/standard/standard_4.png"%>
+                                    <%=image_tag "d_mountain/standard/standard_3.png"%>
+                                    <%=image_tag "d_mountain/standard/standard_2.png"%>
+                                    <%=image_tag "d_mountain/standard/standard_1.png", :class => "opaque"%>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="achievements-list" id="std-controls">
+                                        <li>Negociación Avanzada</li>
+                                        <li>Presentaciones en Congresos Internacionales</li>
+                                        <li>Redacción de Contratos y Papers Académicos</li>
+                                        <li>Liderar Reuniones de Negocios</li>
+                                        <li>Presentaciones y Llamadas Telefonicas</li>
+                                        <li>Participación en Reuniones</li>
+                                        <li class="selected">Comunicación Escrita</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="tab-3">
+                        <div class="tab-body">
+                            <div class="row">
+                                <div class="col-md-8 shadow achv-imgs" id="achievements-exp">
+                                    <%=image_tag "d_mountain/expert/expert_6.png"%>
+                                    <%=image_tag "d_mountain/expert/expert_5.png"%>
+                                    <%=image_tag "d_mountain/expert/expert_4.png"%>
+                                    <%=image_tag "d_mountain/expert/expert_3.png"%>
+                                    <%=image_tag "d_mountain/expert/expert_2.png"%>
+                                    <%=image_tag "d_mountain/expert/expert_1.png", :class => "opaque"%>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="achievements-list" id="exp-controls">
+                                        <li>Negociación Avanzada</li>
+                                        <li>Presentaciones en Congresos Internacionales</li>
+                                        <li>Redacción de Contratos y Papers Académicos</li>
+                                        <li>Liderar Reuniones de Negocios</li>
+                                        <li>Presentaciones y Llamadas Telefonicas</li>
+                                        <li class="selected">Participación en Reuniones</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#int-controls").on('click', 'li', function() {
+    $("#achievements-int img").removeClass("opaque");
+
+    var newImage = $(this).index();
+
+    $("#achievements-int img").eq(newImage).addClass("opaque");
+
+    $("#int-controls li").removeClass("selected");
+    $(this).addClass("selected");
+  });
+
+  $("#std-controls").on('click', 'li', function() {
+    $("#achievements-std img").removeClass("opaque");
+
+    var newImage = $(this).index();
+
+    $("#achievements-std img").eq(newImage).addClass("opaque");
+
+    $("#std-controls li").removeClass("selected");
+    $(this).addClass("selected");
+  });
+
+  $("#exp-controls").on('click', 'li', function() {
+    $("#achievements-exp img").removeClass("opaque");
+
+    var newImage = $(this).index();
+
+    $("#achievements-exp img").eq(newImage).addClass("opaque");
+
+    $("#exp-controls li").removeClass("selected");
+    $(this).addClass("selected");
+  });
+});
+</script>
+
+<section class="slice p-15 base">
+    <div class="cta-wr">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="text-normal">
+                        <strong>Cotiza!</strong> Informate de nuestras ofertas y promociones.
+                    </h1>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" class="btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right">
+                        <span>Contactanos</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slice animate-hover-slide bg-white bb">
+    <div class="wp-section">
+        <div class="container">
+            <div class="section-title-wr">
+                <h3 class="section-title left">
+                    <span>Cursos Próximos a Partir</span>
+                    <small>Los siguientes cursos tienen vacantes disponibles</small>
+                </h3>
+            </div>
+            <div class="owl-carousel owl-carousel-3">
+                <%@active_courses.each do |ac|%>
+                    <div class="item">
+                        <div class="wp-block default">
+                            <div class="figure">
+                                <%=image_tag "prv/school/school-1.jpg", :class => "img-responsive", :alt => ""%>
+                                <span class="wp-block-date-over alpha"><strong><%=l(ac.start_date, :format => "%b %d")%></strong></span>
+                                <div class="figcaption bg-base"></div>
+                                <div class="figcaption-btn">
+                                    <a href="#" class="btn btn-xs btn-b-white"><i class="fa fa-check"></i> Postular</a>
+                                </div>
+                            </div>
+                            <div class="wp-block-body bb">
+                                <h2 class="title"><%=ac.coursename%></h2>
+                                <p>
+                                <%=ac.description%>
+                                <br>
+                                36 Horas.
+                                </p>
+                            </div>
+                            <ul class="aux-info-cells">
+                                <li><i class="fa fa-calendar"></i><%=l(ac.start_date, :format => "%b %d")%></li>
+                                <li><i class="fa fa-clock-o"></i> 10:00 AM</li>
+                                <li style="background-color: <%=route_bg_color(ac.course_level_id)%>;"><i class="fa fa-plus"></i> <a href="#">Más Información</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                <%end%>      
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- LIGHT -->
+<section class="slice bg-white" id="plan-prices">
+    <div class="wp-section pricing-plans">
+        <div class="container">
+            <div class="section-title-wr">
+                <h3 class="section-title left">
+                    <span>Valores</span>
+                    <small>Longbourn Institute</small>
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="wp-block default">
+                        <div class="plan-header light">
+                            <h2 class="plan-title" style="font-size: 24px;">Private Executive</h2>
+                            <h3 class="price-tag" style="font-size: 38px;"><span>$</span>23.000</h3>
+                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small class="plan-info">Programas desde 36 horas</small>
+                        </div>
+                        <ul>
+                            <li><i class="fa fa-user"></i> Curso Individual Cerrado</li>
+                            <li><i class="fa fa-map-marker"></i> Sede Las Condes</li>
+                            <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
+                        </ul>          
+                        <p class="plan-select-block">
+                            <a href="#" class="btn btn-lg btn-block-bm btn-light btn-icon btn-check" hidefocus="true">
+                                <span>Más Información</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wp-block default">
+                        <div class="plan-header light">
+                            <h2 class="plan-title" style="font-size: 24px;">Executive Group</h2>
+                            <h3 class="price-tag" style="font-size: 38px;"><span>$</span>13.800</h3>
+                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small class="plan-info">Programas desde 36 horas</small>
+                        </div>
+                        <ul>
+                            <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
+                            <li><i class="fa fa-map-marker"></i> Sede Las Condes</li>
+                            <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
+                        </ul>          
+                        <p class="plan-select-block">
+                            <a href="#" class="btn btn-lg btn-block-bm btn-light btn-icon btn-check" hidefocus="true">
+                                <span>Más Información</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wp-block default">
+                        <div class="plan-header light">
+                            <h2 class="plan-title" style="font-size: 24px;">Longbourn Institute</h2>
+                            <h3 class="price-tag" style="font-size: 38px;"><span>$</span>9.000</h3>
+                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small class="plan-info">Programas desde 36 horas</small>
+                        </div>
+                        <ul>
+                            <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
+                            <li><i class="fa fa-map-marker"></i> Sede Las Condes</li>
+                            <li><i class="fa fa-clock-o"></i> Cursos de 17:00 a 20:30 hrs.</li>
+                        </ul>          
+                        <p class="plan-select-block">
+                            <a href="#" class="btn btn-lg btn-block-bm btn-light btn-icon btn-check" hidefocus="true">
+                                <span>Más Información</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="wp-block popular">
+                        <div class="plan-header light">
+                        	<div class="popular-tag dark">Destacado</div>
+                            <h2 class="plan-title" style="font-size: 24px;">Longbourn Startup</h2>
+                            <h3 class="price-tag" style="font-size: 38px;"><span>$</span>7.500</h3>
+                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small class="plan-info">Programas desde 36 horas</small>
+                        </div>
+                        <ul>
+                            <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
+                            <li><i class="fa fa-map-marker"></i> Sede Las Condes</li>
+                            <li><i class="fa fa-clock-o"></i> Cursos de 8:00 a 17:30 hrs.</li>
+                        </ul>         
+                        <p class="plan-select-block">
+                            <a href="#" class="btn btn-lg btn-block-bm btn-dark btn-icon btn-check" hidefocus="true">
+                                <span>Ver Cursos Disponibles</span>
+                            </a>
+                        </p>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+</section>

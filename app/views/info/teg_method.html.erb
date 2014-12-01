@@ -1,387 +1,280 @@
-
-
-
-<div class="section">
-    <div class="container-fluid info-section">
-		<h1>Cursos Longbourn</h1>
-		<div class="row">
-			<div class="col-xs-12 info-frame">
-				<p>
-					Nuestro modelo de aprendizaje de inglés es similar al escalamiento gradual de una montaña. Como se muestra en el siguiente esquema, se puede llegar a la cima por diferentes rutas:
-				</p>
-				<div class="row alt-timeline-row">
-					<div class="col-xs-5 alt-timeline-panel">
-						<div class="alt-timeline-title">
-							<h3>Objetivos Longbourn</h3>
-						</div>
-						<div class="alt-timeline-body">
-							<ol id="slide_controls">
-								<li class="selected">Nociones de Ingles</li>
-								<li>Comunicación Escrita</li>
-								<li>Participación Activa en Reuniones</li>
-								<li>Presentaciones y Llamadas telefonicas</li>
-								<li>Dirigir Reuniones</li>
-								<li>Redacción de Contratos / Papers Académicos</li>
-								<li>Presentaciones en Congresos Internacionales</li>
-								<li>Negociación Avanzada</li>
-							</ol>
-						</div>
-					</div>
-					<div class="col-xs-1 alt-timeline-line">
-						<div class="alt-timeline-circle">
-							<i class="fa fa-chevron-down"></i>
-						</div>
-					</div>
-					<div class="col-xs-6 alt-timeline-panel clearfix">
-						<div class="alt-timeline-body" style="padding: 10px 5px;">
-							<div class="shadow">
-							<%=image_tag "site-pics/Diagrama_2.png", :size => "500x240", :alt => "imagen 1", :class => "opaque"%>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row alt-timeline-row">
-					<div class="col-xs-5 alt-timeline-panel">
-						<div class="alt-timeline-title">
-							<h3>Inscripción</h3>
-						</div>
-						<div class="alt-timeline-body">
-							<p>El <b>Punto Objetivo</b> lo decides tú.</p>
-							<ul>
-								<li>La cantidad de libros a contratar queda determinada por lo que cada Ejecutivo o Grupo necesite o quiera aprender.</li>
-							</ul>
-
-							<p>
-								<b>Inscríbete</b> en nuestra <b>Prueba de Diagnóstico</b>. Con tus resultados y teniendo en cuenta el objetivo deseado, generaremos la cotización final de tu <b>Programa Longbourn Executive</b>.
-							</p>
-							<p>
-								La <b>Prueba de Diagnóstico</b> no tiene costo.
-							</p>
-						</div>
-					</div>
-					<div class="col-xs-1 alt-timeline-line">
-						<div class="alt-timeline-circle">
-							<i class="fa fa-chevron-down"></i>
-						</div>
-					</div>
-					<div class="col-xs-6 alt-timeline-panel">
-						<div class="alt-timeline-title">
-							<h3>Tabla de Puntajes</h3>
-						</div>
-						<div class="alt-timeline-body" style="padding: 10px 5px;">
-							<table class="table table-bordered info-frame-table">
-								<thead>
-									<tr>
-										<th>Puntaje Prueba de Diagnóstico</th>
-										<th>Ruta</th>
-										<th>Libro Inicial</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>+71% Prueba Diagnóstico</td>
-										<td>Expert Route</td>
-										<td>Cotopaxi</td>
-									</tr>
-									<tr>
-										<td>40% a 70% Prueba Diagnóstico</td>
-										<td>Standard Route</td>
-										<td>Mauna Kea</td>
-									</tr>
-									<tr>
-										<td>0% a 39% Prueba Diagnóstico</td>
-										<td>Introductory Route</td>
-										<td>Tronador</td>
-									</tr>
-								
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<script>
-$(document).ready(function() {
-  $("#slide_controls").on('mouseenter', 'li', function() {
-    $("#slider-frame img").removeClass("opaque");
-
-    var newImage = $(this).index();
-
-    $("#slider-frame img").eq(newImage).addClass("opaque");
-
-    $("#slider_controls li").removeClass("selected");
-    $(this).addClass("selected");
-  });
-});
-</script>
-
-
-
-<div class="section">
-	<div class="container-fluid">
-		<h1><%=@page_title%></h1>
-		<div class="row">
-			<div class="col-md-12">
-			mientras tanto
-			<div class="section">
-				<div class="container-fluid">
-					<h2 style="text-align: center;">The Longbourn Experience</h2>
-					<div class="col-sm-12">
-						<ul class="timeline">
-							<li>
-								<div class="timeline-badge"><i class="fa fa-chevron-circle-down"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-									  <h4 class="timeline-title">Define tus Metas</h4>
-									  <p><small class="text-muted"><i class="fa fa-trophy"></i> ¿Qué quieres lograr con Longbourn?</small></p>
-									</div>
-									<div class="timeline-body">
-									  <p>Selecciona un objetivo a lograr con <strong>Longbourn Institute</strong>.</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted">
-								<div class="timeline-badge"><i class="fa fa-chevron-circle-down"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-									  <h4 class="timeline-title">Descubre tu Nivel</h4>
-									  <p><small class="text-muted"><i class="fa fa-gamepad"></i> Quiz de diagnostico Longbourn</small></p>
-									</div>
-									<div class="timeline-body">
-									  <p>Diviertete con nuestro entretenido <strong>Quiz de Diagnóstico</strong> y descubre tu ruta a seguir en Longbourn Institute</p>
-									</div>
-								</div>
-							</li>
-							<li>
-								<div class="timeline-badge"><i class="fa fa-chevron-circle-down"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-									  <h4 class="timeline-title">Cotiza tu Curso</h4>
-									  <p><small class="text-muted"><i class="fa fa-university"></i> Cursos de Longbourn</small></p>
-									</div>
-									<div class="timeline-body">
-									  <p>Selecciona uno de los cursos de <strong>Longbourn Institute</strong> en la modalidad y fecha que más te acomode.</p>
-									</div>
-								</div>
-							</li>
-							<li class="timeline-inverted">
-								<div class="timeline-badge"><i class="fa fa-chevron-circle-right"></i></div>
-								<div class="timeline-panel">
-									<div class="timeline-heading">
-									  <h4 class="timeline-title">Vive la Experiencia Longbourn!</h4>
-									  <p><small class="text-muted"><i class="fa fa-gamepad"></i> Cursos a la Medida</small></p>
-									</div>
-									<div class="timeline-body">
-									  <p>Vive la <strong>Experiencia Longbourn</strong> en nuestras salas y con nuestros profesores.</p>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- Testimonials -->
-<div class="section">
-	<div class="container-fluid">
-		<h2 style="text-align:center;">Why Longbourn</h2>
-		<div class="row">
-			<!-- Testimonial -->
-			<div class="testimonial-nb col-md-6">
-				<!-- Author Photo -->
-				<div class="author-photo">
-					<p class="circle-highlight"><i class="fa fa-star fa-lg"></i></p>
-				</div>
-				<div class="testimonial-bubble">
-					<blockquote>
-						<h4>Cursos de Inglés de Calidad</h4>
-						<!-- Quote -->
-						<p class="quote">
-                            Longbourn ofrece la mejor calidad en la enseñanza del idioma. Contamos con el uso exclusivo del TEG Method y sólo contratamos profesores titulados de las mejores Universidades, a quienes capacitamos constantemente.
-                		</p>
-                	</blockquote>
-                	<div class="sprite arrow-speech-bubble"></div>
-                </div>
+<!-- MAIN CONTENT -->
+<div class="pg-opt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Services</h2>
             </div>
-            <!-- End Testimonial -->
-            <div class="testimonial-nb col-md-6">
-				<div class="author-photo">
-					<p class="circle-highlight"><i class="fa fa-suitcase fa-lg"></i></p>
-				</div>
-				<div class="testimonial-bubble">
-					<blockquote>
-						<h4>Facilitamos tu Experiencia</h4>
-						<p class="quote">
-                            Longbourn sabe que tu tiempo y recursos son valiosos. Las prioridades de cada tipo de Profesional son diferentes, por lo que diseñamos múltiples soluciones para facilitar tu experiencia estudiando Inglés.
-                		</p>
-                	</blockquote>
-                	<div class="sprite arrow-speech-bubble"></div>
+            <div class="col-md-6">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li class="active">Services</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="slice white bb animate-hover-slide">
+    <div class="wp-section">
+        <div class="container">
+            <p style="margin-bottom:20px;">
+            <span class="primary-letter style-3 base">L</span>orem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <div class="section-title-wr">
+                <h3 class="section-title left">
+                    <span>What we do</span>
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="wp-block default">
+                        <div class="figure">
+                            <img alt="" src="images/prv/col-img-8.jpg" class="img-responsive">
+                            <div class="figcaption bg-base"></div>
+                            <div class="figcaption-btn">
+                                <a href="images/prv/col-img-1.jpg" class="btn btn-xs btn-b-white theater"><i class="fa fa-plus-circle"></i> Zoom</a>
+                                <a href="#" class="btn btn-xs btn-b-white"><i class="fa fa-link"></i> View</a>
+                            </div>
+                        </div>
+                        <div class="wp-block-body">
+                            <h2 class="title">Web Design</h2>
+                            <p>
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="wp-block default">
+                        <div class="figure">
+                            <img alt="" src="images/prv/col-img-4.jpg" class="img-responsive">
+                            <div class="figcaption bg-base"></div>
+                            <div class="figcaption-btn">
+                                <a href="images/prv/col-img-2.jpg" class="btn btn-xs btn-b-white theater"><i class="fa fa-plus-circle"></i> Zoom</a>
+                                <a href="#" class="btn btn-xs btn-b-white"><i class="fa fa-link"></i> View</a>
+                            </div>
+                        </div>
+                        <div class="wp-block-body">
+                            <h2 class="title">Development</h2>
+                            <p>
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="wp-block default">
+                        <div class="figure">
+                            <img alt="" src="images/prv/col-img-3.jpg" class="img-responsive">
+                            <div class="figcaption bg-base"></div>
+                            <div class="figcaption-btn">
+                                <a href="images/prv/col-img-3.jpg" class="btn btn-xs btn-b-white theater"><i class="fa fa-plus-circle"></i> Zoom</a>
+                                <a href="#" class="btn btn-xs btn-b-white"><i class="fa fa-link"></i> View</a>
+                            </div>
+                        </div>
+                        <div class="wp-block-body">
+                            <h2 class="title">Marketing</h2>
+                            <p>
+                            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row">
-			<div class="testimonial-nb col-md-6">
-				<div class="author-photo">
-					<p class="circle-highlight"><i class="fa fa-map-marker fa-lg"></i></p>
-				</div>
-				<div class="testimonial-bubble">
-					<blockquote>
-						<h4>En tu Oficina o en Longbourn Las Condes</h4>
-						<p class="quote">
-                            Ofrecemos una alta gama horarios en Longbourn Las Condes; con el Metro Escuela Militar a 3 cuadras y estacionamiento muy cercano.
-                		</p>
-                	</blockquote>
-                	<div class="sprite arrow-speech-bubble"></div>
+    </div>
+</section>
+
+<section class="slice light-gray bb">
+    <div class="wp-section">
+        <div class="container">
+            <div class="section-title-wr mb-40">
+                <h3 class="section-title left">
+                    <span class="">What do we offer</span>
+                    <small class="">Lorem ipsum dolor sit amet</small>
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-desktop"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Web Design</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-code"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Coding</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-cogs"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">SE Optimization</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-			<div class="testimonial-nb col-md-6">
-				<div class="author-photo">
-					<p class="circle-highlight"><i class="fa fa-thumbs-o-up fa-lg"></i></p>
-				</div>
-				<div class="testimonial-bubble">
-					<blockquote>
-						<h4>Servicio Confiable</h4>
-						<p class="quote">
-                            El equipo docente Longbourn está apoyado por nuestro equipo de ingeniería y backoffice. Estamos atentos para solucionar cualquier contingencia. Siempre tendremos profesores reemplazantes disponibles en caso de imprevistos.
-                		</p>
-                	</blockquote>
-                	<div class="sprite arrow-speech-bubble"></div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-wrench"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Technical support 24/7</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Monthly updated</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-plane"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Ready to use</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-		</div>
-	</div>
-</div>
-<!-- End Testimonials -->
+        </div>
+    </div>
+</section>
 
-<!-- Call to Action Bar -->
-<div class="section section-white">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="calltoaction-wrapper">
-					<h3>Juega a nuestro Juego y descubre tu nivel de Inglés!</h3> <%=link_to "Jugar", {:controller => "site", :action => "play_tha_game"}, {:class => "btn btn-lg  btn-grey"}%>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- End Call to Action Bar -->
+<section class="slice white animate-hover-slide">
+    <div class="wp-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="section-title-wr">
+                        <h3 class="section-title left"><span>Short info</span></h3>
+                    </div>
 
-<div class="section">
-    <div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12 info-frame" style="margin-top: 20px;">
-				<h1>Características Generales de los Cursos Longbourn Executive</h1>
-			</div>
-			<div class="col-xs-8 col-xs-offset-2 info-frame" style="margin-top: 20px;">
-				<div class="course-features-table">
-					<div class="row table-row">
-						<div class="col-xs-12">
-							<div class="col-xs-5 table-header">
-								Duración de cada Libro
-							</div>
-							<div class="col-xs-7 table-data">
-								<div class="data-row">
-									36 hrs. Cronológicas
-								</div>
-								<div class="data-row">
-									24 Clases de 90 mins. – Aprox. 3 meses.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row table-row">
-						<div class="col-xs-12">
-							<div class="col-xs-5 table-header">
-								Frecuencia de Clases
-							</div>
-							<div class="col-xs-7 table-data">
-								<div class="data-row">
-									2 o más veces por semana
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row table-row">
-						<div class="col-xs-12">
-							<div class="col-xs-5 table-header">
-								Horarios
-							</div>
-							<div class="col-xs-7 table-data">
-								<div class="data-row">
-									Lunes a Viernes, a definir con el cliente.
-								</div>
-								<div class="data-row">
-									Primer Horario inicia a las 08:00
-								</div>
-								<div class="data-row">
-									Último Horario inicia a las 18:30 hrs.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row table-row">
-						<div class="col-xs-12">
-							<div class="col-xs-5 table-header">
-								Ubicación
-							</div>
-							<div class="col-xs-7 table-data">
-								<div class="data-row">
-									Oficina del cliente.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row table-row">
-						<div class="col-xs-12">
-							<div class="col-xs-5 table-header">
-								Reprogramaciones de Clases
-							</div>
-							<div class="col-xs-7 table-data">
-								<div class="data-row">
-									3 Reprogramaciones de Clases por cada 36 hrs. contratadas (no aplica para cursos Sence)
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row table-row">
-						<div class="col-xs-12">
-							<div class="col-xs-5 table-header">
-								Código Sence
-							</div>
-							<div class="col-xs-7 table-data">
-								<div class="data-row">
-									A partir de grupos de 4 o más personas.
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row table-row">
-						<div class="col-xs-12">
-							<div class="col-xs-5 table-header">
-								Criterio de aprobación de cursos
-							</div>
-							<div class="col-xs-7 table-data">
-								<div class="data-row">
-									Obtener promedio de notas sobre 4.0
-								</div>
-								<div class="data-row">
-									75% de asistencia.
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et 
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip 
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+                        fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                        mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="col-md-7">
+                    <div class="section-title-wr">
+                        <h3 class="section-title left"><span>Some of our services</span></h3>
+                    </div>
+
+                    <div class="tabs-framed boxed">
+                        <ul class="tabs clearfix">
+                            <li class="active"><a href="#events" data-toggle="tab">Events</a></li>
+                            <li><a href="#starred" data-toggle="tab">Starred</a></li>
+                            <li><a href="#archive" data-toggle="tab">Archive</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="events">
+                                <!-- Place Your Content Here -->
+                                <div class="tab-body">
+                                    <p>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="starred">
+                                <!-- Place Your Content Here -->
+                            </div>
+
+                            <div class="tab-pane fade" id="archive">
+                                <!-- Place Your Content Here -->
+                            </div>
+                        </div>
+                    </div>
+                               
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slice bg-banner-2 animate-in-view">
+    <div class="wp-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h4><i class="fa fa-bar-chart-o fa-4x"></i></h4>
+                        <h2>UI Elements and Shortcodes for a more dynamic content</h2>
+                        
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3">
+                                <div class="pie-chart" data-percent="91">
+                                    <span class="percent"></span>
+                                    <div class="chart-text">
+                                        <h3>Business ready</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="pie-chart" data-percent="23">
+                                    <span class="percent"></span>
+                                    <div class="chart-text">
+                                        <h3>Business ready</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="pie-chart" data-percent="68">
+                                    <span class="percent"></span>
+                                    <div class="chart-text">
+                                        <h3>Business ready</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-md-3">
+                                <div class="pie-chart" data-percent="68">
+                                    <span class="percent"></span>
+                                    <div class="chart-text">
+                                        <h3>Business ready</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

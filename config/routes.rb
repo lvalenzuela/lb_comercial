@@ -8,19 +8,19 @@ Rails.application.routes.draw do
   ##
   #Informacionales
   ##
-  match "longbourn-executive", to: "info#longbourn_executive", via: [:get]
-  match "longbourn-startup", to: "info#longbourn_startup", via: [:get]
-  match "longbourn-institute", to: "info#longbourn_institute", via: [:get]
+  match "longbourn_executive", to: "info#longbourn_executive", via: [:get]
+  match "longbourn_startup", to: "info#longbourn_startup", via: [:get]
+  match "longbourn_institute", to: "info#longbourn_institute", via: [:get]
   match "cursos-internacionales", to: "info#cursos_internacionales", via: [:get]
 
 
-  match "longbourn-executive", to: "info#longbourn_executive", via: [:get]
-  match "ingles-en-sede", to: "info#cursos_en_sede", via: [:get]
-  match "cursos-toefl", to: "info#cursos_toefl", via: [:get]
-  match "cursos-ielts", to: "info#cursos_ielts", via: [:get]
-  match "cursos-toeic", to: "info#cursos_toeic", via: [:get]
-  match "metodologia-teg", to: "info#teg_method", via: [:get]
-  match "cursos-empresas", to: "info#cursos_empresas", via: [:get]
+  match "longbourn_executive", to: "info#longbourn_executive", via: [:get]
+  match "ingles_en_nuestra_sede", to: "info#cursos_en_sede", via: [:get]
+  match "cursos_toefl", to: "info#cursos_toefl", via: [:get]
+  match "cursos_ielts", to: "info#cursos_ielts", via: [:get]
+  match "cursos_toeic", to: "info#cursos_toeic", via: [:get]
+  match "metodologia_teg", to: "info#teg_method", via: [:get]
+  match "cursos_empresas", to: "info#cursos_empresas", via: [:get]
 
   #rutas antiguas
 
