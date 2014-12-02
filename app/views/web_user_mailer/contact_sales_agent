@@ -4,63 +4,30 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>El usuario <%=@user.name%> requiere una cotizacion</h1>
+    <h3>Se ha registrado una solicitud de contacto a travez de la Web Comercial de Longbourn Institute.</h3>
 
-    <h2>Datos del usuario</h2>
-    <table class="table" style="text-align:left;">
+    <p>Datos generales del Contacto:</p>
+    <table style="text-align: left;">
+      <tr>
+        <th>ID Registro</th>
+        <td><%=@contact.id%></td>
+      </tr>
       <tr>
         <th>Nombre</th>
-        <td><%=@user.name%></td>
+        <td><%=@contact.name%></td>
       </tr>
       <tr>
-        <th>Género</th>
-        <td><%=@user.gender.include?("male") ? "Masculino" : "Femenino"%></td>
+        <th>Email</th>
+        <td><%=@contact.email%></td>
       </tr>
       <tr>
-        <th>Correo</th>
-        <td><%=@user.email%></td>
-      </tr>
-      <tr>
-        <th>Telefono de Contacto</th>
-        <td><%=@user.phone%></td>
+        <th>Telefono</th>
+        <td><%=@contact.phone%></td>
       </tr>
     </table>
-
-    <h2>Datos del Curso Seleccionado</h2>
-    <table class="table" style="text-align:left;">
-      <tr>
-        <th>ID [Summit]</th>
-        <td><%=@course.id%></td>
-      </tr>
-      <tr>
-        <th>Nombre</th>
-        <td><%=@course.coursename%></td>
-      </tr>
-      <tr>
-        <th>Nivel</th>
-        <td><%=@course_level%></td>
-      </tr>
-      <tr>
-        <th>Modalidad</th>
-        <td><%=@course_mode%></td>
-      </tr>
-      <tr>
-        <th>Fecha de Inicio</th>
-        <td><%=l(@course.start_date, :format => "%d-%m-%Y")%></td>
-      </tr>
-      <tr>
-        <th>Horario de Clases</th>
-        <td><%=@course_matching%></td>
-      </tr>
-      <tr>
-        <th>Precio[Sin Dcto]</th>
-        <td><%=@course_price%></td>
-      </tr>
-      <tr>
-        <th>Descuento</th>
-        <td><%=@course.discount_pct%></td>
-      </tr>
-    </table>  
+    <h2>Mensaje</h2>
+    <h4>Título: <%=@contact.subject%></h4>
+    <p><%=@contact.msg%></p>
     
     -------------------------------------------------------
     <p>Este correo fue generado automáticamente, por lo cual se sugiere no responderlo.</p>

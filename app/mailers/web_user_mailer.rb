@@ -30,14 +30,9 @@ class WebUserMailer < ActionMailer::Base
   	mail(to: user.email, subject: "Longbourn Institute: Registro de Usuarios de Longbourn.")
   end
 
-  def contact_sales_agent(user,course)
-    @user = user
-    @course = course
-    @course_level = CourseLevel.find(@course.course_level_id).course_level
-    @course_mode = CourseMode.find(@course.mode).mode_name
-    @course_matching = ClassroomMatching.find(@course.classroom_matching_id).matching_label
-    @course_price = CourseModeZohoProductMap.find_by_zoho_product_id(@course.zoho_product_id).price
-    mail(to: "lvalenzuela@longbourn.cl", subject: "Solicitud de Cotización: #{user.name}")
+  def contact_sales_agent(web_contact)
+    @contact = web_contact
+    mail(to: "aarregui@longbourn.cl", subject: "Contacto Web Comercial: #{web_contact.name}")
   end
 
   private

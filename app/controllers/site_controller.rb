@@ -4,20 +4,23 @@ class SiteController < ApplicationController
 	require "bcrypt"
 
 	def index
-		#@types = CourseType.all()
-		#raw_products = zoho_product_list
-		#if raw_products["code"] == 0
-		#	@modes = raw_products["items"]
-		#else
-		#	@modes = nil
-		#end
-		#@modes = Course.select("distinct(mode) as mode")
-		#Se registra el paso
 		session[:action_milestone] = action_name
 	end
 
 	def contact_us
 		
+	end
+
+	def deliver_contact_form
+		@web_contact = WebContactForm.create(web_contact_form_params)
+		if @web_contact.valid?
+			flash[:notice] = "Su solicitud fue procesada exitosamente. Nos pondremos en contacto con usted a la brevedad."
+			#enviar correo a agente de ventas
+			WebUserMailer.contact_sales_agent(@web_contact).deliver
+		else
+			flash[:notice] = "Su solicitud no pudo procesarse de forma adecuada. Por favor, intentelo de nuevo."
+		end
+		redirect_to :action => :contact_us
 	end
 
 	def signup
@@ -152,6 +155,10 @@ class SiteController < ApplicationController
 #Funciones privadas para esta clase
 #####################################
 	private
+
+	def web_contact_form_params
+		params.require(:web_contact_form).permit(:name, :email, :phone, :subject, :msg)
+	end
 
 	def enable_zoho_contact(web_user)
 		if !web_user.zoho_enabled

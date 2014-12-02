@@ -21,35 +21,40 @@
                     <h3 class="section-title left"><span>Contact us</span></h3>
                 </div>
                 <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                Ponte en contacto con nuestros agentes de ventas para resolver tus dudas y cotizar el curso más adecuado a tus necesidades.
                 </p>
+                <%if flash[:notice]%>
+                    <div class="alert alert-warning">
+                        <%=flash[:notice]%>
+                    </div>
+                <%end%>
                 
-                <%=form_tag contact_us_site_index_path, :class => "form-light mt-20" do%>
+                <%=form_for :web_contact_form, :url => {:action => :deliver_contact_form}, :class => "form-light mt-20" do |f|%>
                     <div class="form-group">
                         <label>Nombre</label>
-                        <%=text_field_tag :user_name, nil, :class => "form-control", :placeholder => "Nombre"%>
+                        <%=f.text_field :name, :class => "form-control", :placeholder => "Nombre"%>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Email</label>
-                                <%=email_field_tag :email, nil, :class => "form-control", :placeholder => "Email"%>
+                                <%=f.email_field :email, :class => "form-control", :placeholder => "Email"%>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <%=phone_field_tag :phone, nil, :class => "form-control", :placeholder => "Número Telefónico"%>
+                                <%=f.phone_field :phone, :class => "form-control", :placeholder => "Número Telefónico"%>
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Título</label>
-                        <%=text_field_tag :subject, nil, :class => "form-control", :placeholder => "Título"%>
+                        <%=f.text_field :subject, :class => "form-control", :placeholder => "Título"%>
                     </div>
                     <div class="form-group">
                         <label>Message</label>
-                        <%=text_area_tag :msg, nil, :class => "form-control", :placeholder => "Escriba su mensaje así.", :style => "height:100px;"%>
+                        <%=f.text_area :msg, :class => "form-control", :placeholder => "Escriba su mensaje aquí.", :style => "height: 100px;"%>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
@@ -90,10 +95,10 @@
                             <h5><i class="fa fa-check"></i> Lunes - Viernes</h5>
                             <p>8:30 AM - 20:30 PM</p>
                             
-                            <h5><i class="fa fa-times"></i> Saturday</h5>
+                            <h5><i class="fa fa-times"></i> Sábado</h5>
                             <p>08:30 AM - 12:00 PM</p>
                             
-                            <h5><i class="fa fa-times"></i> Sunday</h5>
+                            <h5><i class="fa fa-times"></i> Domingo</h5>
                             <p>Cerrado</p>
                         </div>
                     </div>
@@ -102,9 +107,6 @@
                 <div class="section-title-wr">
                     <h3 class="section-title left"><span>Síguenos en las Redes Sociales</span></h3>
                 </div>
-                <p>
-                Lorem ipsum dolor sit amet, consectetur acing elit. Aenean esrsel piesn qersl ioinm sersoe non urna dolor aecena.
-                </p>
                 <div class="social-media">
                     <a href="#"><i class="fa fa-facebook facebook"></i></a>
                     <a href="#"><i class="fa fa-google-plus google"></i></a>

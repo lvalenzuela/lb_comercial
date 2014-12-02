@@ -76,7 +76,7 @@ Rails.application.routes.draw do
       get "course_details_report"
       get "contact_sales_agent"
       get "contact_us"
-      post "contact"
+      post "deliver_contact_form"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.
