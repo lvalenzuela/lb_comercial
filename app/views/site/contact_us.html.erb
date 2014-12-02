@@ -123,11 +123,11 @@
 <script type="text/javascript">
 var map;
 
-function initialize() {
+$(document).ready(function() {
   var myLatlng = new google.maps.LatLng(-33.412876, -70.579246);
   var mapOptions = {
     zoom: 16,
-	scrollwheel: false,
+    scrollwheel: false,
     center: myLatlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   }
@@ -136,14 +136,14 @@ function initialize() {
   var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
-	  animation: google.maps.Animation.DROP,
+      animation: google.maps.Animation.DROP,
       title: 'Longbourn'
   });
   
   var contentString = '<div class="info-window-content"><h2>Longbourn!</h2>'+
-  					  '<h3>Cursos de Ingles para Profesionales y Ejecutivos</h3>'+
-					  '<p>Coronel Pereira 72, Piso 11, Las Condes</p></div>';
-					  
+                      '<h3>Cursos de Ingles para Profesionales y Ejecutivos</h3>'+
+                      '<p>Coronel Pereira 72, Piso 11, Las Condes</p></div>';
+                      
   var infowindow = new google.maps.InfoWindow({
       content: contentString
   });
@@ -151,11 +151,6 @@ function initialize() {
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.open(map,marker);
   });
-}
+});
 
-google.maps.event.addDomListener(window, 'load', initialize);
-
-$('a[data-type="gmap"]').on('shown.bs.tab', function (e) {
-  initialize();
-})
 </script>
