@@ -49,7 +49,15 @@
                       <%=link_to "Inglés In Office", :controller => :info, :action => :longbourn_executive%>
                     </li>
                     <li>
-                      <%=link_to "Inglés en Sede", :controller => :info, :action => :cursos_en_sede%>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Inglés en Sede</a>
+                        <ul class="dropdown-menu">
+                            <li>
+                              <%=link_to "Longbourn Institute", longbourn_institute_path%>
+                            </li>
+                            <li>
+                              <%=link_to "Longbourn StartUp", longbourn_startup_path%>
+                            </li> 
+                        </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Preparación Tests</a>

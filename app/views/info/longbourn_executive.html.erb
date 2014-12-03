@@ -13,47 +13,12 @@
     </div>
 </div>
 
-<section class="slice white bb">
-    <div class="wp-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div id="workCarousel" class="carousel carousel-4 slide color-two-l" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators hide">
-                            <li data-target="#homepageCarousel" data-slide-to="0" class="active"></li>
-                        </ol>
-                        
-                        <div class="carousel-inner">
-                            <div class="item item-dark active">
-                                <%=image_tag "site-pics/meetingbackground.jpg", :class => "img-responsive"%>
-                            </div>
-                        </div>
-                        
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#workCarousel" data-slide="prev">
-                            <i class="fa fa-angle-left"></i>
-                        </a>
-                        <a class="right carousel-control" href="#workCarousel" data-slide="next">
-                            <i class="fa fa-angle-right"></i>
-                        </a>       
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="box-element box-element-bordered dark">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h1>
-                                    Cursos de Ingles para Profesionales en tu Oficina!
-                                </h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="static-page-image">
+    <%=image_tag "backgrounds/full-bg-7.jpg", :alt => ""%>
+    <div class="description-left">
+        <span class="subtitle text-wrapped alpha c-black">Cursos para Ejecutivos en tu Oficina</span>
     </div>
-</section>
+</div>
 
 <section class="slice light-gray bb">
     <div class="wp-section">
@@ -205,10 +170,7 @@
                 </h3>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                   <%=image_tag "site-pics/longbourn-characters.jpg"%>
-                </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
                             <i class="fa fa-child"></i>
@@ -218,7 +180,8 @@
                             <p>El Punto de Partida queda determinado por el nivel inicial de inglés, que será medido a través de nuestra <b>Prueba de Diagnóstico</b>.</p>
                         </div>
                     </div>
-                    
+                </div>
+                <div class="col-md-4">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
                             <i class="fa fa-flag"></i>
@@ -228,7 +191,8 @@
                             <p>La cantidad de libros a contratar queda determinada por lo que cada Profesional o Grupo necesite o quiera aprender.</p>
                         </div>
                     </div>
-                    
+                </div>
+                <div class="col-md-4">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
                             <i class="fa fa-check-square-o"></i>
@@ -238,154 +202,121 @@
                             <p>Inscríbete en nuestra Prueba de Diagnóstico. Con tus resultados y teniendo en cuenta el objetivo deseado, generaremos la cotización final de tu <b>Programa Longbourn Institute</b>.</p>
                         </div>
                     </div>
-                    
                 </div>
             </div>
-        
-        </div>
-    </div>
-</section>
-
-<section class="slice white bb">
-    <div class="wp-section">
-        <div class="container">
-            <div class="section-title-wr">
-                <h3 class="section-title left">
-                    <span>Rutas de Longbourn</span>
-                    <small>Simula tu programa de inglés en Longbourn</small>
-                </h3>
-            </div>
-            <div class="tabs-framed">
-                <ul class="tabs clearfix">
-                    <li class="active"><a href="#tab-1" data-toggle="tab">Introductory</a></li>
-                    <li class=""><a href="#tab-2" data-toggle="tab">Standard</a></li>
-                    <li class=""><a href="#tab-3" data-toggle="tab">Expert</a></li>
-                </ul>
-
-                <div class="tab-content">
-                    <!-- Tab 1 -->
-                    <div class="tab-pane fade active in" id="tab-1">
-                        <div class="tab-body">
-                            <div class="row">
-                                <div class="col-md-8 shadow achv-imgs" id="achievements-int">
-                                    <%=image_tag "d_mountain/introductory/introductory_8.png"%>
-                                    <%=image_tag "d_mountain/introductory/introductory_7.png"%>
-                                    <%=image_tag "d_mountain/introductory/introductory_6.png"%>
-                                    <%=image_tag "d_mountain/introductory/introductory_5.png"%>
-                                    <%=image_tag "d_mountain/introductory/introductory_4.png"%>
-                                    <%=image_tag "d_mountain/introductory/introductory_3.png"%>
-                                    <%=image_tag "d_mountain/introductory/introductory_2.png"%>
-                                    <%=image_tag "d_mountain/introductory/introductory_1.png", :class => "opaque"%>
-                                </div>
-                                <div class="col-md-4">
-                                    <ul class="achievements-list" id="int-controls">
-                                        <li>Negociación Avanzada</li>
-                                        <li>Presentaciones en Congresos Internacionales</li>
-                                        <li>Redacción de Contratos y Papers Académicos</li>
-                                        <li>Liderar Reuniones de Negocios</li>
-                                        <li>Presentaciones y Llamadas Telefonicas</li>
-                                        <li>Participación en Reuniones</li>
-                                        <li>Comunicación Escrita</li>
-                                        <li class="selected">Nociones de Inglés</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <%=select_tag :routes, options_for_select([["Introductory",0],["Standard",1],["Expert",2]],0), {:class => "form-control"}%>
                     </div>
-
-                    <div class="tab-pane fade" id="tab-2">
-                        <div class="tab-body">
-                            <div class="row">
-                                <div class="col-md-8 shadow achv-imgs" id="achievements-std">
-                                    <%=image_tag "d_mountain/standard/standard_7.png"%>
-                                    <%=image_tag "d_mountain/standard/standard_6.png"%>
-                                    <%=image_tag "d_mountain/standard/standard_5.png"%>
-                                    <%=image_tag "d_mountain/standard/standard_4.png"%>
-                                    <%=image_tag "d_mountain/standard/standard_3.png"%>
-                                    <%=image_tag "d_mountain/standard/standard_2.png"%>
-                                    <%=image_tag "d_mountain/standard/standard_1.png", :class => "opaque"%>
-                                </div>
-                                <div class="col-md-4">
-                                    <ul class="achievements-list" id="std-controls">
-                                        <li>Negociación Avanzada</li>
-                                        <li>Presentaciones en Congresos Internacionales</li>
-                                        <li>Redacción de Contratos y Papers Académicos</li>
-                                        <li>Liderar Reuniones de Negocios</li>
-                                        <li>Presentaciones y Llamadas Telefonicas</li>
-                                        <li>Participación en Reuniones</li>
-                                        <li class="selected">Comunicación Escrita</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <%=select_tag :objectives_int, options_for_select([
+                            ["Negociación Avanzada",0],
+                            ["Presentaciones en Congresos Internacionales",1],
+                            ["Redacción de Contratos y Papers Académicos",2],
+                            ["Liderar Reuniones de Negocios",3],
+                            ["Presentaciones y llamadas Telefónicas",4], 
+                            ["Participación en Reuniones",5],
+                            ["Comunicación Escrita",6],
+                            ["Nociones de Inglés",7]],1), {:class => "form-control objectives", :style => "display: block;"}%>
+                        <%=select_tag :objectives_std, options_for_select([
+                            ["Negociación Avanzada",0],
+                            ["Presentaciones en Congresos Internacionales",1],
+                            ["Redacción de Contratos y Papers Académicos",2],
+                            ["Liderar Reuniones de Negocios",3],
+                            ["Presentaciones y llamadas Telefónicas",4], 
+                            ["Participación en Reuniones",5],
+                            ["Comunicación Escrita",6]],1), {:class => "form-control objectives", :style => "display: none;"}%>
+                        <%=select_tag :objectives_exp, options_for_select([
+                            ["Negociación Avanzada",0],
+                            ["Presentaciones en Congresos Internacionales",1],
+                            ["Redacción de Contratos y Papers Académicos",2],
+                            ["Liderar Reuniones de Negocios",3],
+                            ["Presentaciones y llamadas Telefónicas",4], 
+                            ["Participación en Reuniones",5],
+                            ["Comunicación Escrita",6]],1), {:class => "form-control objectives", :style => "display: none;"}%>
                     </div>
-
-                    <div class="tab-pane fade" id="tab-3">
-                        <div class="tab-body">
-                            <div class="row">
-                                <div class="col-md-8 shadow achv-imgs" id="achievements-exp">
-                                    <%=image_tag "d_mountain/expert/expert_6.png"%>
-                                    <%=image_tag "d_mountain/expert/expert_5.png"%>
-                                    <%=image_tag "d_mountain/expert/expert_4.png"%>
-                                    <%=image_tag "d_mountain/expert/expert_3.png"%>
-                                    <%=image_tag "d_mountain/expert/expert_2.png"%>
-                                    <%=image_tag "d_mountain/expert/expert_1.png", :class => "opaque"%>
-                                </div>
-                                <div class="col-md-4">
-                                    <ul class="achievements-list" id="exp-controls">
-                                        <li>Negociación Avanzada</li>
-                                        <li>Presentaciones en Congresos Internacionales</li>
-                                        <li>Redacción de Contratos y Papers Académicos</li>
-                                        <li>Liderar Reuniones de Negocios</li>
-                                        <li>Presentaciones y Llamadas Telefonicas</li>
-                                        <li class="selected">Participación en Reuniones</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <%=link_to "Contactanos", {:controller => :site, :action => :contact_us}, {:class => "btn btn-block btn-base"}%>
                     </div>
                 </div>
             </div>
+
+            <div class="row routes-display" style="display: block;">
+                <div class="col-md-8 shadow achv-imgs" id="achievements-int">
+                    <%=image_tag "d_mountain/introductory/introductory_8.png"%>
+                    <%=image_tag "d_mountain/introductory/introductory_7.png"%>
+                    <%=image_tag "d_mountain/introductory/introductory_6.png"%>
+                    <%=image_tag "d_mountain/introductory/introductory_5.png"%>
+                    <%=image_tag "d_mountain/introductory/introductory_4.png"%>
+                    <%=image_tag "d_mountain/introductory/introductory_3.png"%>
+                    <%=image_tag "d_mountain/introductory/introductory_2.png"%>
+                    <%=image_tag "d_mountain/introductory/introductory_1.png", :class => "opaque"%>
+                </div>
+                <div class="col-md-4">
+                    <ul class="achievements-list" id="int-controls">
+                        <li>Negociación Avanzada</li>
+                        <li>Presentaciones en Congresos Internacionales</li>
+                        <li>Redacción de Contratos y Papers Académicos</li>
+                        <li>Liderar Reuniones de Negocios</li>
+                        <li>Presentaciones y Llamadas Telefonicas</li>
+                        <li>Participación en Reuniones</li>
+                        <li>Comunicación Escrita</li>
+                        <li class="selected">Nociones de Inglés</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row routes-display" style="display: none;">
+                <div class="col-md-8 shadow achv-imgs" id="achievements-std">
+                    <%=image_tag "d_mountain/standard/standard_7.png"%>
+                    <%=image_tag "d_mountain/standard/standard_6.png"%>
+                    <%=image_tag "d_mountain/standard/standard_5.png"%>
+                    <%=image_tag "d_mountain/standard/standard_4.png"%>
+                    <%=image_tag "d_mountain/standard/standard_3.png"%>
+                    <%=image_tag "d_mountain/standard/standard_2.png"%>
+                    <%=image_tag "d_mountain/standard/standard_1.png", :class => "opaque"%>
+                </div>
+                <div class="col-md-4">
+                    <ul class="achievements-list" id="std-controls">
+                        <li>Negociación Avanzada</li>
+                        <li>Presentaciones en Congresos Internacionales</li>
+                        <li>Redacción de Contratos y Papers Académicos</li>
+                        <li>Liderar Reuniones de Negocios</li>
+                        <li>Presentaciones y Llamadas Telefonicas</li>
+                        <li>Participación en Reuniones</li>
+                        <li class="selected">Comunicación Escrita</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row routes-display" style="display: none;">
+                <div class="col-md-8 shadow achv-imgs" id="achievements-exp">
+                    <%=image_tag "d_mountain/expert/expert_6.png"%>
+                    <%=image_tag "d_mountain/expert/expert_5.png"%>
+                    <%=image_tag "d_mountain/expert/expert_4.png"%>
+                    <%=image_tag "d_mountain/expert/expert_3.png"%>
+                    <%=image_tag "d_mountain/expert/expert_2.png"%>
+                    <%=image_tag "d_mountain/expert/expert_1.png", :class => "opaque"%>
+                </div>
+                <div class="col-md-4">
+                    <ul class="achievements-list" id="exp-controls">
+                        <li>Negociación Avanzada</li>
+                        <li>Presentaciones en Congresos Internacionales</li>
+                        <li>Redacción de Contratos y Papers Académicos</li>
+                        <li>Liderar Reuniones de Negocios</li>
+                        <li>Presentaciones y Llamadas Telefonicas</li>
+                        <li class="selected">Participación en Reuniones</li>
+                    </ul>
+                </div>
+            </div>     
         </div>
     </div>
 </section>
-
-<script type="text/javascript">
-$(document).ready(function() {
-  $("#int-controls").on('click', 'li', function() {
-    $("#achievements-int img").removeClass("opaque");
-
-    var newImage = $(this).index();
-
-    $("#achievements-int img").eq(newImage).addClass("opaque");
-
-    $("#int-controls li").removeClass("selected");
-    $(this).addClass("selected");
-  });
-
-  $("#std-controls").on('click', 'li', function() {
-    $("#achievements-std img").removeClass("opaque");
-
-    var newImage = $(this).index();
-
-    $("#achievements-std img").eq(newImage).addClass("opaque");
-
-    $("#std-controls li").removeClass("selected");
-    $(this).addClass("selected");
-  });
-
-  $("#exp-controls").on('click', 'li', function() {
-    $("#achievements-exp img").removeClass("opaque");
-
-    var newImage = $(this).index();
-
-    $("#achievements-exp img").eq(newImage).addClass("opaque");
-
-    $("#exp-controls li").removeClass("selected");
-    $(this).addClass("selected");
-  });
-});
-</script>
 
 <section class="slice p-15 base">
     <div class="cta-wr">
@@ -406,6 +337,7 @@ $(document).ready(function() {
     </div>
 </section>
 
+<!--
 <section class="slice animate-hover-slide bg-white bb">
     <div class="wp-section">
         <div class="container">
@@ -447,7 +379,7 @@ $(document).ready(function() {
         </div>
     </div>
 </section>
-
+-->
     <!-- LIGHT -->
 <section class="slice bg-white" id="plan-prices">
     <div class="wp-section pricing-plans">
