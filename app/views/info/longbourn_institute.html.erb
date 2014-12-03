@@ -165,52 +165,54 @@
         <div class="container">
             <div class="section-title-wr">
                 <h3 class="section-title left">
-                    <span>Proceso de Postulación</span>
-                    <small>Longbourn Institute</small>
+                    <span>Simula tu programa de inglés</span>
+                    <small>Nuestro método de aprendizaje es similar al escalamiento gradual de una montaña.</small>
                 </h3>
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="icon-block icon-block-1">
+                    <div class="icon-block icon-block-1 bordered-icon-block" style="height: 140px;">
                         <div class="icon-block-item">
-                            <i class="fa fa-child"></i>
+                            <%=image_tag "service-icon/one-circle.png", :class => "img-responsive"%>
                         </div>   
                         <div class="icon-block-body">
-                            <h4 class="title">Punto de Partida</h4>
+                            <h4 class="title">Encuentra tu punto de Partida</h4>
                             <p>El Punto de Partida queda determinado por el nivel inicial de inglés, que será medido a través de nuestra <b>Prueba de Diagnóstico</b>.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="icon-block icon-block-1">
+                    <div class="icon-block icon-block-1 bordered-icon-block" style="height: 140px;">
                         <div class="icon-block-item">
-                            <i class="fa fa-flag"></i>
+                            <%=image_tag "service-icon/two-circle.png", :class => "img-responsive"%>
                         </div>   
                         <div class="icon-block-body">
-                            <h4 class="title">El Objetivo lo Defines Tú</h4>
+                            <h4 class="title">Define tu objetivo</h4>
                             <p>La cantidad de libros a contratar queda determinada por lo que cada Profesional o Grupo necesite o quiera aprender.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="icon-block icon-block-1">
+                    <div class="icon-block icon-block-1 bordered-icon-block" style="height: 140px;">
                         <div class="icon-block-item">
-                            <i class="fa fa-check-square-o"></i>
+                            <%=image_tag "service-icon/three-circle.svg", :class => "img-responsive"%>
                         </div>   
                         <div class="icon-block-body">
-                            <h4 class="title">Prueba de Diagnóstico Sin Costo</h4>
-                            <p>Inscríbete en nuestra Prueba de Diagnóstico. Con tus resultados y teniendo en cuenta el objetivo deseado, generaremos la cotización final de tu <b>Programa Longbourn Institute</b>.</p>
+                            <h4 class="title">Asesoramos tu desarrollo</h4>
+                            <p>Duis lacinia elementum velit, nec viverra nisi. Morbi gravida, massa sed dictum consectetur, turpis mi euismod elit, sit amet feugiat orci dui in felis.</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" style="margin-bottom: 20px;">
                 <div class="col-md-4">
+                    <label style="font-weight: bold;">Simula tu nivel inicial</label>
                     <div class="form-group">
-                        <%=select_tag :routes, options_for_select([["Introductory",0],["Standard",1],["Expert",2]],0), {:class => "form-control"}%>
+                        <%=select_tag :routes, options_for_select([["Introductory",0],["Standard",1],["Expert",2]],2), {:class => "form-control"}%>
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <label style="font-weight: bold;">Mi objetivo es</label>
                     <div class="form-group">
                         <%=select_tag :objectives_int, options_for_select([
                             ["Negociación Avanzada",0],
@@ -220,7 +222,7 @@
                             ["Presentaciones y llamadas Telefónicas",4], 
                             ["Participación en Reuniones",5],
                             ["Comunicación Escrita",6],
-                            ["Nociones de Inglés",7]],1), {:class => "form-control objectives", :style => "display: block;"}%>
+                            ["Nociones de Inglés",7]],1), {:class => "form-control objectives", :style => "display: none;"}%>
                         <%=select_tag :objectives_std, options_for_select([
                             ["Negociación Avanzada",0],
                             ["Presentaciones en Congresos Internacionales",1],
@@ -235,26 +237,29 @@
                             ["Redacción de Contratos y Papers Académicos",2],
                             ["Liderar Reuniones de Negocios",3],
                             ["Presentaciones y llamadas Telefónicas",4], 
-                            ["Participación en Reuniones",5]],1), {:class => "form-control objectives", :style => "display: none;"}%>
+                            ["Participación en Reuniones",5]],5), {:class => "form-control objectives", :style => "display: block;"}%>
                     </div>
                 </div>
                 <div class="col-md-4">
+                    <label> </label>
                     <div class="form-group">
-                        <%=link_to "Contactanos", {:controller => :site, :action => :contact_us}, {:class => "btn btn-block btn-light"}%>
+                        <%=link_to "Más Información", {:controller => :site, :action => :contact_us}, {:class => "btn btn-block btn-base"}%>
                     </div>
                 </div>
             </div>
 
-            <div class="row routes-display" style="display: block;">
-                <div class="col-md-8 shadow achv-imgs" id="achievements-int">
-                    <%=image_tag "d_mountain/introductory/introductory_8.png"%>
-                    <%=image_tag "d_mountain/introductory/introductory_7.png"%>
-                    <%=image_tag "d_mountain/introductory/introductory_6.png"%>
-                    <%=image_tag "d_mountain/introductory/introductory_5.png"%>
-                    <%=image_tag "d_mountain/introductory/introductory_4.png"%>
-                    <%=image_tag "d_mountain/introductory/introductory_3.png"%>
-                    <%=image_tag "d_mountain/introductory/introductory_2.png"%>
-                    <%=image_tag "d_mountain/introductory/introductory_1.png", :class => "opaque"%>
+            <div class="row routes-display" style="display: none;">
+                <div class="col-md-8">
+                    <div class="shadow achv-imgs" id="achievements-int">
+                        <%=image_tag "d_mountain/introductory/introductory_8.png"%>
+                        <%=image_tag "d_mountain/introductory/introductory_7.png"%>
+                        <%=image_tag "d_mountain/introductory/introductory_6.png"%>
+                        <%=image_tag "d_mountain/introductory/introductory_5.png"%>
+                        <%=image_tag "d_mountain/introductory/introductory_4.png"%>
+                        <%=image_tag "d_mountain/introductory/introductory_3.png"%>
+                        <%=image_tag "d_mountain/introductory/introductory_2.png"%>
+                        <%=image_tag "d_mountain/introductory/introductory_1.png", :class => "opaque"%>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <ul class="achievements-list" id="int-controls">
@@ -271,14 +276,16 @@
             </div>
 
             <div class="row routes-display" style="display: none;">
-                <div class="col-md-8 shadow achv-imgs" id="achievements-std">
-                    <%=image_tag "d_mountain/standard/standard_7.png"%>
-                    <%=image_tag "d_mountain/standard/standard_6.png"%>
-                    <%=image_tag "d_mountain/standard/standard_5.png"%>
-                    <%=image_tag "d_mountain/standard/standard_4.png"%>
-                    <%=image_tag "d_mountain/standard/standard_3.png"%>
-                    <%=image_tag "d_mountain/standard/standard_2.png"%>
-                    <%=image_tag "d_mountain/standard/standard_1.png", :class => "opaque"%>
+                <div class="col-md-8">
+                    <div class="shadow achv-imgs" id="achievements-std">
+                        <%=image_tag "d_mountain/standard/standard_7.png"%>
+                        <%=image_tag "d_mountain/standard/standard_6.png"%>
+                        <%=image_tag "d_mountain/standard/standard_5.png"%>
+                        <%=image_tag "d_mountain/standard/standard_4.png"%>
+                        <%=image_tag "d_mountain/standard/standard_3.png"%>
+                        <%=image_tag "d_mountain/standard/standard_2.png"%>
+                        <%=image_tag "d_mountain/standard/standard_1.png", :class => "opaque"%>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <ul class="achievements-list" id="std-controls">
@@ -293,23 +300,25 @@
                 </div>
             </div>
 
-            <div class="row routes-display" style="display: none;">
-                <div class="col-md-8 shadow achv-imgs" id="achievements-exp">
-                    <%=image_tag "d_mountain/expert/expert_6.png"%>
-                    <%=image_tag "d_mountain/expert/expert_5.png"%>
-                    <%=image_tag "d_mountain/expert/expert_4.png"%>
-                    <%=image_tag "d_mountain/expert/expert_3.png"%>
-                    <%=image_tag "d_mountain/expert/expert_2.png"%>
-                    <%=image_tag "d_mountain/expert/expert_1.png", :class => "opaque"%>
+            <div class="row routes-display" style="display: block;">
+                <div class="col-md-8">
+                    <div class="shadow achv-imgs" id="achievements-exp">
+                        <%=image_tag "d_mountain/expert/expert_6.png", :class => "opaque"%>
+                        <%=image_tag "d_mountain/expert/expert_5.png"%>
+                        <%=image_tag "d_mountain/expert/expert_4.png"%>
+                        <%=image_tag "d_mountain/expert/expert_3.png"%>
+                        <%=image_tag "d_mountain/expert/expert_2.png"%>
+                        <%=image_tag "d_mountain/expert/expert_1.png"%>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <ul class="achievements-list" id="exp-controls">
-                        <li>Negociación Avanzada</li>
+                        <li class="selected">Negociación Avanzada</li>
                         <li>Presentaciones en Congresos Internacionales</li>
                         <li>Redacción de Contratos y Papers Académicos</li>
                         <li>Liderar Reuniones de Negocios</li>
                         <li>Presentaciones y Llamadas Telefonicas</li>
-                        <li class="selected">Participación en Reuniones</li>
+                        <li>Participación en Reuniones</li>
                     </ul>
                 </div>
             </div>     
@@ -317,24 +326,30 @@
     </div>
 </section>
 
+
+
+
 <section class="slice p-15 base">
     <div class="cta-wr">
         <div class="container">
             <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-normal">Prueba en Longbourn <strong style="font-size: 30px; font-weight: bolder;">sin costo!</strong></h2>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-8">
-                    <h1 class="text-normal">
-                        <strong>Cotiza!</strong> Informate de nuestras ofertas y promociones.
-                    </h1>
+                    <h1 class="text-normal">Prueba de Diagnóstico - Simulación TOEFL - Simulación TOEIC - Simulación IELTS</h1>
                 </div>
                 <div class="col-md-4">
-                    <a href="#" class="btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right">
-                        <span>Contactanos</span>
-                    </a>
+                    <%=link_to "<span>Contactanos</span>".html_safe, {:controller => :site, :action => :contact_us}, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right"}%>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
 <!--
 <section class="slice animate-hover-slide bg-white bb">
     <div class="wp-section">
