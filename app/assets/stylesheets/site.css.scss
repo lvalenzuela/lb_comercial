@@ -2,8 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.routes-selectors {
-	height: 40px;
+/*bordes de simulacion de programa de ingles*/
+
+.bordered-icon-block{
+	border: solid 2px #4A4A4A;
+	padding: 5px;
+	-moz-border-radius: 1em 4em 1em 4em;
+	border-radius: 1em 4em 1em 4em;
+	-webkit-border-radius: 1em 4em 1em 4em;
+}
+
+
+/*franja azul*/
+ul#blue-banner-tests-list {
+	font-size: 18px;
+	font-weight: bold;
 }
 
 /*hero link*/
@@ -158,11 +171,6 @@ ul.achievements-list li{
 	padding-left: 10px;
 	display: block;
 	background-color: #FFF;
-}
-
-ul.achievements-list li:hover {
-	border-bottom: solid 2px #3498db;
-	cursor: pointer;
 }
 
 ul.achievements-list li.selected {

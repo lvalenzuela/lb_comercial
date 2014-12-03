@@ -235,13 +235,12 @@
                             ["Redacción de Contratos y Papers Académicos",2],
                             ["Liderar Reuniones de Negocios",3],
                             ["Presentaciones y llamadas Telefónicas",4], 
-                            ["Participación en Reuniones",5],
-                            ["Comunicación Escrita",6]],1), {:class => "form-control objectives", :style => "display: none;"}%>
+                            ["Participación en Reuniones",5]],1), {:class => "form-control objectives", :style => "display: none;"}%>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="form-group">
-                        <%=link_to "Contactanos", {}, {:class => "btn btn-block btn-light"}%>
+                        <%=link_to "Contactanos", {:controller => :site, :action => :contact_us}, {:class => "btn btn-block btn-light"}%>
                     </div>
                 </div>
             </div>
