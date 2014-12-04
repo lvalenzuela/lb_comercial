@@ -5,11 +5,7 @@
 /*bordes de simulacion de programa de ingles*/
 
 .bordered-icon-block{
-	border: solid 2px #4A4A4A;
 	padding: 5px;
-	-moz-border-radius: 1em 4em 1em 4em;
-	border-radius: 1em 4em 1em 4em;
-	-webkit-border-radius: 1em 4em 1em 4em;
 }
 
 
@@ -174,9 +170,10 @@ ul.achievements-list li{
 }
 
 ul.achievements-list li.selected {
-	background-color: #3498db;
-	color: #FFF;
-	font-weight: bolder;
+	background:#DBDBDB;
+	color:#000;
+	border: solid 1px #000;
+	font-weight: bold;
 }
 /*menu de montaña*/
 

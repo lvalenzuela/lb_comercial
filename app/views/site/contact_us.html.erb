@@ -53,6 +53,26 @@
                         <%=f.text_field :subject, :class => "form-control", :placeholder => "Título"%>
                     </div>
                     <div class="form-group">
+                        <label>Servicio Gratuito que me interesa:</label>
+                        <%=f.select :free_service, options_for_select([
+                            ["Prueba de Diagnóstico"], 
+                            ["Ensayo de Test Internacional"], 
+                            ["Ninguno"]], 
+                            "Prueba de Diagnóstico"), {}, {:class => "form-control"}%>
+                    </div>
+                    <div class="form-group">
+                        <label>Curso de Inglés que me interesa</label>
+                        <%=f.select :paid_service, options_for_select([
+                            ["Longbourn Executive: Cursos en tu Oficina"], 
+                            ["Longbourn Institute: Cursos en los mejores horarios"], 
+                            ["Longbourn StartUp: Cursos a los mejores precios"],
+                            ["Preparación TOEFL"],
+                            ["Preparación TOEIC"],
+                            ["Preparacion IELTS"],
+                            ["Ninguno"]], 
+                            "Longbourn Executive: Cursos en tu Oficina"), {}, {:class => "form-control"}%>
+                    </div>
+                    <div class="form-group">
                         <label>Message</label>
                         <%=f.text_area :msg, :class => "form-control", :placeholder => "Escriba su mensaje aquí.", :style => "height: 100px;"%>
                     </div>

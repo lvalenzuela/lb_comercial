@@ -157,7 +157,7 @@ class SiteController < ApplicationController
 	private
 
 	def web_contact_form_params
-		params.require(:web_contact_form).permit(:name, :email, :phone, :subject, :msg)
+		params.require(:web_contact_form).permit(:name, :email, :free_service, :paid_service, :phone, :subject, :msg)
 	end
 
 	def enable_zoho_contact(web_user)

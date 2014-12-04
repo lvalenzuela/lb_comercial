@@ -7,6 +7,8 @@ $(document).ready ->
     index = $(this).val()
     $(".routes-display").css "display", "none"
     $(".routes-display").eq(index).css "display", "block"
+    $(".achievements-list").css "display", "none"
+    $(".achievements-list").eq(index).css "display", "block"
     $(".objectives").css "display", "none"
     $(".objectives").eq(index).css "display", "block"
     return
