@@ -171,7 +171,7 @@
             </div>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="icon-block icon-block-1 bordered-icon-block" style="height: 140px;">
+                    <div class="icon-block icon-block-1 bordered-icon-block" style="height: 135px;">
                         <div class="icon-block-item">
                             <%=image_tag "service-icon/one-circle.png", :class => "img-responsive"%>
                         </div>   
@@ -182,7 +182,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="icon-block icon-block-1 bordered-icon-block" style="height: 140px;">
+                    <div class="icon-block icon-block-1 bordered-icon-block" style="height: 135px;">
                         <div class="icon-block-item">
                             <%=image_tag "service-icon/two-circle.png", :class => "img-responsive"%>
                         </div>   
@@ -193,7 +193,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="icon-block icon-block-1 bordered-icon-block" style="height: 140px;">
+                    <div class="icon-block icon-block-1 bordered-icon-block" style="height: 135px;">
                         <div class="icon-block-item">
                             <%=image_tag "service-icon/three-circle.svg", :class => "img-responsive"%>
                         </div>   
@@ -222,7 +222,7 @@
                             ["Presentaciones y llamadas Telefónicas",4], 
                             ["Participación en Reuniones",5],
                             ["Comunicación Escrita",6],
-                            ["Nociones de Inglés",7]],1), {:class => "form-control objectives", :style => "display: none;"}%>
+                            ["Nociones de Inglés",7]],0), {:class => "form-control objectives", :style => "display: none;"}%>
                         <%=select_tag :objectives_std, options_for_select([
                             ["Negociación Avanzada",0],
                             ["Presentaciones en Congresos Internacionales",1],
@@ -230,79 +230,46 @@
                             ["Liderar Reuniones de Negocios",3],
                             ["Presentaciones y llamadas Telefónicas",4], 
                             ["Participación en Reuniones",5],
-                            ["Comunicación Escrita",6]],1), {:class => "form-control objectives", :style => "display: none;"}%>
+                            ["Comunicación Escrita",6]],0), {:class => "form-control objectives", :style => "display: none;"}%>
                         <%=select_tag :objectives_exp, options_for_select([
                             ["Negociación Avanzada",0],
                             ["Presentaciones en Congresos Internacionales",1],
                             ["Redacción de Contratos y Papers Académicos",2],
                             ["Liderar Reuniones de Negocios",3],
                             ["Presentaciones y llamadas Telefónicas",4], 
-                            ["Participación en Reuniones",5]],5), {:class => "form-control objectives", :style => "display: block;"}%>
+                            ["Participación en Reuniones",5]],0), {:class => "form-control objectives", :style => "display: block;"}%>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <label> </label>
                     <div class="form-group">
-                        <%=link_to "Más Información", {:controller => :site, :action => :contact_us}, {:class => "btn btn-block btn-base"}%>
+                        <%=link_to "Más Información", {:controller => :site, :action => :contact_us}, {:class => "btn btn-block btn-dark btn-icon fa-envelope", :style => "color: #FFF;"}%>
                     </div>
                 </div>
             </div>
 
-            <div class="row routes-display" style="display: none;">
+            <div class="row">
                 <div class="col-md-8">
-                    <div class="shadow achv-imgs" id="achievements-int">
-                        <%=image_tag "d_mountain/introductory/introductory_8.png"%>
+                    <div class="shadow achv-imgs routes-display" id="achievements-int" style="display: none;">
+                        <%=image_tag "d_mountain/introductory/introductory_8.png", :class => "opaque"%>
                         <%=image_tag "d_mountain/introductory/introductory_7.png"%>
                         <%=image_tag "d_mountain/introductory/introductory_6.png"%>
                         <%=image_tag "d_mountain/introductory/introductory_5.png"%>
                         <%=image_tag "d_mountain/introductory/introductory_4.png"%>
                         <%=image_tag "d_mountain/introductory/introductory_3.png"%>
                         <%=image_tag "d_mountain/introductory/introductory_2.png"%>
-                        <%=image_tag "d_mountain/introductory/introductory_1.png", :class => "opaque"%>
+                        <%=image_tag "d_mountain/introductory/introductory_1.png"%>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <ul class="achievements-list" id="int-controls">
-                        <li>Negociación Avanzada</li>
-                        <li>Presentaciones en Congresos Internacionales</li>
-                        <li>Redacción de Contratos y Papers Académicos</li>
-                        <li>Liderar Reuniones de Negocios</li>
-                        <li>Presentaciones y Llamadas Telefonicas</li>
-                        <li>Participación en Reuniones</li>
-                        <li>Comunicación Escrita</li>
-                        <li class="selected">Nociones de Inglés</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row routes-display" style="display: none;">
-                <div class="col-md-8">
-                    <div class="shadow achv-imgs" id="achievements-std">
-                        <%=image_tag "d_mountain/standard/standard_7.png"%>
+                    <div class="shadow achv-imgs routes-display" id="achievements-std" style="display: none;">
+                        <%=image_tag "d_mountain/standard/standard_7.png", :class => "opaque"%>
                         <%=image_tag "d_mountain/standard/standard_6.png"%>
                         <%=image_tag "d_mountain/standard/standard_5.png"%>
                         <%=image_tag "d_mountain/standard/standard_4.png"%>
                         <%=image_tag "d_mountain/standard/standard_3.png"%>
                         <%=image_tag "d_mountain/standard/standard_2.png"%>
-                        <%=image_tag "d_mountain/standard/standard_1.png", :class => "opaque"%>
+                        <%=image_tag "d_mountain/standard/standard_1.png"%>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <ul class="achievements-list" id="std-controls">
-                        <li>Negociación Avanzada</li>
-                        <li>Presentaciones en Congresos Internacionales</li>
-                        <li>Redacción de Contratos y Papers Académicos</li>
-                        <li>Liderar Reuniones de Negocios</li>
-                        <li>Presentaciones y Llamadas Telefonicas</li>
-                        <li>Participación en Reuniones</li>
-                        <li class="selected">Comunicación Escrita</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="row routes-display" style="display: block;">
-                <div class="col-md-8">
-                    <div class="shadow achv-imgs" id="achievements-exp">
+                    <div class="shadow achv-imgs routes-display" id="achievements-exp" style="display: block;">
                         <%=image_tag "d_mountain/expert/expert_6.png", :class => "opaque"%>
                         <%=image_tag "d_mountain/expert/expert_5.png"%>
                         <%=image_tag "d_mountain/expert/expert_4.png"%>
@@ -312,7 +279,26 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <ul class="achievements-list" id="exp-controls">
+                    <ul class="achievements-list" id="int-controls" style="display: none;">
+                        <li class="selected">Negociación Avanzada</li>
+                        <li>Presentaciones en Congresos Internacionales</li>
+                        <li>Redacción de Contratos y Papers Académicos</li>
+                        <li>Liderar Reuniones de Negocios</li>
+                        <li>Presentaciones y Llamadas Telefonicas</li>
+                        <li>Participación en Reuniones</li>
+                        <li>Comunicación Escrita</li>
+                        <li>Nociones de Inglés</li>
+                    </ul>
+                    <ul class="achievements-list" id="std-controls" style="display: none;">
+                        <li class="selected">Negociación Avanzada</li>
+                        <li>Presentaciones en Congresos Internacionales</li>
+                        <li>Redacción de Contratos y Papers Académicos</li>
+                        <li>Liderar Reuniones de Negocios</li>
+                        <li>Presentaciones y Llamadas Telefonicas</li>
+                        <li>Participación en Reuniones</li>
+                        <li>Comunicación Escrita</li>
+                    </ul>
+                    <ul class="achievements-list" id="exp-controls" style="display: block;">
                         <li class="selected">Negociación Avanzada</li>
                         <li>Presentaciones en Congresos Internacionales</li>
                         <li>Redacción de Contratos y Papers Académicos</li>

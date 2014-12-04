@@ -2,10 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*bordes de simulacion de programa de ingles*/
 
+/*descripcion de niveles metodo TEG*/
+ul.level-description{
+	list-style-type: disc;
+	margin-left: 20px;
+	font-size: 16px;
+}
+
+ul.level-description li{
+	padding: 5px;
+}
+
+/*bordes de simulacion de programa de ingles*/
 .bordered-icon-block{
 	padding: 5px;
+	-moz-border-radius: 1em 1em 1em 1em;
+	-webkit-border-radius: 1em 1em 1em 1em;
+	border-radius: 1em 1em 1em 1em;
 }
 
 
