@@ -13,7 +13,7 @@ $(document).ready ->
     $(".objectives").eq(index).css "display", "block"
     return
 
-  $("#objectives_int").on "change", ->
+  $(".objectives").on "change", ->
     $("#achievements-int img").removeClass "opaque"
     newImage = $(this).val()
     $("#achievements-int img").eq(newImage).addClass "opaque"
@@ -21,44 +21,22 @@ $(document).ready ->
     $("#int-controls li").eq(newImage).addClass "selected"
     return
 
-  $("#objectives_std").on "change", ->
-    $("#achievements-std img").removeClass "opaque"
+  $(".objectives").on "change", ->
     newImage = $(this).val()
-    $("#achievements-std img").eq(newImage).addClass "opaque"
-    $("#std-controls li").removeClass "selected"
-    $("#std-controls li").eq(newImage).addClass "selected"
+    if newImage < 7
+        $("#achievements-std img").removeClass "opaque"
+        $("#achievements-std img").eq(newImage).addClass "opaque"
+        $("#std-controls li").removeClass "selected"
+        $("#std-controls li").eq(newImage).addClass "selected"
     return
 
-  $("#objectives_exp").on "change", ->
-    $("#achievements-exp img").removeClass "opaque"
+  $(".objectives").on "change", ->
     newImage = $(this).val()
-    $("#achievements-exp img").eq(newImage).addClass "opaque"
-    $("#exp-controls li").removeClass "selected"
-    $("#exp-controls li").eq(newImage).addClass "selected"
+    if newImage < 6 
+        $("#achievements-exp img").removeClass "opaque"
+        $("#achievements-exp img").eq(newImage).addClass "opaque"
+        $("#exp-controls li").removeClass "selected"
+        $("#exp-controls li").eq(newImage).addClass "selected"
     return
-
-#  $("#int-controls").on "click", "li", ->
-#    $("#achievements-int img").removeClass "opaque"
-#    newImage = $(this).index()
-#    $("#achievements-int img").eq(newImage).addClass "opaque"
-#    $("#int-controls li").removeClass "selected"
-#    $(this).addClass "selected"
-#   return
-
-#  $("#std-controls").on "click", "li", ->
-#    $("#achievements-std img").removeClass "opaque"
-#    newImage = $(this).index()
-#    $("#achievements-std img").eq(newImage).addClass "opaque"
-#    $("#std-controls li").removeClass "selected"
-#    $(this).addClass "selected"
-#    return
-
-#  $("#exp-controls").on "click", "li", ->
-#    $("#achievements-exp img").removeClass "opaque"
-#    newImage = $(this).index()
-#    $("#achievements-exp img").eq(newImage).addClass "opaque"
-#    $("#exp-controls li").removeClass "selected"
-#    $(this).addClass "selected"
-#    return
 
   return
