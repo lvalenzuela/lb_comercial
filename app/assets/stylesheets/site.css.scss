@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*normal case*/
+.description-left img{
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	padding: 12px;
+	margin-bottom: 0px;
+	margin-left: -15px;
+}
 
 /*descripcion de niveles metodo TEG*/
 ul.level-description{
