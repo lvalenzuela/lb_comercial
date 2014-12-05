@@ -2,12 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+/*PRECIOS*/
+.plan-header .plan-image {
+	padding: 10px 6px 0px 6px;
+}
+
 /*normal case*/
 .description-left img{
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	padding: 12px;
-	margin-bottom: 0px;
-	margin-left: -15px;
+	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+	padding: 25px;
+	margin-bottom: -20px;
+	margin-left: 0px;
 }
 
 /*descripcion de niveles metodo TEG*/

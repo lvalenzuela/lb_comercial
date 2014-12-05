@@ -172,13 +172,13 @@
             </div>
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-md-6">
-                    <label style="font-weight: bold;">Simula tu nivel inicial</label>
+                    <label style="font-weight: bold;">Simula tu Nivel Inicial. A confirmar mediante Prueba de Diagnóstico.</label>
                     <div class="form-group">
-                        <%=select_tag :routes, options_for_select([["Introductory",0],["Standard",1],["Expert",2]],2), {:class => "form-control"}%>
+                        <%=select_tag :routes, options_for_select([["Introductory: Nivel Básico",0],["Standard: Nivel Intermedio",1],["Expert: Nivel Avanzado",2]],2), {:class => "form-control"}%>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label style="font-weight: bold;">Mi objetivo es</label>
+                    <label style="font-weight: bold;">Define tu Objetivo</label>
                     <div class="form-group">
                         <%=select_tag :objectives_int, options_for_select([
                             ["Negociación Avanzada",0],
@@ -340,7 +340,7 @@
             <div class="section-title-wr">
                 <h3 class="section-title left">
                     <span>Valores</span>
-                    <small>Longbourn Institute</small>
+                    <small>Valores de los Programas de Inglés Longbourn</small>
                 </h3>
             </div>
             <div class="row">
@@ -348,20 +348,23 @@
                     <div class="wp-block popular">
                         <div class="plan-header light">
                         	<div class="popular-tag dark">Destacado</div>
-                            <h2 class="plan-title" style="font-size: 24px;">Private Executive</h2>
+                            <div class="plan-image">
+                                <%=image_tag "longbourn-logos/longbourn_executive.png", :class => "img-responsive"%>
+                            </div>
+                            <h2 class="plan-title" style="font-size: 24px;">Private Lessons</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>23.000</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
                             <small class="plan-info">Programas desde 36 horas</small>
                         </div>
                         <ul>
                             <li><i class="fa fa-user"></i> Curso Individual Cerrado</li>
-                            <li><i class="fa fa-map-marker"></i> Sede Las Condes</li>
+                            <li><i class="fa fa-map-marker"></i> Oficinas del Cliente</li>
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <a href="#" class="btn btn-lg btn-block-bm btn-dark btn-icon btn-check" hidefocus="true">
-                                <span>Ver Cursos Disponibles</span>
-                            </a>
+                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                                <span>Contactar Ejecutiva</span>
+                            <%end%>
                         </p>
                     </div>
                 </div>
@@ -369,26 +372,32 @@
                     <div class="wp-block popular">
                         <div class="plan-header light">
                         	<div class="popular-tag dark">Destacado</div>
+                            <div class="plan-image">
+                                <%=image_tag "longbourn-logos/longbourn_executive.png", :class => "img-responsive"%>
+                            </div>
                             <h2 class="plan-title" style="font-size: 24px;">Executive Group</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>13.800</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
                             <small class="plan-info">Programas desde 36 horas</small>
                         </div>
                         <ul>
-                            <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
-                            <li><i class="fa fa-map-marker"></i> Sede Las Condes</li>
+                            <li><i class="fa fa-group"></i> Máx. 4 Participantes Mismo Nivel</li>
+                            <li><i class="fa fa-map-marker"></i> Oficinas del Cliente</li>
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <a href="#" class="btn btn-lg btn-block-bm btn-dark btn-icon btn-check" hidefocus="true">
-                                <span>Ver Cursos Disponibles</span>
-                            </a>
+                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                                <span>Contactar Ejecutiva</span>
+                            <%end%>
                         </p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="wp-block default">
                         <div class="plan-header light">
+                            <div class="plan-image">
+                                <%=image_tag "longbourn-logos/longbourn_institute.png", :class => "img-responsive"%>
+                            </div>
                             <h2 class="plan-title" style="font-size: 24px;">Longbourn Institute</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>9.000</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
@@ -396,19 +405,22 @@
                         </div>
                         <ul>
                             <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
-                            <li><i class="fa fa-map-marker"></i> Sede Las Condes</li>
+                            <li><i class="fa fa-map-marker"></i> Longbourn Sede Las Condes</li>
                             <li><i class="fa fa-clock-o"></i> Cursos de 17:00 a 20:30 hrs.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <a href="#" class="btn btn-lg btn-block-bm btn-light btn-icon btn-check" hidefocus="true">
-                                <span>Más Información</span>
-                            </a>
+                            <%=link_to longbourn_institute_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                                <span>Ir a Longbourn Institute</span>
+                            <%end%>
                         </p>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="wp-block default">
                         <div class="plan-header light">
+                            <div class="plan-image">
+                                <%=image_tag "longbourn-logos/longbourn_startup.png", :class => "img-responsive"%>
+                            </div>
                             <h2 class="plan-title" style="font-size: 24px;">Longbourn Startup</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>7.500</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
@@ -416,13 +428,13 @@
                         </div>
                         <ul>
                             <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
-                            <li><i class="fa fa-map-marker"></i> Sede Las Condes</li>
+                            <li><i class="fa fa-map-marker"></i> Longbourn Sede Las Condes</li>
                             <li><i class="fa fa-clock-o"></i> Cursos de 8:00 a 17:30 hrs.</li>
                         </ul>         
                         <p class="plan-select-block">
-                            <a href="#" class="btn btn-lg btn-block-bm btn-light btn-icon btn-check" hidefocus="true">
-                                <span>Más Información</span>
-                            </a>
+                            <%=link_to longbourn_startup_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                                <span>Ir a Longbourn StartUp</span>
+                            <%end%>
                         </p>
                     </div>
                 </div>                

@@ -87,10 +87,21 @@
             <div class="section-title-wr">
                 <h3 class="section-title left">
                     <span>Características Generales</span>
-                    <small>Cursos Longbourn Institute</small>
+                    <small>Programas Longbourn de Preparación TOEIC</small>
                 </h3>
             </div>
             <div class="row mt-20">
+                <div class="col-md-4 col-sm-6 ">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <i class="fa fa-map-marker"></i>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Ubicación</h4>
+                            <p>Oficinas del Cliente o Sede Longbourn Las Condes.</p>
+                        </div>
+                    </div>
+                </div> 
                 <div class="col-md-4 col-sm-6 ">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
@@ -99,7 +110,7 @@
                         <div class="icon-block-body">
                             <h4 class="">Horarios</h4>
                             <p>In Office: A definir con el Cliente</p>
-                            <p>Sede: Consultar por Horarios Disponibles</p>
+                            <p>Sede: <%=link_to "Consultar", {:controller => :site, :action => :contact_us}, {:style => "text-decoration: underline; font-size: 16px;"}%> por Horarios Disponibles</p>
                         </div>
                     </div>
                 </div>
@@ -113,18 +124,7 @@
                             <p>2 clases de 90 minutos por semana</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 ">
-                    <div class="icon-block icon-block-1">
-                        <div class="icon-block-item">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <div class="icon-block-body">
-                            <h4 class="">Ubicación</h4>
-                            <p>Oficinas del Cliente o Sede Longbourn Las Condes.</p>
-                        </div>
-                    </div>
-                </div>                    
+                </div>                   
             </div>
             <div class="row">
                 <div class="col-md-4 col-sm-6 ">
@@ -236,7 +236,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <h2 class="text-normal">Ensayos TOEIC <strong style="font-size: 30px; font-weight: bolder;">sin costo</strong> todas las semanas</h2>
+                    <h2 class="text-normal">Ensayos TOEIC <strong style="font-size: 32px; font-weight: bolder;">sin costo</strong> todas las semanas</h2>
                 </div>
                 <div class="col-md-4">
                     <%=link_to "<span>Consulta Aca!</span>".html_safe, {:controller => :site, :action => :contact_us}, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right"}%>
@@ -257,10 +257,10 @@
                 </h3>
             </div>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="wp-block default">
                         <div class="plan-header light">
-                            <h2 class="plan-title" style="font-size: 24px;">Private Executive</h2>
+                            <h2 class="plan-title" style="font-size: 24px;">TOEIC: Private Lessons</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>23.000</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
                             <small class="plan-info">Programas desde 36 horas</small>
@@ -271,16 +271,16 @@
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <a href="#" class="btn btn-lg btn-block-bm btn-light btn-icon btn-check" hidefocus="true">
-                                <span>Más Información</span>
-                            </a>
+                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                                <span>Contactar Ejecutiva</span>
+                            <%end%>
                         </p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="wp-block default">
                         <div class="plan-header light">
-                            <h2 class="plan-title" style="font-size: 24px;">Executive Group</h2>
+                            <h2 class="plan-title" style="font-size: 24px;">TOEIC: Executive Group</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>13.800</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
                             <small class="plan-info">Programas desde 36 horas</small>
@@ -291,16 +291,16 @@
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <a href="#" class="btn btn-lg btn-block-bm btn-light btn-icon btn-check" hidefocus="true">
-                                <span>Más Información</span>
-                            </a>
+                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                                <span>Contactar Ejecutiva</span>
+                            <%end%>
                         </p>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="wp-block default">
                         <div class="plan-header light">
-                            <h2 class="plan-title" style="font-size: 24px;">Longbourn Institute</h2>
+                            <h2 class="plan-title" style="font-size: 24px;">TOEIC: Grupal Sede Las Condes</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>9.000</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
                             <small class="plan-info">Programas desde 36 horas</small>
@@ -308,32 +308,12 @@
                         <ul>
                             <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
                             <li><i class="fa fa-map-marker"></i> Longbourn Sede Las Condes</li>
-                            <li><i class="fa fa-clock-o"></i> Cursos de 17:00 a 20:30 hrs.</li>
+                            <li><i class="fa fa-clock-o"></i> Cursos de 08:00 a 20:30 hrs.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <a href="#" class="btn btn-lg btn-block-bm btn-light btn-icon btn-check" hidefocus="true">
-                                <span>Más Información</span>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="wp-block default">
-                        <div class="plan-header light">
-                            <h2 class="plan-title" style="font-size: 24px;">Longbourn Startup</h2>
-                            <h3 class="price-tag" style="font-size: 38px;"><span>$</span>7.500</h3>
-                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
-                            <small class="plan-info">Programas desde 36 horas</small>
-                        </div>
-                        <ul>
-                            <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
-                            <li><i class="fa fa-map-marker"></i> Sede Las Condes</li>
-                            <li><i class="fa fa-clock-o"></i> Cursos de 8:00 a 17:30 hrs.</li>
-                        </ul>         
-                        <p class="plan-select-block">
-                            <a href="#" class="btn btn-lg btn-block-bm btn-light btn-icon btn-check" hidefocus="true">
-                                <span>Ver Cursos Disponibles</span>
-                            </a>
+                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                                <span>Contactar Ejecutiva</span>
+                            <%end%>
                         </p>
                     </div>
                 </div>                
