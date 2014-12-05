@@ -1,9 +1,9 @@
 require 'bundler/capistrano'
 require "rvm/capistrano"
 
-set :application, "Longbourn Institute"
+set :application, "Longbourn Web App"
 set :repository,  "git@github.com:lvalenzuela/lb_comercial.git"
-set :deploy_to, "/home/ubuntu/production"
+set :deploy_to, "/var/www/html/web_app"
 set :scm, :git
 set :branch, "master"
 set :user, "ubuntu"
@@ -12,9 +12,9 @@ set :use_sudo, false
 set :rails_env, "production"
 set :deploy_via, :copy
 set :ssh_options, { :forward_agent => true }
-set :keep_releases, 3
+set :keep_releases, 5
 default_run_options[:pty] = true
-server "54.211.124.146", :app, :web, :db, :primary => true
+server "50.16.3.249", :app, :web, :db, :primary => true
 
 set :rvm_ruby_string, :local        # use the same ruby as used locally for deployment
 
