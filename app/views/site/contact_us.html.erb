@@ -48,10 +48,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>Título</label>
-                        <%=f.text_field :subject, :class => "form-control", :placeholder => "Título"%>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Empresa</label>
+                            <%=f.text_field :institution, :class => "form-control", :placeholder => "Empresa"%>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Comuna</label>
+                            <%=f.text_field :location, :class => "form-control", :placeholder => "Comuna"%>
+                        </div>
                     </div>
+                    <%=f.hidden_field :subject, :value => "Contacto Web", :class => "form-control", :placeholder => "Título"%>
                     <div class="form-group">
                         <label>Servicio Gratuito que me interesa:</label>
                         <%=f.select :free_service, options_for_select([
@@ -61,7 +68,7 @@
                             "Prueba de Diagnóstico"), {}, {:class => "form-control"}%>
                     </div>
                     <div class="form-group">
-                        <label>Curso de Inglés que me interesa</label>
+                        <label>Programa de Inglés que me interesa</label>
                         <%=f.select :paid_service, options_for_select([
                             ["Longbourn Executive: Cursos en tu Oficina"], 
                             ["Longbourn Institute: Cursos en los mejores horarios"], 
@@ -74,15 +81,15 @@
                     </div>
                     <div class="form-group">
                         <label>Message</label>
-                        <%=f.text_area :msg, :class => "form-control", :placeholder => "Escriba su mensaje aquí.", :style => "height: 100px;"%>
+                        <%=f.text_area :msg, :class => "form-control", :placeholder => "Escribe tu mensaje aquí.", :style => "height: 100px;"%>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <button type="reset" class="btn btn-light">Reset</button>
+                            <button type="reset" class="btn btn-light">Borrar</button>
                         </div>
                         <div class="col-md-6">
                             <button type="submit" class="btn btn-base btn-icon btn-icon-right btn-fly pull-right">
-                                <span>Send message</span>
+                                <span>Enviar Mensaje</span>
                             </button>
                         </div>
                     </div>
@@ -115,7 +122,7 @@
                             <h5><i class="fa fa-check"></i> Lunes - Viernes</h5>
                             <p>8:30 AM - 20:30 PM</p>
                             
-                            <h5><i class="fa fa-times"></i> Sábado</h5>
+                            <h5><i class="fa fa-check"></i> Sábado</h5>
                             <p>08:30 AM - 12:00 PM</p>
                             
                             <h5><i class="fa fa-times"></i> Domingo</h5>

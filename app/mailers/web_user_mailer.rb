@@ -32,7 +32,7 @@ class WebUserMailer < ActionMailer::Base
 
   def contact_sales_agent(web_contact)
     @contact = web_contact
-    mail(to: "aarregui@longbourn.cl", subject: "Contacto Web Comercial: #{web_contact.name}")
+    mail(to: "lvalenzuela@longbourn.cl", subject: "Contacto Web Comercial: #{web_contact.name}")
   end
 
   private

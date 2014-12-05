@@ -12,7 +12,7 @@ set :use_sudo, false
 set :rails_env, "production"
 set :deploy_via, :copy
 set :ssh_options, { :forward_agent => true }
-set :keep_releases, 5
+set :keep_releases, 3
 default_run_options[:pty] = true
 server "54.211.124.146", :app, :web, :db, :primary => true
 
