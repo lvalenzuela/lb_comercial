@@ -14,7 +14,7 @@
 </div>
 
 <div class="static-page-image">
-    <%=image_tag "backgrounds/full-bg-2.jpg", :alt => ""%>
+    <%=image_tag "web-imgs/toeic1.jpg", :alt => ""%>
     <div class="description-left">
         <span class="subtitle text-wrapped alpha c-black">Curso de Preparación TOEIC de Longbourn</span>
     </div>
@@ -57,9 +57,9 @@
                             <i class="fa fa-level-up"></i>
                         </div>
                         
-                        <h2>Monitoreo de Progreso</h2>
+                        <h2>Control de Progreso</h2>
                         <p class="text-center">
-                            Se monitorea el progreso del curso mediante tareas evaluadas. Los objetivos son identificar las habilidades que es necesario mejorar y ayudar al estudiante a mantener ritmos de trabajo constante, entregando una ventaja significativa al enfrentar el examen.
+                            Se controla el progreso del curso mediante tareas evaluadas. Los objetivos son identificar las habilidades que es necesario mejorar y ayudar al estudiante a mantener ritmos de trabajo constante, entregando una ventaja significativa al enfrentar el examen.
                         </p>
                     </div>
                 </div>
@@ -149,17 +149,6 @@
                             <p>De 1 hasta 8 participantes, mismo nivel</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-sm-6 ">
-                    <div class="icon-block icon-block-1">
-                        <div class="icon-block-item">
-                            <i class="fa fa-exclamation-circle"></i>
-                        </div>
-                        <div class="icon-block-body">
-                            <h4 class="">Reprogramaciones de Clases</h4>
-                            <p>3 Reprogramaciones de Clases por cada 36 hrs. contratadas (aplica sólo para Cursos In Office)</p>
-                        </div>
-                    </div>
                 </div>              
             </div>
         </div>
@@ -235,11 +224,11 @@
     <div class="cta-wr">
         <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <h2 class="text-normal">Ensayos TOEIC <strong style="font-size: 32px; font-weight: bolder;">sin costo</strong> todas las semanas</h2>
+                <div class="col-md-9">
+                    <h2 class="text-normal" style="font-weight: bolder;">Prueba de Diagnóstico <strong style="font-size: 32px; font-weight: bolder;">sin costo</strong>. Inscripciones todas las semanas.</h2>
                 </div>
-                <div class="col-md-4">
-                    <%=link_to "<span>Consulta Aca!</span>".html_safe, {:controller => :site, :action => :contact_us}, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right"}%>
+                <div class="col-md-3">
+                    <%=link_to "<span>Consulta acá</span>".html_safe, {:controller => :site, :action => :contact_us}, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right"}%>
                 </div>
             </div>
         </div>
@@ -269,6 +258,7 @@
                             <li><i class="fa fa-user"></i> Curso Individual Cerrado</li>
                             <li><i class="fa fa-map-marker"></i> Oficinas del CLiente</li>
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
+                            <li><i class="fa fa-times"></i> 3 Reprogramaciones de Clases por cada 36 hrs. contratadas</li>
                         </ul>          
                         <p class="plan-select-block">
                             <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>

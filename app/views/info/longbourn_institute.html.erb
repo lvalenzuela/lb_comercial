@@ -14,7 +14,7 @@
 </div>
 
 <div class="static-page-image">
-    <%=image_tag "backgrounds/full-bg-19.jpg", :alt => ""%>
+    <%=image_tag "web-imgs/institute1.jpg", :alt => ""%>
     <div class="description-left">
         <%=image_tag "longbourn-logos/longbourn_institute.png"%>
         <span class="subtitle text-wrapped alpha c-black">Cursos de Inglés para Profesionales. Los mejores horarios en Longbourn Sede Las Condes</span>
@@ -32,7 +32,7 @@
                         </div>
                         
                         <h2>Cursos Orientados a Profesionales</h2>
-                        <p class="text-center">Te estregaremos las herramientas y contenidos para que puedas comunicar tus ideas en forma precisa y puedas comprender con claridad mensajes escritos y auditivos en inglés.</p>
+                        <p class="text-center">Te estregaremos las herramientas y contenidos para que puedas comunicar tus ideas en forma precisa y puedas comprender con claridad mensajes escritos y hablados en inglés.</p>
                     </div>
                 </div>
                 
@@ -280,7 +280,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-9">
-                    <h2 class="text-normal" style="font-weight: bolder;">Prueba de Diagnóstico y Orientación <strong style="font-size: 32px; font-weight: bolder;">sin costo</strong> todas las semanas.</h2>
+                    <h2 class="text-normal" style="font-weight: bolder;">Prueba de Diagnóstico <strong style="font-size: 32px; font-weight: bolder;">sin costo</strong>. Inscripciones todas las semanas.</h2>
                 </div>
                 <div class="col-md-3">
                     <%=link_to "<span>Consulta acá</span>".html_safe, {:controller => :site, :action => :contact_us}, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right"}%>
@@ -289,7 +289,6 @@
         </div>
     </div>
 </section>
-
 
 <!--
 <section class="slice animate-hover-slide bg-white bb">
@@ -334,7 +333,7 @@
     </div>
 </section>
 -->
-
+    <!-- LIGHT -->
 <section class="slice bg-white" id="plan-prices">
     <div class="wp-section pricing-plans">
         <div class="container">
@@ -351,7 +350,7 @@
                             <div class="plan-image">
                                 <%=image_tag "longbourn-logos/longbourn_executive.png", :class => "img-responsive"%>
                             </div>
-                            <h2 class="plan-title" style="font-size: 24px;">Private Lessons</h2>
+                            <h2 class="plan-title" style="font-size: 18px;">Private Lessons</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>23.000</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
                             <small class="plan-info">Programas desde 36 horas</small>
@@ -360,6 +359,7 @@
                             <li><i class="fa fa-user"></i> Curso Individual Cerrado</li>
                             <li><i class="fa fa-map-marker"></i> Oficinas del Cliente</li>
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
+                            <li><i class="fa fa-times"></i> Hasta 3 reprogramaciones por Libro.</li>
                         </ul>          
                         <p class="plan-select-block">
                             <%=link_to longbourn_executive_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
@@ -374,7 +374,7 @@
                             <div class="plan-image">
                                 <%=image_tag "longbourn-logos/longbourn_executive.png", :class => "img-responsive"%>
                             </div>
-                            <h2 class="plan-title" style="font-size: 24px;">Executive Group</h2>
+                            <h2 class="plan-title" style="font-size: 18px;">Executive Group</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>13.800</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
                             <small class="plan-info">Programas desde 36 horas</small>
@@ -398,7 +398,7 @@
                             <div class="plan-image">
                                 <%=image_tag "longbourn-logos/longbourn_institute.png", :class => "img-responsive"%>
                             </div>
-                            <h2 class="plan-title" style="font-size: 24px;">Longbourn Institute</h2>
+                            <h2 class="plan-title" style="font-size: 24px;"></h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>9.000</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
                             <small class="plan-info">Programas desde 36 horas</small>
@@ -406,7 +406,7 @@
                         <ul>
                             <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
                             <li><i class="fa fa-map-marker"></i> Longbourn Sede Las Condes</li>
-                            <li><i class="fa fa-clock-o"></i> Cursos de 17:00 a 20:30 hrs.</li>
+                            <li><i class="fa fa-clock-o"></i> Desde 8:00 a 10:00 y 17:00 a 20:30.</li>
                         </ul>          
                         <p class="plan-select-block">
                             <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
@@ -421,7 +421,7 @@
                             <div class="plan-image">
                                 <%=image_tag "longbourn-logos/longbourn_startup.png", :class => "img-responsive"%>
                             </div>
-                            <h2 class="plan-title" style="font-size: 24px;">Longbourn Startup</h2>
+                            <h2 class="plan-title" style="font-size: 24px;"></h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>7.500</h3>
                             <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
                             <small class="plan-info">Programas desde 36 horas</small>
@@ -429,7 +429,7 @@
                         <ul>
                             <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
                             <li><i class="fa fa-map-marker"></i> Longbourn Sede Las Condes</li>
-                            <li><i class="fa fa-clock-o"></i> Cursos de 8:00 a 17:30 hrs.</li>
+                            <li><i class="fa fa-clock-o"></i> Desde 10:00 a 17:00.</li>
                         </ul>         
                         <p class="plan-select-block">
                             <%=link_to longbourn_startup_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
