@@ -11,6 +11,27 @@ class SiteController < ApplicationController
 		
 	end
 
+
+	def contact_sales_agent
+
+	end
+
+	def work_with_us
+		@job_contact = JobContactForm.new
+	end
+
+	def deliver_job_form
+		@job_contact = JobContactForm.create(job_contact_form_params)
+		if @job_contact.valid?
+			flash[:notice] = "Su solicitud fue procesada exitosamente. Nos pondremos en contacto con usted a la brevedad."
+			WebUserMailer.contact_jobs_agent(@job_contact).deliver
+			redirect_to :action => :work_with_us
+		else
+			render :work_with_us
+		end
+		
+	end
+
 	def deliver_contact_form
 		@web_contact = WebContactForm.create(web_contact_form_params)
 		if @web_contact.valid?
@@ -142,19 +163,15 @@ class SiteController < ApplicationController
 		end
 	end
 
-	def contact_sales_agent
-		user = WebUser.find(params[:userid])
-		course = Course.find(params[:courseid])
-		WebUserMailer.contact_sales_agent(user,course).deliver
-		flash[:notice] = "Tus datos se han enviado a nuestros ejecutivos de ventas.<br> Nos pondremos en contacto contigo dentro de las siguientes 24 horas."
-		redirect_to :action => :redirect_view, :controller_name => "site", :action_name => "index"
-	end
-
 
 #####################################
 #Funciones privadas para esta clase
 #####################################
 	private
+
+	def job_contact_form_params
+		params.require(:job_contact_form).permit(:name, :university, :address, :location, :email, :phone, :job_choice, :subject, :msg, :attached_resume)
+	end
 
 	def web_contact_form_params
 		params.require(:web_contact_form).permit(:name, :email, :free_service, :paid_service, :institution, :location, :phone, :subject, :msg)

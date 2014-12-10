@@ -32,7 +32,21 @@ class WebUserMailer < ActionMailer::Base
 
   def contact_sales_agent(web_contact)
     @contact = web_contact
-    mail(to: "aarregui@longbourn.cl", subject: "Contacto Web Comercial: #{web_contact.name}")
+
+    if @contact.paid_service.include?("Executive")
+      recipient = "aarregui@longbourn.cl"
+    else
+      recipient = "contacto@longbourn.cl"
+    end
+    mail(to: recipient, subject: "Contacto Web Comercial: #{web_contact.name}")
+  end
+
+  def contact_jobs_agent(job_contact)
+    @contact = job_contact
+    if !@contact.attached_resume.blank?
+      attachments["curriculum_"+@contact.name+".pdf"] = File.read(@contact.attached_resume.path)
+    end
+    mail(to: "lvalenzuela@longbourn.cl", subject: "Solicitud de Empleo: #{job_contact.name}")
   end
 
   private

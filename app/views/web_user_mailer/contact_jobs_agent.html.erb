@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Se ha registrado una solicitud de contacto a travez de la Web Comercial de Longbourn Institute.</h3>
+
+    <p>Datos generales del Contacto:</p>
+    <table style="text-align: left;">
+      <tr>
+        <th>ID Registro</th>
+        <td><%=@contact.id%></td>
+      </tr>
+      <tr>
+        <th>Nombre</th>
+        <td><%=@contact.name%></td>
+      </tr>
+      <tr>
+        <th>Universidad</th>
+        <td><%=@contact.university%></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%=@contact.email%></td>
+      </tr>
+      <tr>
+        <th>Telefono</th>
+        <td><%=@contact.phone%></td>
+      </tr>
+      <tr>
+        <th>Dirección</th>
+        <td><%=@contact.address%></td>
+      </tr>
+      <tr>
+        <th>Comuna</th>
+        <td><%=@contact.location%></td>
+      </tr>
+      <tr>
+        <th>Trabajo al que postula</th>
+        <td><%=@contact.job_choice%></td>
+      </tr>
+    </table>
+
+    <h2>Mensaje</h2>
+    <h4>Título: <%=@contact.subject%></h4>
+    <p><%=@contact.msg%></p>
+    
+    -------------------------------------------------------
+    <p>Este correo fue generado automáticamente, por lo cual se sugiere no responderlo.</p>
+  </body>
+</html>

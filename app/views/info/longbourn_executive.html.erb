@@ -14,7 +14,7 @@
 </div>
 
 <div class="static-page-image">
-    <%=image_tag "web-imgs/businessman1.jpg", :alt => ""%>
+    <%=image_tag "web-imgs/full-bg-20.jpg", :alt => ""%>
     <div class="description-left">
         <%=image_tag "longbourn-logos/longbourn_executive.png"%>
         <span class="subtitle text-wrapped alpha c-black">Cursos de Inglés para Ejecutivos. En tu propia Oficina.</span>
@@ -53,7 +53,7 @@
                             <i class="fa fa-clock-o"></i>
                         </div>
                         
-                        <h2 class="normal-case">Clases en tu Oficina, en el horario que definas</h2>
+                        <h2 class="normal-case">Clases en tu Oficina, en Horario a Convenir</h2>
                         <p class="text-center">Cursos de inglés especialmente diseñados para ejecutivos con poco tiempo disponible, que necesitan una capacitación personalizada, efectiva y flexible en su propia oficina. </p>
                     </div>
                 </div>
@@ -272,7 +272,7 @@
                     <h2 class="text-normal" style="font-weight: bolder;">Prueba de Diagnóstico <strong style="font-size: 32px; font-weight: bolder;">sin costo</strong>. Inscripciones todas las semanas.</h2>
                 </div>
                 <div class="col-md-3">
-                    <%=link_to "<span>Consulta acá</span>".html_safe, {:controller => :site, :action => :contact_us}, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right"}%>
+                    <%=link_to "<span>Consulta acá</span>".html_safe, contactar_agente_path, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right"}%>
                 </div>
             </div>
         </div>
@@ -352,7 +352,7 @@
                             <li><i class="fa fa-times"></i> Hasta 3 reprogramaciones por cada 36 hrs. contratadas.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to contactar_agente_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>
@@ -376,7 +376,7 @@
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to contactar_agente_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>

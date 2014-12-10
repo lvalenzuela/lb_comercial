@@ -15,12 +15,16 @@ Rails.application.routes.draw do
 
 
   match "longbourn_executive", to: "info#longbourn_executive", via: [:get]
-  match "ingles_en_nuestra_sede", to: "info#cursos_en_sede", via: [:get]
+  match "ingles_en_sede", to: "info#cursos_en_sede", via: [:get]
   match "cursos_toefl", to: "info#cursos_toefl", via: [:get]
   match "cursos_ielts", to: "info#cursos_ielts", via: [:get]
   match "cursos_toeic", to: "info#cursos_toeic", via: [:get]
   match "metodologia_teg", to: "info#teg_method", via: [:get]
   match "cursos_empresas", to: "info#cursos_empresas", via: [:get]
+
+  match "contactanos", to: "site#contact_us", via: [:get]
+  match "contactar_agente", to: "site#contact_sales_agent", via: [:get]
+  match "jobs_longbourn", to: "site#work_with_us", via: [:get]
 
   #rutas antiguas
 
@@ -76,7 +80,9 @@ Rails.application.routes.draw do
       get "course_details_report"
       get "contact_sales_agent"
       get "contact_us"
+      get "work_with_us"
       post "deliver_contact_form"
+      post "deliver_job_form"
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,211 @@
+<div class="pg-opt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Trabaja con Nosotros</h2>
+            </div>
+            <div class="col-md-6">
+                <ol class="breadcrumb">
+                    <li>Trabaja en Longbourn</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="slice bg-white">
+    <div class="wp-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <ul class="list-listings-2"> 
+                        <li class="">
+                            <div class="listing-image">
+                                <%=image_tag "LogoLongbourn1.png", :class => "img-responsive", :style => "margin-top: 25%;"%>
+                                <a href="#work-with-us-form" class="btn btn-lg btn-square btn-alt btn-block-bm btn-icon btn-icon-go" hidefocus="true">Postular</a>
+                            </div>
+                            <div class="cell">
+                                <div class="listing-body clearfix">
+                                    <h3>Traductores, Longüistas o Profesores de Inglés Part-Time</h3>
+                                    <h4>Descripción General</h4>
+                                    <p>
+                                    Se requieren Traductores inglés-español, Lingüistas o Profesores de Inglés para hacer clases a profesionales de diferentes áreas en sus propias oficinas. Las clases se realizan en modo individual o grupal. El trabajo es part-time (20 hrs. semanales).
+                                    </p>
+                                </div>
+                                <div class="listing-footer">
+                                    <ul class="aux-info">
+                                        <li><i class="fa fa-clock-o"></i><strong>Horas:</strong> 20 hrs. Semanales</li>
+                                        <li><i class="fa fa-map-marker"></i><strong>Ubicación</strong> Sede Longbourn Las Condes</li>
+                                    </ul>
+                                </div>
+                            </div> 
+                        </li>
+                    </ul>
+
+                    <div class="section-title-wr">
+                        <h3 class="section-title left"><span>Perfil del Postulante</span></h3>
+                    </div>
+                    <p>
+                    Buscamos traductores inglés-español, lingüistas o profesores de inglés titulados, con experiencia entre 1 y 2 años. El postulante tendrá que ser una persona con mucha paciencia, de trato respetuoso y discreto. Es necesario que tenga buen manejo de herramientas tecnológicas.
+                    <br>
+
+                    Es muy importante que el postulante esté dispuesto a desplazarse constantemente por la ciudad para llegar a las oficinas de sus alumnos y que se sienta cómodo interactuando con personas exigentes pertenecientes a ambientes corporativos.
+                    </p>
+
+                    <hr>
+
+                    <div class="section-title-wr">
+                        <h3 class="section-title left"><span>Horarios</span></h3>
+                    </div>
+                    <ul class="list-check">
+                        <li><i class="fa fa-check"></i> Lunes a viernes 08:00 a 13:00 hrs. (1 vacante)</li>
+                        <li><i class="fa fa-check"></i> Lunes a viernes de 15:00 a 20:00 hrs. (3 vacantes)</li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <!-- MAP -->
+                    <div class="panel panel-default panel-sidebar-1">
+                        <div class="panel-heading"><h2>Ubicación</h2></div>
+                        <div id="mapCanvas" class="map-canvas-square"></div>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="slice bg-white bb" id="work-with-us-form">
+<div class="w-section inverse">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-title-wr">
+                    <h3 class="section-title left"><span>Formulario de Postulacion</span></h3>
+                </div>
+                <p>
+               Estamos buscando personas talentosas para trabajar en Longbourn Institute. Postula a través de nuestro formulario y nos pondremos en contacto contigo.
+                </p>
+                <%if flash[:notice]%>
+                    <div class="alert alert-warning">
+                        <%=flash[:notice]%>
+                    </div>
+                <%end%>
+
+                <%if @job_contact.errors.any?%>
+                    <div class="alert alert-danger">
+                        <h4><%=pluralize(@job_contact.errors.count,"error(es)")%> no permitieron llevar a cabo la operacion</h4>
+                        <ul>
+                            <%@job_contact.errors.full_messages.each do |msg|%>
+                                <li><%= msg %></li>
+                            <%end%>
+                        </ul>
+                    </div>
+                <%end%>
+                
+                <%=form_for :job_contact_form, :url => {:action => :deliver_job_form}, :class => "form-light mt-20", :multipart => true do |f|%>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <%=f.text_field :name, :value => @job_contact.name, :class => "form-control", :placeholder => "Nombre"%>
+                    </div>
+                    <div class="form-group">
+                        <label>Universidad</label>
+                        <%=f.text_field :university, :value => @job_contact.university, :class => "form-control", :placeholder => "Universidad"%>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Dirección</label>
+                                <%=f.text_field :address, :value => @job_contact.address, :class => "form-control", :placeholder => "Dirección"%>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Comuna</label>
+                                <%=f.text_field :location, :value => @job_contact.location, :class => "form-control", :placeholder => "Comuna"%>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <%=f.email_field :email, :value => @job_contact.email, :class => "form-control", :placeholder => "Email"%>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Telefono</label>
+                                <%=f.phone_field :phone, :value => @job_contact.phone, :class => "form-control", :placeholder => "Número Telefónico"%>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Puesto al que postula</label>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td><%=f.radio_button :job_choice, "Profesor Part-Time: 8:00 - 13:00"%></td>
+                                <td>Profesor de Inglés Part-time 20 hrs semanales (Horario 08:00 - 13:00)</td>
+                            </tr>
+                            <tr>
+                                <td><%=f.radio_button :job_choice, "Profesor Part-Time: 15:00 - 20:00"%></td>
+                                <td>Profesor de Inglés Part-time 20 hrs semanales (Horario 15:00 - 20:00)</td>
+                            </tr>
+                            <tr>
+                                <td><%=f.radio_button :job_choice, "Secretaria Ejecutiva"%></td>
+                                <td>Secretaria Ejecutiva</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="form-group">
+                        <label>Curriculum (.pdf)</label>
+                        <%=f.file_field :attached_resume%>
+                    </div>
+                    <%=f.hidden_field :subject, :value => "Postulación Empleo", :class => "form-control"%>
+                    <div class="form-group">
+                        <label>Disponibilidad y Pretenciones de Sueldo</label>
+                        <%=f.text_area :msg, :value => @job_contact.msg, :class => "form-control", :placeholder => "", :style => "height: 100px;"%>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="reset" class="btn btn-light">Borrar</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-base btn-icon btn-icon-right btn-fly pull-right">
+                                <span>Enviar</span>
+                            </button>
+                        </div>
+                    </div>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>
+</section>   
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+  var map;
+  var myLatlng = new google.maps.LatLng(-33.412876, -70.579246);
+  var mapOptions = {
+    zoom: 16,
+    scrollwheel: false,
+    center: myLatlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
+
+  var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      title: 'Longbourn'
+  });
+  
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.open(map,marker);
+  });
+});
+
+</script>

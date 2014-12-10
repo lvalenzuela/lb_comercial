@@ -14,7 +14,7 @@
 </div>
 
 <div class="static-page-image">
-    <%=image_tag "web-imgs/toeic1.jpg", :alt => ""%>
+    <%=image_tag "web-imgs/toeic2.jpg", :alt => ""%>
     <div class="description-left">
         <span class="subtitle text-wrapped alpha c-black">Curso de Preparación TOEIC de Longbourn</span>
     </div>
@@ -33,7 +33,7 @@
                         
                         <h2>Ejercicios Cotidianos</h2>
                         <p class="text-center">
-                            El curso está diseñado para proveer ejercicios que simulan la cotidianidad de un ambiente angloparlante, tal como la prueba TOEIC.
+                           El curso está diseñado para proveer ejercicios que simulan la cotidianeidad de un ambiente angloparlante, tal como la prueba TOIEC.
                         </p>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                         
                         <h2>Material de Apoyo</h2>
                         <p class="text-center">
-                            El estudiante encontrará todo el apoyo gramatical para aclarar dudas con un libro resumen de gramática del inglés, incluido en el programa de estudio, que puede ser consultado cada vez que se necesite.
+                           El estudiante encontrará todo el apoyo gramatical para aclarar dudas con el material incluido en el programa de estudio.
                         </p>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                         <div class="icon-block-body">
                             <h4 class="">Horarios</h4>
                             <p>In Office: A definir con el Cliente</p>
-                            <p>Sede: <%=link_to "Consultar", {:controller => :site, :action => :contact_us}, {:style => "text-decoration: underline; font-size: 16px;"}%> por Horarios Disponibles</p>
+                            <p>Sede: <%=link_to "Consultar", contactar_agente_path, {:style => "text-decoration: underline; font-size: 16px;"}%> por Horarios Disponibles</p>
                         </div>
                     </div>
                 </div>
@@ -228,7 +228,7 @@
                     <h2 class="text-normal" style="font-weight: bolder;">Prueba de Diagnóstico <strong style="font-size: 32px; font-weight: bolder;">sin costo</strong>. Inscripciones todas las semanas.</h2>
                 </div>
                 <div class="col-md-3">
-                    <%=link_to "<span>Consulta acá</span>".html_safe, {:controller => :site, :action => :contact_us}, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right"}%>
+                    <%=link_to "<span>Consulta acá</span>".html_safe, contactar_agente_path, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right"}%>
                 </div>
             </div>
         </div>
@@ -261,7 +261,7 @@
                             <li><i class="fa fa-times"></i> 3 Reprogramaciones de Clases por cada 36 hrs. contratadas</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to contactar_agente_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>
@@ -281,7 +281,7 @@
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to contactar_agente_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>
@@ -301,7 +301,7 @@
                             <li><i class="fa fa-clock-o"></i> Cursos de 08:00 a 20:30 hrs.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to contact_us_site_index_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to contactar_agente_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>

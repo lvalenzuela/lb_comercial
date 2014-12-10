@@ -1,0 +1,100 @@
+<div class="pg-opt">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Contáctanos</h2>
+        </div>
+    </div>
+</div>
+</div>
+
+<section class="slice slice-lg bg-image" id="contact-agent">
+    <div class="wp-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-6">                   
+                    <div class="wp-block default user-form user-form-alpha no-margin">
+                        <div class="form-header">
+                            <h2>Ponte en Contacto con Nuestros Agentes de Ventas</h2>
+                        </div>
+                        <div class="form-body">
+                        <p>
+                        Ponte en contacto con nuestros agentes de ventas para resolver tus dudas y cotizar el curso más adecuado a tus necesidades.
+                        </p>
+                        <%if flash[:notice]%>
+                            <div class="alert alert-warning">
+                                <%=flash[:notice]%>
+                            </div>
+                        <%end%>
+                        <%=form_for :web_contact_form, :url => {:action => :deliver_contact_form}, :class => "form-light mt-20" do |f|%>
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <%=f.text_field :name, :class => "form-control", :placeholder => "Nombre"%>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <%=f.email_field :email, :class => "form-control", :placeholder => "Email"%>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Telefono</label>
+                                        <%=f.phone_field :phone, :class => "form-control", :placeholder => "Número Telefónico"%>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Empresa</label>
+                                    <%=f.text_field :institution, :class => "form-control", :placeholder => "Empresa"%>
+                                </div>
+                                <div class="col-md-6">
+                                    <label>Comuna</label>
+                                    <%=f.text_field :location, :class => "form-control", :placeholder => "Comuna"%>
+                                </div>
+                            </div>
+                            <%=f.hidden_field :subject, :value => "Contacto Web", :class => "form-control", :placeholder => "Título"%>
+                            <div class="form-group">
+                                <label>Servicio Gratuito que me interesa:</label>
+                                <%=f.select :free_service, options_for_select([
+                                    ["Prueba de Diagnóstico"], 
+                                    #["Ensayo de Test Internacional"], 
+                                    ["Ninguno"]], 
+                                    "Prueba de Diagnóstico"), {}, {:class => "form-control"}%>
+                            </div>
+                            <div class="form-group">
+                                <label>Programa de Inglés que me interesa</label>
+                                <%=f.select :paid_service, options_for_select([
+                                    ["Longbourn Executive: Cursos en tu Oficina"], 
+                                    ["Longbourn Institute: Cursos en los mejores horarios"], 
+                                    ["Longbourn StartUp: Cursos a los mejores precios"],
+                                    ["Preparación TOEFL"],
+                                    ["Preparación TOEIC"],
+                                    ["Preparacion IELTS"],
+                                    ["Ninguno"]], 
+                                    "Longbourn Executive: Cursos en tu Oficina"), {}, {:class => "form-control"}%>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <%=f.text_area :msg, :class => "form-control", :placeholder => "Escribe tu mensaje aquí.", :style => "height: 100px;"%>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <button type="reset" class="btn btn-light">Borrar</button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-base btn-icon btn-icon-right btn-fly pull-right">
+                                        <span>Enviar Mensaje</span>
+                                    </button>
+                                </div>
+                            </div>
+                        <%end%>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

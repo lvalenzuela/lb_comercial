@@ -19,3 +19,20 @@ es:
       - month
       - day
       - year
+  activerecord:
+    errors:
+      models:
+        job_contact_form:
+          attributes:
+            job_choice:
+              blank: "Debe seleccionar una opción de trabajo"
+            name:
+              blank: "El campo correspondiente al nombre nombre no puede estar en blanco"
+            email:
+              blank: "El campo de email no puede estar en blanco"
+            university:
+              blank: "El campo correspondiente a la universidad no puede ir en blanco"
+            attached_resume:
+              blank: "No ha adjuntado un archivo de Curriculum"
+            attached_resume_content_type:
+              invalid: "El formato del archivo adjunto no es valido. Intente con un archivo .pdf"
