@@ -22,6 +22,14 @@ es:
   activerecord:
     errors:
       models:
+        web_contact_form:
+          attributes:
+            name: 
+              blank: "El nombre no puede estar vacío"
+            email:
+              blank: "Debe ingresar un correo electrónico valido"
+            msg:
+              blank: "La casilla correspondiente al mensaje no puede estar vacía"
         job_contact_form:
           attributes:
             job_choice:

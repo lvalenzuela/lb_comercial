@@ -46,7 +46,7 @@ class WebUserMailer < ActionMailer::Base
     if !@contact.attached_resume.blank?
       attachments["curriculum_"+@contact.name+".pdf"] = File.read(@contact.attached_resume.path)
     end
-    mail(to: "lvalenzuela@longbourn.cl", subject: "Solicitud de Empleo: #{job_contact.name}")
+    mail(to: "ecalderon@longbourn.cl", subject: "Solicitud de Empleo: #{job_contact.name}")
   end
 
   private

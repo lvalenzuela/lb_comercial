@@ -82,6 +82,7 @@ Rails.application.routes.draw do
       get "contact_us"
       get "work_with_us"
       post "deliver_contact_form"
+      post "deliver_sales_contact_form"
       post "deliver_job_form"
     end
   end

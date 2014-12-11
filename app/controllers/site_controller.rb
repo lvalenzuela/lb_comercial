@@ -8,12 +8,25 @@ class SiteController < ApplicationController
 	end
 
 	def contact_us
-		
+		@web_contact = WebContactForm.new
 	end
 
 
 	def contact_sales_agent
+		@web_contact = WebContactForm.new
 
+	end
+
+	def deliver_sales_contact_form
+		@web_contact = WebContactForm.create(web_contact_form_params)
+		if @web_contact.valid?
+			flash[:notice] = "Su solicitud fue procesada exitosamente. Nos pondremos en contacto con usted a la brevedad."
+			#enviar correo a agente de ventas
+			WebUserMailer.contact_sales_agent(@web_contact).deliver
+			redirect_to :action => :contact_sales_agent
+		else
+			render :contact_sales_agent
+		end
 	end
 
 	def work_with_us
@@ -38,10 +51,10 @@ class SiteController < ApplicationController
 			flash[:notice] = "Su solicitud fue procesada exitosamente. Nos pondremos en contacto con usted a la brevedad."
 			#enviar correo a agente de ventas
 			WebUserMailer.contact_sales_agent(@web_contact).deliver
+			redirect_to :action => :contact_us
 		else
-			flash[:notice] = "Su solicitud no pudo procesarse de forma adecuada. Por favor, intentelo de nuevo."
+			render :contact_us
 		end
-		redirect_to :action => :contact_us
 	end
 
 	def signup

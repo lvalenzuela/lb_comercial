@@ -44,7 +44,7 @@
 
     <h2>Mensaje</h2>
     <h4>Título: <%=@contact.subject%></h4>
-    <p><%=@contact.msg%></p>
+    <p><%=simple_format @contact.msg%></p>
     
     -------------------------------------------------------
     <p>Este correo fue generado automáticamente, por lo cual se sugiere no responderlo.</p>

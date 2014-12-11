@@ -28,34 +28,45 @@
                         <%=flash[:notice]%>
                     </div>
                 <%end%>
+
+                <%if @web_contact.errors.any?%>
+                    <div class="alert alert-danger">
+                        <h4><%=pluralize(@web_contact.errors.count,"error(es)")%> no permitieron llevar a cabo la operacion</h4>
+                        <ul>
+                            <%@web_contact.errors.full_messages.each do |msg|%>
+                                <li><%= msg %></li>
+                            <%end%>
+                        </ul>
+                    </div>
+                <%end%>
                 
                 <%=form_for :web_contact_form, :url => {:action => :deliver_contact_form}, :class => "form-light mt-20" do |f|%>
                     <div class="form-group">
                         <label>Nombre</label>
-                        <%=f.text_field :name, :class => "form-control", :placeholder => "Nombre"%>
+                        <%=f.text_field :name, :value => @web_contact.name, :class => "form-control", :placeholder => "Nombre"%>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Email</label>
-                                <%=f.email_field :email, :class => "form-control", :placeholder => "Email"%>
+                                <%=f.email_field :email, :value => @web_contact.email, :class => "form-control", :placeholder => "Email"%>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Telefono</label>
-                                <%=f.phone_field :phone, :class => "form-control", :placeholder => "Número Telefónico"%>
+                                <%=f.phone_field :phone, :value => @web_contact.phone, :class => "form-control", :placeholder => "Número Telefónico"%>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <label>Empresa</label>
-                            <%=f.text_field :institution, :class => "form-control", :placeholder => "Empresa"%>
+                            <%=f.text_field :institution, :value => @web_contact.institution, :class => "form-control", :placeholder => "Empresa"%>
                         </div>
                         <div class="col-md-6">
                             <label>Comuna</label>
-                            <%=f.text_field :location, :class => "form-control", :placeholder => "Comuna"%>
+                            <%=f.text_field :location, :value => @web_contact.location, :class => "form-control", :placeholder => "Comuna"%>
                         </div>
                     </div>
                     <%=f.hidden_field :subject, :value => "Contacto Web", :class => "form-control", :placeholder => "Título"%>
@@ -65,7 +76,7 @@
                             ["Prueba de Diagnóstico"], 
                             #["Ensayo de Test Internacional"], 
                             ["Ninguno"]], 
-                            "Prueba de Diagnóstico"), {}, {:class => "form-control"}%>
+                            @web_contact.free_service), {}, {:class => "form-control"}%>
                     </div>
                     <div class="form-group">
                         <label>Programa de Inglés que me interesa</label>
@@ -77,11 +88,11 @@
                             #["Preparación TOEIC"],
                             #["Preparacion IELTS"],
                             ["Ninguno"]], 
-                            "Longbourn Executive: Cursos en tu Oficina"), {}, {:class => "form-control"}%>
+                            @web_contact.paid_service), {}, {:class => "form-control"}%>
                     </div>
                     <div class="form-group">
                         <label>Message</label>
-                        <%=f.text_area :msg, :class => "form-control", :placeholder => "Escribe tu mensaje aquí.", :style => "height: 100px;"%>
+                        <%=f.text_area :msg, :value => @web_contact.msg, :class => "form-control", :placeholder => "Escribe tu mensaje aquí.", :style => "height: 100px;"%>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
