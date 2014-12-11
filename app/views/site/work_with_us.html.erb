@@ -26,7 +26,7 @@
                             </div>
                             <div class="cell">
                                 <div class="listing-body clearfix">
-                                    <h3>Traductores, Longüistas o Profesores de Inglés Part-Time</h3>
+                                    <h3>Traductores, Lingüistas o Profesores de Inglés Part-Time</h3>
                                     <h4>Descripción General</h4>
                                     <p>
                                     Se requieren Traductores inglés-español, Lingüistas o Profesores de Inglés para hacer clases a profesionales de diferentes áreas en sus propias oficinas. Las clases se realizan en modo individual o grupal. El trabajo es part-time (20 hrs. semanales).
@@ -144,16 +144,12 @@
                         <label>Puesto al que postula</label>
                         <table class="table table-bordered">
                             <tr>
-                                <td><%=f.radio_button :job_choice, "Profesor Part-Time: 8:00 - 13:00"%></td>
+                                <td><%=f.radio_button :job_choice, "Profesor Part-Time: 8:00 - 13:00", :checked => true%></td>
                                 <td>Profesor de Inglés Part-time 20 hrs semanales (Horario 08:00 - 13:00)</td>
                             </tr>
                             <tr>
                                 <td><%=f.radio_button :job_choice, "Profesor Part-Time: 15:00 - 20:00"%></td>
                                 <td>Profesor de Inglés Part-time 20 hrs semanales (Horario 15:00 - 20:00)</td>
-                            </tr>
-                            <tr>
-                                <td><%=f.radio_button :job_choice, "Secretaria Ejecutiva"%></td>
-                                <td>Secretaria Ejecutiva</td>
                             </tr>
                         </table>
                     </div>
