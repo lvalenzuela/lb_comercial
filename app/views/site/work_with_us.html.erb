@@ -188,7 +188,9 @@ $(document).ready(function() {
     zoom: 16,
     scrollwheel: false,
     center: myLatlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    disableDefaultUI: true,
+    draggable: false
   }
   map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
 

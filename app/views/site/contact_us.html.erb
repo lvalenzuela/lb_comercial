@@ -31,7 +31,7 @@
 
                 <%if @web_contact.errors.any?%>
                     <div class="alert alert-danger">
-                        <h4><%=pluralize(@web_contact.errors.count,"error(es)")%> no permitieron llevar a cabo la operacion</h4>
+                        <h4><%=@web_contact.errors.count%> error(es) no permitieron llevar a cabo la operacion</h4>
                         <ul>
                             <%@web_contact.errors.full_messages.each do |msg|%>
                                 <li><%= msg %></li>
@@ -165,7 +165,9 @@ $(document).ready(function() {
     zoom: 16,
     scrollwheel: false,
     center: myLatlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+    disableDefaultUI: true,
+    draggable: false
   }
   map = new google.maps.Map(document.getElementById('mapCanvas'), mapOptions);
 

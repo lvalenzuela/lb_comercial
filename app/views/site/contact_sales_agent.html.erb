@@ -77,7 +77,7 @@
                         
                         <%if @web_contact.errors.any?%>
                             <div class="alert alert-danger">
-                                <h4><%=pluralize(@web_contact.errors.count,"error(es)")%> no permitieron llevar a cabo la operacion</h4>
+                                <h4><%=@web_contact.errors.count%> error(es) no permitieron llevar a cabo la operacion</h4>
                                 <ul>
                                     <%@web_contact.errors.full_messages.each do |msg|%>
                                         <li><%= msg %></li>
