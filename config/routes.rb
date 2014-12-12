@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   match "longbourn_executive", to: "info#longbourn_executive", via: [:get]
   match "ingles_en_sede", to: "info#cursos_en_sede", via: [:get]
   match "cursos_toefl", to: "info#cursos_toefl", via: [:get]
-  match "cursos_ielts", to: "info#cursos_ielts", via: [:get]
-  match "cursos_toeic", to: "info#cursos_toeic", via: [:get]
+  #match "cursos_ielts", to: "info#cursos_ielts", via: [:get]
+  #match "cursos_toeic", to: "info#cursos_toeic", via: [:get]
   match "metodologia_teg", to: "info#teg_method", via: [:get]
   match "cursos_empresas", to: "info#cursos_empresas", via: [:get]
 
@@ -28,30 +28,21 @@ Rails.application.routes.draw do
 
   #rutas antiguas
 
-  match "cursos-de-ingles-personalizados-in-office", to: "info#cursos_individuales_in_office", via: [:get]
-  match "workshops-de-inmersion-en-ingles", to: "info#workshops_inmersion", via: [:get]
-  match "workshops-interempresariales-en-ingles", to: "info#workshops_interempresariales", via: [:get]
-  match "cursos-de-ingles-grupales-in-office", to: "info#cursos_grupales_in_office", via: [:get]
-  match "cursos-de-ingles-presenciales", to: "info#cursos_presenciales", via: [:get]
-  match "cursos-de-ingles-semi-presenciales", to: "info#cursos_semi_presenciales", via: [:get]
-  match "cursos-de-ingles-startup-presenciales", to: "info#cursos_startup_presenciales", via: [:get]
-  match "cursos-de-ingles-startup-semi-presenciales", to: "info#cursos_startup_semi_presenciales", via: [:get]
-
   match "programas-ejecutivos", to: "info#programas_ejecutivos", via: [:get]
   match "programas-corporativos", to: "info#programas_corporativos", via: [:get]
   match "soluciones-de-motivacion", to: "info#soluciones_motivacion", via: [:get]
 
   resources :users do
     collection do
-      get "user_identification"
-      post "create"
-      post "update"
-      post "longbourn_login"
-      post "register_user_contact"
-      post "modify_contact_data"
-      get "user_logout"
-      post "register_lead"
-      post "create_contact_person"
+      #get "user_identification"
+      #post "create"
+      #post "update"
+      #post "longbourn_login"
+      #post "register_user_contact"
+      #post "modify_contact_data"
+      #get "user_logout"
+      #post "register_lead"
+      #post "create_contact_person"
     end
   end
 
@@ -61,7 +52,6 @@ Rails.application.routes.draw do
       get "course_list"
       get "new_contact_person"
       get "index"
-      get "show_challenges"
       get "available_courses"
       post "available_courses"
       get "selected_courses_list"
