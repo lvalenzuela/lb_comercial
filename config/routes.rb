@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root "site#index"
 
-  match "auth/:provider/callback", to: "users#facebook_login", via: [:get , :post]
-  match "auth/failure", to: redirect("/"), via: [:get , :post]
-  match "signout", to: "users#logout", as: "signout", via: [:get , :post]
+  #match "auth/:provider/callback", to: "users#facebook_login", via: [:get , :post]
+  #match "auth/failure", to: redirect("/"), via: [:get , :post]
+  #match "signout", to: "users#logout", as: "signout", via: [:get , :post]
 
   ##
   #Informacionales
@@ -13,8 +13,6 @@ Rails.application.routes.draw do
   match "longbourn_institute", to: "info#longbourn_institute", via: [:get]
   match "cursos_internacionales", to: "info#cursos_internacionales", via: [:get]
 
-
-  match "longbourn_executive", to: "info#longbourn_executive", via: [:get]
   match "ingles_en_sede", to: "info#cursos_en_sede", via: [:get]
   match "cursos_toefl", to: "info#cursos_toefl", via: [:get]
   #match "cursos_ielts", to: "info#cursos_ielts", via: [:get]
@@ -28,9 +26,9 @@ Rails.application.routes.draw do
 
   #rutas antiguas
 
-  match "programas-ejecutivos", to: "info#programas_ejecutivos", via: [:get]
-  match "programas-corporativos", to: "info#programas_corporativos", via: [:get]
-  match "soluciones-de-motivacion", to: "info#soluciones_motivacion", via: [:get]
+  #match "programas-ejecutivos", to: "info#programas_ejecutivos", via: [:get]
+  #match "programas-corporativos", to: "info#programas_corporativos", via: [:get]
+  #match "soluciones-de-motivacion", to: "info#soluciones_motivacion", via: [:get]
 
   resources :users do
     collection do
@@ -50,24 +48,24 @@ Rails.application.routes.draw do
     collection do
       get "redirect_view"
       get "course_list"
-      get "new_contact_person"
+      #get "new_contact_person"
       get "index"
-      get "available_courses"
-      post "available_courses"
-      get "selected_courses_list"
-      post "load_extra_content"
-      get "confirm_purchase"
-      get "register_purchase"
-      get "register_invoice"
-      get "signup"
-      get "edit_user"
-      get "organization_signup"
-      get "registration_success"
-      get "login"
-      get "play_tha_game"
-      post "test_results"
-      post "search"
-      get "course_details_report"
+      #get "available_courses"
+      #post "available_courses"
+      #get "selected_courses_list"
+      #post "load_extra_content"
+      #get "confirm_purchase"
+      #get "register_purchase"
+      #get "register_invoice"
+      #get "signup"
+      #get "edit_user"
+      #get "organization_signup"
+      #get "registration_success"
+      #get "login"
+      #get "play_tha_game"
+      #post "test_results"
+      #post "search"
+      #get "course_details_report"
       get "contact_sales_agent"
       get "contact_us"
       get "work_with_us"

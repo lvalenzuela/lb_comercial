@@ -52,3 +52,4 @@ gem 'prawn'
 gem "gmaps4rails"
 gem "underscore-rails"
 gem 'jquery-turbolinks'
+gem "sitemap_generator"
