@@ -19,5 +19,8 @@
 /config/secrets.yml
 /config/database.yml
 
+#ignorar assets pre compilados
+/public/assets/*
+
 # Ignore application configuration
 /config/application.yml

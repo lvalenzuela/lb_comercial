@@ -2,6 +2,7 @@ class SiteController < ApplicationController
 	require "json"
 	require "uri"
 	require "bcrypt"
+	layout "gmaps_layout", only: [:contact_us, :work_with_us]
 
 	def index
 		session[:action_milestone] = action_name
