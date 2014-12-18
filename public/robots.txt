@@ -141,4 +141,4 @@ Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/plupload/
 #Disallow: /wp-admin*/
 
 #Sitemaps
-Sitemap: http://www.longbourn.cl/sitemap.xml
+Sitemap: http://longbourn.cl/sitemap.xml.gz
