@@ -105,7 +105,7 @@
                         </div>
                         <div class="icon-block-body">
                             <h4 class="">Horarios</h4>
-                            <p>Consulta <%=link_to "acá", contactar_agente_path, {:style => "text-decoration: underline; font-size: 16px;"}%> por horarios y vacantes disponibles.</p>
+                            <p>Consulta <%=link_to "acá", {:controller => :site, :action => :contact_sales_agent}, {:style => "text-decoration: underline; font-size: 16px;"}%> por horarios y vacantes disponibles.</p>
                         </div>
                     </div>
                 </div>
@@ -239,7 +239,7 @@
                             <li><i class="fa fa-times"></i> Hasta 3 reprogramaciones por Libro.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to longbourn_executive_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to ingles_ejecutivo_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
                                 <span>Ir a Longbourn Executive</span>
                             <%end%>
                         </p>
@@ -262,7 +262,7 @@
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to longbourn_executive_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to ingles_ejecutivo_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
                                 <span>Ir a Longbourn Executive</span>
                             <%end%>
                         </p>
@@ -286,7 +286,7 @@
                             <li><i class="fa fa-clock-o"></i> Desde 8:00 a 10:00 y 17:00 a 20:30.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to contactar_agente_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>
@@ -309,7 +309,7 @@
                             <li><i class="fa fa-clock-o"></i> Desde 10:00 a 17:00.</li>
                         </ul>         
                         <p class="plan-select-block">
-                            <%=link_to longbourn_startup_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to ingles_empresarial_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
                                 <span>Ir a Longbourn StartUp</span>
                             <%end%>
                         </p>

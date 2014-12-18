@@ -8,21 +8,21 @@ Rails.application.routes.draw do
   ##
   #Informacionales
   ##
-  match "longbourn_executive", to: "info#longbourn_executive", via: [:get]
-  match "longbourn_startup", to: "info#longbourn_startup", via: [:get]
-  match "longbourn_institute", to: "info#longbourn_institute", via: [:get]
+  match "ingles-ejecutivo", to: "info#longbourn_executive", via: [:get]
+  match "ingles-empresarial", to: "info#longbourn_startup", via: [:get]
+  match "instituto-de-ingles", to: "info#longbourn_institute", via: [:get]
   match "cursos_internacionales", to: "info#cursos_internacionales", via: [:get]
 
-  match "ingles_en_sede", to: "info#cursos_en_sede", via: [:get]
-  match "cursos_toefl", to: "info#cursos_toefl", via: [:get]
+  match "ingles-en-las-condes", to: "info#cursos_en_sede", via: [:get]
+  match "cursos-toefl", to: "info#cursos_toefl", via: [:get]
   #match "cursos_ielts", to: "info#cursos_ielts", via: [:get]
   #match "cursos_toeic", to: "info#cursos_toeic", via: [:get]
-  match "metodologia_teg", to: "info#teg_method", via: [:get]
-  match "cursos_empresas", to: "info#cursos_empresas", via: [:get]
+  match "metodologia-teg", to: "info#teg_method", via: [:get]
+  match "cursos-de-ingles-para-empresas", to: "info#cursos_empresas", via: [:get]
 
   match "contactanos", to: "site#contact_us", via: [:get]
-  match "contactar_agente", to: "site#contact_sales_agent", via: [:get]
-  match "jobs_longbourn", to: "site#work_with_us", via: [:get]
+  match "valores-precios-o-tarifas", to: "site#contact_sales_agent", via: [:get]
+  match "trabajo-ingles", to: "site#work_with_us", via: [:get]
 
   #rutas antiguas
 

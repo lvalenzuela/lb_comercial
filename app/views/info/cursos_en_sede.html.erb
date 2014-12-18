@@ -6,10 +6,10 @@
     <div class="description-buttons" style="position: absolute; top: 80%; width: 100%;">
         <div class="row">
             <div class="col-md-6">
-                <%=link_to "Longbourn Institute - Mejores Horarios", longbourn_institute_path, {:class => "btn btn-block btn-dark btn-lg"}%>
+                <%=link_to "Longbourn Institute - Mejores Horarios", {:controller => :info, :action => :longbourn_institute}, {:class => "btn btn-block btn-dark btn-lg"}%>
             </div>
             <div class="col-md-6">
-                <%=link_to "Longbourn StartUp - Mejores Precios", longbourn_startup_path, {:class => "btn btn-block btn-dark btn-lg"}%>
+                <%=link_to "Longbourn StartUp - Mejores Precios", {:controller => :info, :action => :longbourn_startup}, {:class => "btn btn-block btn-dark btn-lg"}%>
             </div>
         </div>
     </div>

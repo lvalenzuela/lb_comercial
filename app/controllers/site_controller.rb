@@ -9,11 +9,13 @@ class SiteController < ApplicationController
 	end
 
 	def contact_us
+		@page_title = "Contacto cursos de inglés"
 		@web_contact = WebContactForm.new
 	end
 
 
 	def contact_sales_agent
+		@page_title = "Valores, precios o tarifas de nuestros Cursos de Inglés"
 		@web_contact = WebContactForm.new
 
 	end
@@ -31,6 +33,7 @@ class SiteController < ApplicationController
 	end
 
 	def work_with_us
+		@page_title = "Trabajo para Profesores de Inglés & Traductores de Inglés"
 		@job_contact = JobContactForm.new
 	end
 
