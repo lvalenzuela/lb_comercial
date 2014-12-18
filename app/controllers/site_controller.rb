@@ -5,17 +5,21 @@ class SiteController < ApplicationController
 	layout "gmaps_layout", only: [:contact_us, :work_with_us]
 
 	def index
+		@page_title = "Cursos de Inglés para Profesionales, Ejecutivos y Gerentes"
+		@meta_description = "Cursos de Inglés para profesionales, ejecutivos y gerentes en Santiago de Chile, directamente en tu oficina o centro de negocios. ¡Metodología TEG!"
 		session[:action_milestone] = action_name
 	end
 
 	def contact_us
 		@page_title = "Contacto cursos de inglés"
+		@meta_description = "Contáctate con nosotros para saber más acerca de los cursos de inglés In Office"
 		@web_contact = WebContactForm.new
 	end
 
 
 	def contact_sales_agent
 		@page_title = "Valores, precios o tarifas de nuestros Cursos de Inglés"
+		@meta_description = "Conoce los tarifas de nuestros cursos de inglés, precios accesibles para profesionales y empresas. ¡Código SENCE! ¡Metodología TEG! ¡Contáctanos!"
 		@web_contact = WebContactForm.new
 
 	end
@@ -34,6 +38,7 @@ class SiteController < ApplicationController
 
 	def work_with_us
 		@page_title = "Trabajo para Profesores de Inglés & Traductores de Inglés"
+		@meta_description = "¿Eres profesor de inglés o traductor de inglés y estás buscando empleo? ¡Tenemos las mejores oportunidades de trabajo para profesores y traductores!"
 		@job_contact = JobContactForm.new
 	end
 

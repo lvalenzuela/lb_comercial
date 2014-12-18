@@ -24,11 +24,19 @@ Rails.application.routes.draw do
   match "valores-precios-o-tarifas", to: "site#contact_sales_agent", via: [:get]
   match "trabajo-ingles", to: "site#work_with_us", via: [:get]
 
-  #rutas antiguas
+  #Redirect 301#
+  get "/jobs_longbourn", to: redirect("/trabajo-ingles")
+  get "/ingles_en_sede", to: redirect("/ingles-en-las-condes")
+  get "/cursos_empresas", to: redirect("/cursos-de-ingles-para-empresas")
+  get "/longbourn_institute", to: redirect("/instituto-de-ingles")
+  get "/longbourn_executive", to: redirect("/ingles-ejecutivo")
+  get "/longbourn_startup", to: redirect("/ingles-empresarial")
+  get "/contactar_agente", to: redirect("/valores-precios-o-tarifas")
+  get "/metodologia_teg", to: redirect("/metodologia-teg")
+  get "/cursos_toefl", to: redirect("/cursos-toefl")
+  get "/site/contact_us", to: redirect("/contactanos")
 
-  #match "programas-ejecutivos", to: "info#programas_ejecutivos", via: [:get]
-  #match "programas-corporativos", to: "info#programas_corporativos", via: [:get]
-  #match "soluciones-de-motivacion", to: "info#soluciones_motivacion", via: [:get]
+
 
   resources :users do
     collection do

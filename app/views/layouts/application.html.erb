@@ -20,7 +20,11 @@
 	  ga('send', 'pageview');
 
 	</script>
-
+	<%if @meta_description%>
+		<meta name="description" content="<%=@page_title%>">
+	<%else%>
+		<meta name="description" content="Cursos de Inglés para profesionales, ejecutivos y gerentes en Santiago de Chile, directamente en tu oficina o centro de negocios. ¡Metodología TEG!">
+	<%end%>
 </head>
 <body id="page1">
 <%= render "common_partials/top_menu"%>

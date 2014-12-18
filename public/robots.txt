@@ -1,9 +1,144 @@
-# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
-#
-# To ban all spiders from the entire site uncomment the next two lines:
-# User-agent: *
-# Disallow: /
 User-agent: *
-Disallow: /contactanos
-Disallow: /contactar_agente
-Sitemap: http://longbourn.cl/sitemap.xml.gz
+#FileRules
+Disallow: /*.xls$
+Disallow: /*.csv$
+Disallow: /*.pdf$
+Disallow: /*.css$
+Disallow: /*.js$
+Disallow: /*.doc$
+Disallow: /*.sql$
+Disallow: /*.ico$
+Disallow: /*.htm$
+Disallow: /*.shtml$
+Disallow: /*.html$
+Disallow: /*.xtml$
+Disallow: /*.php$
+Disallow: /*.asp$
+Disallow: /*.aspx$
+Disallow: /*.tpl$
+Disallow: /*.zip$
+Disallow: /*.rar$
+Disallow: /*.ppt$
+Disallow: /*.swf$
+Disallow: /*.md$
+Disallow: /*.tmp$
+Disallow: /*.mp4$
+Disallow: /*.mp3$
+Disallow: /*.avi$
+Disallow: /*.wmv$
+Disallow: /*.wav$
+Disallow: /*.usermin$
+Disallow: /*.log$
+
+#PagesUrls
+
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-session=ac-magna-natoque-non-vel-magnis-a/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-session=ultricies-elit-nascetur-mattis-egestas-odio-amet/
+Disallow: /development.longbourn.cl/course/index.php?categoryid=18/
+Disallow: /development.longbourn.cl/course/index.php?categoryid=17/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-event=parturient-a-pulvinar-risus/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=5&nuevo_ano=1007/
+Disallow: /web-comercial.longbourn.cl/good_view/jany.php?auth_token=3LgIxB5IluoLZD/uAfwXDtMSXfwnF2m+da5KLXahh2s=/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/themes/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/skins/
+Disallow: /development.longbourn.cl/course/index.php?categoryid=16/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/SimplePie/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-event=futbolmax/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=8&nuevo_ano=1005/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=3&nuevo_ano=1008/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=8&nuevo_ano=1006/
+Disallow: /longbourn.cl/blog/bienvenido-al-blog-de-longbourn-institute/
+Disallow: /development.longbourn.cl/course/index.php?categoryid=19/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/SimplePie/HTTP/
+Disallow: /longbourn.cl/component/mailto/?tmpl=component&template=beez5&link=6f63f922da5022fe436bc62e7970e7a779a60f55/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/plugins/charmap/
+Disallow: /web-comercial.longbourn.cl/wordpress/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-session=montes-natoque-risus-sit-porta-ridiculus-massa/
+Disallow: /development.longbourn.cl/course/index.php?categoryid=33/
+Disallow: /web-comercial.longbourn.cl/wordpress/?author=1/
+Disallow: /web-comercial.longbourn.cl/good_view/jany.php?auth_token=uerd7uz+v9t+Y1DB/7S3qhMJfAM6XOx3HhALiLuWzE8=/
+Disallow: /development.longbourn.cl/course/index.php?categoryid=31/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-links-opml.php/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-session=turpis-sed-sed-augue-nunc-in-rhoncus/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/images/media/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/SimplePie/Decode/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-session=amet-elit-integer-egestas-parturient-mattis-amet/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/plugins/wordpress/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/Text/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/images/wlw/
+Disallow: /development.longbourn.cl/course/index.php/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/imgareaselect/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-session=hac-nunc-scelerisque-turpis-elementum-egestas-placerat/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/skins/lightgray/fonts/
+Disallow: /development.longbourn.cl/course/index.php?categoryid=43/
+Disallow: /development.longbourn.cl/course/index.php?categoryid=40/
+Disallow: /longbourn.cl/component/content/?view=featured/
+Disallow: /longbourn.cl/component/content/article/8-products/13-cursos/
+Disallow: /web-comercial.longbourn.cl/
+Disallow: /longbourn.cl/component/content/article/12-start/43-me-gusta/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/theme-compat/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/skins/lightgray/
+Disallow: /longbourn.cl/component/content/article/12-start/6-inicio/
+Disallow: /longbourn.cl/component/content/category/12-start/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/Text/Diff/Renderer/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=9&nuevo_ano=824/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/mediaelement/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=6&nuevo_ano=991/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/themes/modern/
+Disallow: /longbourn.cl/user/view.php?id=2&course=1/
+Disallow: /longbourn.cl/component/content/category/8-products/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/certificates/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=6&nuevo_ano=809/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=5&nuevo_ano=792/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=8&nuevo_ano=702/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=1&nuevo_ano=992/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/Text/Diff/Engine/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=2&nuevo_ano=966/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=9&nuevo_ano=940/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-event=testing-again/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-event=egestas-lundium-augue-porta/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/SimplePie/Net/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=5&nuevo_ano=997/
+Disallow: /development.longbourn.cl/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/SimplePie/Content/Type/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=4&nuevo_ano=1009/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/langs/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/images/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/skins/wordpress/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=6&nuevo_ano=923/
+Disallow: /longbourn.cl/component/content/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-seleccion-fecha/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/plugins/paste/
+Disallow: /web-comercial.longbourn.cl/wordpress/?p=9/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=8&nuevo_ano=723/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-event=pid-mauris-amet-est/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/plugins/wpfullscreen/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-event=nascetur-risus-ac-nunc/
+Disallow: /web-comercial.longbourn.cl/alvaro.html/
+Disallow: /longbourn.cl/component/content/category/7-about-longbourn/
+Disallow: /longbourn.cl/component/content/category/11-content/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/SimplePie/Cache/
+Disallow: /web-comercial.longbourn.cl/wordpress/?page_id=2/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/Text/Diff/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=2&nuevo_ano=994/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/tinymce/plugins/directionality/
+Disallow: /longbourn.cl/component/content/article/13-cover/16-quienes-somos/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-event=mattis-risus-diam-integer/
+Disallow: /web-comercial.longbourn.cl/wordpress/?ja-session=placerat-et-cursus-ultricies-nisi-augue-lundium/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=8&nuevo_ano=804/
+Disallow: /longbourn.cl/blog/curiosidades-sobre-los-juegos-olimpicos-de-londres-2012-curious-facts-about-the-2012-london-olympics/
+Disallow: /longbourn.cl/component/content/category/13-cover/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/SimplePie/XML/Declaration/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=8&nuevo_ano=742/
+Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=4&nuevo_ano=934/
+Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/plupload/
+
+#PageRules
+#Disallow: /*wp-admin
+
+#Directories
+#Disallow: /wp-admin*/
+
+#Sitemaps
+Sitemap: http://www.longbourn.cl/sitemap.xml
