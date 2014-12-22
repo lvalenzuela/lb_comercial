@@ -11,12 +11,12 @@ Rails.application.routes.draw do
   match "ingles-ejecutivo", to: "info#longbourn_executive", via: [:get]
   match "ingles-empresarial", to: "info#longbourn_startup", via: [:get]
   match "instituto-de-ingles", to: "info#longbourn_institute", via: [:get]
-  match "cursos_internacionales", to: "info#cursos_internacionales", via: [:get]
+  #match "cursos-internacionales", to: "info#cursos_internacionales", via: [:get]
 
   match "ingles-en-las-condes", to: "info#cursos_en_sede", via: [:get]
   match "cursos-toefl", to: "info#cursos_toefl", via: [:get]
-  #match "cursos_ielts", to: "info#cursos_ielts", via: [:get]
-  #match "cursos_toeic", to: "info#cursos_toeic", via: [:get]
+  #match "cursos-ielts", to: "info#cursos_ielts", via: [:get]
+  #match "cursos-toeic", to: "info#cursos_toeic", via: [:get]
   match "metodologia-teg", to: "info#teg_method", via: [:get]
   match "cursos-de-ingles-para-empresas", to: "info#cursos_empresas", via: [:get]
 
