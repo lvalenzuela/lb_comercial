@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   get "/cursos_toefl", to: redirect("/cursos-toefl")
   get "/site/contact_us", to: redirect("/contactanos")
   get "/quiz", to: redirect("/")
+  get "/nuestros-clientes", to: redirect("/")
+  get "/jobs", to: redirect("/trabajo-ingles")
 
 
 
