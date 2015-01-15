@@ -5,7 +5,8 @@
     <header class="header-standard-2">     
     <!-- MAIN NAV -->
       <div class="navbar navbar-wp navbar-arrow mega-nav" role="navigation">
-        <div class="phone-wrapper">
+        <!-- Encargada de la zona de los telefonos -->
+        <div class="phone-wrapper hidden-xs hidden-sm">
             <div class="row">
                 <div class="pull-right" style="display: block">
                     <table class="phone-contact">
@@ -20,19 +21,28 @@
                 </div>
             </div>
         </div>
+        
         <div class="container">
+            
+        <!-- Incluye el menu de arriba -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <!-- Boton del menu de arriba-->
+               <button type="button" class="navbar-toggle hidden-xs hidden-sm" data-toggle="collapse" data-target=".navbar-collapse">
                     <i class="fa fa-bars icon-custom"></i>
-                </button>
-                <%=link_to root_url, :class => "navbar-brand", :title => "Longbourn Institute" do%>
+                </button> 
+                <%=link_to root_url, :class => "navbar-brand", :title => "Longbourn Institute", :style => "margin-left:0px" do%>
                     <%=image_tag "LogoLongbourn1.png", :alt => "Longbourn Institute"%>
                 <%end%>
+                <a href="#" class="toggle-nav btn btn-lg hidden-md hidden-lg" style="float:left; margin-top:20px;">
+                <i class="fa fa-bars"></i>
+            </a>
+
             </div>
-            <div class="navbar-collapse collapse">
+        
+            <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden-md hidden-lg">
-                        <div class="bg-light-gray">
+                    <li>
+                        <div class="bg-light-gray hidden-md hidden-lg">
                             <form class="form-horizontal form-light p-15" role="form">
                                 <div class="input-group input-group-lg">
                                     <input type="text" class="form-control" placeholder="I want to find ...">

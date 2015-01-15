@@ -1,3 +1,50 @@
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.experiencia-icon').popover({
+        placement : 'right',
+        html: true,
+        content: function(){
+            return $('.experiencia-info').html();
+        }   
+    });
+    $('.cursos-icon').popover({
+        placement : 'left',
+        html: true,
+         content: function(){
+            return $('.cursos-info').html();
+        }  
+    });
+    $('.clases-icon').popover({
+        placement : 'right',
+        html: true,
+         content: function(){
+            return $('.clases-info').html();
+        }  
+    });
+    $('.profesores-icon').popover({
+        placement : 'left',
+        html: true,
+         content: function(){
+            return $('.profesores-info').html();
+        }  
+    });
+    $('.informes-icon').popover({
+        placement : 'right',
+        html: true,
+         content: function(){
+            return $('.informes-info').html();
+        }  
+    });
+    $('.control-icon').popover({
+        placement : 'left',
+        html: true,
+         content: function(){
+            return $('.control-info').html();
+        }  
+    }); 
+});
+</script>
+
 <!-- MAIN CONTENT -->
 <div class="pg-opt">
     <div class="container">
@@ -6,7 +53,7 @@
                 <h1><%=@page_title%></h1>
             </div>
             <div class="col-md-5">
-                <ol class="breadcrumb">
+                <ol class="return-path breadcrumb">
                     <li><%=link_to "Home", root_path%></li>
                     <li class="active">Cursos Para Empresas</li>
                 </ol>
@@ -81,7 +128,7 @@
     <div class="wp-section">
         <div class="container">
             <div class="section-title-wr mb-40">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span class="">Experiencia para los Participantes</span>
                 </h3>
             </div>
@@ -91,7 +138,9 @@
 	            		Un Programa de Capacitación exitoso es aquel en el que los participantes logran adquirir nuevos conocimientos y sienten que la Empresa les está entregando una herramienta útil para su trabajo y crecimiento profesional. Esto se ve reflejado en altas tasas de asistencia y elevado rendimiento de los participantes.
 	            	</p>
             	</div>
-                <div class="col-md-6 col-sm-6">
+               
+            <!--Version para escritorio-->   
+                <div class="col-md-6 col-sm-6 hidden-xs hidden-sm">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
                             <i class="fa fa-institution"></i>
@@ -100,10 +149,28 @@
                             <h4 class="">Experiencia</h4>
                             <p>Longbourn trabaja en que la experiencia para los participantes sea de mucho agrado, al momento de la Clase y al interactuar con la Web de Estudiantes.</p>
                         </div>
-                    </div>
+                    </div>    
                 </div>
-                
-                <div class="col-md-6 col-sm-6 ">
+
+                <!--Version movil-->               
+                 <div class="col-md-6 col-sm-6 hidden-md hidden-lg">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                             <a href="#" class="btn btn-lg experiencia-icon" data-toggle="popover" tabindex="0" data-trigger="focus">
+                                 <div class="experiencia-info hide" >
+                                    <p style="font-size: 2em">Longbourn trabaja en que la experiencia para los participantes sea de mucho agrado, al momento de la Clase y al interactuar con la Web de Estudiantes.</p></div>
+                            <i id="mobileIcon" class="fa fa-institution"></i></a>
+                        </div>
+                         <div class="icon-block-body">
+                            <h4 class="">Experiencia</h4>
+                        </div>        
+
+                    </div>    
+                </div>
+
+
+                <!--Version de escritorio-->
+                <div class="col-md-6 col-sm-6 hidden-xs hidden-sm">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
                             <i class="fa fa-graduation-cap"></i>
@@ -114,8 +181,25 @@
                         </div>
                     </div>
                 </div>
+
+                <!--Version movil-->
+                <div class="col-md-6 col-sm-6 hidden-md hidden-lg">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                            <a href="#" id="" class="btn btn-lg cursos-icon" data-toggle="popover" tabindex="1" data-trigger="focus" >
+                                 <div class="cursos-info hide">
+                                    <p style="font-size: 2em">Los Cursos de Inglés Longbourn están diseñados para profesionales, que necesitan una capacitación personalizada y efectiva en su propia oficina. Los programas son entretenidos y diversos, abarcando temas que van mucho más allá del aprendizaje del inglés.</p></div>
+                                <i id="mobileIcon" class="fa fa-graduation-cap"></i></a>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Cursos para Profesionales</h4>
+                        </div>
+                    </div>
+                </div>     
             </div>
-            <div class="col-md-6 col-sm-6 ">
+            
+
+            <div class="col-md-6 col-sm-6 hidden-xs hidden-sm">
                 <div class="icon-block icon-block-1">
                     <div class="icon-block-item">
                         <i class="fa fa-thumbs-up"></i>
@@ -126,7 +210,23 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 ">
+
+
+            <div class="col-md-6 col-sm-6 hidden-md hidden-lg">
+                <div class="icon-block icon-block-1">
+                    <div class="icon-block-item">
+                        <a href="#" class="btn btn-lg clases-icon" data-toggle="popover" tabindex="1" data-trigger="focus" >
+                             <div class="clases-info hide">
+                                <p style="font-size: 2em">Las clases utilizan la Metodología TEG (Teaching English Gradually) que de una forma diferente, dinámica y entretenida, desarrolla de manera simultánea las 4 habilidades del idioma: leer, escribir, escuchar y hablar.</p></div>
+                            <i id="mobileIcon" class="fa fa-thumbs-up"></i></a>
+                    </div>
+                    <div class="icon-block-body">
+                        <h4 class="">Clases Dinámicas y Entretenidas</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 hidden-xs hidden-sm">
                 <div class="icon-block icon-block-1">
                     <div class="icon-block-item">
                         <i class="fa fa-group"></i>
@@ -137,16 +237,32 @@
                     </div>
                 </div>
             </div>
+
+             <div class="col-md-6 col-sm-6 hidden-md hidden-lg">
+                <div class="icon-block icon-block-1">
+                    <div class="icon-block-item">
+                        <div class="icon-block-item">
+                            <a href="#" class="btn btn-lg profesores-icon" data-toggle="popover" tabindex="1" data-trigger="focus">
+                                <div class="profesores-info hide">
+                                    <p style="font-size: 2em">Nuestros profesores son titulados de las mejores Universidades y son capacitados en Longbourn, entregándoles las herramientas para que realicen clases de excelencia.</p></div>
+                                <i id="mobileIcon" class="fa fa-group"></i></a>
+                    </div>
+                    <div class="icon-block-body">
+                        <h4 class="">Nuestros Profesores</h4>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </section>
-
 
 <section class="slice white bb">
     <div class="wp-section">
         <div class="container">
             <div class="section-title-wr mb-40">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span class="">Soluciones para el Área de Recursos Humanos</span>
                 </h3>
             </div>
@@ -156,7 +272,7 @@
 	            		Longbourn se preocupa para que los informes de control del Programa de Inglés de tu Empresa te lleguen oportunamente.
 	            	</p>
             	</div>
-                <div class="col-md-6 col-sm-6">
+                <div class="col-md-6 col-sm-6 hidden-xs hidden-sm">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
                             <i class="fa fa-desktop"></i>
@@ -167,8 +283,23 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-6 col-sm-6 hidden-md hidden-lg">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                              <a href="#" class="btn btn-lg informes-icon" data-toggle="popover" tabindex="1" data-trigger="focus">
+                               <div class="informes-info hide">
+                                    <p style="font-size: 2em">Longbourn entregará a la Empresa informes de seguimiento periódicos sobre el desempeño y asistencia de los participantes del programa, con el objetivo de notificar el cumplimiento de parámetros de aprobación. Esto es de mucha ayuda, especialmente para cursos con Franquicia Sence.</p></div>
+                               <i id="mobileIcon" class="fa fa-desktop"></i></a>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Informes de Seguimiento</h4>
+                        </div>
+                    </div>
+                </div>    
+
                 
-                <div class="col-md-6 col-sm-6 ">
+                <div class="col-md-6 col-sm-6 hidden-xs hidden-sm">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
                             <i class="fa fa-check-square-o"></i>
@@ -179,6 +310,21 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-6 col-sm-6 hidden-md hidden-lg">
+                    <div class="icon-block icon-block-1">
+                        <div class="icon-block-item">
+                           <a href="#" class="btn btn-lg control-icon" data-toggle="popover" tabindex="1" data-trigger="focus" >
+                            <div class="control-info hide">
+                                <p style="font-size: 2em">Longbourn posee un sistema de Control de Calidad robusto para mantener nuestro standard de calidad a niveles elevados e identificar contingencias rápidamente para ofrecer soluciones precisas y efectivas.</p></div>
+                               <i id="mobileIcon" class="fa fa-check-square-o"></i></a>
+                        </div>
+                        <div class="icon-block-body">
+                            <h4 class="">Control de Calidad</h4>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -188,7 +334,7 @@
     <div class="wp-section">
         <div class="container">
             <div class="section-title-wr">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span>Proceso de Inscripción</span>
                 </h3>
             </div>
@@ -202,8 +348,8 @@
                             <%=image_tag "service-icon/one-circle.png", :class => "img-responsive"%>
                         </div>   
                         <div class="icon-block-body">
-                            <h4 class="title">Reunión Inicial</h4>
-                            <p>Reunión inicial, en la cual se fijarán los objetivos y alcances del programa.</p>
+                            <h4 class="number-title title">Reunión Inicial</h4>
+                            <p class="box-main-text">Reunión inicial, en la cual se fijarán los objetivos y alcances del programa.</p>
                         </div>
                     </div>
                 </div>
@@ -213,8 +359,8 @@
                             <%=image_tag "service-icon/two-circle.png", :class => "img-responsive"%>
                         </div>   
                         <div class="icon-block-body">
-                            <h4 class="title">Prueba de Diagnóstico</h4>
-                            <p>Toma de Prueba de Diagnóstico a los interesados.</p>
+                            <h4 class="number-title title">Prueba de Diagnóstico</h4>
+                            <p class="box-main-text">Toma de Prueba de Diagnóstico a los interesados.</p>
                         </div>
                     </div>
                 </div>
@@ -224,8 +370,8 @@
                             <%=image_tag "service-icon/three-circle.svg", :class => "img-responsive"%>
                         </div>   
                         <div class="icon-block-body">
-                            <h4 class="title">Propuesta Final</h4>
-                            <p>Cotización y propuesta final.</p>
+                            <h4 class="number-title title">Propuesta Final</h4>
+                            <p class="box-main-text">Cotización y propuesta final.</p>
                         </div>
                     </div>
                 </div>
@@ -235,8 +381,8 @@
                             <%=image_tag "service-icon/four-circle.png", :class => "img-responsive"%>
                         </div>   
                         <div class="icon-block-body">
-                            <h4 class="title">Inicio Programa</h4>
-                            <p>Inicio del Programa de Inglés en las dependencias de la Empresa.</p>
+                            <h4 class="number-title title">Inicio Programa</h4>
+                            <p class="box-main-text">Inicio del Programa de Inglés en las dependencias de la Empresa.</p>
                         </div>
                     </div>
                 </div>

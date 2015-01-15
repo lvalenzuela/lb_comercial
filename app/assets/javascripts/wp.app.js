@@ -345,7 +345,7 @@ $(document).ready(function() {
 	$.fn.waypoint.defaults = {
 		context: window,
 		continuous: true,
-		enabled: true,
+		enabled: false,
 		horizontal: false,
 		offset: 300,
 		triggerOnce: false

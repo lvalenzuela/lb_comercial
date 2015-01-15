@@ -20,6 +20,131 @@
 	  ga('send', 'pageview');
 
 	</script>
+	<script type="text/javascript">
+		$(function() {
+			$('.toggle-nav').click(function() {
+				toggleNav();
+			});
+		});
+
+		function toggleNav() {
+			if ($('#site-wrapper').hasClass('show-nav')) {
+				/*Close*/
+				$('#site-wrapper').removeClass('show-nav');
+			} else {
+				/*Open*/
+				$('#site-wrapper').addClass('show-nav');
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$('#ingles-sede').hover(function(){
+				if($('#ingles-sede').hasClass('open')){
+					$('#principal-ingles-sede').css('background','#3498DB');
+					$('#principal-ingles-sede').css('color','#FFF');
+				}else{
+					$('#principal-ingles-sede').css('background','');
+					$('#principal-ingles-sede').css('color','');	
+				}
+			},function(){
+				$('#principal-ingles-sede').css('background','');
+				$('#principal-ingles-sede').css('color','');
+			})
+		});
+
+		$(function(){
+			$('#drop-institute').hover(function(){
+				$('#drop-institute').css('background','#3498DB');
+				$('#drop-institute').css('color','#FFF');
+			},function(){
+				$('#drop-institute').css('background','');
+				$('#drop-institute').css('color','');
+			})
+		});		
+
+		$(function(){
+			$('#drop-startup').hover(function(){
+				$('#drop-startup').css('background','#3498DB');
+				$('#drop-startup').css('color','#FFF');
+			},function(){
+				$('#drop-startup').css('background','');
+				$('#drop-startup').css('color','');
+			})
+		});
+
+	</script>
+	<script type="text/javascript">
+		$(window).ready(function() {
+   			var highestCol = Math.max($('#ejecutivo').outerHeight(),$('#instituto').outerHeight(),$('#empresarial').outerHeight(),$('#toefl').outerHeight());
+	    	$('.channel-block').height((highestCol*1+20));
+	    	$('.sp-button').css("height",highestCol);
+		});
+
+	</script>
+	<script type="text/javascript">
+	    (function($,sr){
+  			// debouncing function from John Hann
+  			// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+  			var debounce = function (func, threshold, execAsap) {
+     			var timeout;
+			    return function debounced () {
+			        var obj = this, args = arguments;
+			        function delayed () {
+			            if (!execAsap)
+			                func.apply(obj, args);
+			            timeout = null;
+         			};
+
+	        		if (timeout)
+	              		clearTimeout(timeout);
+	          		else if (execAsap)
+	              		func.apply(obj, args);
+
+	          		timeout = setTimeout(delayed, threshold || 100);
+      			};
+			}
+			// smartresize 
+			jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+		})(jQuery,'smartresize');
+
+		$(window).smartresize(function(){
+			$('.sp-button').css("height","");	
+
+			var highestCol = Math.max($('#ejecutivo').outerHeight(),$('#instituto').outerHeight(),$('#empresarial').outerHeight(),$('#toefl').outerHeight());
+	    	$('.channel-block').height((highestCol*1+20));
+	    	$('.sp-button').css("height",highestCol);
+
+			if ($(window).width() > 992) {
+				$('#site-wrapper').removeClass('show-nav');
+			}
+			else{
+				var pos_init = $('#main-bgvid').position().top;
+				var pos_title = $('#main-video-titles').position().top;
+				var height_title = $('#main-video-titles').height();
+				var height_channel = $('#channels-row').height();
+			
+				var totalHeight = (pos_title - pos_init) + height_title + height_channel; 
+
+				$('#layerslider').css ("height",totalHeight);	
+			}	
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			if ($(window).width() < 992) {	
+				var pos_init = $('#main-bgvid').position().top;
+				var pos_title = $('#main-video-titles').position().top;
+				var height_title = $('#main-video-titles').height();
+				var height_channel = $('#channels-row').height();
+			
+				var totalHeight = (pos_title - pos_init) + height_title + height_channel; 
+
+				$('#layerslider').css ("height",totalHeight);	
+			}	
+		});	
+	</script>
 	<%if @meta_description%>
 		<meta name="description" content="<%=@page_title%>">
 	<%else%>
@@ -27,10 +152,44 @@
 	<%end%>
 </head>
 <body id="page1">
-<%= render "common_partials/top_menu"%>
+	<div id="site-wrapper">
+		<div id="site-canvas">
+			<div id="site-menu">
+					<ul class="nav navbar-nav navbar-right">
+						 <li>
+	                      <%=link_to "Inglés In Office", {:controller => :info, :action => :longbourn_executive}, {:class => "hidden-menu-item"} %>
+	                    </li>
+	                    <li id="ingles-sede">
+	                        <%=link_to "Inglés en Sede", {:controller => :info, :action => :cursos_en_sede}, {:class => "dropdown-toggle disabled hidden-menu-item", :data => {:toggle => "dropdown"}, :id => "principal-ingles-sede"}%>
+	                        <ul class="dropdown-menu">
+	                            <li>
+	                              <%=link_to "Longbourn Institute - Mejores Horarios", 
+	                               {:controller => :info, :action => :longbourn_institute} , {:id => "drop-institute"} %>
+	                            </li>
+	                            <li>
+	                              <%=link_to "Longbourn StartUp - Mejores Precios", 
+	                              {:controller => :info, :action => :longbourn_startup} , {:id => "drop-startup"} %>
+	                            </li> 
+	                        </ul>
+	                    </li>
+	                    <li><%=link_to "Preparación TOEFL", {:controller => :info, :action => :cursos_toefl}, {:class => "hidden-menu-item"} %></li>
+	                    <li>
+	                      <%=link_to "Metodología TEG", {:controller => :info, :action => :teg_method}, { :class => "hidden-menu-item"} %>
+	                    </li>
+	                    <li>
+	                      <%=link_to "Empresas", {:controller => :info, :action => :cursos_empresas}, { :class => "hidden-menu-item"}%>
+	                    </li>
+	                    <li>
+	                      <%=link_to "Contacto", {:controller => :site, :action => :contact_us}, {"data-no-turbolink" => true, :class => "hidden-menu-item"}%>
+	                    </li>	
+					</ul>
+		</div>
+			
+			<%= render "common_partials/top_menu"%> 
+			<%= yield %>
+			<%= render "common_partials/bottom_menu"%>
+		</div>
 
-<%= yield %>
-
-<%= render "common_partials/bottom_menu"%>
+	</div>
 </body>
 </html>

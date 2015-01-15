@@ -5,7 +5,7 @@
                 <h1><%=@page_title%></h1>
             </div>
             <div class="col-md-6">
-                <ol class="breadcrumb">
+                <ol class="return-path breadcrumb">
                     <li><%=link_to "Home", root_path%></li>
                     <li class="active">Longbourn Executive</li>
                 </ol>
@@ -18,7 +18,7 @@
     <%=image_tag "web-imgs/full-bg-20_mid.jpg", :alt => "Longbourn Executive"%>
     <div class="description-left">
         <%=image_tag "longbourn-logos/longbourn_executive.png"%>
-        <span class="subtitle text-wrapped alpha c-black">Cursos de Inglés para Ejecutivos. En tu propia Oficina.</span>
+        <span id="top-subtitle" class="subtitle text-wrapped alpha c-black under-subtitle">Cursos de Inglés para Ejecutivos. En tu propia Oficina.</span>
     </div>
 </div>
 
@@ -32,8 +32,8 @@
                             <i class="fa fa-lightbulb-o"></i>
                         </div>
                         
-                        <h2 class="normal-case">Cursos Orientados a Ejecutivos</h2>
-                        <p class="text-center">Los Cursos de Inglés Executive te entregarán, sin moverte de tu oficina, las herramientas y contenidos para comunicarte en forma precisa y para entender con claridad los mensajes escritos y hablados en inglés.</p>
+                        <h2 id="box-title" class="normal-case">Cursos Orientados a Ejecutivos</h2>
+                        <p class="box-main-text">Los Cursos de Inglés Executive te entregarán, sin moverte de tu oficina, las herramientas y contenidos para comunicarte en forma precisa y para entender con claridad los mensajes escritos y hablados en inglés.</p>
                     </div>
                 </div>
                 
@@ -43,8 +43,8 @@
                             <i class="fa fa-user"></i>
                         </div>
                         
-                        <h2 class="normal-case">Clases Integrales</h2>
-                        <p class="text-center">Longbourn incorpora los conocimientos y habilidades personales de cada estudiante a su metodología de enseñanza, favoreciendo significativamente el aprendizaje del inglés.</p>
+                        <h2 id="box-title" class="normal-case">Clases Integrales</h2>
+                        <p class="box-main-text">Longbourn incorpora los conocimientos y habilidades personales de cada estudiante a su metodología de enseñanza, favoreciendo significativamente el aprendizaje del inglés.</p>
                     </div>
                 </div>
                 
@@ -54,8 +54,8 @@
                             <i class="fa fa-clock-o"></i>
                         </div>
                         
-                        <h2 class="normal-case">Clases en tu Oficina, en Horario a Convenir</h2>
-                        <p class="text-center">Cursos de inglés especialmente diseñados para ejecutivos con poco tiempo disponible, que necesitan una capacitación personalizada, efectiva y flexible en su propia oficina. </p>
+                        <h2 id="box-title" class="normal-case">Clases en tu Oficina, en Horario a Convenir</h2>
+                        <p class="box-main-text">Cursos de inglés especialmente diseñados para ejecutivos con poco tiempo disponible, que necesitan una capacitación personalizada, efectiva y flexible en su propia oficina. </p>
                     </div>
                 </div>
                 
@@ -65,8 +65,8 @@
                             <i class="fa fa-pencil"></i>
                         </div>
                         
-                        <h2 class="normal-case">Metodología TEG</h2>
-                        <p class="text-center">Las clases utilizan la Metodología TEG (Teaching English Gradually) que de una forma diferente, dinámica y entretenida, desarrolla de manera simultánea las 4 habilidades del idioma: leer, escribir, escuchar y hablar.</p>
+                        <h2 id="box-title" class="normal-case">Metodología TEG</h2>
+                        <p class="box-main-text">Las clases utilizan la Metodología TEG (Teaching English Gradually) que de una forma diferente, dinámica y entretenida, desarrolla de manera simultánea las 4 habilidades del idioma: leer, escribir, escuchar y hablar.</p>
                     </div>
                 </div>
                     
@@ -81,68 +81,68 @@
     <div class="wp-section">
         <div class="container">
             <div class="section-title-wr">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span>Características Generales</span>
                     <small>Cursos de Inglés Longbourn Executive</small>
                 </h3>
             </div>
             <div class="row mt-20">
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-map-marker"></i>
+                            <i class="adaptable-icon fa fa-map-marker"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Ubicación</h4>
-                            <p>Oficinas del Cliente</p>
+                            <h4 class="info-title">Ubicación</h4>
+                            <p class="info-text">Oficinas del Cliente</p>
                         </div>
                     </div>
                 </div> 
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-clock-o"></i>
+                            <i class="adaptable-icon fa fa-clock-o"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Horarios</h4>
-                            <p>Lunes a Viernes, a definir con el Cliente.</p>
-                            <p>Desde 08:00 hasta 18:30 hrs.</p>
+                            <h4 class="info-title">Horarios</h4>
+                            <p class="info-text">Lunes a Viernes, a definir con el Cliente.</p>
+                            <p class="info-text">Desde 08:00 hasta 18:30 hrs.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-calendar"></i>
+                            <i class="adaptable-icon fa fa-calendar"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Frecuencia de Clases</h4>
-                            <p>2 clases de 90 minutos por semana.</p>
+                            <h4 class="info-title">Frecuencia de Clases</h4>
+                            <p class="info-text">2 clases de 90 minutos por semana.</p>
                         </div>
                     </div>
                 </div>                   
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-graduation-cap"></i>
+                            <i class="adaptable-icon fa fa-graduation-cap"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Criterios de Aprobación</h4>
-                            <p>Obtener promedio de notas sobre 4.0</p>
-                            <p>75% de asistencia.</p>
+                            <h4 class="info-title">Criterios de Aprobación</h4>
+                            <p class="info-text">Obtener promedio de notas sobre 4.0</p>
+                            <p class="info-text">75% de asistencia.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-barcode"></i>
+                            <i class="adaptable-icon fa fa-barcode"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Código Sence</h4>
-                            <p>Para grupos de 4 o más personas</p>
+                            <h4 class="info-title">Código Sence</h4>
+                            <p class="info-text">Para grupos de 4 o más personas</p>
                         </div>
                     </div>
                 </div>                   
@@ -204,7 +204,7 @@
     <div class="wp-section pricing-plans">
         <div class="container">
             <div class="section-title-wr">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span>Valores</span>
                     <small>Valores de los Programas de Inglés Longbourn</small>
                 </h3>
@@ -229,7 +229,7 @@
                             <li><i class="fa fa-times"></i> Hasta 3 reprogramaciones por cada 36 hrs. contratadas.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-adaptable btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>
@@ -253,8 +253,8 @@
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
-                                <span>Contactar Ejecutiva</span>
+                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-adaptable btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                                <span id="contact-link">Contactar Ejecutiva</span>
                             <%end%>
                         </p>
                     </div>
@@ -276,8 +276,8 @@
                             <li><i class="fa fa-clock-o"></i> Desde 8:00 a 9:59 y 17:00 a 20:30.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to instituto_de_ingles_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
-                                <span>Ir a Longbourn Institute</span>
+                            <%=link_to instituto_de_ingles_path, :class => "btn btn-adaptable btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                                <span id="contact-link">Ir a Longbourn Institute</span>
                             <%end%>
                         </p>
                     </div>
@@ -299,8 +299,8 @@
                             <li><i class="fa fa-clock-o"></i> Desde 10:00 a 16:59.</li>
                         </ul>         
                         <p class="plan-select-block">
-                            <%=link_to ingles_empresarial_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
-                                <span>Ir a Longbourn StartUp</span>
+                            <%=link_to ingles_empresarial_path, :class => "btn btn-adaptable btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                                <span id="contact-link">Ir a Longbourn StartUp</span>
                             <%end%>
                         </p>
                     </div>

@@ -1,46 +1,48 @@
 <section id="slider-wrapper" class="layer-slider-wrapper layer-slider-dynamic">
     <div id="layerslider" class="main-video-wrapper"> 
         <!-- slide background video-->
-        <%=image_tag "web-imgs/empresas/empresas_index.jpg", :class => "img-responsive", :id => "main-bgvid"%>
+        <%=image_tag "web-imgs/empresas/empresas_index.jpg", :class => "img-responsive", :id => "main-bgvid" %>
         <%#video_tag "vids/main_vid.webm", "vids/main_vid.mp4", :autoplay => true ,:loop => true, :muted => true, :poster => "backgrounds/vid-background.png", :id => "main-bgvid"%>
         <div id="main-video-titles">
 	        <!-- Left Text -->
 	       <h3 class="ls-l title c-white text-wrapped text-uppercase text-center strong">
 	            Cursos de Inglés para <b>Profesionales</b> y <b>Ejecutivos</b>
-	        </h3>
+	       </h3>
 
 	    </div> 
-        <div class="row" id="channels-row">
+        <div id="channels-row">
             <div class="col-sm-12 channels-title">
                 <h3 class="ls-l title c-white text-wrapped text-uppercase text-center strong">
                     <b>¿Qué Necesitas?</b>
                 </h3>
             </div>
             <div class="col-sm-3 channel-block">
-                <%=link_to ingles_ejecutivo_path, :class => "btn btn-lg btn-block btn-dark" do%>
-                    <h3>Longbourn Executive</h3>
-                    <span class="subtitle" style="text-transform: none;">Inglés en tu Oficina</span>
-                <%end%>
+                <button class="btn btn-lg btn-block btn-dark sp-button" style="margin:0px" id="ejecutivo" 
+                onclick= <%= "javascript:location.href='" + ingles_ejecutivo_path + "'"%> >
+                    <h3 style="color: #DEDEDE; white-space: normal;">Longbourn Executive</h3>
+                    <span class="subtitle">Inglés en tu Oficina</span>
+                    
+                </button>
             </div>
             
             <div class="col-sm-3 channel-block">
-                <%=link_to instituto_de_ingles_path, :class => "btn btn-lg btn-block btn-dark" do%>
-                    <h3>Longbourn Institute</h3>
-                    <span class="subtitle" style="text-transform: none;">Inglés en los Mejores Horarios</span>
-                <%end%>
+                <button class="btn btn-lg btn-block btn-dark sp-button" style="margin:0px" id="instituto" onclick= <%= "javascript:location.href='" + instituto_de_ingles_path + "'"%> > 
+                        <h3 style="color: #DEDEDE; white-space: normal;">Longbourn Institute</h3>
+                        <span class="subtitle">Inglés en los Mejores Horarios</span>
+                </button> 
             </div>
             
             <div class="col-sm-3 channel-block">
-                <%=link_to ingles_empresarial_path, :class => "btn btn-lg btn-block btn-dark" do%>
-                    <h3>Longbourn StartUp</h3>
-                    <span class="subtitle" style="text-transform: none;">Inglés a los Mejores Precios</span>
-                <%end%>
+                <button class="btn btn-lg btn-block btn-dark sp-button" style="margin:0px" id="empresarial" onclick= <%= "javascript:location.href='" + ingles_empresarial_path + "'"%>> 
+                        <h3 style="color: #DEDEDE; white-space: normal;">Longbourn StartUp</h3>
+                        <span class="subtitle">Inglés a los Mejores Precios</span>
+                </button>    
             </div>
             <div class="col-sm-3 channel-block">
-                <%=link_to cursos_toefl_path, :class => "btn btn-lg btn-block btn-dark" do%>
-                    <h3>Preparacion TOEFL</h3>
-                    <span class="subtitle" style="text-transform: none;">&nbsp;</span>
-                <%end%>
+                <button class="btn btn-lg btn-block btn-dark sp-button" style="margin:0px" id="toefl" onclick= <%= "javascript:location.href='" + cursos_toefl_path + "'"%>> 
+                        <h3 style="color: #DEDEDE; white-space: normal;">Preparacion TOEFL</h3>
+                        <span class="subtitle">&nbsp;</span>
+                </button>    
             </div>
         </div>
     </div>
@@ -48,7 +50,7 @@
 
 
 <!-- MAIN CONTENT -->
-<section class="slice no-padding">
+<section class="slice no-padding row">
     <div class="wp-section">
         <div class="row-fluid">
             <div class="col-md-3 wp-block no-space arrow-right base no-margin">
@@ -57,7 +59,7 @@
                         <i class="fa fa-pencil"></i>
                     </div>
                     <h1>Metodología TEG</h1>
-                    <p class="text-center">
+                    <p class="box-main-text ">
                     La Metodología TEG desarrolla simultáneamente, de forma diferente, dinámica y entretenida, las 4 habilidades del inglés: leer, escribir, escuchar y hablar.
                     </p>
                 </div>
@@ -68,7 +70,7 @@
                         <i class="fa fa-institution"></i>
                     </div>
                     <h1>Nuestros Profesores</h1>
-                    <p class="text-center">
+                    <p class="box-main-text">
                     Nuestros profesores son titulados de las mejores Universidades y son capacitados en Longbourn, entregándoles las herramientas para que realicen clases de excelencia.
                     </p>
                 </div>
@@ -79,7 +81,7 @@
                         <i class="fa fa-graduation-cap"></i>
                     </div>
                     <h1>Para Profesionales</h1>
-                    <p class="text-center">
+                    <p class="box-main-text">
                     Diseñamos soluciones para facilitar tu experiencia estudiando Inglés. En Longbourn podrás compartir e intercambiar ideas con Profesionales con tus mismos objetivos.
                     </p>
                 </div>
@@ -90,7 +92,7 @@
                         <i class="fa fa-map-marker"></i>
                     </div>
                     <h1>Localización</h1>
-                    <p class="text-center">
+                    <p class="box-main-text">
                     Sabemos que tu tiempo y recursos son valiosos. Puedes acceder a nuestros Cursos de Inglés en tu Oficina o en Longbourn Las Condes, a pasos del Metro Escuela Militar
                     </p>
                 </div>

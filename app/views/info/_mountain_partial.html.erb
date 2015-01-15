@@ -2,20 +2,20 @@
     <div class="wp-section">
         <div class="container">
             <div class="section-title-wr">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span>Simula tu programa de Inglés</span>
                     <small>Nuestro Método de Aprendizaje es similar al escalamiento gradual de una Montaña</small>
                 </h3>
             </div>
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-md-6">
-                    <label style="font-weight: bold;">Simula tu Nivel Inicial. A confirmar mediante Prueba de Diagnóstico.</label>
+                    <label class="mountain-label" style="font-weight: bold;">Simula tu Nivel Inicial. A confirmar mediante Prueba de Diagnóstico.</label>
                     <div class="form-group">
-                        <%=select_tag :routes, options_for_select([["Expert Route: Nivel Avanzado",0],["Standard Route: Nivel Intermedio",1],["Introductory Route: Nivel Básico",2]],1), {:class => "form-control"}%>
+                        <%=select_tag :routes, options_for_select([["Expert Route: Nivel Avanzado",0],["Standard Route: Nivel Intermedio",1],["Introductory Route: Nivel Básico",2]],1), {:class => "form-control mountain-select"}%>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <label style="font-weight: bold;">Define tu Objetivo</label>
+                    <label class="mountain-label" style="font-weight: bold;">Define tu Objetivo</label>
                     <div class="form-group">
                         <%=select_tag :objectives_exp, options_for_select([
                             ["Negociación Avanzada",0],
@@ -23,7 +23,7 @@
                             ["Redacción de Contratos y Papers Académicos",2],
                             ["Liderar Reuniones de Negocios",3],
                             ["Presentaciones y llamadas Telefónicas",4], 
-                            ["Participación en Reuniones",5]],3), {:class => "form-control objectives", :style => "display: none;"}%>
+                            ["Participación en Reuniones",5]],3), {:class => "form-control objectives mountain-select", :style => "display: none;"}%>
                         <%=select_tag :objectives_std, options_for_select([
                             ["Negociación Avanzada",0],
                             ["Presentaciones en Congresos Internacionales",1],
@@ -31,7 +31,7 @@
                             ["Liderar Reuniones de Negocios",3],
                             ["Presentaciones y llamadas Telefónicas",4], 
                             ["Participación en Reuniones",5],
-                            ["Comunicación Escrita",6]],3), {:class => "form-control objectives", :style => "display: block;"}%>
+                            ["Comunicación Escrita",6]],3), {:class => "form-control objectives mountain-select", :style => "display: block;"}%>
                         <%=select_tag :objectives_int, options_for_select([
                             ["Negociación Avanzada",0],
                             ["Presentaciones en Congresos Internacionales",1],
@@ -40,7 +40,7 @@
                             ["Presentaciones y llamadas Telefónicas",4], 
                             ["Participación en Reuniones",5],
                             ["Comunicación Escrita",6],
-                            ["Nociones de Inglés",7]],3), {:class => "form-control objectives", :style => "display: none;"}%>
+                            ["Nociones de Inglés",7]],3), {:class => "form-control objectives mountain-select", :style => "display: none;"}%>
                     </div>
                 </div>
             </div>
@@ -48,34 +48,56 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="shadow achv-imgs routes-display" id="achievements-exp" style="display: none;">
-                        <%=image_tag "d_mountain/expert/expert_6.png", :alt => "Meta 6 Expert"%>
-                        <%=image_tag "d_mountain/expert/expert_5.png", :alt => "Meta 5 Expert"%>
-                        <%=image_tag "d_mountain/expert/expert_4.png", :alt => "Meta 4 Expert"%>
-                        <%=image_tag "d_mountain/expert/expert_3.png", :class => "opaque", :alt => "Meta 3 Expert"%>
-                        <%=image_tag "d_mountain/expert/expert_2.png", :alt => "Meta 2 Expert"%>
-                        <%=image_tag "d_mountain/expert/expert_1.png", :alt => "Meta 1 Expert"%>
+                        <%=image_tag "d_mountain/expert/expert_6.png", :alt => "Meta 6 Expert", :class =>"hidden-xs hidden-sm" %>
+                        <%=image_tag "d_mountain/expert/expert_5.png", :alt => "Meta 5 Expert" , :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/expert/expert_4.png", :alt => "Meta 4 Expert" , :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/expert/expert_3.png", :class => "opaque hidden-xs hidden-sm", :alt => "Meta 3 Expert"%>
+                        <%=image_tag "d_mountain/expert/expert_2.png", :alt => "Meta 2 Expert" , :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/expert/expert_1.png", :alt => "Meta 1 Expert" , :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/expert/expert_6_mobile.png", :alt => "Meta 6 Expert", :class =>"hidden-md hidden-lg" %>
+                        <%=image_tag "d_mountain/expert/expert_5_mobile.png", :alt => "Meta 5 Expert", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/expert/expert_4_mobile.png", :alt => "Meta 4 Expert", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/expert/expert_3_mobile.png", :alt => "Meta 3 Expert", :class =>"opaque hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/expert/expert_2_mobile.png", :alt => "Meta 2 Expert", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/expert/expert_1_mobile.png", :alt => "Meta 1 Expert", :class =>"hidden-md hidden-lg"%>       
                     </div>
-                    <div class="shadow achv-imgs routes-display" id="achievements-std" style="display: block;">
-                        <%=image_tag "d_mountain/standard/standard_7.png", :alt => "Meta 7 Standard"%>
-                        <%=image_tag "d_mountain/standard/standard_6.png", :alt => "Meta 6 Standard"%>
-                        <%=image_tag "d_mountain/standard/standard_5.png", :alt => "Meta 5 Standard"%>
-                        <%=image_tag "d_mountain/standard/standard_4.png", :class => "opaque", :alt => "Meta 4 Standard"%>
-                        <%=image_tag "d_mountain/standard/standard_3.png", :alt => "Meta 3 Standard"%>
-                        <%=image_tag "d_mountain/standard/standard_2.png", :alt => "Meta 2 Standard"%>
-                        <%=image_tag "d_mountain/standard/standard_1.png", :alt => "Meta 1 Standard"%>
+                   <div class="shadow achv-imgs routes-display" id="achievements-std" style="display: block;">
+                        <%=image_tag "d_mountain/standard/standard_7.png", :alt => "Meta 7 Standard", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/standard/standard_6.png", :alt => "Meta 6 Standard", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/standard/standard_5.png", :alt => "Meta 5 Standard", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/standard/standard_4.png", :class => "opaque hidden-xs hidden-sm", :alt => "Meta 4 Standard"%>
+                        <%=image_tag "d_mountain/standard/standard_3.png", :alt => "Meta 3 Standard", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/standard/standard_2.png", :alt => "Meta 2 Standard", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/standard/standard_1.png", :alt => "Meta 1 Standard", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/standard/standard_7_mobile.png", :alt => "Meta 7 Standard", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/standard/standard_6_mobile.png", :alt => "Meta 6 Standard", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/standard/standard_5_mobile.png", :alt => "Meta 5 Standard", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/standard/standard_4_mobile.png", :class => "opaque hidden-md hidden-lg", :alt => "Meta 4 Standard"%>
+                        <%=image_tag "d_mountain/standard/standard_3_mobile.png", :alt => "Meta 3 Standard", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/standard/standard_2_mobile.png", :alt => "Meta 2 Standard", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/standard/standard_1_mobile.png", :alt => "Meta 1 Standard", :class =>"hidden-md hidden-lg"%>
+
                     </div>
                     <div class="shadow achv-imgs routes-display" id="achievements-int" style="display: none;">
-                        <%=image_tag "d_mountain/introductory/introductory_8.png", :alt => "Meta 8 Introductory"%>
-                        <%=image_tag "d_mountain/introductory/introductory_7.png", :alt => "Meta 7 Introductory"%>
-                        <%=image_tag "d_mountain/introductory/introductory_6.png", :alt => "Meta 6 Introductory"%>
-                        <%=image_tag "d_mountain/introductory/introductory_5.png", :class => "opaque", :alt => "Meta 5 Introductory"%>
-                        <%=image_tag "d_mountain/introductory/introductory_4.png", :alt => "Meta 4 Introductory"%>
-                        <%=image_tag "d_mountain/introductory/introductory_3.png", :alt => "Meta 3 Introductory"%>
-                        <%=image_tag "d_mountain/introductory/introductory_2.png", :alt => "Meta 2 Introductory"%>
-                        <%=image_tag "d_mountain/introductory/introductory_1.png", :alt => "Meta 1 Introductory"%>
+                        <%=image_tag "d_mountain/introductory/introductory_8.png", :alt => "Meta 8 Introductory", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/introductory/introductory_7.png", :alt => "Meta 7 Introductory", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/introductory/introductory_6.png", :alt => "Meta 6 Introductory", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/introductory/introductory_5.png", :class => "opaque hidden-xs hidden-sm", :alt => "Meta 5 Introductory"%>
+                        <%=image_tag "d_mountain/introductory/introductory_4.png", :alt => "Meta 4 Introductory", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/introductory/introductory_3.png", :alt => "Meta 3 Introductory", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/introductory/introductory_2.png", :alt => "Meta 2 Introductory", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/introductory/introductory_1.png", :alt => "Meta 1 Introductory", :class =>"hidden-xs hidden-sm"%>
+                        <%=image_tag "d_mountain/introductory/introductory_8_mobile.png", :alt => "Meta 8 Introductory", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/introductory/introductory_7_mobile.png", :alt => "Meta 7 Introductory", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/introductory/introductory_6_mobile.png", :alt => "Meta 6 Introductory", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/introductory/introductory_5_mobile.png", :class => "opaque hidden-md hidden-lg", :alt => "Meta 5 Introductory"%>
+                        <%=image_tag "d_mountain/introductory/introductory_4_mobile.png", :alt => "Meta 4 Introductory", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/introductory/introductory_3_mobile.png", :alt => "Meta 3 Introductory", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/introductory/introductory_2_mobile.png", :alt => "Meta 2 Introductory", :class =>"hidden-md hidden-lg"%>
+                        <%=image_tag "d_mountain/introductory/introductory_1_mobile.png", :alt => "Meta 1 Introductory", :class =>"hidden-md hidden-lg"%>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 hidden-xs hidden-sm">
                     <ul class="achievements-list" id="exp-controls" style="display: none;">
                         <li>Negociación Avanzada</li>
                         <li>Presentaciones en Congresos Internacionales</li>
@@ -104,7 +126,40 @@
                         <li>Nociones de Inglés</li>
                     </ul>
                 </div>
+            </div>
+
+
+            <div class="row">
+                    <div class="col-md-8 hidden-md hidden-lg">
+                        <div class="shadow achv-imgs sub-display" id="achievements-exp-sub" style="display: none;">
+                            <%=image_tag "d_mountain/expert/expert_6_sub.png", :alt => "Meta 6 Expert Info", :class =>"mobile-sub-info" %>
+                             <%=image_tag "d_mountain/expert/expert_5_sub.png", :alt => "Meta 5 Expert Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/expert/expert_4_sub.png", :alt => "Meta 4 Expert Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/expert/expert_3_sub.png", :alt => "Meta 3 Expert Info", :class =>"opaque mobile-sub-info"%>
+                            <%=image_tag "d_mountain/expert/expert_2_sub.png", :alt => "Meta 2 Expert Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/expert/expert_1_sub.png", :alt => "Meta 1 Expert Info", :class =>"mobile-sub-info"%>
+                        </div>
+                        <div class="shadow achv-imgs sub-display" id="achievements-std-sub" style="display: block;">
+                             <%=image_tag "d_mountain/standard/standard_7_sub.png", :alt => "Meta 7 Standard Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/standard/standard_6_sub.png", :alt => "Meta 6 Standard Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/standard/standard_5_sub.png", :alt => "Meta 5 Standard Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/standard/standard_4_sub.png", :class => "opaque mobile-sub-info", :alt => "Meta 4 Standard Info"%>
+                            <%=image_tag "d_mountain/standard/standard_3_sub.png", :alt => "Meta 3   Standard Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/standard/standard_2_sub.png", :alt => "Meta 2 Standard Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/standard/standard_1_sub.png", :alt => "Meta 1 Standard Info", :class =>"mobile-sub-info"%>
+                        </div>        
+                        <div class="shadow achv-imgs sub-display" id="achievements-int-sub" style="display: none;">
+                            <%=image_tag "d_mountain/introductory/introductory_8_sub.png", :alt => "Meta 8 Introductory Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/introductory/introductory_7_sub.png", :alt => "Meta 7 Introductory Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/introductory/introductory_6_sub.png", :alt => "Meta 6 Introductory Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/introductory/introductory_5_sub.png", :class => "opaque mobile-sub-info", :alt => "Meta 5 Introductory"%>
+                            <%=image_tag "d_mountain/introductory/introductory_4_sub.png", :alt => "Meta 4 Introductory Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/introductory/introductory_3_sub.png", :alt => "Meta 3 Introductory Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/introductory/introductory_2_sub.png", :alt => "Meta 2 Introductory Info", :class =>"mobile-sub-info"%>
+                            <%=image_tag "d_mountain/introductory/introductory_1_sub.png", :alt => "Meta 1 Introductory Info", :class =>"mobile-sub-info"%>       
+                        </div>
+                    </div>
+                </div>            
             </div>     
         </div>
-    </div>
 </section>

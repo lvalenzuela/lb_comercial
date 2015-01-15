@@ -5,7 +5,7 @@
                 <h1><%=@page_title%></h1>
             </div>
             <div class="col-md-6">
-                <ol class="breadcrumb">
+                <ol class="return-path breadcrumb">
                     <li><%=link_to "Home", root_path%></li>
                     <li class="active">Cursos TOEFL</li>
                 </ol>
@@ -18,7 +18,7 @@
 <div class="static-page-image">
     <%=image_tag "web-imgs/toefl/toefl_mid.jpg", :alt => "Cursos TOEFL"%>
     <div class="description-left">
-        <span class="subtitle text-wrapped alpha c-black">Curso de Preparación TOEFL de Longbourn</span>
+        <span id="top-subtitle" class="subtitle text-wrapped alpha c-black">Curso de Preparación TOEFL de Longbourn</span>
     </div>
 </div>
 
@@ -33,8 +33,8 @@
                             <i class="fa fa-search"></i>
                         </div>
                         
-                        <h2>Explorando TOEFL y Determinando Cursos de Acción</h2>
-                        <p class="text-center">
+                        <h2 id="box-title">Explorando TOEFL y Determinando Cursos de Acción</h2>
+                        <p class="box-main-text text-center">
                             Se estudiará y explorará cada parte de la prueba. El estudiante podrá analizar los ejercicios relacionados a cada habilidad a evaluar, comprendiendo los errores que se suelen cometer y seguir estrategias para mejorar.
                         </p>
                     </div>
@@ -46,8 +46,8 @@
                             <i class="fa fa-level-up"></i>
                         </div>
                         
-                        <h2>Realización de Tareas y Control de Avance</h2>
-                        <p class="text-center">
+                        <h2 id="box-title">Realización de Tareas y Control de Avance</h2>
+                        <p class="box-main-text text-center">
                             Se controla el progreso del curso mediante tareas evaluadas. Los objetivos son identificar las habilidades que es necesario mejorar y ayudar al estudiante a mantener ritmos de trabajo constante, entregando una ventaja significativa al enfrentar el examen.  
                         </p>
                     </div>
@@ -59,8 +59,8 @@
                             <i class="fa fa-file-text-o"></i>
                         </div>
                         
-                        <h2>Ensayos</h2>
-                        <p class="text-center">
+                        <h2 id="box-title">Ensayos</h2>
+                        <p class="box-main-text text-center">
                             Durante el curso se realizarán 2 ensayos de la prueba TOEFL. Con esto se busca generar práctica suficiente y obtener datos fidedignos del avance del estudiante.
                         </p>
                     </div>
@@ -72,8 +72,8 @@
                             <i class="fa fa-book"></i>
                         </div>
                         
-                        <h2>Material de Apoyo</h2>
-                        <p class="text-center">
+                        <h2 id="box-title">Material de Apoyo</h2>
+                        <p class="box-main-text text-center">
                             El estudiante encontrará todo el apoyo gramatical para aclarar dudas con el material incluido en el programa de estudio.
                         </p>
                     </div>
@@ -90,68 +90,68 @@
     <div class="wp-section">
         <div class="container">
             <div class="section-title-wr">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span>Características Generales</span>
                     <small>Programas Longbourn de Preparación TOEFL</small>
                 </h3>
             </div>
             <div class="row mt-20">
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-map-marker"></i>
+                            <i class="adaptable-icon fa fa-map-marker"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Ubicación</h4>
-                            <p>Oficinas del Cliente o Sede Longbourn Las Condes.</p>
+                            <h4 class="info-title">Ubicación</h4>
+                            <p class="info-text">Oficinas del Cliente o Sede Longbourn Las Condes.</p>
                         </div>
                     </div>
                 </div> 
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-clock-o"></i>
+                            <i class="adaptable-icon fa fa-clock-o"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Horarios</h4>
-                            <p>In Office: A definir con el Cliente</p>
-                            <p>Sede: <%=link_to "Consultar", {:controller => :site, :action => :contact_sales_agent}, {:style => "text-decoration: underline; font-size: 16px;"}%> por Horarios Disponibles</p>
+                            <h4 class="info-title">Horarios</h4>
+                            <p class="info-text">In Office: A definir con el Cliente</p>
+                            <p class="info-text">Sede: <%=link_to "Consultar", {:controller => :site, :action => :contact_sales_agent}, {:style => "text-decoration: underline; font-size: 16px;"}%> por Horarios Disponibles</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-calendar"></i>
+                            <i class="adaptable-icon fa fa-calendar"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Frecuencia de Clases</h4>
-                            <p>2 clases de 90 minutos por semana</p>
+                            <h4 class="info-title">Frecuencia de Clases</h4>
+                            <p class="info-text">2 clases de 90 minutos por semana</p>
                         </div>
                     </div>
                 </div>                   
             </div>
             <div class="row">
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-graduation-cap"></i>
+                            <i class="adaptable-icon fa fa-graduation-cap"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Criterios de Aprobación</h4>
-                            <p>Obtener promedio de notas sobre 4.0</p>
-                            <p>75% de asistencia.</p>
+                            <h4 class="info-title">Criterios de Aprobación</h4>
+                            <p class="info-text">Obtener promedio de notas sobre 4.0</p>
+                            <p class="info-text">75% de asistencia.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-group"></i>
+                            <i class="adaptable-icon fa fa-group"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Grupos</h4>
-                            <p>De 1 hasta 8 participantes, mismo nivel</p>
+                            <h4 class="info-title">Grupos</h4>
+                            <p class="info-text">De 1 hasta 8 participantes, mismo nivel</p>
                         </div>
                     </div>
                 </div>             
@@ -235,7 +235,7 @@
     <div class="wp-section pricing-plans">
         <div class="container">
             <div class="section-title-wr">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span>Valores</span>
                     <small>Longbourn Institute</small>
                 </h3>
@@ -256,7 +256,7 @@
                             <li><i class="fa fa-times"></i> 3 Reprogramaciones de Clases por cada 36 hrs. contratadas</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-adaptable btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>
@@ -276,7 +276,7 @@
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-adaptable btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>
@@ -296,7 +296,7 @@
                             <li><i class="fa fa-clock-o"></i> Cursos de 08:00 a 20:30 hrs.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-adaptable btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>

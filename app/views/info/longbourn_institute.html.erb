@@ -5,7 +5,7 @@
                 <h1><%=@page_title%></h1>
             </div>
             <div class="col-md-6">
-                <ol class="breadcrumb">
+                <ol class="return-path breadcrumb">
                     <li><%=link_to "Home", root_path%></li>
                     <li class="active">Longbourn Institute</li>
                 </ol>
@@ -18,7 +18,7 @@
     <%=image_tag "web-imgs/institute/institute_mid.jpg", :alt => "Longbourn Institute"%>
     <div class="description-left">
         <%=image_tag "longbourn-logos/longbourn_institute.png"%>
-        <span class="subtitle text-wrapped alpha c-black">Cursos de Inglés para Profesionales. Los mejores horarios en Longbourn Sede Las Condes</span>
+        <span id="top-subtitle" class="subtitle text-wrapped alpha c-black">Cursos de Inglés para Profesionales. Los mejores horarios en Longbourn Sede Las Condes</span>
     </div>
 </div>
 
@@ -32,8 +32,8 @@
                             <i class="fa fa-lightbulb-o"></i>
                         </div>
                         
-                        <h2>Cursos Orientados a Profesionales</h2>
-                        <p class="text-center">Te entregaremos las herramientas y contenidos para que puedas comunicar tus ideas en forma precisa y puedas comprender con claridad mensajes escritos y hablados en inglés.</p>
+                        <h2 id="box-title">Cursos Orientados a Profesionales</h2>
+                        <p class="box-main-text text-center">Te entregaremos las herramientas y contenidos para que puedas comunicar tus ideas en forma precisa y puedas comprender con claridad mensajes escritos y hablados en inglés.</p>
                     </div>
                 </div>
                 
@@ -43,8 +43,8 @@
                             <i class="fa fa-group"></i>
                         </div>
                         
-                        <h2>Grupos de Hasta 8 Participantes</h2>
-                        <p class="text-center">En Longbourn podrás compartir e intercambiar ideas con otros Profesionales que buscan tus mismos objetivos, lo que enriquece la experiencia de aprendizaje.</p>
+                        <h2 id="box-title">Grupos de Hasta 8 Participantes</h2>
+                        <p class="box-main-text text-center">En Longbourn podrás compartir e intercambiar ideas con otros Profesionales que buscan tus mismos objetivos, lo que enriquece la experiencia de aprendizaje.</p>
                     </div>
                 </div>
                 
@@ -54,8 +54,8 @@
                             <i class="fa fa-clock-o"></i>
                         </div>
                         
-                        <h2>Los Mejores Horarios en Nuestra Sede</h2>
-                        <p class="text-center">Sabemos que tienes poco tiempo disponible. Los Cursos de Inglés Longbourn Institute se dictan temprano en la mañana o después de tu horario de oficina, en nuestra Sede Las Condes, a pasos del Metro Escuela Militar. </p>
+                        <h2 id="box-title">Los Mejores Horarios en Nuestra Sede</h2>
+                        <p class="box-main-text text-center">Sabemos que tienes poco tiempo disponible. Los Cursos de Inglés Longbourn Institute se dictan temprano en la mañana o después de tu horario de oficina, en nuestra Sede Las Condes, a pasos del Metro Escuela Militar. </p>
                     </div>
                 </div>
                 
@@ -65,8 +65,8 @@
                             <i class="fa fa-pencil"></i>
                         </div>
                         
-                        <h2>Metodología TEG</h2>
-                        <p class="text-center">Las clases utilizan la Metodología TEG (Teaching English Gradually) que de una forma diferente, dinámica y entretenida, desarrolla de manera simultánea las 4 habilidades del idioma: leer, escribir, escuchar y hablar.</p>
+                        <h2 id="box-title">Metodología TEG</h2>
+                        <p class="box-main-text text-center">Las clases utilizan la Metodología TEG (Teaching English Gradually) que de una forma diferente, dinámica y entretenida, desarrolla de manera simultánea las 4 habilidades del idioma: leer, escribir, escuchar y hablar.</p>
                     </div>
                 </div>
                     
@@ -81,43 +81,43 @@
     <div class="wp-section">
         <div class="container">
             <div class="section-title-wr">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span>Características Generales</span>
                     <small>Cursos de Inglés Longbourn Institute</small>
                 </h3>
             </div>
             <div class="row mt-20">
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-map-marker"></i>
+                            <i class="adaptable-icon fa fa-map-marker"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Ubicación</h4>
-                            <p>Longbourn Sede Las Condes.</p>
-                            <p>Coronel Pereira 72 Piso 11, Las Condes</p>
+                            <h4 class="info-title">Ubicación</h4>
+                            <p class="info-text">Longbourn Sede Las Condes.</p>
+                            <p class="info-text">Coronel Pereira 72 Piso 11, Las Condes</p>
                         </div>
                     </div>
                 </div> 
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-clock-o"></i>
+                            <i class="adaptable-icon fa fa-clock-o"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Horarios</h4>
-                            <p>Consulta <%=link_to "acá", {:controller => :site, :action => :contact_sales_agent}, {:style => "text-decoration: underline; font-size: 16px;"}%> por horarios y vacantes disponibles.</p>
+                            <h4 class="info-title">Horarios</h4>
+                            <p class="info-text">Consulta <%=link_to "acá", {:controller => :site, :action => :contact_sales_agent}, {:style => "text-decoration: underline; @media screen and(max-width: 992px){font-size: 23px;}"} %> por horarios y vacantes disponibles.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-6 ">
+                <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-calendar"></i>
+                            <i class="adaptable-icon fa fa-calendar"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Frecuencia de Clases</h4>
-                            <p>2 veces por semana</p>
+                            <h4 class="info-title">Frecuencia de Clases</h4>
+                            <p class="info-text">2 veces por semana</p>
                         </div>
                     </div>
                 </div>                   
@@ -126,34 +126,34 @@
                 <div class="col-md-4 col-sm-6 ">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-graduation-cap"></i>
+                            <i class="adaptable-icon fa fa-graduation-cap"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Criterios de Aprobación</h4>
-                            <p>Obtener promedio de notas sobre 4.0</p>
-                            <p>75% de asistencia.</p>
+                            <h4 class="info-title">Criterios de Aprobación</h4>
+                            <p class="info-text">Obtener promedio de notas sobre 4.0</p>
+                            <p class="info-text">75% de asistencia.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 ">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-group"></i>
+                            <i class="adaptable-icon fa fa-group"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Grupos</h4>
-                            <p>De 1 hasta 8 participantes, mismo nivel</p>
+                            <h4 class="info-title">Grupos</h4>
+                            <p class="info-text">De 1 hasta 8 participantes, mismo nivel</p>
                         </div>
                     </div>
                 </div> 
                 <div class="col-md-4 col-sm-6 ">
                     <div class="icon-block icon-block-1">
                         <div class="icon-block-item">
-                            <i class="fa fa-barcode"></i>
+                            <i class="adaptable-icon fa fa-barcode"></i>
                         </div>
                         <div class="icon-block-body">
-                            <h4 class="">Código Sence</h4>
-                            <p>Sí. Consulta con tu Empresa.</p>
+                            <h4 class="info-title">Código Sence</h4>
+                            <p class="info-text">Sí. Consulta con tu Empresa.</p>
                         </div>
                     </div>
                 </div>                   
@@ -216,7 +216,7 @@
     <div class="wp-section pricing-plans">
         <div class="container">
             <div class="section-title-wr">
-                <h3 class="section-title left">
+                <h3 class="title-adaptable">
                     <span>Valores</span>
                     <small>Valores de los Programas de Inglés Longbourn</small>
                 </h3>
@@ -240,7 +240,7 @@
                             <li><i class="fa fa-times"></i> Hasta 3 reprogramaciones por Libro.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to ingles_ejecutivo_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to ingles_ejecutivo_path, :class => "btn btn-adaptable btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
                                 <span>Ir a Longbourn Executive</span>
                             <%end%>
                         </p>
@@ -263,7 +263,7 @@
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to ingles_ejecutivo_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to ingles_ejecutivo_path, :class => "btn btn-adaptable btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
                                 <span>Ir a Longbourn Executive</span>
                             <%end%>
                         </p>
@@ -287,7 +287,7 @@
                             <li><i class="fa fa-clock-o"></i> Desde 8:00 a 9:59 y 17:00 a 20:30.</li>
                         </ul>          
                         <p class="plan-select-block">
-                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-adaptable btn-lg btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
                                 <span>Contactar Ejecutiva</span>
                             <%end%>
                         </p>
@@ -310,7 +310,7 @@
                             <li><i class="fa fa-clock-o"></i> Desde 10:00 a 16:59.</li>
                         </ul>         
                         <p class="plan-select-block">
-                            <%=link_to ingles_empresarial_path, :class => "btn btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
+                            <%=link_to ingles_empresarial_path, :class => "btn btn-adaptable btn-lg btn-block-bm btn-light btn-icon btn-check", :hidefocus => true do%>
                                 <span>Ir a Longbourn StartUp</span>
                             <%end%>
                         </p>
