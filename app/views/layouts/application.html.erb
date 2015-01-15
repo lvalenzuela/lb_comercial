@@ -2,9 +2,9 @@
 <html>
 <head>
 	<%if @page_title%>
-		<title><%=@page_title%></title>
+		<title>Longbourn: <%=@page_title%></title>
 	<%else%>
-		<title>Cursos de Inglés para Profesionales, Ejecutivos y Gerentes</title>  
+		<title>Longbourn: Cursos de Inglés para Profesionales y Ejecutivos</title>  
 	<%end%>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true%>
@@ -146,7 +146,7 @@
 		});	
 	</script>
 	<%if @meta_description%>
-		<meta name="description" content="<%=@page_title%>">
+		<meta name="description" content="<%=@meta_description%>">
 	<%else%>
 		<meta name="description" content="Cursos de Inglés para profesionales, ejecutivos y gerentes en Santiago de Chile, directamente en tu oficina o centro de negocios. ¡Metodología TEG!">
 	<%end%>

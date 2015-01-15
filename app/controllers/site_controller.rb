@@ -5,7 +5,7 @@ class SiteController < ApplicationController
 	layout "gmaps_layout", only: [:contact_us, :work_with_us]
 
 	def index
-		@page_title = "Cursos de Inglés para Profesionales, Ejecutivos y Gerentes"
+		@page_title = "Cursos de Inglés para Profesionales y Ejecutivos"
 		@meta_description = "Cursos de Inglés para profesionales, ejecutivos y gerentes en Santiago de Chile, directamente en tu oficina o centro de negocios. ¡Metodología TEG!"
 		session[:action_milestone] = action_name
 	end
