@@ -257,8 +257,12 @@ ul.achievements-list li.selected {
 
 /*Adaptaciones para visualizacion en dispositivos moviles*/
 p.box-main-text {
-	@media screen and(max-width: 992px){
+	@media screen and (max-width: 992px){
 		font-size: 1.4em; 	
+	}
+
+	@media screen and(max-width: 850px){
+		font-size: 1.8em;
 	}
 }
 
@@ -392,7 +396,7 @@ p.box-main-text {
 
 #mobileIcon {
 	color: #333 !important;
-	font-size:3.55em;
+	font-size:1.5em;
 }
 
 .number-title {
@@ -444,10 +448,17 @@ label.form-label{
 
 #site-menu {
 	width: 300px;
+	left: -300px;
+
+	@media screen and (max-width: 850px){
+		/*Ancho debe ser mayor cuando el dispositivo es de menor tamano*/
+		width:500px;
+		left: -500px;	
+	}	
+		
 	height: 100%;
 	position: absolute;
 	top: 0;
-	left: -300px;
 	background: #FFFFFF;
 	padding: 15px;
 }
@@ -455,6 +466,18 @@ label.form-label{
 #site-wrapper.show-nav #site-canvas {
 	-webkit-transform: translateX(300px);
 	transform: translateX(300px);
+
+	@media screen and(max-width: 850px){
+		-webkit-transform: translateX(500px);
+		transform: translateX(500px);
+	}
+}
+
+.hidden-menu-item {
+	@media screen and(max-width: 850px){
+		height:50px;
+		font-size: 2em;		
+	}
 }
 
 .hidden-menu-item:hover {
@@ -463,10 +486,15 @@ label.form-label{
     border-radius: 0px !important;
 }
 
+.modal-dialog {
+	width:90%;
+	height:95%;
+	padding: 0;
+}
+
 #contact-form .modal-content
 {
-  height:600px;
-  overflow:auto;
+  overflow-y: auto;
 }
 
 .mountain-label {
@@ -488,4 +516,30 @@ label.form-label{
 	margin-top:10%;
 	padding-top: 10%;
 	height: 300px;
+}
+
+#menu-button {
+	@media screen and(max-width: 850px){
+		font-size: 2em;
+		top: -5px;
+	}
+}
+
+.mobile-paragraph {
+	@media screen and(max-width: 992px){
+		font-size:1.2em;
+	}
+
+	@media screen and (max-width: 850px){
+		font-size:1.4em;
+	}
+}
+
+#contactar {
+	font-size: 2em;
+	background-color: #616161;
+}
+
+#contactar:hover, #contactar:focus{
+	border-color: #616161;
 }

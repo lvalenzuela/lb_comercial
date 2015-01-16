@@ -83,34 +83,15 @@
 
 	</script>
 	<script type="text/javascript">
-	    (function($,sr){
-  			// debouncing function from John Hann
-  			// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-  			var debounce = function (func, threshold, execAsap) {
-     			var timeout;
-			    return function debounced () {
-			        var obj = this, args = arguments;
-			        function delayed () {
-			            if (!execAsap)
-			                func.apply(obj, args);
-			            timeout = null;
-         			};
+	   	var id;
+	   	$(window).resize(function(){
+	   		clearTimeout(id);
+    		id = setTimeout(resizeFunction, 500);
+    	});
 
-	        		if (timeout)
-	              		clearTimeout(timeout);
-	          		else if (execAsap)
-	              		func.apply(obj, args);
 
-	          		timeout = setTimeout(delayed, threshold || 100);
-      			};
-			}
-			// smartresize 
-			jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
-		})(jQuery,'smartresize');
-
-		$(window).smartresize(function(){
-			$('.sp-button').css("height","");	
+	   	function resizeFunction(){
+	   		$('.sp-button').css("height","");	
 
 			var highestCol = Math.max($('#ejecutivo').outerHeight(),$('#instituto').outerHeight(),$('#empresarial').outerHeight(),$('#toefl').outerHeight());
 	    	$('.channel-block').height((highestCol*1+20));
@@ -126,10 +107,21 @@
 				var height_channel = $('#channels-row').height();
 			
 				var totalHeight = (pos_title - pos_init) + height_title + height_channel; 
-
 				$('#layerslider').css ("height",totalHeight);	
-			}	
-		});
+	   	}
+	</script>
+	<!--Javascript para esconder y mostrar contenido de la cronologia-->
+	<script type="text/javascript">
+	   $(document).ready(function(){
+	        $('.title-to-click').click(function() {
+	            if ($(this).children('.hide-content').hasClass("hidden")) {        
+	                $(this).children('.hide-content').removeClass("hidden").addClass("visible");
+
+	            } else {
+	                $(this).children('.hide-content').removeClass("visible").addClass("hidden");
+	            }
+	        });
+    	});
 	</script>
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -141,7 +133,7 @@
 			
 				var totalHeight = (pos_title - pos_init) + height_title + height_channel; 
 
-				$('#layerslider').css ("height",totalHeight);	
+				$('#layerslider').css ("height",totalHeight);
 			}	
 		});	
 	</script>
@@ -161,7 +153,7 @@
 	                    </li>
 	                    <li id="ingles-sede">
 	                        <%=link_to "Inglés en Sede", {:controller => :info, :action => :cursos_en_sede}, {:class => "dropdown-toggle disabled hidden-menu-item", :data => {:toggle => "dropdown"}, :id => "principal-ingles-sede"}%>
-	                        <ul class="dropdown-menu">
+	                        <ul class="dropdown-menu" style="font-size:1.7em">
 	                            <li>
 	                              <%=link_to "Longbourn Institute - Mejores Horarios", 
 	                               {:controller => :info, :action => :longbourn_institute} , {:id => "drop-institute"} %>

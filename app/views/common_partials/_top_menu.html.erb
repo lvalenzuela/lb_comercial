@@ -34,7 +34,7 @@
                     <%=image_tag "LogoLongbourn1.png", :alt => "Longbourn Institute"%>
                 <%end%>
                 <a href="#" class="toggle-nav btn btn-lg hidden-md hidden-lg" style="float:left; margin-top:20px;">
-                <i class="fa fa-bars"></i>
+                <i class="fa fa-bars" id="menu-button"></i>
             </a>
 
             </div>
@@ -45,7 +45,7 @@
                         <div class="bg-light-gray hidden-md hidden-lg">
                             <form class="form-horizontal form-light p-15" role="form">
                                 <div class="input-group input-group-lg">
-                                    <input type="text" class="form-control" placeholder="I want to find ...">
+                                    <input type="textn" class="form-control" placeholder="I want to find ...">
                                     <span class="input-group-btn">
                                         <button class="btn btn-white" type="button">
                                             <i class="fa fa-search"></i>
@@ -60,7 +60,7 @@
                     </li>
                     <li>
                         <%=link_to "Inglés en Sede", {:controller => :info, :action => :cursos_en_sede}, {:class => "dropdown-toggle disabled", :data => {:toggle => "dropdown"}}%>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" >
                             <li>
                               <%=link_to "Longbourn Institute - Mejores Horarios", instituto_de_ingles_path%>
                             </li>
