@@ -442,15 +442,15 @@ label.form-label{
 	position: relative;
 	-webkit-transform: translateX(0);
 	transform: translateX(0);
-	-webkit-transition: .3s ease all;
-	transition: .3s ease all;
+	-webkit-transition: .1s ease all;
+	transition: .1s ease all;
 }
 
 #site-menu {
 	width: 300px;
 	left: -300px;
 
-	@media screen and (max-width: 850px){
+	@media screen and (max-width: 980px){
 		/*Ancho debe ser mayor cuando el dispositivo es de menor tamano*/
 		width:500px;
 		left: -500px;	
@@ -467,14 +467,14 @@ label.form-label{
 	-webkit-transform: translateX(300px);
 	transform: translateX(300px);
 
-	@media screen and(max-width: 850px){
+	@media screen and(max-width: 980px){
 		-webkit-transform: translateX(500px);
 		transform: translateX(500px);
 	}
 }
 
 .hidden-menu-item {
-	@media screen and(max-width: 850px){
+	@media screen and(max-width: 980px){
 		height:50px;
 		font-size: 2em;		
 	}
@@ -519,7 +519,7 @@ label.form-label{
 }
 
 #menu-button {
-	@media screen and(max-width: 850px){
+	@media screen and(max-width: 980px){
 		font-size: 2em;
 		top: -5px;
 	}
@@ -530,7 +530,7 @@ label.form-label{
 		font-size:1.2em;
 	}
 
-	@media screen and (max-width: 850px){
+	@media screen and (max-width: 980px){
 		font-size:1.4em;
 	}
 }
