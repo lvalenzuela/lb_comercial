@@ -33,12 +33,12 @@ class WebUserMailer < ActionMailer::Base
   def contact_sales_agent(web_contact)
     @contact = web_contact
 
-    if @contact.paid_service.include?("Executive")
-      recipient = "aarregui@longbourn.cl"
-    else
-      recipient = "contacto@longbourn.cl"
-    end
-    mail(to: recipient, subject: "Contacto Web Comercial: #{web_contact.name}")
+    #if @contact.paid_service.include?("Executive")
+    #  recipient = "aarregui@longbourn.cl"
+    #else
+    #  recipient = "contacto@longbourn.cl"
+    #end
+    mail(to: "contacto@longbourn.cl", subject: "Contacto Web Comercial: #{web_contact.name}")
   end
 
   def contact_jobs_agent(job_contact)
@@ -52,6 +52,6 @@ class WebUserMailer < ActionMailer::Base
   private
 
   def longbourn_url
-  	return "http://localhost:3000"
+  	return "http://www.longbourn.cl"
   end
 end

@@ -1,51 +1,59 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <h3>Se ha registrado una solicitud de contacto a través de la Web Comercial de Longbourn Institute.</h3>
+<%=render :partial => "mailer_header"%>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Se ha registrado una solicitud de contacto a través de la Web Comercial de Longbourn.</h1>
 
-    <p>Datos generales del Contacto:</p>
-    <table style="text-align: left;">
-      <tr>
-        <th>ID Registro</th>
-        <td><%=@contact.id%></td>
-      </tr>
-      <tr>
-        <th>Nombre</th>
-        <td><%=@contact.name%></td>
-      </tr>
-      <tr>
-        <th>Email</th>
-        <td><%=@contact.email%></td>
-      </tr>
-      <tr>
-        <th>Telefono</th>
-        <td><%=@contact.phone%></td>
-      </tr>
-      <tr>
-        <th>Empresa</th>
-        <td><%=@contact.institution%></td>
-      </tr>
-      <tr>
-        <th>Comuna</th>
-        <td><%=@contact.location%></td>
-      </tr>
-      <tr>
-        <th>Servicio Gratuito de Interes</th>
-        <td><%=@contact.free_service%></td>
-      </tr>
-      <tr>
-        <th>Curso de Interes</th>
-        <td><%=@contact.paid_service%></td>
-      </tr>
-    </table>
-    <h2>Mensaje</h2>
-    <h4>Título: <%=@contact.subject%></h4>
-    <p><%=simple_format @contact.msg%></p>
-    
-    -------------------------------------------------------
-    <p>Este correo fue generado automáticamente, por lo cual se sugiere no responderlo.</p>
-  </body>
-</html>
+      <h3>Datos generales del Contacto:</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-10">
+      <table class="table table-striped">
+        <tr>
+          <th>ID Registro</th>
+          <td><%=@contact.id%></td>
+        </tr>
+        <tr>
+          <th>Nombre</th>
+          <td><%=@contact.name%></td>
+        </tr>
+        <tr>
+          <th>Email</th>
+          <td><%=@contact.email%></td>
+        </tr>
+        <tr>
+          <th>Teléfono</th>
+          <td><%=@contact.phone%></td>
+        </tr>
+        <tr>
+          <th>Empresa</th>
+          <td><%=@contact.institution%></td>
+        </tr>
+        <tr>
+          <th>Comuna</th>
+          <td><%=@contact.location%></td>
+        </tr>
+        <tr>
+          <th>Servicio Gratuito de Interes</th>
+          <td><%=@contact.free_service%></td>
+        </tr>
+        <tr>
+          <th>Curso de Interés</th>
+          <td><%=@contact.paid_service%></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Mensaje</h2>
+      <h4>Título: <%=@contact.subject%></h4>
+      <p><%=simple_format @contact.msg%></p>
+      
+      -------------------------------------------------------
+      <p>Este correo fue generado automáticamente, por lo cual se sugiere no responderlo.</p>
+    </div>
+  </div>
+</div>
+<%= render :partial => "mailer_footer"%>
