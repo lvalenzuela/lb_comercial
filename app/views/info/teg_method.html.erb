@@ -1,23 +1,9 @@
-<!--Javascript para esconder y mostrar contenido de la cronologia-->
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.title-to-click').click(function() {
-            if ($(this).children('.hide-content').hasClass("hidden")) {        
-                $(this).children('.hide-content').removeClass("hidden").addClass("visible");
-
-            } else {
-                $(this).children('.hide-content').removeClass("visible").addClass("hidden");
-            }
-        });
-    });
-</script>
-
 <!-- MAIN CONTENT -->
 <div class="pg-opt">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1>Metodología TEG</h1>
+                <h1 id="page-title">Metodología TEG</h1>
             </div>
             <div class="col-md-6">
                 <ol class="return-path breadcrumb">
@@ -34,7 +20,7 @@
         <div class="container">
             <div class="section-title-wr">
                 <h3 class="title-adaptable">
-                    <span>El Método TEG</span>
+                    <span >El Método TEG</span>
                 </h3>
             </div>
             <div class="row">
@@ -44,8 +30,8 @@
                             <%=image_tag "web-imgs/metodologia_teg/teg1_small.jpg", :class => "img-responsive", :alt => "TEG 1"%>
                         </div>
                         <div class="wp-block-body">
-                            <h2 class="title">¿Qué es TEG?</h2>
-                            <p>
+                            <h2 class="title" id="info-title">¿Qué es TEG?</h2>
+                            <p class="toefl-txt">
                             Teaching English Gradually o Enseñanza gradual del inglés es una combinación de las teorías de aprendizaje que busca, de acuerdo a objetivos planteados, desarrollar competencias propias de las 4 habilidades del lenguaje: leer, escribir, escuchar y hablar.
                             </p>
                         </div>
@@ -58,8 +44,8 @@
                             <%=image_tag "web-imgs/metodologia_teg/teg2_small.jpg", :class => "img-responsive", :alt => "TEG 2"%>
                         </div>
                         <div class="wp-block-body">
-                            <h2 class="title">¿Por qué estudiar en Longbourn?</h2>
-                            <p>
+                            <h2 class="title" id="info-title">¿Por qué estudiar en Longbourn?</h2>
+                            <p class="toefl-txt">
                             TEG toma en cuenta los pilares fundamentales de la enseñanza y aprendizaje del inglés, los cuales son la cohesión y la coherencia. Estos pilares están sólidamente establecidos en áreas del conocimiento, tales como ciencias, arte, matemática e historia.
                             </p>
                         </div>
@@ -72,8 +58,8 @@
                             <%=image_tag "web-imgs/metodologia_teg/teg3_small.jpg", :class => "img-responsive", :alt => "TEG 3"%>
                         </div>
                         <div class="wp-block-body">
-                            <h2 class="title">¿Cómo son las clases en Longbourn?</h2>
-                            <p>
+                            <h2 class="title" id="info-title">¿Cómo son las clases en Longbourn?</h2>
+                            <p class="toefl-txt">
                             TEG considera las habilidades y características propias de cada estudiante para generar una estrategia de enseñanza, la cual da especial importancia a la forma en la que aprende el estudiante. Esto se sustenta a través de la diversidad de inteligencias que define al alumno para aprender inglés. Además, TEG está diseñado para generar un ambiente donde las conductas espontáneas y dinámicas sean parte de una educación integral.
                             </p>
                         </div>
@@ -91,8 +77,8 @@
                 <div class="col-md-12">
                     <div class="text-center">
                         <h4><i class="fa fa-calendar fa-3x"></i></h4>
-                        <h2>La Historia de la Metodología TEG</h2>
-                        <p>
+                        <h2 id="box-main-title">La Historia de la Metodología TEG</h2>
+                        <p id="info-text">
                             Entendiendo la Metodología TEG a través de su historia.
                         </p>
                         <span class="clearfix"></span>
@@ -108,7 +94,7 @@
     <div class="wp-section">
         <div class="container">
             <ul class="timeline">
-                <li class="year">1991</li>     
+                <li id="mob-year" class="year">1991</li>     
                 <li class="event offset-first">
                     <div class="title-to-click event-date">
                         <h3>Inicios <i class="fa fa-arrows-v hidden-lg hidden-md" style="float:right"></i></h3>  
@@ -128,7 +114,7 @@
                 </li>
                 <li class="clearfix"></li>
                 
-                <li class="year">1992</li>
+                <li id="mob-year" class="year">1992</li>
                 <li class="event offset-first">
                     <div class="title-to-click event-date">
                         <h3>1992 - 1997 <i class="fa fa-arrows-v hidden-lg hidden-md" style="float:right"></i></h3>  
@@ -150,7 +136,7 @@
                 </li>
                 <li class="clearfix"></li>
 
-                <li class="year">1998</li>
+                <li id="mob-year" class="year">1998</li>
                 <li class="event offset-first">
                     <div class="title-to-click event-date">
                         <h3>1998 - 2000 <i class="fa fa-arrows-v hidden-lg hidden-md" style="float:right"></i></h3>  
@@ -170,7 +156,7 @@
                 </li>
                 <li class="clearfix"></li>
 
-                <li class="year">2001</li>
+                <li id="mob-year" class="year">2001</li>
                 <li class="event offset-first">
                     <div class="title-to-click event-date">
                         <h3>2001 <i class="fa fa-arrows-v hidden-lg hidden-md" style="float:right"></i></h3>  
@@ -190,7 +176,7 @@
                 </li>
                 <li class="clearfix"></li>
 
-                <li class="year">2002</li>
+                <li id="mob-year" class="year">2002</li>
                 <li class="event offset-first">
                     <div class="title-to-click event-date">
                         <h3>2002 - 2007 <i class="fa fa-arrows-v hidden-lg hidden-md" style="float:right"></i></h3> 
@@ -211,7 +197,7 @@
 
                 <li class="clearfix"></li>
 
-                <li class="year">2008</li>
+                <li id="mob-year" class="year">2008</li>
                 <li class="event offset-first">
                     <div class="title-to-click event-date">
                         <h3>2008 <i class="fa fa-arrows-v hidden-lg hidden-md" style="float:right"></i></h3> 
@@ -285,7 +271,7 @@
                         <h3 class="title-adaptable left">
                         <span>Objetivos de cada Nivel de Inglés</span></h3>
                     </div>
-                    <p>
+                    <p class="toefl-txt">
                         Los objetivos que se busca desarrollar en cada nivel son los que se indican a continuación.
                     </p>
 
@@ -309,7 +295,7 @@
                             <div class="tab-pane fade in active" id="lvla">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Comunicar quiénes son, saludar y generar expresiones del ambiente inmediato.</li>
                                         <li>Responder preguntas limitadas.</li>
                                         <li>Escuchar y comprender diálogos simples.</li>
@@ -322,7 +308,7 @@
                             <div class="tab-pane fade" id="lvlb">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Comunicar ideas breves, responder preguntas y sugerencias de contextos más amplios.</li>
                                         <li>Escuchar diálogos, canciones y lecturas sencillas.</li>
                                         <li>Escribir, leer y entender textos breves (como correspondencia electrónica)</li>
@@ -334,7 +320,7 @@
                             <div class="tab-pane fade" id="lvlc">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Establecer diálogos simples.</li>
                                         <li>Generar y responder preguntas y sugerencias simples.</li>
                                         <li>Comprender canciones con modelos conocidos.</li>
@@ -357,7 +343,7 @@
                             <div class="tab-pane fade" id="lvle">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Establecer conversaciones cotidianas en torno a temas relacionados con el trabajo, vida familiar y competencias.</li>
                                         <li>Asistir a reuniones de negocios.</li>
                                         <li>Conocer y aplicar elementos de fonética (para pronunciar y comprender adecuadamente).</li>
@@ -368,7 +354,7 @@
                             <div class="tab-pane fade" id="lvlf">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Establecer conversaciones personal o telefónicamente con angloparlantes o nativos, también hacerlo en actividades de negocios o sociales, acerca de temas relacionados al trabajo, vida familiar, tiempo libre, y temas de interés.</li>
                                         <li>Asistir y participar (entiende, habla, sugiere) en reuniones de negocios.</li>
                                         <li>Realizar y responder preguntas complejas, sugerencias, ofrecimientos, requerimientos, consejos y obligaciones.</li>
@@ -382,7 +368,7 @@
                             <div class="tab-pane fade" id="lvlg">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Participar de manera importante y productiva en reuniones de negocios o profesionales (escuchando, hablando, sugiriendo, discrepando).</li>
                                         <li>Realizar y contestar preguntas complejas, requerimientos, consejos, y obligaciones.</li>
                                         <li>Comunicarse con nativos.</li>
@@ -392,7 +378,7 @@
                             <div class="tab-pane fade" id="lvlh">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Establecer conversaciones personal o telefónicamente de manera fluida con nativos o angloparlante.</li>
                                         <li>Conversar temas diversos en reuniones sociales y de negocio con nativos en torno al acontecer actual y asuntos de relevancia general.</li>
                                         <li>Realizar y responder preguntas sofisticadas.</li>
@@ -403,7 +389,7 @@
                             <div class="tab-pane fade" id="lvli">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Participar en reuniones de negocios de forma activa y productiva (escuchar, hablar, inferir, proponer, solucionar).</li>
                                         <li>Participar activamente en conferencias o cursos.</li>
                                         <li>Realizar y responder preguntas especializadas.</li>
@@ -416,7 +402,7 @@
                             <div class="tab-pane fade" id="lvlj">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Establecer conversaciones personales o telefónicas fluidas, avanzadas, efectivas con nativos o clientes angloparlantes.</li>
                                         <li>Asistir y participar en reuniones de negocios en forma activa y productiva (escuchar, hablar, inferir, proponer, disuadir, solucionar).</li>
                                         <li>Asistir y participar activamente en conferencias o cursos.</li>
@@ -432,7 +418,7 @@
                             <div class="tab-pane fade" id="lvlk">
                                 <!-- Place Your Content Here -->
                                 <div class="tab-body">
-                                    <ul class="level-description">
+                                    <ul id="level-info" class="level-description">
                                         <li>Establecer conversaciones personales o telefónicas fluidas, sofisticadas, abstractas, eficientes y efectivas con nativos o angloparlantes.</li>
                                         <li>Asistir y participar en reuniones de negocios y académicas en forma activa y productiva (escuchar, hablar, inferir, proponer, disuadir, solucionar).</li>
                                         <li>Manejar giros imprevistos en las conversaciones con fuerte manejo de referentes culturales.</li>

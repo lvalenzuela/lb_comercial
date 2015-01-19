@@ -169,7 +169,7 @@ table.phone-contact td.separator{
 	color: #DEDEDE;
 	text-transform: none; 
 	white-space: normal;
-	font-size: 1.2em;
+	font-size: 1.6em;
 }
 
  .btn a span.subtitle {
@@ -257,21 +257,17 @@ ul.achievements-list li.selected {
 
 /*Adaptaciones para visualizacion en dispositivos moviles*/
 p.box-main-text {
-	@media screen and (max-width: 992px){
-		font-size: 1.4em; 	
-	}
-
-	@media screen and(max-width: 850px){
-		font-size: 1.8em;
-	}
-}
-
-#box-title {
+	text-align: justify;
 	@media screen and(max-width: 992px){
-		font-size: 1.8em; 	
+		font-size: 2em;
 	}
 }
 
+#box-main-title {
+	@media screen and (max-width: 992px){
+		font-size: 35px; 	
+	}	
+}
 
 .btn-adaptable {
     /*Caracteristicas basicas se heredan de .btn*/
@@ -322,7 +318,7 @@ p.box-main-text {
 	color: #999;
 
 	@media screen and (max-width: 992px){
-		font-size: 100%;
+		font-size: 130%;
 	}
 }
 
@@ -334,19 +330,19 @@ p.box-main-text {
 
 .info-title {
 	@media screen and (max-width: 992px){
-		font-size:1.4em;	
+		font-size:1.5em;	
 	}
 }
 
 .info-text {
 	@media screen and (max-width: 992px){
-		font-size: 140%;
+		font-size: 150%;
 	}
 }
 
 #top-subtitle {
 	@media screen and (max-width: 992px){
-		font-size: 1.3em;
+		font-size: 1.7em;
 		line-height: 110%;
 	}
 }
@@ -373,15 +369,15 @@ p.box-main-text {
 	}    
 }
 
-#mob-year {
+#mob-year, #info-plan {
 	@media screen and (max-width: 992px){
-		font-size:1.2em;
+		font-size:30px;
 	}		
 }
 
 .return-path {
 	@media screen and (max-width: 992px){
-		font-size:1.25em;
+		font-size:1.7em;
 	}
 }
 
@@ -400,7 +396,7 @@ p.box-main-text {
 }
 
 .number-title {
-	font-size: 1.7em;
+	font-size: 1.9em;
 }
 
 label.form-label{
@@ -412,7 +408,7 @@ label.form-label{
 	font-size: 1.3em;
 }
 
-.form-button {
+.form-button, .toefl-txt {
 	font-size: 1.3em;
 }
 
@@ -459,7 +455,7 @@ label.form-label{
 	height: 100%;
 	position: absolute;
 	top: 0;
-	background: #FFFFFF;
+	background: #ECF0F1;
 	padding: 15px;
 }
 
@@ -497,18 +493,11 @@ label.form-label{
   overflow-y: auto;
 }
 
-.mountain-label {
-	@media screen and (max-width: 992px){
-		font-size: 1.25em;
-	}	
-}
-
 .mountain-select {
 	@media screen and (max-width: 992px){
 		height:50px;
 		font-size: 1.5em;	
 	}
-	
 }
 
 .mobile-sub-info{
@@ -525,13 +514,15 @@ label.form-label{
 	}
 }
 
-.mobile-paragraph {
-	@media screen and(max-width: 992px){
-		font-size:1.2em;
-	}
-
-	@media screen and (max-width: 980px){
+.contact-txt, .contact-info p {
+	@media screen and (max-width: 992px){
 		font-size:1.4em;
+	}
+}
+
+.mobile-paragraph{
+	@media screen and (max-width: 992px){
+		font-size:1.7em;
 	}
 }
 
@@ -543,3 +534,45 @@ label.form-label{
 #contactar:hover, #contactar:focus{
 	border-color: #616161;
 }
+
+.index-title {
+	color: #DEDEDE;
+	white-space: normal;
+	font-size: 30px;
+}
+
+#icon-mobile {
+	@media screen and (max-width: 992px){
+		font-size: 3em;
+		width: 80px;
+		height: 80px;
+		padding: 20px;
+	}
+}
+
+
+#info-text, .mountain-label, .plan-info-list li, .contact-info h5 {
+	@media screen and (max-width: 992px){
+		font-size: 1.5em !important;
+	}
+}
+
+#page-title, #destacado, #info-title, .toefl-title  {
+	@media screen and (max-width: 992px){
+		font-size: 2em;
+	}
+}
+
+#title-plan {
+	font-size: 24px;
+	@media screen and (max-width: 992px){
+		font-size: 2em;
+	}
+}
+
+#level-info{
+	@media screen and (max-width: 992px){
+		font-size: 20px;
+	}	
+}
+

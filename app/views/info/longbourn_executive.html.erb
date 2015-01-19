@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1><%=@page_title%></h1>
+                <h1 id="page-title"><%=@page_title%></h1>
             </div>
             <div class="col-md-6">
                 <ol class="return-path breadcrumb">
@@ -32,7 +32,7 @@
                             <i class="fa fa-lightbulb-o"></i>
                         </div>
                         
-                        <h2 id="box-title" class="normal-case">Cursos Orientados a Ejecutivos</h2>
+                        <h2 id="box-main-title" class="normal-case">Cursos Orientados a Ejecutivos</h2>
                         <p class="box-main-text">Los Cursos de Inglés Executive te entregarán, sin moverte de tu oficina, las herramientas y contenidos para comunicarte en forma precisa y para entender con claridad los mensajes escritos y hablados en inglés.</p>
                     </div>
                 </div>
@@ -43,7 +43,7 @@
                             <i class="fa fa-user"></i>
                         </div>
                         
-                        <h2 id="box-title" class="normal-case">Clases Integrales</h2>
+                        <h2 id="box-main-title" class="normal-case">Clases Integrales</h2>
                         <p class="box-main-text">Longbourn incorpora los conocimientos y habilidades personales de cada estudiante a su metodología de enseñanza, favoreciendo significativamente el aprendizaje del inglés.</p>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                             <i class="fa fa-clock-o"></i>
                         </div>
                         
-                        <h2 id="box-title" class="normal-case">Clases en tu Oficina, en Horario a Convenir</h2>
+                        <h2 id="box-main-title" class="normal-case">Clases en tu Oficina, en Horario a Convenir</h2>
                         <p class="box-main-text">Cursos de inglés especialmente diseñados para ejecutivos con poco tiempo disponible, que necesitan una capacitación personalizada, efectiva y flexible en su propia oficina. </p>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                             <i class="fa fa-pencil"></i>
                         </div>
                         
-                        <h2 id="box-title" class="normal-case">Metodología TEG</h2>
+                        <h2 id="box-main-title" class="normal-case">Metodología TEG</h2>
                         <p class="box-main-text">Las clases utilizan la Metodología TEG (Teaching English Gradually) que de una forma diferente, dinámica y entretenida, desarrolla de manera simultánea las 4 habilidades del idioma: leer, escribir, escuchar y hablar.</p>
                     </div>
                 </div>
@@ -154,50 +154,6 @@
 
 <%=render :partial => "blue_stripe_partial"%>
 
-<!--
-<section class="slice animate-hover-slide bg-white bb">
-    <div class="wp-section">
-        <div class="container">
-            <div class="section-title-wr">
-                <h3 class="section-title left">
-                    <span>Cursos Próximos a Partir</span>
-                    <small>Los siguientes cursos tienen vacantes disponibles</small>
-                </h3>
-            </div>
-            <div class="owl-carousel owl-carousel-3">
-                <%@active_courses.each do |ac|%>
-                    <div class="item">
-                        <div class="wp-block default">
-                            <div class="figure">
-                                <%=image_tag "prv/school/school-1.jpg", :class => "img-responsive", :alt => ""%>
-                                <span class="wp-block-date-over alpha"><strong><%=l(ac.start_date, :format => "%b %d")%></strong></span>
-                                <div class="figcaption bg-base"></div>
-                                <div class="figcaption-btn">
-                                    <a href="#" class="btn btn-xs btn-b-white"><i class="fa fa-check"></i> Postular</a>
-                                </div>
-                            </div>
-                            <div class="wp-block-body bb">
-                                <h2 class="title"><%=ac.coursename%></h2>
-                                <p>
-                                <%=ac.description%>
-                                <br>
-                                36 Horas.
-                                </p>
-                            </div>
-                            <ul class="aux-info-cells">
-                                <li><i class="fa fa-calendar"></i><%=l(ac.start_date, :format => "%b %d")%></li>
-                                <li><i class="fa fa-clock-o"></i> 10:00 AM</li>
-                                <li style="background-color: <%=route_bg_color(ac.course_level_id)%>;"><i class="fa fa-plus"></i> <a href="#">Más Información</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                <%end%>      
-            </div>
-        </div>
-    </div>
-</section>
--->
-    <!-- LIGHT -->
 <section class="slice bg-white" id="plan-prices">
     <div class="wp-section pricing-plans">
         <div class="container">
@@ -211,16 +167,16 @@
                 <div class="col-md-3">
                     <div class="wp-block popular">
                         <div class="plan-header light">
-                        	<div class="popular-tag dark">Destacado</div>
+                        	<div id="destacado" class="popular-tag dark">Destacado</div>
                             <div class="plan-image">
                                 <%=image_tag "longbourn-logos/longbourn_executive.png", :class => "img-responsive"%>
                             </div>
-                            <h2 class="plan-title" style="font-size: 18px;">Private Lessons</h2>
+                            <h2 id="title-plan" class="plan-title">Private Lessons</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>23.000<span>(*)</span></h3>
-                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
-                            <small class="plan-info">Programas desde 36 horas</small>
+                            <small id="info-plan" class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small id="info-plan" class="plan-info">Programas desde 36 horas</small>
                         </div>
-                        <ul>
+                        <ul class="plan-info-list">
                             <li><i class="fa fa-user"></i> Curso Individual Cerrado</li>
                             <li><i class="fa fa-map-marker"></i> Oficinas del Cliente</li>
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
@@ -236,19 +192,19 @@
                 <div class="col-md-3">
                     <div class="wp-block popular">
                         <div class="plan-header light">
-                        	<div class="popular-tag dark">Destacado</div>
+                        	<div id="destacado" class="popular-tag dark">Destacado</div>
                             <div class="plan-image">
                                 <%=image_tag "longbourn-logos/longbourn_executive.png", :class => "img-responsive"%>
                             </div>
-                            <h2 class="plan-title" style="font-size: 18px;">Executive Group</h2>
+                            <h2 id="title-plan" class="plan-title">Executive Group</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>13.800<span>(*)</span></h3>
-                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
-                            <small class="plan-info">Programas desde 36 horas</small>
+                            <small id="info-plan" class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small id="info-plan" class="plan-info">Programas desde 36 horas</small>
                         </div>
-                        <ul>
-                            <li><i class="fa fa-group"></i> Máx. 4 Participantes Mismo Nivel</li>
-                            <li><i class="fa fa-map-marker"></i> Oficinas del Cliente</li>
-                            <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
+                        <ul class="plan-info-list">
+                            <li><i id="info-plan" class="fa fa-group"></i> Máx. 4 Participantes Mismo Nivel</li>
+                            <li><i id="info-plan" class="fa fa-map-marker"></i> Oficinas del Cliente</li>
+                            <li><i id="info-plan" class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
                         </ul>          
                         <p class="plan-select-block">
                             <%=link_to valores_precios_o_tarifas_path, :class => "btn btn-adaptable btn-block-bm btn-dark btn-icon btn-check", :hidefocus => true do%>
@@ -265,10 +221,10 @@
                             </div>
                             <h2 class="plan-title" style="font-size: 24px;"></h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>9.000</h3>
-                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
-                            <small class="plan-info">Programas desde 36 horas</small>
+                            <small id="info-plan" class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small id="info-plan" class="plan-info">Programas desde 36 horas</small>
                         </div>
-                        <ul>
+                        <ul class="plan-info-list">
                             <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
                             <li><i class="fa fa-map-marker"></i> Longbourn Sede Las Condes</li>
                             <li><i class="fa fa-clock-o"></i> Desde 8:00 a 9:59 y 17:00 a 20:30.</li>
@@ -288,10 +244,10 @@
                             </div>
                             <h2 class="plan-title" style="font-size: 24px;"></h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>7.500</h3>
-                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
-                            <small class="plan-info">Programas desde 36 horas</small>
+                            <small id="info-plan" class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small id="info-plan" class="plan-info">Programas desde 36 horas</small>
                         </div>
-                        <ul>
+                        <ul class="plan-info-list">
                             <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
                             <li><i class="fa fa-map-marker"></i> Longbourn Sede Las Condes</li>
                             <li><i class="fa fa-clock-o"></i> Desde 10:00 a 16:59.</li>
@@ -311,7 +267,7 @@
 <section class="slice white">
     <div class="wp-section">
         <div class="container">
-            <p><b>(*)</b>Precio válido para las comunas de Las Condes, Vitacura, Providencia y Santiago Centro. Consultar valor para otras comunas</p>
+            <p style="font-size: 1.4em;"><b>(*)</b>Precio válido para las comunas de Las Condes, Vitacura, Providencia y Santiago Centro. Consultar valor para otras comunas</p>
         </div>
     </div>
 </section>

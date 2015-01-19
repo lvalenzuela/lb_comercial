@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1><%=@page_title%></h1>
+                <h1 id="page-title"><%=@page_title%></h1>
             </div>
             <div class="col-md-6">
                 <ol class="return-path breadcrumb">
@@ -33,7 +33,7 @@
                             <i class="fa fa-search"></i>
                         </div>
                         
-                        <h2 id="box-title">Explorando TOEFL y Determinando Cursos de Acción</h2>
+                        <h2 id="box-main-title">Explorando TOEFL y Determinando Cursos de Acción</h2>
                         <p class="box-main-text text-center">
                             Se estudiará y explorará cada parte de la prueba. El estudiante podrá analizar los ejercicios relacionados a cada habilidad a evaluar, comprendiendo los errores que se suelen cometer y seguir estrategias para mejorar.
                         </p>
@@ -46,7 +46,7 @@
                             <i class="fa fa-level-up"></i>
                         </div>
                         
-                        <h2 id="box-title">Realización de Tareas y Control de Avance</h2>
+                        <h2 id="box-main-title">Realización de Tareas y Control de Avance</h2>
                         <p class="box-main-text text-center">
                             Se controla el progreso del curso mediante tareas evaluadas. Los objetivos son identificar las habilidades que es necesario mejorar y ayudar al estudiante a mantener ritmos de trabajo constante, entregando una ventaja significativa al enfrentar el examen.  
                         </p>
@@ -59,7 +59,7 @@
                             <i class="fa fa-file-text-o"></i>
                         </div>
                         
-                        <h2 id="box-title">Ensayos</h2>
+                        <h2 id="box-main-title">Ensayos</h2>
                         <p class="box-main-text text-center">
                             Durante el curso se realizarán 2 ensayos de la prueba TOEFL. Con esto se busca generar práctica suficiente y obtener datos fidedignos del avance del estudiante.
                         </p>
@@ -72,7 +72,7 @@
                             <i class="fa fa-book"></i>
                         </div>
                         
-                        <h2 id="box-title">Material de Apoyo</h2>
+                        <h2 id="box-main-title">Material de Apoyo</h2>
                         <p class="box-main-text text-center">
                             El estudiante encontrará todo el apoyo gramatical para aclarar dudas con el material incluido en el programa de estudio.
                         </p>
@@ -163,15 +163,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                	<h4 style="text-transform: none;">¿Qué es el TOEFL?</h4>
-                    <p>
+                	<h4 style="text-transform: none;" class="toefl-title">¿Qué es el TOEFL?</h4>
+                    <p class="toefl-txt">
                     	Test Of English as a Foreign Language (Examen de inglés como segunda lengua) es una prueba internacional estandarizada por ETS (Educational Testing Service), que mide el dominio del lenguaje inglés académico. 
                     	<br>
 						El test está diseñado una manera práctica a través de distintas secciones con el objetivo de recrear contextos semejantes a la vida real en un ambiente universitario angloparlante. Las secciones miden la capacidad para generar comunicación en las cuatro habilidades del lenguaje: expresión oral, expresión escrita, comprensión auditiva y de lectura, para desarrollar tareas académicas.
 						<br>
 						La certificación TOEFL es útil para:
                     </p>
-                    <ul class="list-check">
+                    <ul class="list-check toefl-txt">
                         <li><i class="fa fa-check"></i> Estudiantes que desean estudiar en una universidad extranjera.</li>
                         <li><i class="fa fa-check"></i> Admisiones y egreso del programa de aprendizaje del idioma inglés.</li>
                         <li><i class="fa fa-check"></i> Candidatos para becas y certificaciones.</li>
@@ -190,18 +190,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-title-wr">
-                        <h3 class="section-title left" style="text-transform: none;"><span>¿Quién acepta las calificaciones del TOEFL?</span></h3>
+                        <h3 class="section-title left" style="text-transform: none;"><span id="destacado">¿Quién acepta las calificaciones del TOEFL?</span></h3>
                     </div>
-                    <p>
+                    <p class="toefl-txt">
                     	Hay más de 9000 universidades, organizaciones y otras instituciones en 130 países que aceptan esta calificación. Sin embargo, cada interesado deberá conocer los requisitos para cada caso en que se pretenda utilizar esta calificación. <br>
 
 						Algunas otras instituciones y organizaciones utilizan la calificación TOEFL para otros propósitos, como por ejemplo:
                     </p>
-                    <ul class="list-check">
+                    <ul class="list-check toefl-txt">
                         <li><i class="fa fa-check"></i> Los departamentos de inmigración, así emiten visas de residencia y trabajo.</li>
                         <li><i class="fa fa-check"></i> Los organismos médicos y de expedición de licencias, para certificación profesional.</li>
                     </ul>
-                    <p>
+                    <p class="toefl-txt">
 						El postulante que se preparara para esta prueba no solo estará haciendo más claras sus posibilidades de obtener un puntaje alto, sino que también mejorará su nivel de uso de inglés, de manera que aumentarán también las posibilidades de ser elegible para el propósito que se busca. 
                     </p>
                 </div>
@@ -240,12 +240,12 @@
                 <div class="col-md-4">
                     <div class="wp-block default">
                         <div class="plan-header light">
-                            <h2 class="plan-title" style="font-size: 24px;">TOEFL: Private Lessons</h2>
+                            <h2 class="plan-title" id="title-plan">TOEFL: Private Lessons</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>23.000</h3>
-                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
-                            <small class="plan-info">Programas desde 36 horas</small>
+                            <small id="info-plan" class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small id="info-plan" class="plan-info">Programas desde 36 horas</small>
                         </div>
-                        <ul>
+                        <ul class="plan-info-list">
                             <li><i class="fa fa-user"></i> Curso Individual Cerrado</li>
                             <li><i class="fa fa-map-marker"></i> Oficinas del Cliente</li>
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
@@ -261,12 +261,12 @@
                 <div class="col-md-4">
                     <div class="wp-block default">
                         <div class="plan-header light">
-                            <h2 class="plan-title" style="font-size: 24px;">TOEFL: Executive Group</h2>
+                            <h2 class="plan-title" id="title-plan">TOEFL: Executive Group</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>13.800</h3>
-                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
-                            <small class="plan-info">Programas desde 36 horas</small>
+                            <small id="info-plan" class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small id="info-plan" class="plan-info">Programas desde 36 horas</small>
                         </div>
-                        <ul>
+                        <ul class="plan-info-list">
                             <li><i class="fa fa-group"></i> Máx. 4 Participantes Mismo Nivel</li>
                             <li><i class="fa fa-map-marker"></i> Oficinas del Cliente</li>
                             <li><i class="fa fa-clock-o"></i> Horario a Definir con el Cliente</li>
@@ -281,12 +281,12 @@
                 <div class="col-md-4">
                     <div class="wp-block default">
                         <div class="plan-header light">
-                            <h2 class="plan-title" style="font-size: 24px;">TOEFL: Grupal Sede Las Condes</h2>
+                            <h2 class="plan-title" id="title-plan">TOEFL: Grupal Sede Las Condes</h2>
                             <h3 class="price-tag" style="font-size: 38px;"><span>$</span>9.000</h3>
-                            <small class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
-                            <small class="plan-info">Programas desde 36 horas</small>
+                            <small id="info-plan" class="plan-info" style="margin-bottom: 0px; padding-bottom: 0px;">Valor Hora Cronológica por Persona</small>
+                            <small id="info-plan" class="plan-info">Programas desde 36 horas</small>
                         </div>
-                        <ul>
+                        <ul class="plan-info-list">
                             <li><i class="fa fa-group"></i> Máx. 8 Participantes Mismo Nivel</li>
                             <li><i class="fa fa-map-marker"></i> Longbourn Sede Las Condes</li>
                             <li><i class="fa fa-clock-o"></i> Cursos de 08:00 a 20:30 hrs.</li>

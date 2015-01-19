@@ -1,10 +1,7 @@
 <section id="slider-wrapper" class="layer-slider-wrapper layer-slider-dynamic">
     <div id="layerslider" class="main-video-wrapper"> 
-        <!-- slide background video-->
         <%=image_tag "web-imgs/empresas/empresas_index.jpg", :class => "img-responsive", :id => "main-bgvid" %>
-        <%#video_tag "vids/main_vid.webm", "vids/main_vid.mp4", :autoplay => true ,:loop => true, :muted => true, :poster => "backgrounds/vid-background.png", :id => "main-bgvid"%>
         <div id="main-video-titles">
-	        <!-- Left Text -->
 	       <h1 class="ls-l title c-white text-wrapped text-uppercase text-center strong">
 	            Cursos de Inglés para <b>Profesionales</b> y <b>Ejecutivos</b>
             </h1>
@@ -18,7 +15,7 @@
             <div class="col-sm-3 channel-block">
                 <button class="btn btn-lg btn-block btn-dark sp-button" style="margin:0px" id="ejecutivo" 
                 onclick= <%= "javascript:location.href='" + ingles_ejecutivo_path + "'"%> >
-                    <h3 style="color: #DEDEDE; white-space: normal;">Longbourn Executive</h3>
+                    <h3 class="index-title">Longbourn Executive</h3>
                     <span class="subtitle">Inglés en tu Oficina</span>
                     
                 </button>
@@ -26,20 +23,20 @@
             
             <div class="col-sm-3 channel-block">
                 <button class="btn btn-lg btn-block btn-dark sp-button" style="margin:0px" id="instituto" onclick= <%= "javascript:location.href='" + instituto_de_ingles_path + "'"%> > 
-                        <h3 style="color: #DEDEDE; white-space: normal;">Longbourn Institute</h3>
+                        <h3 class="index-title">Longbourn Institute</h3>
                         <span class="subtitle">Inglés en los Mejores Horarios</span>
                 </button> 
             </div>
             
             <div class="col-sm-3 channel-block">
                 <button class="btn btn-lg btn-block btn-dark sp-button" style="margin:0px" id="empresarial" onclick= <%= "javascript:location.href='" + ingles_empresarial_path + "'"%>> 
-                        <h3 style="color: #DEDEDE; white-space: normal;">Longbourn StartUp</h3>
+                        <h3 class="index-title">Longbourn StartUp</h3>
                         <span class="subtitle">Inglés a los Mejores Precios</span>
                 </button>    
             </div>
             <div class="col-sm-3 channel-block">
                 <button class="btn btn-lg btn-block btn-dark sp-button" style="margin:0px" id="toefl" onclick= <%= "javascript:location.href='" + cursos_toefl_path + "'"%>> 
-                        <h3 style="color: #DEDEDE; white-space: normal;">Preparacion TOEFL</h3>
+                        <h3 class="index-title">Preparacion TOEFL</h3>
                         <span class="subtitle">&nbsp;</span>
                 </button>    
             </div>
@@ -47,8 +44,6 @@
     </div>
 </section>
 
-
-<!-- MAIN CONTENT -->
 <section class="slice no-padding row">
     <div class="wp-section">
         <div class="row-fluid">
@@ -57,7 +52,7 @@
                     <div class="img-icon">
                         <i class="fa fa-pencil"></i>
                     </div>
-                    <h1>Metodología TEG</h1>
+                    <h1 id="box-main-title">Metodología TEG</h1>
                     <p class="box-main-text ">
                     La Metodología TEG desarrolla simultáneamente, de forma diferente, dinámica y entretenida, las 4 habilidades del inglés: leer, escribir, escuchar y hablar.
                     </p>
@@ -68,7 +63,7 @@
                     <div class="img-icon">
                         <i class="fa fa-institution"></i>
                     </div>
-                    <h1>Nuestros Profesores</h1>
+                    <h1 id="box-main-title">Nuestros Profesores</h1>
                     <p class="box-main-text">
                     Nuestros profesores son titulados de las mejores Universidades y son capacitados en Longbourn, entregándoles las herramientas para que realicen clases de excelencia.
                     </p>
@@ -79,7 +74,7 @@
                     <div class="img-icon">
                         <i class="fa fa-graduation-cap"></i>
                     </div>
-                    <h1>Para Profesionales</h1>
+                    <h1 id="box-main-title">Para Profesionales</h1>
                     <p class="box-main-text">
                     Diseñamos soluciones para facilitar tu experiencia estudiando Inglés. En Longbourn podrás compartir e intercambiar ideas con Profesionales con tus mismos objetivos.
                     </p>
@@ -90,7 +85,7 @@
                     <div class="img-icon">
                         <i class="fa fa-map-marker"></i>
                     </div>
-                    <h1>Localización</h1>
+                    <h1 id="box-main-title">Localización</h1>
                     <p class="box-main-text">
                     Sabemos que tu tiempo y recursos son valiosos. Puedes acceder a nuestros Cursos de Inglés en tu Oficina o en Longbourn Las Condes, a pasos del Metro Escuela Militar
                     </p>
@@ -99,60 +94,3 @@
         </div>
     </div>
 </section>
-
-
-<!--
-<section class="slice bg-white">
-    <div class="wp-section">
-        <div class="container">
-            <div class="section-title-wr">
-                <h3 class="section-title left"><span>Nuestros Clientes</span></h3>
-            </div>
-            <div class="row">
-                <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="client">
-                        <a href="#">
-                            <%=image_tag "logos/canon.png"%>
-                        </a>
-                    </div>
-                </div>
-                 <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="client">
-                        <a href="#">
-                            <%=image_tag "logos/cisco.png"%>
-                        </a>
-                    </div>
-                </div>
-                 <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="client">
-                        <a href="#">
-                            <%=image_tag "logos/dell.png"%>
-                        </a>
-                    </div>
-                </div>
-                 <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="client">
-                        <a href="#">
-                            <%=image_tag "logos/ea.png"%>
-                        </a>
-                    </div>
-                </div>
-                 <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="client">
-                        <a href="#">
-                            <%=image_tag "logos/ebay.png"%>
-                        </a>
-                    </div>
-                </div>
-                 <div class="col-md-2 col-sm-4 col-xs-6">
-                    <div class="client">
-                        <a href="#">
-                            <%=image_tag "logos/facebook.png"%>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
--->

@@ -1,11 +1,7 @@
-<!-- main wrapper - termina en footer -->
 <div class="body-wrap">
-  <!-- HEADER -->
   <div id="divHeaderWrapper">
     <header class="header-standard-2">     
-    <!-- MAIN NAV -->
       <div class="navbar navbar-wp navbar-arrow mega-nav" role="navigation">
-        <!-- Encargada de la zona de los telefonos -->
         <div class="phone-wrapper hidden-xs hidden-sm">
             <div class="row">
                 <div class="pull-right" style="display: block">
@@ -23,15 +19,12 @@
         </div>
         
         <div class="container">
-            
-        <!-- Incluye el menu de arriba -->
             <div class="navbar-header">
-               <!-- Boton del menu de arriba-->
                <button type="button" class="navbar-toggle hidden-xs hidden-sm" data-toggle="collapse" data-target=".navbar-collapse">
                     <i class="fa fa-bars icon-custom"></i>
                 </button> 
                 <%=link_to root_url, :class => "navbar-brand", :title => "Longbourn Institute", :style => "margin-left:0px" do%>
-                    <%=image_tag "LogoLongbourn1.png", :alt => "Longbourn Institute"%>
+                    <%=image_tag "LogoLongbourn1.png", :alt => "Longbourn Institute", :style =>"margin-left:20%" %>
                 <%end%>
                 <a href="#" class="toggle-nav btn btn-lg hidden-md hidden-lg" style="float:left; margin-top:20px;">
                 <i class="fa fa-bars" id="menu-button"></i>
@@ -70,22 +63,6 @@
                         </ul>
                     </li>
                     <li><%=link_to "Preparación TOEFL", :controller => :info, :action => :cursos_toefl%></li>
-                    <!--
-                    <li class="dropdown">
-                        <%#link_to "Preparación Tests", cursos_internacionales_path, {:class => "dropdown-toggle disabled", :data => {:toggle => "dropdown"}}%>
-                        <ul class="dropdown-menu">
-                            <li>
-                              
-                            </li>
-                            <li>
-                              
-                            </li>
-                            <li>
-                              
-                            </li> 
-                        </ul>
-                    </li>
-                    -->
                     <li>
                       <%=link_to "Metodología TEG", :controller => :info, :action => :teg_method%>
                     </li>
@@ -96,7 +73,7 @@
                       <%=link_to "Contacto", {:controller => :site, :action => :contact_us}, {"data-no-turbolink" => true}%>
                     </li>
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>
         </div>
       </div>
     </header>        

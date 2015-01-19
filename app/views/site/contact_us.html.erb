@@ -2,8 +2,8 @@
 <div class="pg-opt">
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <h1>Contáctanos</h1>
+        <div class="col-md-6 ">
+            <h1 id="page-title">Contáctanos</h1>
         </div>
     </div>
 </div>
@@ -21,7 +21,7 @@
                 <div class="section-title-wr">
                     <h3 class="hidden-xs hidden-sm section-title left"><span>Contáctanos</span></h3>
                 </div>
-                <p>
+                <p class="contact-txt">
                 Ponte en contacto con nuestros agentes de ventas para resolver tus dudas y cotizar el curso más adecuado a tus necesidades.
                 </p>
                 <%if flash[:notice]%>
@@ -95,8 +95,6 @@
                             ["Longbourn Institute: Cursos en los mejores horarios"], 
                             ["Longbourn StartUp: Cursos a los mejores precios"],
                             ["Preparación TOEFL"],
-                            #["Preparación TOEIC"],
-                            #["Preparacion IELTS"],
                             ["Ninguno"]], 
                             @web_contact.paid_service), {}, {:class => "mobile-form form-control"}%>
                     </div>
@@ -169,8 +167,6 @@
                             ["Longbourn Institute: Cursos en los mejores horarios"], 
                             ["Longbourn StartUp: Cursos a los mejores precios"],
                             ["Preparación TOEFL"],
-                            #["Preparación TOEIC"],
-                            #["Preparacion IELTS"],
                             ["Ninguno"]], 
                             @web_contact.paid_service), {}, {:class => "form-control"}%>
                     </div>
@@ -199,11 +195,11 @@
                 </div>
                 
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" style="margin-top: 20px;">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="section-title-wr">
-                            <h3 class="section-title left"><span>Información de Contacto</span></h3>
+                            <h3 class="section-title left"><span id="info-text">Información de Contacto</span></h3>
                         </div>
                         <div class="contact-info">
                             <h5><i class="fa fa-map-marker"></i> Dirección</h5>
@@ -220,7 +216,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="section-title-wr">
-                            <h3 class="section-title left"><span>Atención</span></h3>
+                            <h3 class="section-title left"><span id="info-text">Atención</span></h3>
                         </div>
                         <div class="contact-info">
                             <h5><i class="fa fa-check"></i> Lunes - Viernes</h5>
