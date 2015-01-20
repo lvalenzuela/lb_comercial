@@ -1,33 +1,4 @@
 <script type="text/javascript">
-        var id;
-        $(window).resize(function(){
-            clearTimeout(id);
-            id = setTimeout(resizeFunction, 500);
-        });
-
-
-        function resizeFunction(){
-            $('.sp-button').css("height","");   
-
-            var highestCol = Math.max($('#ejecutivo').outerHeight(),$('#instituto').outerHeight(),$('#empresarial').outerHeight(),$('#toefl').outerHeight());
-            $('.channel-block').height((highestCol*1+20));
-            $('.sp-button').css("height",highestCol);
-
-            if ($(window).width() > 992) {
-                $('#site-wrapper').removeClass('show-nav');
-            }
-            else{
-                var pos_init = $('#main-bgvid').position().top;
-                var pos_title = $('#main-video-titles').position().top;
-                var height_title = $('#main-video-titles').height();
-                var height_channel = $('#channels-row').height();
-            
-                var totalHeight = (pos_title - pos_init) + height_title + height_channel; 
-                $('#layerslider').css ("height",totalHeight);   
-            }
-        };  
-</script>
-<script type="text/javascript">
         $(document).ready(function() {
             if ($(window).width() < 992) {  
                 var pos_init = $('#main-bgvid').position().top;
@@ -41,6 +12,15 @@
             }   
         }); 
 </script>
+    <script type="text/javascript">
+        $(window).ready(function() {
+            var highestCol = Math.max($('#ejecutivo').outerHeight(),$('#instituto').outerHeight(),$('#empresarial').outerHeight(),$('#toefl').outerHeight());
+            $('.channel-block').height((highestCol*1+20));
+            $('.sp-button').css("height",highestCol);
+        });
+
+    </script>
+
 
 <section id="slider-wrapper" class="layer-slider-wrapper layer-slider-dynamic">
     <div id="layerslider" class="main-video-wrapper"> 
