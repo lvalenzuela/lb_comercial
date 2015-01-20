@@ -14,7 +14,7 @@ set :deploy_via, :copy
 set :ssh_options, { :forward_agent => true }
 set :keep_releases, 5
 default_run_options[:pty] = true
-server "54.81.113.88", :app, :web, :db, :primary => true #"50.16.3.249"
+server "54.205.158.154", :app, :web, :db, :primary => true #"50.16.3.249"
 
 set :rvm_ruby_string, :local        # use the same ruby as used locally for deployment
 
