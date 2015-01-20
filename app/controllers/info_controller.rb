@@ -3,6 +3,7 @@ class InfoController < ApplicationController
 	def promotions
 		@page_title = "Promociones y descuentos en Longbourn"
 		@meta_description = "Recomienda Longbourn y accede a increíbles descuentos."
+		@user = current_user
 	end
 
 	def longbourn_startup
