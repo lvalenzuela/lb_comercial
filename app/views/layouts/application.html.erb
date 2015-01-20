@@ -6,7 +6,7 @@
 	<%else%>
 		<title>Longbourn: Cursos de Inglés para Profesionales y Ejecutivos</title>  
 	<%end%>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true%>
   <%= csrf_meta_tags %>
 	
@@ -75,14 +75,6 @@
 
 	</script>
 	<script type="text/javascript">
-		$(window).ready(function() {
-   			var highestCol = Math.max($('#ejecutivo').outerHeight(),$('#instituto').outerHeight(),$('#empresarial').outerHeight(),$('#toefl').outerHeight());
-	    	$('.channel-block').height((highestCol*1+20));
-	    	$('.sp-button').css("height",highestCol);
-		});
-
-	</script>
-	<script type="text/javascript">
 	   $(document).ready(function(){
 	        $('.title-to-click').click(function() {
 	            if ($(this).children('.hide-content').hasClass("hidden")) {        
@@ -94,6 +86,20 @@
 	        });
     	});
 	</script>
+	<script type="text/javascript">
+		var id;
+        $(window).resize(function(){
+            clearTimeout(id);
+            id = setTimeout(hideMenuFunction, 500);
+        });
+
+        function hideMenuFunction(){
+            if ($(window).width() > 992) {
+                $('#site-wrapper').removeClass('show-nav');
+            }
+        }    
+	</script>
+
 	<%if @meta_description%>
 		<meta name="description" content="<%=@meta_description%>">
 	<%else%>
