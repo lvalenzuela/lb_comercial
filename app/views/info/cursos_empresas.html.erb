@@ -18,7 +18,7 @@
 <section class="slice white bb animate-hover-slide">
     <div class="wp-section">
         <div class="container">
-            <p style="margin-bottom:20px;" class="mobile-paragraph">
+            <p style="margin-bottom:20px;" class="mobile-paragraph-big">
             Longbourn tiene muchos años de experiencia en la realización de Programas de Capacitación en Inglés para Empresas. El diseño de nuestros Programas Empresa tiene los siguientes focos:
             </p>
             <div class="row">
@@ -28,7 +28,7 @@
                             <%=image_tag "web-imgs/empresas/empresas1_small.jpg", :class => "img-responsive", :alt => "Empresas 1"%>
                         </div>
                         <div class="wp-block-body">
-                            <p class="mobile-paragraph">
+                            <p class="mobile-paragraph-big">
                             Facilitar el acceso a Cursos de Inglés con Cursos In Office.
                             </p>
                         </div>
@@ -41,7 +41,7 @@
                             <%=image_tag "web-imgs/empresas/empresas2_small.jpg", :class => "img-responsive", :alt => "Empresas 2"%>
                         </div>
                         <div class="wp-block-body">
-                            <p class="mobile-paragraph">
+                            <p class="mobile-paragraph-big">
                             Entregar una experiencia de capacitación única y gratificante a los participantes, dado que podrán aprender inglés de calidad de forma amena y entretenida.
                             </p>
                         </div>
@@ -54,7 +54,7 @@
                             <%=image_tag "web-imgs/empresas/empresas3_small.jpg", :class => "img-responsive", :alt => "Empresas 3"%>
                         </div>
                         <div class="wp-block-body">
-                            <p class="mobile-paragraph">
+                            <p class="mobile-paragraph-big">
 							Facilitar la experiencia del Área de Recursos Humanos en la administración y control del Programa.
 							</p>
                         </div>
@@ -66,7 +66,7 @@
                             <%=image_tag "web-imgs/empresas/empresas4_small.jpg", :class => "img-responsive"%>
                         </div>
                         <div class="wp-block-body">
-                            <p class="mobile-paragraph">
+                            <p class="mobile-paragraph-big">
                             Precios especiales para Empresas y Franquicia SENCE.
                             </p>
                         </div>
@@ -87,7 +87,7 @@
             </div>
             <div class="row">
             	<div class="col-md-12">
-	            	<p class="mobile-paragraph">
+	            	<p class="mobile-paragraph info-top">
 	            		Un Programa de Capacitación exitoso es aquel en el que los participantes logran adquirir nuevos conocimientos y sienten que la Empresa les está entregando una herramienta útil para su trabajo y crecimiento profesional. Esto se ve reflejado en altas tasas de asistencia y elevado rendimiento de los participantes.
 	            	</p>
             	</div>
@@ -153,7 +153,7 @@
             </div>
             <div class="row">
             	<div class="col-md-12">
-	            	<p class="mobile-paragraph">
+	            	<p class="mobile-paragraph info-top">
 	            		Longbourn se preocupa para que los informes de control del Programa de Inglés de tu Empresa te lleguen oportunamente.
 	            	</p>
             	</div>
@@ -255,128 +255,14 @@
                     <h2 class="text-normal">Contáctatenos para iniciar el proceso. Una Ejecutiva te asesorará para diseñar tu Programa de Inglés Longbourn Empresas.</h2>
                 </div>
                 <div class="col-md-4">
-                    <%=link_to "<span>Consulta Aca!</span>".html_safe, {:controller => :site, :action => :contact_us}, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right","data-no-turbolink" => true}%>
+                    <%=link_to "<span id='info-text'>Consulta Aca!</span>".html_safe, {:controller => :site, :action => :contact_us}, {:class => "btn btn-lg btn-b-white btn-icon btn-icon-right btn-check pull-right","data-no-turbolink" => true}%>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="slice white bb">
-    <div class="wp-section">
-        <div class="container">
-            <div class="section-title-wr">
-                <h3 class="section-title left">
-                    <span>Cursos Longbourn</span>
-                    <small>Nuestro modelo de aprendizaje de inglés es similar al escalamiento gradual de una montaña. Como se muestra en el siguiente esquema, se puede llegar a la cima por diferentes rutas.</small>
-                </h3>
-            </div>
-            <div class="row" style="margin-bottom: 20px;">
-                <div class="col-md-6">
-                    <label style="font-weight: bold;">Simula tu Nivel Inicial. A confirmar mediante Prueba de Diagnóstico.</label>
-                    <div class="form-group">
-                        <%=select_tag :routes, options_for_select([["Expert Route: Nivel Avanzado",0],["Standard Route: Nivel Intermedio",1],["Introductory Route: Nivel Básico",2]],1), {:class => "form-control"}%>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <label style="font-weight: bold;">Define tu Objetivo</label>
-                    <div class="form-group">
-                        <%=select_tag :objectives_exp, options_for_select([
-                            ["Negociación Avanzada",0],
-                            ["Presentaciones en Congresos Internacionales",1],
-                            ["Redacción de Contratos y Papers Académicos",2],
-                            ["Liderar Reuniones de Negocios",3],
-                            ["Presentaciones y llamadas Telefónicas",4], 
-                            ["Participación en Reuniones",5]],3), {:class => "form-control objectives", :style => "display: none;"}%>
-                        <%=select_tag :objectives_std, options_for_select([
-                            ["Negociación Avanzada",0],
-                            ["Presentaciones en Congresos Internacionales",1],
-                            ["Redacción de Contratos y Papers Académicos",2],
-                            ["Liderar Reuniones de Negocios",3],
-                            ["Presentaciones y llamadas Telefónicas",4], 
-                            ["Participación en Reuniones",5],
-                            ["Comunicación Escrita",6]],3), {:class => "form-control objectives", :style => "display: block;"}%>
-                        <%=select_tag :objectives_int, options_for_select([
-                            ["Negociación Avanzada",0],
-                            ["Presentaciones en Congresos Internacionales",1],
-                            ["Redacción de Contratos y Papers Académicos",2],
-                            ["Liderar Reuniones de Negocios",3],
-                            ["Presentaciones y llamadas Telefónicas",4], 
-                            ["Participación en Reuniones",5],
-                            ["Comunicación Escrita",6],
-                            ["Nociones de Inglés",7]],3), {:class => "form-control objectives", :style => "display: none;"}%>
-                    </div>
-                </div>
-            </div>
+<%=render :partial => "mountain_partial"%>
 
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="shadow achv-imgs routes-display" id="achievements-exp" style="display: none;">
-                        <%=image_tag "d_mountain/expert/expert_6.png"%>
-                        <%=image_tag "d_mountain/expert/expert_5.png"%>
-                        <%=image_tag "d_mountain/expert/expert_4.png"%>
-                        <%=image_tag "d_mountain/expert/expert_3.png", :class => "opaque"%>
-                        <%=image_tag "d_mountain/expert/expert_2.png"%>
-                        <%=image_tag "d_mountain/expert/expert_1.png"%>
-                    </div>
-                    <div class="shadow achv-imgs routes-display" id="achievements-std" style="display: block;">
-                        <%=image_tag "d_mountain/standard/standard_7.png"%>
-                        <%=image_tag "d_mountain/standard/standard_6.png"%>
-                        <%=image_tag "d_mountain/standard/standard_5.png"%>
-                        <%=image_tag "d_mountain/standard/standard_4.png", :class => "opaque"%>
-                        <%=image_tag "d_mountain/standard/standard_3.png"%>
-                        <%=image_tag "d_mountain/standard/standard_2.png"%>
-                        <%=image_tag "d_mountain/standard/standard_1.png"%>
-                    </div>
-                    <div class="shadow achv-imgs routes-display" id="achievements-int" style="display: none;">
-                        <%=image_tag "d_mountain/introductory/introductory_8.png"%>
-                        <%=image_tag "d_mountain/introductory/introductory_7.png"%>
-                        <%=image_tag "d_mountain/introductory/introductory_6.png"%>
-                        <%=image_tag "d_mountain/introductory/introductory_5.png", :class => "opaque"%>
-                        <%=image_tag "d_mountain/introductory/introductory_4.png"%>
-                        <%=image_tag "d_mountain/introductory/introductory_3.png"%>
-                        <%=image_tag "d_mountain/introductory/introductory_2.png"%>
-                        <%=image_tag "d_mountain/introductory/introductory_1.png"%>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <ul class="achievements-list" id="exp-controls" style="display: none;">
-                        <li>Negociación Avanzada</li>
-                        <li>Presentaciones en Congresos Internacionales</li>
-                        <li>Redacción de Contratos y Papers Académicos</li>
-                        <li class="selected">Liderar Reuniones de Negocios</li>
-                        <li>Presentaciones y Llamadas Telefónicas</li>
-                        <li>Participación en Reuniones</li>
-                    </ul>
-                    <ul class="achievements-list" id="std-controls" style="display: block;">
-                        <li>Negociación Avanzada</li>
-                        <li>Presentaciones en Congresos Internacionales</li>
-                        <li>Redacción de Contratos y Papers Académicos</li>
-                        <li class="selected">Liderar Reuniones de Negocios</li>
-                        <li>Presentaciones y Llamadas Telefónicas</li>
-                        <li>Participación en Reuniones</li>
-                        <li>Comunicación Escrita</li>
-                    </ul>
-                    <ul class="achievements-list" id="int-controls" style="display: none;">
-                        <li>Negociación Avanzada</li>
-                        <li>Presentaciones en Congresos Internacionales</li>
-                        <li>Redacción de Contratos y Papers Académicos</li>
-                        <li class="selected">Liderar Reuniones de Negocios</li>
-                        <li>Presentaciones y Llamadas Telefónicas</li>
-                        <li>Participación en Reuniones</li>
-                        <li>Comunicación Escrita</li>
-                        <li>Nociones de Inglés</li>
-                    </ul>
-                </div>
-            </div>  
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="mobile-paragraph">Nuestros libros tienen nombres de montañas debido a que cada uno representa distinto grado de dificultad y permite alcanzar distintos objetivos, tal como se indican en el esquema.</p>
- 
-                    <p class="mobile-paragraph">Cada libro consiste en 36 hrs. de estudio (Aprox. 3 meses, con clases 2 veces por semana)</p>
-                </div>
-            </div>   
-        </div>
-    </div>
-</section>
+
 

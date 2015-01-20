@@ -408,7 +408,7 @@ label.form-label{
 	font-size: 1.3em;
 }
 
-.form-button, .toefl-txt {
+.form-button{
 	font-size: 1.3em;
 }
 
@@ -575,4 +575,17 @@ label.form-label{
 		font-size: 20px;
 	}	
 }
+
+.info-top {
+	@media screen and (max-width: 992px){	
+		margin-bottom: 50px;
+	}	
+}
+
+.mobile-paragraph-big {
+	@media screen and (max-width: 992px){	
+		font-size:1.8em;
+	}	
+}
+
 
