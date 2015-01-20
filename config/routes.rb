@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   root "site#index"
 
-  #match "auth/:provider/callback", to: "users#facebook_login", via: [:get , :post]
-  #match "auth/failure", to: redirect("/"), via: [:get , :post]
-  #match "signout", to: "users#logout", as: "signout", via: [:get , :post]
+  match "auth/:provider/callback", to: "users#facebook_login", via: [:get , :post]
+  match "auth/failure", to: redirect("/"), via: [:get , :post]
+  match "signout", to: "users#logout", as: "signout", via: [:get , :post]
 
   ##
   #Informacionales
@@ -19,10 +19,10 @@ Rails.application.routes.draw do
   #match "cursos-toeic", to: "info#cursos_toeic", via: [:get]
   match "metodologia-teg", to: "info#teg_method", via: [:get]
   match "cursos-de-ingles-para-empresas", to: "info#cursos_empresas", via: [:get]
-
   match "contactanos", to: "site#contact_us", via: [:get]
   match "valores-precios-o-tarifas", to: "site#contact_sales_agent", via: [:get]
   match "trabajo-ingles", to: "site#work_with_us", via: [:get]
+  match "promociones", to: "info#promotions", via: [:get]
 
   #Redirect 301#
   get "/jobs_longbourn", to: redirect("/trabajo-ingles")
