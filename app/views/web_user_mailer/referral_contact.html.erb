@@ -1,0 +1,18 @@
+<%=render :partial => "mailer_header"%>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <h3><%=@user.name%> te ha invitado a conocer Longbourn!</h3>
+      <p><%=@user.firstname%> ha solicitado que te enviemos este correo para invitarte formalmente a conocer Longbourn Institute.</p>
+
+      <h4>¿Quienes somos?</h4>
+      <p>Longbourn es un instituto de Inglés que ha desarrollado su propia metodología de enseñanza para que sus alumnos puedan aprender de la forma y en el ritmo que les acomode.</p>
+
+      <h4>Conocenos!</h4>
+      <p>Al ingresar mediante este <%=link_to "link", @referral_url%> y registrandote en nuestra página, estarás accediendo a los increíbles descuentos en cursos de ingles que tenemos para ti!</p>
+
+      <h2>Te esperamos!</h2>
+    </div>
+  </div>
+</div>
+<%= render :partial => "mailer_footer"%>

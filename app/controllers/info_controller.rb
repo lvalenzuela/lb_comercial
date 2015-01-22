@@ -1,12 +1,5 @@
 class InfoController < ApplicationController
 	
-	def promotions
-		@page_title = "Promociones y descuentos en Longbourn"
-		@meta_description = "Recomienda Longbourn y accede a increíbles descuentos."
-		@user = current_user
-		@random = SecureRandom.base64(10)
-	end
-
 	def longbourn_startup
 		@page_title = "Inglés Empresarial para ejecutivos, ¡En tu propia oficina!"
 		@meta_description = "Inglés empresarial con programas In Office y metodología TEG, orientados a ejecutivos y profesionales. Código SENCE. Niveles básico, intermedio y avanzado."

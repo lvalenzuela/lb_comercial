@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   match "contactanos", to: "site#contact_us", via: [:get]
   match "valores-precios-o-tarifas", to: "site#contact_sales_agent", via: [:get]
   match "trabajo-ingles", to: "site#work_with_us", via: [:get]
-  match "promociones", to: "info#promotions", via: [:get]
+  match "promociones", to: "promotions#index", via: [:get]
+  match "promo-refiere-a-tus-amigos", to: "promotions#promo_referral", via: [:get]
 
   #Redirect 301#
   get "/jobs_longbourn", to: redirect("/trabajo-ingles")
@@ -40,6 +41,13 @@ Rails.application.routes.draw do
   get "/jobs", to: redirect("/trabajo-ingles")
 
 
+
+  resources :promotions do 
+    collection do
+      post "send_promo_mail"
+      get "register_by_referral"
+    end
+  end
 
   resources :users do
     collection do

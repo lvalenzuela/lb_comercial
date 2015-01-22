@@ -1,6 +1,12 @@
 class WebUserMailer < ActionMailer::Base
   default from: "info@longbourn.cl"
 
+  def referral_contact(contact_mail, user, referral_url)
+    @referral_url = referral_url
+    @user = user
+    mail(:to => contact_mail, :subject => "#{user.name} te ha invitado a conocer Longbourn!")
+  end
+
   def user_registration(key_code, user)
   	@url = longbourn_url+"/users/user_identification?user_auth_token="+key_code
   	@user = user

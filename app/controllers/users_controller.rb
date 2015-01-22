@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 			user.save!
 		end
 		cookies.permanent[:oauth_token] = user.oauth_token
-		redirect_to :controller => :site, :action => session[:action_milestone]
+		redirect_to :controller => :promotions, :action => :index
 	end
 
 	def longbourn_login

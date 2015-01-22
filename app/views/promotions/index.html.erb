@@ -1,0 +1,93 @@
+<!-- MAIN CONTENT -->
+<div class="pg-opt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1><%=@page_title%></h1>
+            </div>
+            <div class="col-md-5">
+                <ol class="breadcrumb">
+                    <li><%=link_to "Home", root_path%></li>
+                    <li class="active">Promociones Longbourn</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="slice bg-white">
+    <div class="wp-section">
+        <div class="container">
+            <%if @user.blank?%>
+                <div class="row">
+                    <%=render :partial => "facebook_login_partial"%>
+                </div>
+            <%else%>
+            <div class="row">
+                    <div class="col-md-6">
+                        <div class="wp-block default user-form">
+                            <div class="form-header">
+                                <h2>Bienvenido <%=@user.name%></h2>
+                            </div>
+                            <div class="form-body social-login">
+                                <p>Utilizando tu dirección de referencias puedes obtener atractivos descuentos para tu siguiente curso en Longbourn</p>
+                                <p>Mientras más personas utilicen tu código para registrarse en nuestra página, mayores serán los beneficios que podrás obtener con esta promoción!.</p>
+                                <p>Adicionalmente, quienes ingresen con tu código obtendrán un descuento del 10% en su primer curso inmediatamente.</p>
+                                <p>Tu dirección de referencia es la siguiente.</p>
+                                <%=link_to "#{root_url}promo-refiere-a-tus-amigos?code=#{@user_data.find_by_promotion_attribute_id(1).attribute_value}", {:controller => :promotions, :action => :promo_referral, :params => {:code => @user_data.find_by_promotion_attribute_id(1).attribute_value}}%>
+                            </div>
+                            <div class="form-footer clearfix">
+                                <div class="pull-right">
+                                    <%=link_to "Log Out", "/signout", :class => "btn btn-primary"%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Cantidad de Referencias</th>
+                                    <th>Total Descuento Aplicado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><%=@user_data.find_by_promotion_attribute_id(2).attribute_value%></td>
+                                    <td><%=@discount_multiplier*@promo_data.discount_index%>%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <%=form_tag :controller => :promotions, :action => :send_promo_mail do%>
+                        <%=hidden_field_tag :promotion_name, "referral"%>
+                        <%=hidden_field_tag :user_code, @user_data.find_by_promotion_attribute_id(1).attribute_value%>
+                        <%if flash[:notice]%>
+                            <div class="alert alert-warning">
+                                <%=flash[:notice]%>
+                            </div>
+                        <%end%>
+                        <h2>Envía tu código por correo a tus contactos más cercanos!</h2>
+                        <div class="form-group">
+                            <label>Correos de Contactos (separados por coma)</label>
+                            <%=text_field_tag "contact_emails", nil, :class => "form-control"%>
+                        </div>
+                        <div class="form-group clearfix">
+                            <div class="pull-right">
+                                <%=submit_tag "Enviar Referencias", :class => "btn btn-primary" %>
+                            </div>
+                        </div>
+                        <%end%>
+                    </div>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+
+</script>
