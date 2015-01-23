@@ -134,6 +134,10 @@ Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basi
 Disallow: /web-comercial.longbourn.cl/codigos-calendario-php/calendario-php-basico/index.php?nuevo_mes=4&nuevo_ano=934/
 Disallow: /web-comercial.longbourn.cl/wordpress/wp-includes/js/plupload/
 
+
+#sitio de longbourn de pruebas
+Disallow: /web_test.longbourn.cl
+
 #PageRules
 #Disallow: /*wp-admin
 
