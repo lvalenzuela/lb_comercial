@@ -407,7 +407,9 @@ p.box-main-text {
 }
 
 .number-title {
-	font-size: 1.9em;
+	@media screen and (max-width: 992px){
+		font-size: 1.9em;
+	}	
 }
 
 label.form-label{

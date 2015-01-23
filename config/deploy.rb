@@ -3,7 +3,7 @@ require "rvm/capistrano"
 
 set :application, "Longbourn Web App"
 set :repository,  "git@github.com:lvalenzuela/lb_comercial.git"
-set :deploy_to, "/var/www/html/test_web_app"
+set :deploy_to, "/var/www/html/web_app"
 set :scm, :git
 set :branch, "master"
 set :user, "ubuntu"
