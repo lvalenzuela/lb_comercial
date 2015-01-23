@@ -6,7 +6,7 @@
 	<%else%>
 		<title>Longbourn: Cursos de Inglés para Profesionales y Ejecutivos</title>  
 	<%end%>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true%>
   <%= csrf_meta_tags %>
 	
@@ -20,17 +20,132 @@
 	  ga('send', 'pageview');
 
 	</script>
+	<script type="text/javascript">
+		$(function() {
+			$('.toggle-nav').click(function() {
+				toggleNav();
+			});
+		});
+
+		function toggleNav() {
+			if ($('#site-wrapper').hasClass('show-nav')) {
+				/*Close*/
+				$('#site-wrapper').removeClass('show-nav');
+			} else {
+				/*Open*/
+				$('#site-wrapper').addClass('show-nav');
+			}
+		}
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$('#ingles-sede').hover(function(){
+				if($('#ingles-sede').hasClass('open')){
+					$('#principal-ingles-sede').css('background','#3498DB');
+					$('#principal-ingles-sede').css('color','#FFF');
+				}else{
+					$('#principal-ingles-sede').css('background','');
+					$('#principal-ingles-sede').css('color','');	
+				}
+			},function(){
+				$('#principal-ingles-sede').css('background','');
+				$('#principal-ingles-sede').css('color','');
+			})
+		});
+
+		$(function(){
+			$('#drop-institute').hover(function(){
+				$('#drop-institute').css('background','#3498DB');
+				$('#drop-institute').css('color','#FFF');
+			},function(){
+				$('#drop-institute').css('background','');
+				$('#drop-institute').css('color','');
+			})
+		});		
+
+		$(function(){
+			$('#drop-startup').hover(function(){
+				$('#drop-startup').css('background','#3498DB');
+				$('#drop-startup').css('color','#FFF');
+			},function(){
+				$('#drop-startup').css('background','');
+				$('#drop-startup').css('color','');
+			})
+		});
+
+	</script>
+	<script type="text/javascript">
+	   $(document).ready(function(){
+	        $('.title-to-click').click(function() {
+	            if ($(this).children('.hide-content').hasClass("hidden")) {        
+	                $(this).children('.hide-content').removeClass("hidden").addClass("visible");
+
+	            } else {
+	                $(this).children('.hide-content').removeClass("visible").addClass("hidden");
+	            }
+	        });
+    	});
+	</script>
+	<script type="text/javascript">
+		var id;
+        $(window).resize(function(){
+            clearTimeout(id);
+            id = setTimeout(hideMenuFunction, 500);
+        });
+
+        function hideMenuFunction(){
+            if ($(window).width() > 992) {
+                $('#site-wrapper').removeClass('show-nav');
+            }
+        }    
+	</script>
+
 	<%if @meta_description%>
 		<meta name="description" content="<%=@meta_description%>">
 	<%else%>
 		<meta name="description" content="Cursos de Inglés para profesionales, ejecutivos y gerentes en Santiago de Chile, directamente en tu oficina o centro de negocios. ¡Metodología TEG!">
 	<%end%>
+	
 </head>
 <body id="page1">
-<%= render "common_partials/top_menu"%>
+	<div id="site-wrapper">
+		<div id="site-canvas">
+			<div id="site-menu">
+					<ul class="nav navbar-nav navbar-right">
+						 <li>
+	                      <%=link_to "Inglés In Office", {:controller => :info, :action => :longbourn_executive}, {:class => "hidden-menu-item"} %>
+	                    </li>
+	                    <li id="ingles-sede">
+	                        <%=link_to "Inglés en Sede", {:controller => :info, :action => :cursos_en_sede}, {:class => "dropdown-toggle disabled hidden-menu-item", :data => {:toggle => "dropdown"}, :id => "principal-ingles-sede"}%>
+	                        <ul class="dropdown-menu" style="font-size:1.7em">
+	                            <li>
+	                              <%=link_to "Longbourn Institute - Mejores Horarios", 
+	                               {:controller => :info, :action => :longbourn_institute} , {:id => "drop-institute"} %>
+	                            </li>
+	                            <li>
+	                              <%=link_to "Longbourn StartUp - Mejores Precios", 
+	                              {:controller => :info, :action => :longbourn_startup} , {:id => "drop-startup"} %>
+	                            </li> 
+	                        </ul>
+	                    </li>
+	                    <li><%=link_to "Preparación TOEFL", {:controller => :info, :action => :cursos_toefl}, {:class => "hidden-menu-item"} %></li>
+	                    <li>
+	                      <%=link_to "Metodología TEG", {:controller => :info, :action => :teg_method}, { :class => "hidden-menu-item"} %>
+	                    </li>
+	                    <li>
+	                      <%=link_to "Empresas", {:controller => :info, :action => :cursos_empresas}, { :class => "hidden-menu-item"}%>
+	                    </li>
+	                    <li>
+	                      <%=link_to "Contacto", {:controller => :site, :action => :contact_us}, {"data-no-turbolink" => true, :class => "hidden-menu-item"}%>
+	                    </li>	
+					</ul>
+		</div>
+			
+			<%= render "common_partials/top_menu"%> 
+			<%= yield %>
+			<%= render "common_partials/bottom_menu"%>
+		</div>
 
-<%= yield %>
-
-<%= render "common_partials/bottom_menu"%>
+	</div>
 </body>
 </html>

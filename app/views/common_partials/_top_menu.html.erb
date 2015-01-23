@@ -1,11 +1,8 @@
-<!-- main wrapper - termina en footer -->
 <div class="body-wrap">
-  <!-- HEADER -->
   <div id="divHeaderWrapper">
     <header class="header-standard-2">     
-    <!-- MAIN NAV -->
       <div class="navbar navbar-wp navbar-arrow mega-nav" role="navigation">
-        <div class="phone-wrapper">
+        <div class="phone-wrapper hidden-xs hidden-sm">
             <div class="row">
                 <div class="pull-right" style="display: block">
                     <table class="phone-contact">
@@ -17,22 +14,28 @@
                 </div>
             </div>
         </div>
+        
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <button type="button" class="navbar-toggle hidden-xs hidden-sm" data-toggle="collapse" data-target=".navbar-collapse">
                     <i class="fa fa-bars icon-custom"></i>
-                </button>
+                </button> 
                 <%=link_to root_url, :class => "navbar-brand", :title => "Longbourn Institute" do%>
-                    <%=image_tag "LogoLongbourn1.png", :alt => "Longbourn Institute"%>
+                   <%=image_tag "LogoLongbourn1.png", :alt => "Longbourn Institute", :class =>"brand-longbourn" %>
                 <%end%>
+                <a href="#" class="toggle-nav btn btn-lg hidden-md hidden-lg" style="float:left; margin-top:20px;">
+                <i class="fa fa-bars" id="menu-button"></i>
+            </a>
+
             </div>
-            <div class="navbar-collapse collapse">
+        
+            <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden-md hidden-lg">
-                        <div class="bg-light-gray">
+                    <li>
+                        <div class="bg-light-gray hidden-md hidden-lg">
                             <form class="form-horizontal form-light p-15" role="form">
                                 <div class="input-group input-group-lg">
-                                    <input type="text" class="form-control" placeholder="I want to find ...">
+                                    <input type="textn" class="form-control" placeholder="I want to find ...">
                                     <span class="input-group-btn">
                                         <button class="btn btn-white" type="button">
                                             <i class="fa fa-search"></i>
@@ -47,7 +50,7 @@
                     </li>
                     <li>
                         <%=link_to "Inglés en Sede", {:controller => :info, :action => :cursos_en_sede}, {:class => "dropdown-toggle disabled", :data => {:toggle => "dropdown"}}%>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" >
                             <li>
                               <%=link_to "Longbourn Institute - Mejores Horarios", instituto_de_ingles_path%>
                             </li>
@@ -57,22 +60,6 @@
                         </ul>
                     </li>
                     <li><%=link_to "Preparación TOEFL", :controller => :info, :action => :cursos_toefl%></li>
-                    <!--
-                    <li class="dropdown">
-                        <%#link_to "Preparación Tests", cursos_internacionales_path, {:class => "dropdown-toggle disabled", :data => {:toggle => "dropdown"}}%>
-                        <ul class="dropdown-menu">
-                            <li>
-                              
-                            </li>
-                            <li>
-                              
-                            </li>
-                            <li>
-                              
-                            </li> 
-                        </ul>
-                    </li>
-                    -->
                     <li>
                       <%=link_to "Metodología TEG", :controller => :info, :action => :teg_method%>
                     </li>
@@ -83,7 +70,7 @@
                       <%=link_to "Contacto", {:controller => :site, :action => :contact_us}, {"data-no-turbolink" => true}%>
                     </li>
                 </ul>
-            </div><!--/.nav-collapse -->
+            </div>
         </div>
       </div>
     </header>        

@@ -58,6 +58,6 @@ class WebUserMailer < ActionMailer::Base
   private
 
   def longbourn_url
-    return "http://www.longbourn.cl"
+    return root_url
   end
 end

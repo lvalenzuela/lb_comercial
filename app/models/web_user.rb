@@ -25,7 +25,9 @@ class WebUser < ActiveRecord::Base
 	def set_course_level
 		## Se supone que aca se define el nivel del curso en que estará el alumno
 		## Utilizando el puntaje obtenido en el test
-		if self.test_score < 20
+		if self.test_score.nil?
+			self.course_level_id = nil
+		elsif self.test_score < 20
 			#nivel introductorio
 			self.course_level_id = 1
 		elsif self.test_score < 40

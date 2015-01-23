@@ -147,6 +147,10 @@ table.phone-contact td.separator{
 	position: absolute;
 	top: 200px;
 	opacity: 1;
+
+	@media screen and (max-width: 992px){
+		top: 5%;
+	}
 }
 
 /*canales en el video*/
@@ -154,6 +158,10 @@ table.phone-contact td.separator{
 #channels-row {
 	position: absolute;
 	top: 312px;
+
+	@media screen and (max-width: 992px){
+		top: 8.95%;
+	}
 }
 
 #channels-row .channels-title {
@@ -168,15 +176,26 @@ table.phone-contact td.separator{
 	padding-bottom: 15px;
 }
 
-
-
-#channels-row .channel-block span.subtitle {
-	color: #DEDEDE; 
+#channels-row .channel-block span.subtitle{
+	color: #DEDEDE;
+	text-transform: none; 
+	white-space: normal;
+	font-size: 1.6em;
 }
+
+ .btn a span.subtitle {
+	color: #DEDEDE;
+	font-style: oblique; 
+	text-transform: none; 
+	white-space: normal;
+	font-size: 1em;
+}
+
 
 #channels-row .channel-block h2{
 	color: #FFF;
 	font-weight: bolder;
+	white-space: normal;
 }
 /**/
 .figcaption a {
@@ -245,3 +264,346 @@ ul.achievements-list li.selected {
   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   filter: alpha(opacity=1);
 }
+
+
+/*Adaptaciones para visualizacion en dispositivos moviles*/
+p.box-main-text {
+	text-align: justify;
+	@media screen and(max-width: 992px){
+		font-size: 2em;
+	}
+}
+
+#box-main-title {
+	@media screen and (max-width: 992px){
+		font-size: 35px; 	
+	}	
+}
+
+.btn-adaptable {
+    /*Caracteristicas basicas se heredan de .btn*/
+    @extend .btn;
+    @media screen and (max-width: 992px){
+    	/* Configuraciones para dispositivos moviles*/
+    	padding: 18px 28px;
+	 	line-height: 1.33;
+  		border-radius: 6px;
+    	font-size: 2em;	
+    }
+
+    @media screen and (min-width: 992px){
+    	/* Configuraciones para escritorios, identicas a btn-lg*/
+    	padding: 10px 16px;
+  		font-size: 18px;
+  		line-height: 1.33;
+  		border-radius: 6px;
+    }
+}
+
+.title-adaptable {
+	display: table-cell;
+	color: #333;
+	font-size: 18px;
+
+	margin: 0px;
+	padding: 0px;
+	font-weight: 500;
+	position: relative;
+
+	float: left;	
+}
+
+.title-adaptable span{
+	font-size: 25px;
+
+	@media screen and (max-width: 992px){
+		font-size: 2.0em;
+	}
+}
+
+.title-adaptable small {
+	font-size: 65%;
+	display: block;
+	margin-top: 4px;
+	font-size: 14px;
+	color: #999;
+
+	@media screen and (max-width: 992px){
+		font-size: 130%;
+	}
+}
+
+.adaptable-icon {
+	@media screen and (max-width: 992px){
+		font-size:2em;	
+	}
+}
+
+.info-title {
+	@media screen and (max-width: 992px){
+		font-size:1.5em;	
+	}
+}
+
+.info-text {
+	@media screen and (max-width: 992px){
+		font-size: 150%;
+	}
+}
+
+#top-subtitle {
+	@media screen and (max-width: 992px){
+		font-size: 1.7em;
+		line-height: 110%;
+	}
+}
+
+.img-principal {
+	position:absolute;
+
+	@media screen and (max-width: 992px){
+		top: 90px;
+	}
+}
+
+.hidden>div {
+	display: block;
+	@media screen and (max-width: 992px){
+    	display:none;
+    }
+}	
+
+.visible>div {
+	display: block;
+	@media screen and (max-width: 992px){
+	    display:block;
+	}    
+}
+
+#mob-year, #info-plan {
+	@media screen and (max-width: 992px){
+		font-size:30px;
+	}		
+}
+
+.return-path {
+	@media screen and (max-width: 992px){
+		font-size:1.7em;
+	}
+}
+
+#adapt-level {
+	padding: 12px 0px;
+
+	@media screen and (max-width: 992px){
+		font-size:1.5em;
+		padding: 12px 25px;
+	}
+}
+
+#mobileIcon {
+	color: #333 !important;
+	font-size:1.5em;
+}
+
+.number-title {
+	font-size: 1.9em;
+}
+
+label.form-label{
+	font-size: 1.5em;
+}
+
+.mobile-form {
+	height: 45px;
+	font-size: 1.3em;
+}
+
+.form-button{
+	font-size: 1.3em;
+}
+
+#contact-link {
+	white-space: normal;
+	padding-left: 30px;
+}
+
+.show-desktop {
+	@media screen and (min-width: 992px){ 
+		visibility: visible !important;
+		display: block !important;
+	}
+}
+
+#site-wrapper {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+
+	/*height: 5000px; Temp: Simulates a tall page. */
+}
+
+#site-canvas {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+	-webkit-transition: .1s ease all;
+	transition: .1s ease all;
+}
+
+#site-menu {
+	width: 300px;
+	left: -300px;
+
+	@media screen and (max-width: 980px){
+		/*Ancho debe ser mayor cuando el dispositivo es de menor tamano*/
+		width:500px;
+		left: -500px;	
+	}	
+		
+	height: 100%;
+	position: absolute;
+	top: 0;
+	background: #ECF0F1;
+	padding: 15px;
+}
+
+#site-wrapper.show-nav #site-canvas {
+	-webkit-transform: translateX(300px);
+	transform: translateX(300px);
+
+	@media screen and(max-width: 980px){
+		-webkit-transform: translateX(500px);
+		transform: translateX(500px);
+	}
+}
+
+.hidden-menu-item {
+	@media screen and(max-width: 980px){
+		height:50px;
+		font-size: 2em;		
+	}
+}
+
+.hidden-menu-item:hover {
+    color: #FFF;
+    background-color: #3498DB !important;
+    border-radius: 0px !important;
+}
+
+.modal-dialog {
+	width:90%;
+	height:95%;
+	padding: 0;
+}
+
+#contact-form .modal-content
+{
+  overflow-y: auto;
+}
+
+.mountain-select {
+	@media screen and (max-width: 992px){
+		height:50px;
+		font-size: 1.5em;	
+	}
+}
+
+.mobile-sub-info{
+	margin-left: 15%;
+	margin-top:10%;
+	padding-top: 10%;
+	height: 300px;
+}
+
+#menu-button {
+	@media screen and(max-width: 980px){
+		font-size: 2em;
+		top: -5px;
+	}
+}
+
+.contact-txt, .contact-info p {
+	@media screen and (max-width: 992px){
+		font-size:1.4em;
+	}
+}
+
+.mobile-paragraph{
+	@media screen and (max-width: 992px){
+		font-size:1.7em;
+	}
+}
+
+#contactar {
+	font-size: 2em;
+	background-color: #616161;
+}
+
+#contactar:hover, #contactar:focus{
+	border-color: #616161;
+}
+
+.index-title {
+	color: #DEDEDE;
+	white-space: normal;
+	font-size: 30px;
+}
+
+#icon-mobile {
+	@media screen and (max-width: 992px){
+		font-size: 3em;
+		width: 80px;
+		height: 80px;
+		padding: 20px;
+	}
+}
+
+
+#info-text, .mountain-label, .plan-info-list li, .contact-info h5 {
+	@media screen and (max-width: 992px){
+		font-size: 1.5em !important;
+	}
+}
+
+#page-title, #destacado, #info-title, .toefl-title  {
+	@media screen and (max-width: 992px){
+		font-size: 2em;
+	}
+}
+
+#title-plan {
+	font-size: 24px;
+	@media screen and (max-width: 992px){
+		font-size: 2em;
+	}
+}
+
+#level-info{
+	@media screen and (max-width: 992px){
+		font-size: 20px;
+	}	
+}
+
+.info-top {
+	@media screen and (max-width: 992px){	
+		margin-bottom: 50px;
+		font-size: 1.9em;
+	}	
+}
+
+.mobile-paragraph-big {
+	@media screen and (max-width: 992px){	
+		font-size:1.8em;
+	}	
+}
+
+.brand-longbourn {
+	@media screen and (max-width: 992px){
+		margin-left:20%
+	}	
+}
+
+

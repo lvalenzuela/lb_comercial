@@ -1,15 +1,15 @@
 <div class="static-page-image">
     <%=image_tag "web-imgs/landing_sede/landing_sede_mid.jpg", :alt => "Cursos Sede"%>
     <div class="description-left">
-        <span class="subtitle text-wrapped alpha c-black">Cursos en la Sede Longbourn Las Condes</span>
+        <span class="subtitle text-wrapped alpha c-black"  id="page-title">Cursos en la Sede Longbourn Las Condes</span>
     </div>
-    <div class="description-buttons" style="position: absolute; top: 80%; width: 100%;">
+    <div class="description-buttons" style="position: absolute; top: 70%; width: 100%;">
         <div class="row">
             <div class="col-md-6">
-                <%=link_to "Longbourn Institute - Mejores Horarios", {:controller => :info, :action => :longbourn_institute}, {:class => "btn btn-block btn-dark btn-lg"}%>
+                <%=link_to "Longbourn Institute - Mejores Horarios", {:controller => :info, :action => :longbourn_institute}, {:class => "btn btn-block btn-dark btn-lg", :id => "info-plan"}%>
             </div>
             <div class="col-md-6">
-                <%=link_to "Longbourn StartUp - Mejores Precios", {:controller => :info, :action => :longbourn_startup}, {:class => "btn btn-block btn-dark btn-lg"}%>
+                <%=link_to "Longbourn StartUp - Mejores Precios", {:controller => :info, :action => :longbourn_startup}, {:class => "btn btn-block btn-dark btn-lg", :id => "info-plan"}%>
             </div>
         </div>
     </div>

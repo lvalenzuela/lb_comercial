@@ -1,11 +1,10 @@
-  <!-- FOOTER -->
   <footer class="footer">
       <div class="container">
           <div class="row">
               <div class="col-md-3">
                   <div class="col">
-                     <h4>Contacto</h4>
-                     <ul>
+                     <h4 id="info-title">Contacto</h4>
+                     <ul id="info-text">
                           <li>Coronel Pereira 72, Piso 11, Las Condes</li>
                           <li>Telefono: +56 2 2378 7720</li>
                           <li><a href="mailto:contacto@longbourn.cl">contacto@longbourn.cl</a></li>
@@ -15,8 +14,8 @@
 
               <div class="col-md-3">
                 <div class="col">
-                  <h4>Jobs Longbourn</h4>
-                  <ul>
+                  <h4 id="info-title">Jobs Longbourn</h4>
+                  <ul id="info-text">
                     <li>Buscamos profesionales talentosos que se adecúen a nuestro perfil de trabajo. Postula <%=link_to "aqui", {:controller => :site, :action => :work_with_us}, {"data-no-turbolink" => true}%></li>
                   </ul>
                 </div>
@@ -24,8 +23,8 @@
 
               <div class="col-md-3">
                 <div class="col">
-                  <h4>Web de Estudiantes</h4>
-                  <ul>
+                  <h4 id="info-title">Web de Estudiantes</h4>
+                  <ul id="info-text">
                     <li><%=link_to "students.longbourn.cl", "http://students.longbourn.cl", {:target => "_blank"}%></li>
                   </ul>
                 </div>
@@ -33,11 +32,11 @@
               
               <div class="col-md-3">
                   <div class="col col-social-icons">
-                      <h4>Síguenos en</h4>
-                      <a href="http://www.facebook.com/longbourn.ingles" target="_blank"><i class="fa fa-facebook"></i></a>
-                      <a href="http://twitter.com/ingleslongbourn" target="_blank"><i class="fa fa-twitter"></i></a>
-                      <a href="http://plus.google.com/113778967564203146683" target="_blank"><i class="fa fa-google-plus"></i></a>
-                      <a href="http://www.linkedin.com/company/2298092" target="_blank"><i class="fa fa-linkedin"></i></a>
+                      <h4 id="info-title">Síguenos en</h4>
+                      <a href="http://www.facebook.com/longbourn.ingles" target="_blank" style="margin-right:40px"><i id="icon-mobile" class="fa fa-facebook"></i></a>
+                      <a href="http://twitter.com/ingleslongbourn" target="_blank" style="margin-right:40px"><i id="icon-mobile" class="fa fa-twitter"></i></a>
+                      <a href="http://plus.google.com/113778967564203146683" target="_blank" style="margin-right:40px"><i id="icon-mobile" class="fa fa-google-plus"></i></a>
+                      <a href="http://www.linkedin.com/company/2298092" target="_blank"><i id="icon-mobile" class="fa fa-linkedin"></i></a>
                   </div>
               </div>
 
@@ -46,7 +45,7 @@
           <hr>
           
           <div class="row">
-              <div class="col-lg-9 copyright">
+              <div class="col-lg-9 copyright" id="info-text">
                   &copy; 2014 Longbourn. Todos los derechos reservados.
               </div>
           </div>
