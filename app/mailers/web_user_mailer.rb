@@ -36,15 +36,15 @@ class WebUserMailer < ActionMailer::Base
   	mail(to: user.email, subject: "Longbourn Institute: Registro de Usuarios de Longbourn.")
   end
 
-  def contact_sales_agent(web_contact)
-    @contact = web_contact
+  def contact_sales_agent(contact_form)
+    @contact = contact_form
 
     #if @contact.paid_service.include?("Executive")
     #  recipient = "aarregui@longbourn.cl"
     #else
     #  recipient = "contacto@longbourn.cl"
     #end
-    mail(to: "contacto@longbourn.cl", subject: "Contacto Web Comercial: #{web_contact.name}")
+    mail(to: "lvalenzuela@longbourn.cl", subject: "Contacto Web Comercial: #{contact_form.name}")
   end
 
   def contact_jobs_agent(job_contact)

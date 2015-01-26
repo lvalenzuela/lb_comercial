@@ -21,7 +21,40 @@
             <%if @user.blank?%>
             <div class="row">
                 <div class="col-xs-6">
-                    <%=image_tag "web-imgs/experimental-imgs/sales.jpg", :class => "img-responsive"%>
+                    <%=form_for :web_contact_form, :url => {:controller => :promotions, :action => :send_contact_info} do |f|%>
+                        <div class="wp-block default user-form"> 
+                            <div class="form-header">
+                                <h2>Envíanos tus Consultas</h2>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <%=f.text_field :name, {:class => "form-control", :placeholder => "Nombre"}%>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <%=f.email_field :email, {:class => "form-control", :placeholder => "Email"}%>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefono de Contácto</label>
+                                    <%=f.phone_field :phone, {:class => "form-control", :placeholder => "Telefono"}%>
+                                </div>
+                                <div class="form-group">
+                                    <label>Comuna</label>
+                                    <%=f.text_field :location, {:class => "form-control", :placeholder => "Comuna"}%>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mensaje</label>
+                                    <%=f.text_area :msg, {:class => "form-control", :style => "height: 100px;", :placeholder => "Escribe tu mensaje aquí"}%>
+                                </div>
+                            </div>
+                            <div class="form-footer clearfix">
+                                <div class="pull-right">
+                                    <%=f.submit "Enviar", :class => "btn btn-primary"%>
+                                </div>
+                            </div>
+                        </div>
+                    <%end%>
                 </div>
                 <div class="col-xs-6">
                     <div class="vertical-info">

@@ -46,6 +46,7 @@ Rails.application.routes.draw do
     collection do
       post "send_promo_mail"
       get "register_by_referral"
+      post "send_contact_info"
     end
   end
 

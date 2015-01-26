@@ -90,7 +90,22 @@ class PromotionsController < ApplicationController
 		redirect_to :action => :promo_referral
 	end
 
+	def send_contact_info
+		@contact_form = WebContactForm.create(web_contact_form_params)
+		if @contact_form.valid?
+			flash[:notice] = "Tu solicitud ha sido enviada satisfactoriamente. Nos pondremos en contacto contigo a la brevedad."
+			WebUserMailer.contact_sales_agent(@contact_form).deliver
+		else
+			flash[:notice] = "Tu solicitud no pudo ser enviada. Intentalo de nuevo por favor."
+		end
+		redirect_to :action => :promo_referral
+	end
+
 	private
+
+	def web_contact_form_params
+		params.require(:web_contact_form).permit(:name, :email, :location, :phone, :msg)
+	end
 
 	def referral_total_discount(referral_counter,promo_discount)
 		case referral_counter

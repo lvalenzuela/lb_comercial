@@ -36,11 +36,11 @@
         </tr>
         <tr>
           <th>Servicio Gratuito de Interes</th>
-          <td><%=@contact.free_service%></td>
+          <td><%=@contact.free_service ? @contact.free_service : "-"%></td>
         </tr>
         <tr>
           <th>Curso de Interés</th>
-          <td><%=@contact.paid_service%></td>
+          <td><%=@contact.paid_service ? @contact.paid_service : "-"%></td>
         </tr>
       </table>
     </div>
