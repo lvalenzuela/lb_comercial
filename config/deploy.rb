@@ -3,9 +3,9 @@ require "rvm/capistrano"
 
 set :application, "Longbourn Web App"
 set :repository,  "git@github.com:lvalenzuela/lb_comercial.git"
-set :deploy_to, "/var/www/html/web_app"
+set :deploy_to, "/var/www/html/test_web_app"
 set :scm, :git
-set :branch, "master"
+set :branch, "test_branch"
 set :user, "ubuntu"
 set :group, "deployers"
 set :use_sudo, false
@@ -14,7 +14,7 @@ set :deploy_via, :copy
 set :ssh_options, { :forward_agent => true }
 set :keep_releases, 5
 default_run_options[:pty] = true
-server "50.16.3.249", :app, :web, :db, :primary => true 
+server "54.205.158.154", :app, :web, :db, :primary => true 
 
 set :rvm_ruby_string, :local        # use the same ruby as used locally for deployment
 
