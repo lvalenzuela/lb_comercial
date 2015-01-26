@@ -22,8 +22,8 @@ Rails.application.routes.draw do
   match "contactanos", to: "site#contact_us", via: [:get]
   match "valores-precios-o-tarifas", to: "site#contact_sales_agent", via: [:get]
   match "trabajo-ingles", to: "site#work_with_us", via: [:get]
-  match "promociones", to: "promotions#index", via: [:get]
-  match "promo-refiere-a-tus-amigos", to: "promotions#promo_referral", via: [:get]
+  match "promociones", to: "promotions#promo_referral", via: [:get]
+  match "comparte-longbourn-con-tus-amigos", to: "promotions#promo_referral_landing", via: [:get]
 
   #Redirect 301#
   get "/jobs_longbourn", to: redirect("/trabajo-ingles")

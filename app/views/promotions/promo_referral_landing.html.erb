@@ -1,0 +1,43 @@
+<!-- MAIN CONTENT -->
+<div class="pg-opt">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <h1><%=@page_title%></h1>
+            </div>
+            <div class="col-md-5">
+                <ol class="breadcrumb">
+                    <li><%=link_to "Home", root_path%></li>
+                    <li class="active">Promociones Longbourn</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="slice bg-white">
+    <div class="wp-section">
+        <div class="container">
+            <div class="row">
+                <h3>Bienvenido!</h3>
+                <p>Has sido referido por el usuario <%=@main_user.name%></p>
+                <p>Registrate en nuestra página para acceder a increíbles descuentos!</p>
+                <div class="col-md-4 col-sm-6">
+                    <div class="wp-block default user-form"> 
+                        <div class="form-header">
+                            <h2>Promociones Longbourn</h2>
+                        </div>
+                        <div class="form-body social-login">
+                            <p>Ingresa mediante Facebook para acceder a nuestros descuentos y promociones.</p>
+                            <%=link_to register_by_referral_promotions_path(:code => @code), :class => "btn-facebook-login" do%>
+                                <i class="fa fa-facebook fa-lg"></i> Registrarse con Facebook
+                            <%end%>
+                        </div>
+                        <div class="form-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

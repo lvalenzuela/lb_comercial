@@ -1,6 +1,10 @@
 class PromotionsController < ApplicationController
 
 	def index
+		redirect_to :action => :promo_referral
+	end
+
+	def promo_referral
 		@page_title = "Promociones y descuentos en Longbourn"
 		@meta_description = "Recomienda Longbourn y accede a increíbles descuentos."
 		@user = current_user
@@ -43,7 +47,7 @@ class PromotionsController < ApplicationController
 		end
 	end
 
-	def promo_referral
+	def promo_referral_landing
 		@page_title = "Promociones y descuentos en Longbourn"
 		@meta_description = "Recomienda Longbourn y accede a increíbles descuentos."
 		#Solo habrá un usuario con el código señalado en la promocion indicada
@@ -55,10 +59,10 @@ class PromotionsController < ApplicationController
 				@main_user = WebUser.find(main_user_data.user_id)
 				@code = params[:code]
 			else
-				redirect_to :action => :index
+				redirect_to :action => :promo_referral
 			end
 		else
-			redirect_to :action => :index
+			redirect_to :action => :promo_referral
 		end
 	end
 
@@ -83,7 +87,7 @@ class PromotionsController < ApplicationController
 				flash[:notice] = "La promocion ingresada no es válida actualmente."
 			end
 		end
-		redirect_to :action => :index
+		redirect_to :action => :promo_referral
 	end
 
 	private
