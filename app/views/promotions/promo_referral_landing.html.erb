@@ -19,16 +19,51 @@
     <div class="wp-section">
         <div class="container">
             <div class="row">
-                <h3>Bienvenido!</h3>
-                <p>Has sido referido por el usuario <%=@main_user.name%></p>
-                <p>Registrate en nuestra página para acceder a increíbles descuentos!</p>
-                <div class="col-md-4 col-sm-6">
+                <div class="col-xs-6">
+                    <%=form_for :web_contact_form, :url => {:controller => :promotions, :action => :send_contact_info} do |f|%>
+                        <div class="wp-block default user-form"> 
+                            <div class="form-header">
+                                <h2>Envíanos tus Consultas</h2>
+                            </div>
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label>Nombre</label>
+                                    <%=f.text_field :name, {:class => "form-control", :placeholder => "Nombre"}%>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <%=f.email_field :email, {:class => "form-control", :placeholder => "Email"}%>
+                                </div>
+                                <div class="form-group">
+                                    <label>Telefono de Contácto</label>
+                                    <%=f.phone_field :phone, {:class => "form-control", :placeholder => "Telefono"}%>
+                                </div>
+                                <div class="form-group">
+                                    <label>Comuna</label>
+                                    <%=f.text_field :location, {:class => "form-control", :placeholder => "Comuna"}%>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mensaje</label>
+                                    <%=f.text_area :msg, {:class => "form-control", :style => "height: 100px;", :placeholder => "Escribe tu mensaje aquí"}%>
+                                </div>
+                            </div>
+                            <div class="form-footer clearfix">
+                                <div class="pull-right">
+                                    <%=f.submit "Enviar", :class => "btn btn-primary"%>
+                                </div>
+                            </div>
+                        </div>
+                    <%end%>
+                </div>
+                <div class="col-xs-6">
                     <div class="wp-block default user-form"> 
                         <div class="form-header">
-                            <h2>Promociones Longbourn</h2>
+                            <h2>Bienvenido!</h2>
                         </div>
                         <div class="form-body social-login">
-                            <p>Ingresa mediante Facebook para acceder a nuestros descuentos y promociones.</p>
+                            <p><b><%=@main_user.name%></b> te ha invitado a conocer Longbourn!</p>
+                            <p>Regístrate en nuestra página mediante Facebook y accede a los múltiples descuentos y benficios en cursos de Inglés y capacitaciones que tenemos para ti.</p>
+                            <p>Si tienes alguna duda sobre nuestro instituto no dudes en Contactarnos, uno de nuestros ejecutivos se pondrá en contacto contigo a la brevedad.</p>
                             <%=link_to register_by_referral_promotions_path(:code => @code), :class => "btn-facebook-login" do%>
                                 <i class="fa fa-facebook fa-lg"></i> Registrarse con Facebook
                             <%end%>

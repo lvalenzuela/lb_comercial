@@ -80,7 +80,7 @@ class PromotionsController < ApplicationController
 			when "referral"
 				contacts_array = params[:contact_emails].split(",")
 				contacts_array.each do |contact|
-					WebUserMailer.referral_contact(contact, current_user, "#{root_url}promo-refiere-a-tus-amigos?code=#{params[:user_code]}").deliver
+					WebUserMailer.referral_contact(contact, current_user, "#{root_url}comparte-longbourn-con-tus-amigos?code=#{params[:user_code]}").deliver
 				end
 				flash[:notice] = "Los correos de notificación han sido enviados satisfactoriamente."
 			else
